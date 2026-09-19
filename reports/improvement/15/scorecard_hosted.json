@@ -1,0 +1,206 @@
+{
+  "corpus_size_scored": 243,
+  "reviewed_label_count": 60,
+  "schema_version": 2,
+  "regex_prompt_version": 1,
+  "hosted_prompt_version": 1,
+  "regex": {
+    "backend": "regex",
+    "n_scored": 243,
+    "schema_valid_rate": 1.0,
+    "latency_ms": {
+      "mean": 0.24924279817470077,
+      "p50": 0.2558000051067211,
+      "p95": 0.32176999884541146,
+      "max": 0.39090000063879415
+    },
+    "memory": {
+      "process_rss_peak_mb": 27.84765625,
+      "python_alloc_peak_mb": 0.21106338500976562,
+      "note": "whole-process RSS sampled after each record (coarse); python_alloc_peak_mb is tracemalloc's traced-allocation peak for this loop only."
+    },
+    "cost_usd_per_1000": 0.0,
+    "confusion_vs_reviewed_labels": {
+      "ground_excuse": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 60,
+        "pred_unknown": 0,
+        "label_unknown": 60,
+        "n": 60,
+        "precision": null,
+        "recall": null
+      },
+      "distance_excuse": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "tn": 59,
+        "pred_unknown": 0,
+        "label_unknown": 55,
+        "n": 60,
+        "precision": null,
+        "recall": 0.0
+      },
+      "trip_trouble": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "tn": 58,
+        "pred_unknown": 0,
+        "label_unknown": 58,
+        "n": 60,
+        "precision": null,
+        "recall": 0.0
+      },
+      "headgear_first_time": {
+        "tp": 5,
+        "fp": 1,
+        "fn": 1,
+        "tn": 53,
+        "pred_unknown": 0,
+        "label_unknown": 52,
+        "n": 60,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334
+      },
+      "returning_from_layoff": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 16,
+        "tn": 42,
+        "pred_unknown": 0,
+        "label_unknown": 42,
+        "n": 60,
+        "precision": 1.0,
+        "recall": 0.1111111111111111
+      },
+      "course_winner": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 5,
+        "tn": 54,
+        "pred_unknown": 0,
+        "label_unknown": 49,
+        "n": 60,
+        "precision": 1.0,
+        "recall": 0.16666666666666666
+      }
+    }
+  },
+  "hosted": {
+    "status": "SCORED",
+    "backend": "hosted_openrouter",
+    "provider": "openrouter",
+    "model": "deepseek/deepseek-v4.1-flash",
+    "reasoning_effort": "low",
+    "n_scored": 243,
+    "n_requested": 243,
+    "stop_reason": "completed_all_records",
+    "schema_valid_rate": 0.8600823045267489,
+    "failure_count": 34,
+    "cache_hits": 12,
+    "total_prompt_tokens": 107038,
+    "total_completion_tokens": 206040,
+    "total_reasoning_tokens": 182797,
+    "total_cost_usd": 0.08885035040000001,
+    "cost_usd_per_1000": 0.3656393020576132,
+    "memory": {
+      "process_rss_peak_mb": 67.65234375,
+      "note": "whole local client process RSS sampled after each call \u2014 network-bound; the hosted MODEL's own runtime memory is not observable from the client and is not reported."
+    },
+    "latency_ms": {
+      "mean": 11401.374923868176,
+      "p50": 9702.71739999589,
+      "p95": 23691.562380000672,
+      "max": 41019.65619999828
+    },
+    "ledger_snapshot": {
+      "max_cost_usd": 5.0,
+      "max_requests": 1200,
+      "committed_cost_usd": 0.2835941871999998,
+      "committed_requests": 498,
+      "reserved_cost_usd": 0,
+      "reserved_requests": 0,
+      "remaining_cost_usd": 4.716405812800001,
+      "remaining_requests": 702
+    },
+    "confusion_vs_reviewed_labels": {
+      "ground_excuse": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 60,
+        "pred_unknown": 60,
+        "label_unknown": 60,
+        "n": 60,
+        "precision": null,
+        "recall": null
+      },
+      "distance_excuse": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 0,
+        "tn": 59,
+        "pred_unknown": 59,
+        "label_unknown": 55,
+        "n": 60,
+        "precision": 1.0,
+        "recall": 1.0
+      },
+      "trip_trouble": {
+        "tp": 2,
+        "fp": 1,
+        "fn": 0,
+        "tn": 57,
+        "pred_unknown": 57,
+        "label_unknown": 58,
+        "n": 60,
+        "precision": 0.6666666666666666,
+        "recall": 1.0
+      },
+      "headgear_first_time": {
+        "tp": 5,
+        "fp": 3,
+        "fn": 1,
+        "tn": 51,
+        "pred_unknown": 49,
+        "label_unknown": 52,
+        "n": 60,
+        "precision": 0.625,
+        "recall": 0.8333333333333334
+      },
+      "returning_from_layoff": {
+        "tp": 12,
+        "fp": 1,
+        "fn": 6,
+        "tn": 41,
+        "pred_unknown": 35,
+        "label_unknown": 42,
+        "n": 60,
+        "precision": 0.9230769230769231,
+        "recall": 0.6666666666666666
+      },
+      "course_winner": {
+        "tp": 6,
+        "fp": 2,
+        "fn": 0,
+        "tn": 52,
+        "pred_unknown": 52,
+        "label_unknown": 49,
+        "n": 60,
+        "precision": 0.75,
+        "recall": 1.0
+      }
+    }
+  },
+  "local_qwen3.5_9b": {
+    "status": "DEFERRED_DATA",
+    "reason": "not evaluated in this invocation"
+  },
+  "local_hermes4_14b": {
+    "status": "DEFERRED_DATA",
+    "reason": "not evaluated in this invocation"
+  }
+}

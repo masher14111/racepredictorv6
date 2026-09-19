@@ -1,0 +1,27 @@
+2026-09-19 06:52:12 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 06:52:12 | WARNING  | config | RP env var RP_CPU_WORKERS has no matching config path — skipped
+2026-09-19 06:52:12 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 06:52:12 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+
+=== frozen  data/features/training.parquet ===
+rows=260,490  race_uid=29,512  dates=2024-01-01..2026-07-25
+race_uid spanning >1 race_date: 0   >1 venue: 0
+WIN-market restriction: 260,490 -> 148,860 rows
+train=119,079 test=29,781  shared race_uid=0
+[won] fit=91,085 es=10,121 calib=17,873 test=29,781 | pairwise shared=0 chrono_ok=True cv_folds=3 cv_shared=0 core~calib=0 core~test=0
+[placed_2] fit=91,085 es=10,121 calib=17,873 test=29,781 | pairwise shared=0 chrono_ok=True cv_folds=3 cv_shared=0 core~calib=0 core~test=0
+[showed] fit=91,085 es=10,121 calib=17,873 test=29,781 | pairwise shared=0 chrono_ok=True cv_folds=3 cv_shared=0 core~calib=0 core~test=0
+shuffle-invariant test-group membership: True
+
+=== cand-06 data/audit/06/training_refreshed.parquet ===
+rows=551,815  race_uid=31,242  dates=2024-01-01..2026-09-17
+race_uid spanning >1 race_date: 0   >1 venue: 0
+WIN-market restriction: 551,815 -> 276,297 rows
+train=221,036 test=55,261  shared race_uid=0
+[won] fit=169,074 es=18,797 calib=33,165 test=55,261 | pairwise shared=0 chrono_ok=True cv_folds=3 cv_shared=0 core~calib=0 core~test=0
+[placed_2] fit=169,074 es=18,797 calib=33,165 test=55,261 | pairwise shared=0 chrono_ok=True cv_folds=3 cv_shared=0 core~calib=0 core~test=0
+[showed] fit=169,074 es=18,797 calib=33,165 test=55,261 | pairwise shared=0 chrono_ok=True cv_folds=3 cv_shared=0 core~calib=0 core~test=0
+shuffle-invariant test-group membership: True
+
+============================================================
+PASS: every split/calibration/tuning boundary is race-disjoint, chronologically admissible and row-order invariant

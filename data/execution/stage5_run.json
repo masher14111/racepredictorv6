@@ -1,0 +1,1444 @@
+{
+  "generated_at": "2026-07-27T21:41:12+00:00",
+  "model_verdict": {
+    "go": false,
+    "verdict": "NO-GO",
+    "source": "data\\audit\\stage4\\final_evaluation.json",
+    "available": true,
+    "window": [
+      "2026-06-13",
+      "2026-07-25"
+    ],
+    "n_races": 904,
+    "n_runners": 7922,
+    "headline_line": "audit_independent",
+    "lines": {
+      "audit_independent": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.873997624461691,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": -0.18621322373131566,
+        "logloss_delta_ci95": [
+          -0.22507052056836044,
+          -0.14620101841695424
+        ],
+        "beats_market_logloss": false,
+        "beats_best_devig": false,
+        "significant": false,
+        "model_ece": 0.01624687830123363,
+        "market_ece": 0.008664567285319693
+      },
+      "audit_market_adjusted": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6817336640114835,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.0060507367188917804,
+        "logloss_delta_ci95": [
+          -0.006444386847118044,
+          0.017957473248171776
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.007782264829144432,
+        "market_ece": 0.008664567285319693
+      },
+      "audit_market_adjusted_sigmoid": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6849862514716225,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.002798149258752769,
+        "logloss_delta_ci95": [
+          -0.003541981774795022,
+          0.009543142187701869
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.008601828582529997,
+        "market_ece": 0.008664567285319693
+      },
+      "audit_grouped_temperature": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.8663179832748948,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": -0.17853358254451956,
+        "logloss_delta_ci95": [
+          -0.2181577453098706,
+          -0.13767278746211153
+        ],
+        "beats_market_logloss": false,
+        "beats_best_devig": false,
+        "significant": false,
+        "model_ece": 0.010081661166557454,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3nf_independent": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.8690219714435659,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": -0.18123757071319058,
+        "logloss_delta_ci95": [
+          -0.2228288943580508,
+          -0.14192477141791382
+        ],
+        "beats_market_logloss": false,
+        "beats_best_devig": false,
+        "significant": false,
+        "model_ece": 0.010142317666158215,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3nf_market_adjusted_sigmoid_refit": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6805838429632534,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.007200557767121918,
+        "logloss_delta_ci95": [
+          0.0010712854421223495,
+          0.014539834440484067
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": true,
+        "model_ece": 0.008441229521914036,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3nf_market_adjusted": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.679190927639613,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.008593473090762194,
+        "logloss_delta_ci95": [
+          -0.005769631664357911,
+          0.020066134241146054
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.006976750449540907,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3_priced": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6765999312010622,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.011184469529313068,
+        "logloss_delta_ci95": [
+          -0.0035831628575882734,
+          0.027539733883952765
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.006769169152301803,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_lgbm": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6772362435533896,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.01054815717698565,
+        "logloss_delta_ci95": [
+          -0.00462992970677723,
+          0.026812527393418998
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.003897898663773891,
+        "market_ece": 0.008664567285319693
+      }
+    },
+    "best_devig_method": "shin",
+    "best_devig_log_loss": 1.6856753637072701,
+    "mean_clv_log": -0.1341686933114934,
+    "clv_ci95": [
+      -0.1388757257132935,
+      -0.12946166090969327
+    ],
+    "clv_positive": false,
+    "beat_close_rate": 0.2645796516031305,
+    "drift_ok": false,
+    "drift_threshold": 0.2,
+    "drift_failures": [
+      [
+        "going_speed",
+        4.9159
+      ],
+      [
+        "horse_career_runs",
+        0.3009
+      ]
+    ],
+    "reasons": [
+      "logloss_edge_not_significant:delta=-0.18621 ci95=[-0.22507,-0.14620]",
+      "loses_to_best_devig:shin=1.68568",
+      "clv_not_positive:mean=-0.13417 ci95_lower=-0.13888",
+      "drift_gate_failed:going_speed=4.916, horse_career_runs=0.301"
+    ],
+    "checked_at": "2026-07-27T21:41:12+00:00"
+  },
+  "forward_gate": {
+    "passed": false,
+    "state_label": "FORWARD GATE NOT MET (9 of 9 criteria failed)",
+    "criteria": [
+      {
+        "name": "model_go",
+        "passed": false,
+        "observed": "NO-GO",
+        "required": "Stage-4 model verdict == GO",
+        "detail": {
+          "reasons": [
+            "logloss_edge_not_significant:delta=-0.18621 ci95=[-0.22507,-0.14620]",
+            "loses_to_best_devig:shin=1.68568",
+            "clv_not_positive:mean=-0.13417 ci95_lower=-0.13888",
+            "drift_gate_failed:going_speed=4.916, horse_career_runs=0.301"
+          ],
+          "source": "data\\audit\\stage4\\final_evaluation.json",
+          "available": true
+        }
+      },
+      {
+        "name": "min_weeks",
+        "passed": false,
+        "observed": 0.0,
+        "required": ">= 8 weeks of forward tracking",
+        "detail": {
+          "weeks_elapsed": 0.0,
+          "min_weeks": 8.0
+        }
+      },
+      {
+        "name": "min_qualified_bets",
+        "passed": false,
+        "observed": 0,
+        "required": ">= 200 qualified bets",
+        "detail": {
+          "n_qualified_bets": 0
+        }
+      },
+      {
+        "name": "min_qualified_races",
+        "passed": false,
+        "observed": 0,
+        "required": ">= 150 qualified races",
+        "detail": {
+          "n_qualified_races": 0
+        }
+      },
+      {
+        "name": "positive_mean_clv",
+        "passed": false,
+        "observed": null,
+        "required": "mean CLV > 0",
+        "detail": {
+          "mean_clv": null,
+          "note": "CLV is the single best forward indicator that a bet was +EV; Stage 4 measured -13.4%."
+        }
+      },
+      {
+        "name": "clv_ci_lower",
+        "passed": false,
+        "observed": null,
+        "required": "95% race-clustered CI lower bound > 0",
+        "detail": {
+          "clv_ci95": null,
+          "clustered_by": "race",
+          "resamples": 1000
+        }
+      },
+      {
+        "name": "ae_stable",
+        "passed": false,
+        "observed": null,
+        "required": "0.9 <= A/E <= 1.1",
+        "detail": {
+          "ae": null,
+          "ae_min": 0.9,
+          "ae_max": 1.1
+        }
+      },
+      {
+        "name": "calibration",
+        "passed": false,
+        "observed": null,
+        "required": "ECE <= 0.03",
+        "detail": {
+          "ece": null,
+          "bins": 10
+        }
+      },
+      {
+        "name": "drawdown",
+        "passed": false,
+        "observed": null,
+        "required": "max drawdown <= 0.1 of bankroll",
+        "detail": {
+          "max_drawdown_pct": null
+        }
+      }
+    ],
+    "failed": [
+      "model_go",
+      "min_weeks",
+      "min_qualified_bets",
+      "min_qualified_races",
+      "positive_mean_clv",
+      "clv_ci_lower",
+      "ae_stable",
+      "calibration",
+      "drawdown"
+    ],
+    "weeks_elapsed": 0.0,
+    "n_qualified_bets": 0,
+    "n_qualified_races": 0,
+    "evidence_kind": "forward",
+    "evaluated_at": "2026-07-27T21:41:12+00:00",
+    "summary": "Forward-release gate NOT met: 9 of 9 criteria failed (model_go, min_weeks, min_qualified_bets, min_qualified_races, positive_mean_clv, clv_ci_lower, ae_stable, calibration, drawdown). Observed 0.0 weeks of forward evidence, 0 qualified bets across 0 qualified races. 0 criteria were met. The deployment stays paper-only."
+  },
+  "deployment": "PAPER-ONLY",
+  "paper_only": true,
+  "selection": {
+    "selected": {
+      "name": "edge0.020_ev0.050_short_lt_4",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.05,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      }
+    },
+    "n_strategies_tried": 64,
+    "correction": "sidak",
+    "alpha": 0.05,
+    "adjusted_alpha": 0.0008011366433465783,
+    "train_score": -0.06603513490887222,
+    "validation_score": -0.0684924336137426,
+    "test_score": -0.09227489600588801,
+    "test_scored_at": "2026-07-27T21:27:01+00:00",
+    "selection_bias_note": "64 strategy variant(s) were scored on the training window; 16 were carried to validation and the single winner was scored on the test window exactly once. A family-wise alpha of 0.05 becomes 0.0008011 under the sidak correction for 64 comparison(s). The reported test score is a single draw from one window and does not by itself establish an edge.",
+    "reused_lock": true,
+    "lock_path": "data/execution/selection_lock.json",
+    "candidates": [
+      {
+        "name": "edge0.020_ev0.050_all",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.05,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.23660031567522435,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.050_short_lt_4",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.05,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.06603513490887222,
+        "validation_score": -0.0684924336137426,
+        "selected": true
+      },
+      {
+        "name": "edge0.020_ev0.050_mid_4_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.05,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13348476633103282,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.050_long_ge_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.05,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24603825111641933,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.080_all",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.08,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.23662231882920784,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.080_short_lt_4",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.08,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.06786392895644923,
+        "validation_score": -0.07770088486400127,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.080_mid_4_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.08,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13264152664572423,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.080_long_ge_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.08,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24603825111641933,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.120_all",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.12,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.23667247509760458,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.120_short_lt_4",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.12,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.06788714760065806,
+        "validation_score": -0.08357808629958122,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.120_mid_4_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.12,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13101662088140498,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.120_long_ge_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.12,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24603086252918402,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.200_all",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.2,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.23691142831508025,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.200_short_lt_4",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.2,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.0667465075086876,
+        "validation_score": -0.09529403278724753,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.200_mid_4_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.2,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13069204545616844,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.020_ev0.200_long_ge_12",
+        "params": {
+          "min_edge": 0.02,
+          "min_expected_value": 0.2,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24597074576597835,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.050_all",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.05,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.2354806464878124,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.050_short_lt_4",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.05,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.06878060354581288,
+        "validation_score": -0.07537822309309947,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.050_mid_4_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.05,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13459337155328194,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.050_long_ge_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.05,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24693264509622337,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.080_all",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.08,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.23552411726810982,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.080_short_lt_4",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.08,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.0693836908301478,
+        "validation_score": -0.08058688543142896,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.080_mid_4_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.08,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13426476944963556,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.080_long_ge_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.08,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24693264509622337,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.120_all",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.12,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.23557412215696394,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.120_short_lt_4",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.12,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.06655984499895896,
+        "validation_score": -0.08357808629958122,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.120_mid_4_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.12,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13352065524900267,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.120_long_ge_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.12,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24693264509622337,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.200_all",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.2,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.23588355681047218,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.200_short_lt_4",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.2,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.0667465075086876,
+        "validation_score": -0.09529403278724753,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.200_mid_4_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.2,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.1329083000747868,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.030_ev0.200_long_ge_12",
+        "params": {
+          "min_edge": 0.03,
+          "min_expected_value": 0.2,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.24693264509622337,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.050_all",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.05,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.22442013608660163,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.050_short_lt_4",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.05,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.07402656749833073,
+        "validation_score": -0.07764411604859273,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.050_mid_4_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.05,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13409285179734767,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.050_long_ge_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.05,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.2431636794835545,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.080_all",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.08,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.22442013608660163,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.080_short_lt_4",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.08,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.07311951810241925,
+        "validation_score": -0.07739019767609485,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.080_mid_4_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.08,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13406563126038357,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.080_long_ge_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.08,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.2431636794835545,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.120_all",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.12,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.2245160036184049,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.120_short_lt_4",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.12,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.07072876673144683,
+        "validation_score": -0.07530497023906613,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.120_mid_4_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.12,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13395828739671262,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.120_long_ge_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.12,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.2431636794835545,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.200_all",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.2,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.2247806298031696,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.200_short_lt_4",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.2,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.0667465075086876,
+        "validation_score": -0.08123919839077184,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.200_mid_4_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.2,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13399488638424645,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.050_ev0.200_long_ge_12",
+        "params": {
+          "min_edge": 0.05,
+          "min_expected_value": 0.2,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.2431636794835545,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.050_all",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.05,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.2069449933171431,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.050_short_lt_4",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.05,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.07809701317978188,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.050_mid_4_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.05,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13475331523429168,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.050_long_ge_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.05,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.23803374211260228,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.080_all",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.08,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.2069449933171431,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.080_short_lt_4",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.08,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.07809701317978188,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.080_mid_4_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.08,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13475331523429168,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.080_long_ge_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.08,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.23803374211260228,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.120_all",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.12,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.20696702839361789,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.120_short_lt_4",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.12,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.07621151427681283,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.120_mid_4_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.12,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13475331523429168,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.120_long_ge_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.12,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.23803374211260228,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.200_all",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.2,
+          "odds_band": "all",
+          "odds_min": 1.0,
+          "odds_max": null
+        },
+        "train_score": -0.20711256900462877,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.200_short_lt_4",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.2,
+          "odds_band": "short_lt_4",
+          "odds_min": 1.0,
+          "odds_max": 4.0
+        },
+        "train_score": -0.07428891013273371,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.200_mid_4_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.2,
+          "odds_band": "mid_4_12",
+          "odds_min": 4.0,
+          "odds_max": 12.0
+        },
+        "train_score": -0.13475331523429168,
+        "validation_score": null,
+        "selected": false
+      },
+      {
+        "name": "edge0.080_ev0.200_long_ge_12",
+        "params": {
+          "min_edge": 0.08,
+          "min_expected_value": 0.2,
+          "odds_band": "long_ge_12",
+          "odds_min": 12.0,
+          "odds_max": null
+        },
+        "train_score": -0.23803374211260228,
+        "validation_score": null,
+        "selected": false
+      }
+    ],
+    "windows": {
+      "train": [
+        "2025-01-01",
+        "2025-11-05",
+        44584
+      ],
+      "validation": [
+        "2025-11-06",
+        "2026-02-20",
+        13204
+      ],
+      "test": [
+        "2026-02-22",
+        "2026-05-25",
+        14229
+      ]
+    },
+    "superseded_locks": [
+      {
+        "path": "data/execution\\selection_lock_superseded_20260727.json",
+        "selected": {
+          "name": "edge0.080_ev0.050_mid_4_12",
+          "params": {
+            "min_edge": 0.08,
+            "min_expected_value": 0.05,
+            "odds_band": "mid_4_12",
+            "odds_min": 4.0,
+            "odds_max": 12.0
+          }
+        },
+        "test_score": -0.14455661150878496,
+        "test_scored_at": "2026-07-27T21:10:20+00:00",
+        "reason": "The odds-band filter was applied to the scored frame instead of to the backable-runner mask. That renormalised the de-vig over a field with its favourites removed (so `edge` was measured against a book no bookmaker offered) and changed the eligible race set per strategy (the `short_lt_4` band reported 0 of 3817 races eligible, and 16 of 64 candidates were never scored at all). Fixed in execution/baselines.py:model_only_selection; the sweep was re-run from scratch."
+      }
+    ]
+  },
+  "walk_config": {
+    "source": "selected strategy",
+    "strategy": "edge0.020_ev0.050_short_lt_4",
+    "min_edge": 0.02,
+    "min_expected_value": 0.05,
+    "odds_band": [
+      1.0,
+      4.0
+    ],
+    "band_applies_to": "model_only only \u2014 baselines bet the whole book"
+  },
+  "backtest": {
+    "model_only": {
+      "name": "model_only",
+      "n_bets": 63,
+      "n_races": 63,
+      "n_days": 42,
+      "turnover": 302.5999999999999,
+      "total_return": 396.71439577,
+      "profit": 94.11439576999999,
+      "roi": 0.31101915323859886,
+      "yield_pct": 31.101915323859885,
+      "roi_ci": {
+        "lower": -0.09070146730961123,
+        "upper": 0.7089370649674124,
+        "level": 0.95,
+        "excludes_zero": false
+      },
+      "hit_rate": 0.3968253968253968,
+      "hit_rate_ci": {
+        "lower": 0.2698412698412698,
+        "upper": 0.5238095238095238,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "mean_clv_log": -0.09374275582138517,
+      "clv_ci": {
+        "lower": -0.12479678536403274,
+        "upper": -0.06435229417310506,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "mean_clv_pct": -0.0825124795735663,
+      "beat_close_rate": 0.2222222222222222,
+      "ae_ratio": 1.0664178912596618,
+      "ae_ci": {
+        "lower": 0.7373883012577404,
+        "upper": 1.4028174483474176,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "expected_wins": 23.442967531677276,
+      "actual_wins": 25.0,
+      "max_drawdown": 29.5,
+      "max_drawdown_pct": 0.026260600086206353,
+      "longest_losing_streak": 7,
+      "calibration_ece": 0.0780284116883919
+    },
+    "devigged_market": {
+      "name": "devigged_market",
+      "n_bets": 74,
+      "n_races": 74,
+      "n_days": 45,
+      "turnover": 177.70000000000002,
+      "total_return": 219.15688143999995,
+      "profit": 41.45688144,
+      "roi": 0.2332970255486775,
+      "yield_pct": 23.32970255486775,
+      "roi_ci": {
+        "lower": -0.2776376024117136,
+        "upper": 0.7964470035691393,
+        "level": 0.95,
+        "excludes_zero": false
+      },
+      "hit_rate": 0.21621621621621623,
+      "hit_rate_ci": {
+        "lower": 0.13513513513513514,
+        "upper": 0.3108108108108108,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "mean_clv_log": -0.06511080188452047,
+      "clv_ci": {
+        "lower": -0.09251735000179735,
+        "upper": -0.0368853867277209,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "mean_clv_pct": -0.05534911260842418,
+      "beat_close_rate": 0.28378378378378377,
+      "ae_ratio": 1.1935416516951607,
+      "ae_ci": {
+        "lower": 0.7178167854541635,
+        "upper": 1.7140302214948564,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "expected_wins": 13.405481054871906,
+      "actual_wins": 16.0,
+      "max_drawdown": 40.71497580000005,
+      "max_drawdown_pct": 0.03825673164701019,
+      "longest_losing_streak": 12,
+      "calibration_ece": 0.06795701507505027
+    },
+    "favourite": {
+      "name": "favourite",
+      "n_bets": 153,
+      "n_races": 153,
+      "n_days": 59,
+      "turnover": 467.5,
+      "total_return": 524.20168731,
+      "profit": 56.70168730999998,
+      "roi": 0.12128703167914434,
+      "yield_pct": 12.128703167914434,
+      "roi_ci": {
+        "lower": -0.1663205630493253,
+        "upper": 0.40410182742714496,
+        "level": 0.95,
+        "excludes_zero": false
+      },
+      "hit_rate": 0.3660130718954248,
+      "hit_rate_ci": {
+        "lower": 0.29395424836601325,
+        "upper": 0.4444444444444444,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "mean_clv_log": -0.02708547280528343,
+      "clv_ci": {
+        "lower": -0.04419154642484811,
+        "upper": -0.011057928686269529,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "mean_clv_pct": -0.02126819611020034,
+      "beat_close_rate": 0.45751633986928103,
+      "ae_ratio": 0.9992685271422039,
+      "ae_ci": {
+        "lower": 0.7987109555259272,
+        "upper": 1.200160088832733,
+        "level": 0.95,
+        "excludes_zero": true
+      },
+      "expected_wins": 56.04099246491204,
+      "actual_wins": 56.0,
+      "max_drawdown": 60.21168439999997,
+      "max_drawdown_pct": 0.060211684399999965,
+      "longest_losing_streak": 12,
+      "calibration_ece": 0.06892668183427436
+    }
+  },
+  "backtest_summaries": {
+    "model_only": {
+      "strategy": "model_only",
+      "n_attempts": 66,
+      "n_struck": 63,
+      "strike_rate": 0.9545,
+      "blocked_by": {
+        "SUSPENDED": 2,
+        "REJECTED": 1
+      },
+      "turnover": 302.6,
+      "initial_bankroll": 1000.0,
+      "final_bankroll": 1094.11,
+      "settled_from_archive": 63,
+      "settled_from_panel": 0,
+      "archive_coverage": 1.0,
+      "race_facts_supplied": true,
+      "paper_only": true,
+      "evidence_kind": "backtest",
+      "not_exercised": [
+        "live source-health staleness (scraper telemetry describes today, not the backtest window; quote age is enforced instead)",
+        "price movement between observations (the warehouse holds one pre-off quote per runner, so movement is modelled, not measured)",
+        "each-way terms and best-odds-guaranteed (neither is recorded historically; win-only unless terms are passed explicitly)"
+      ],
+      "caveat": "Backtest under assumed frictions over a fixed historical window. This is evidence about execution mechanics, NOT evidence that the strategy is profitable, and it cannot satisfy the forward-release gate."
+    },
+    "devigged_market": {
+      "strategy": "devigged_market",
+      "n_attempts": 105,
+      "n_struck": 74,
+      "strike_rate": 0.7048,
+      "blocked_by": {
+        "min_stake": 30,
+        "REJECTED": 1
+      },
+      "turnover": 177.7,
+      "initial_bankroll": 1000.0,
+      "final_bankroll": 1041.46,
+      "settled_from_archive": 74,
+      "settled_from_panel": 0,
+      "archive_coverage": 1.0,
+      "race_facts_supplied": true,
+      "paper_only": true,
+      "evidence_kind": "backtest",
+      "not_exercised": [
+        "live source-health staleness (scraper telemetry describes today, not the backtest window; quote age is enforced instead)",
+        "price movement between observations (the warehouse holds one pre-off quote per runner, so movement is modelled, not measured)",
+        "each-way terms and best-odds-guaranteed (neither is recorded historically; win-only unless terms are passed explicitly)"
+      ],
+      "caveat": "Backtest under assumed frictions over a fixed historical window. This is evidence about execution mechanics, NOT evidence that the strategy is profitable, and it cannot satisfy the forward-release gate."
+    },
+    "favourite": {
+      "strategy": "favourite",
+      "n_attempts": 1480,
+      "n_struck": 153,
+      "strike_rate": 0.1034,
+      "blocked_by": {
+        "no_edge": 1247,
+        "min_stake": 65,
+        "REJECTED": 10,
+        "SUSPENDED": 3,
+        "daily_exposure_limit": 2
+      },
+      "turnover": 467.5,
+      "initial_bankroll": 1000.0,
+      "final_bankroll": 1056.7,
+      "settled_from_archive": 153,
+      "settled_from_panel": 0,
+      "archive_coverage": 1.0,
+      "race_facts_supplied": true,
+      "paper_only": true,
+      "evidence_kind": "backtest",
+      "not_exercised": [
+        "live source-health staleness (scraper telemetry describes today, not the backtest window; quote age is enforced instead)",
+        "price movement between observations (the warehouse holds one pre-off quote per runner, so movement is modelled, not measured)",
+        "each-way terms and best-odds-guaranteed (neither is recorded historically; win-only unless terms are passed explicitly)"
+      ],
+      "caveat": "Backtest under assumed frictions over a fixed historical window. This is evidence about execution mechanics, NOT evidence that the strategy is profitable, and it cannot satisfy the forward-release gate."
+    }
+  },
+  "paper": {
+    "n_tickets": 0,
+    "n_open": 0,
+    "n_settled": 0
+  },
+  "n_candidates": 0,
+  "n_passes": 356,
+  "reports": {
+    "forward_validation": "reports\\forward_validation_20260727.md",
+    "candidates": "reports\\todays_candidates_20260727.md"
+  }
+}

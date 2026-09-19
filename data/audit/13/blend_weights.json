@@ -1,0 +1,48 @@
+{
+  "indep": {
+    "cb_lgbm": {
+      "weights": {
+        "cb_indep": 0.75,
+        "lgbm_indep": 0.5
+      },
+      "race_log_loss": 1.902437705296258,
+      "n_grid_points": 48,
+      "calibration_method": "sigmoid",
+      "n_calib_rows": 16606
+    },
+    "cb_lgbm_xgb": {
+      "weights": {
+        "cb_indep": 0.75,
+        "lgbm_indep": 0.5,
+        "xgb_indep": 0.0
+      },
+      "race_log_loss": 1.902437705296258,
+      "n_grid_points": 342,
+      "calibration_method": "sigmoid",
+      "n_calib_rows": 16606
+    }
+  },
+  "market": {
+    "cb_lgbm": {
+      "weights": {
+        "cb_market": 1.0,
+        "lgbm_market": 0.0
+      },
+      "race_log_loss": 1.684000111693252,
+      "n_grid_points": 48,
+      "calibration_method": "sigmoid",
+      "n_calib_rows": 16606
+    },
+    "cb_lgbm_xgb": {
+      "weights": {
+        "cb_market": 1.0,
+        "lgbm_market": 0.0,
+        "xgb_market": 0.0
+      },
+      "race_log_loss": 1.684000111693252,
+      "n_grid_points": 342,
+      "calibration_method": "sigmoid",
+      "n_calib_rows": 16606
+    }
+  }
+}

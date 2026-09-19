@@ -1,0 +1,58 @@
+{
+ "1_duplicate_physical_races": {
+  "Dundalk (10 runners)": [
+   "2026-09-18T19:30:00+01:00",
+   "2026-09-18T19:31:00+01:00"
+  ]
+ },
+ "2_already_off_at_generation": {
+  "generated_at": "2026-09-18T19:33:43.213673+01:00",
+  "races_total": 26,
+  "already_off": 2,
+  "runners_in_already_off_races": 20
+ },
+ "3_payload_provenance": {
+  "top_level_keys": [
+   "generated_at",
+   "model_targets",
+   "races",
+   "total_races",
+   "total_runners",
+   "verdict"
+  ],
+  "runner_has_connections_source": false,
+  "runner_has_model_version_or_hash": false,
+  "payload_names_a_catboost_tag": false
+ },
+ "4_mixed_precision_parse": {
+  "pandas": "3.0.3",
+  "NaT_without_format_mixed": 1,
+  "NaT_with_format_mixed": 0
+ },
+ "5_timeform_declared_cards": {
+  "rows": 28,
+  "race_date_min": "2026-06-13",
+  "race_date_max": "2026-06-13",
+  "has_runner_status_col": false
+ },
+ "5_unified_runner_status": {
+  "rows": 651154,
+  "non_null_runner_status": 0
+ },
+ "6_ui_value_flags_vs_gate_ev": {
+  "ui_value_bets": 5,
+  "EV_on_the_gates_price_free_prob": [
+   -0.351,
+   -0.161,
+   -0.306,
+   -0.383,
+   -0.29
+  ],
+  "gate_min_expected_value": 0.05
+ },
+ "7_ev_eligible_races_over_gate_overround_ceiling": {
+  "ev_eligible_races": 26,
+  "book_sum_gt_1.25": 16,
+  "max_book_sum": 1.587
+ }
+}

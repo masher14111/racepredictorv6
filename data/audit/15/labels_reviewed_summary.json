@@ -1,0 +1,28 @@
+{
+  "n_records": 60,
+  "review_status": "single_reviewer_llm_unverified",
+  "true_counts": {
+    "ground_excuse": 0,
+    "distance_excuse": 1,
+    "trip_trouble": 2,
+    "headgear_first_time": 6,
+    "returning_from_layoff": 18,
+    "course_winner": 6
+  },
+  "false_counts": {
+    "ground_excuse": 0,
+    "distance_excuse": 4,
+    "trip_trouble": 0,
+    "headgear_first_time": 2,
+    "returning_from_layoff": 0,
+    "course_winner": 5
+  },
+  "unknown_counts": {
+    "ground_excuse": 60,
+    "distance_excuse": 55,
+    "trip_trouble": 58,
+    "headgear_first_time": 52,
+    "returning_from_layoff": 42,
+    "course_winner": 49
+  }
+}

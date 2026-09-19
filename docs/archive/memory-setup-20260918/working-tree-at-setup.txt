@@ -1,0 +1,106 @@
+ M .streamlit/config.toml
+ M FINALSETUP.md
+ M HANDOFF.md
+ M QUICKSTART.md
+ M README.md
+ M config.yaml
+ M data/execution/daily_loop_run.json
+ M data/execution/gap_ledger.json
+ M data/predictions.json
+ M models/predictor.py
+ M scraper/boylesports.py
+ M scraper/paddy_power.py
+ M scripts/daily_clv.cmd
+ M scripts/daily_paper_loop.cmd
+ M scripts/refresh.py
+ M tests/conftest.py
+ M tests/ui/test_components.py
+ M tests/ui/test_dashboard.py
+ M tests/ui/test_icons.py
+ M ui/_components.py
+ M ui/_design.py
+ M ui/_icons.py
+ D ui/_theme.py
+ M ui/app.py
+ M ui/bet_placer.py
+ M ui/dashboard.py
+ M ui/forward_validation.py
+ M ui/live_races.py
+ M ui/model_compare.py
+ M ui/model_honesty.py
+ M ui/pages/10_Dashboard.py
+ M ui/pages/11_Todays_Suggestions.py
+ M ui/pages/12_Horse_Detail.py
+ M ui/pages/13_Yesterdays_Bet_Predictor.py
+ M ui/pages/14_Model_Honesty.py
+ M ui/pages/15_Model_Compare.py
+ M ui/pages/16_Forward_Validation.py
+ M ui/pages/1_Scrape_and_Refresh.py
+ M ui/pages/7_Test_Results.py
+ M ui/pages/8_Race_Detail.py
+ M ui/pages/9_Paper_Betting.py
+ D ui/performance.py
+ M ui/performance_dashboard.py
+ D ui/predictions.py
+ M ui/race_compare.py
+ M ui/settings.py
+ M utils/backtester.py
+ M utils/config_loader.py
+ M utils/currency.py
+ M utils/normalizer.py
+ M utils/proxy_manager.py
+ M utils/timezone.py
+?? .claude/
+?? .design-md/
+?? "0 - First-Time Setup.bat"
+?? "1 - Full Daily Run.bat"
+?? "2 - Open Dashboard Only.bat"
+?? "3 - Run Tests.bat"
+?? DESIGN.md
+?? RACE_PREDICTOR_REPAIR_PROMPTS.md
+?? STAGE_6_PROMPT.md
+?? data/audit/
+?? data/backups/
+?? data/source_health.json
+?? docs/archive/
+?? docs/research/
+?? images/
+?? implementation_plan.md
+?? memory/live-repair-00-prompt-sequence.md
+?? memory/live-repair-triage-20260727.md
+?? reports/backtest_3wk_smart_ew.md
+?? reports/backtest_6wk_ew.md
+?? reports/backtest_6wk_win.md
+?? reports/bets_20260614_200133.csv
+?? reports/calibration_dependency_failure_20260725.md
+?? reports/forward_validation_20260918.md
+?? reports/live_market_dependency_check_20260725.csv
+?? reports/manifest.json
+?? reports/predictions_20260614_200133.csv
+?? reports/snapshot_20260614_200133.json
+?? reports/testrun/
+?? reports/week_test_20260719_20260725_bets.csv
+?? reports/week_test_20260719_20260725_summary.csv
+?? requirements.lock.txt
+?? review/
+?? scraper/firecrawl_fetch.py
+?? tests/models/test_predictor_alerts.py
+?? tests/scraper/test_boylesports_botasaurus.py
+?? tests/scraper/test_boylesports_regions.py
+?? tests/scraper/test_boylesports_tier_accept.py
+?? tests/scraper/test_firecrawl_fetch.py
+?? tests/scripts/test_refresh_result_size.py
+?? tests/test_train_lgbm.py
+?? tests/ui/test_today.py
+?? tests/utils/test_alert_dedupe.py
+?? tests/utils/test_currency_conversion.py
+?? tests/utils/test_odds_format.py
+?? tests/utils/test_proxy_sticky.py
+?? tests/utils/test_stake_advice.py
+?? tests/utils/test_timezone_bucketing.py
+?? tools/
+?? ui/_today.py
+?? utils/alert_dedupe.py
+?? utils/odds_format.py
+?? utils/stake_advice.py
+?? v4prompts.md

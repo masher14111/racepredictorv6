@@ -1,0 +1,14 @@
+{
+  "days": {
+    "2026-09-18": {
+      "cause": "scraper_outage",
+      "recorded_at": "2026-09-18T18:38:43.213673+00:00",
+      "status": "gap"
+    },
+    "2026-09-19": {
+      "cause": "no_racing",
+      "recorded_at": "2026-09-19T18:38:43.213673+00:00",
+      "status": "gap"
+    }
+  }
+}

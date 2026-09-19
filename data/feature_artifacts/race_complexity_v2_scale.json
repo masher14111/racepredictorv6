@@ -1,0 +1,25 @@
+{
+  "components": {
+    "field_size": {
+      "mean": 9.424641996313625,
+      "n": 14106,
+      "std": 3.6178923835539614
+    },
+    "race_class_std": {
+      "mean": 0.0,
+      "n": 0,
+      "std": 1.0
+    },
+    "rating_std": {
+      "mean": 0.0,
+      "n": 0,
+      "std": 1.0
+    },
+    "recent_form_std": {
+      "mean": 0.0,
+      "n": 0,
+      "std": 1.0
+    }
+  },
+  "version": "v1"
+}

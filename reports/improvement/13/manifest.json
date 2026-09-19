@@ -1,0 +1,119 @@
+{
+  "frozen_at_utc": "2026-09-19T09:38:30.974314+00:00",
+  "purpose": "Step 13: add XGBoost as a third boosted-tree candidate alongside CatBoost and grouped-softmax LightGBM; measure the incremental gain (or lack of it) from blending it into a CatBoost+LightGBM ensemble. Frozen BEFORE any XGBoost model is fit or any blend weight is selected.",
+  "inherits": {
+    "run_manifest_10": "reports/improvement/10/run_manifest.json",
+    "run_manifest_10_sha256": "9d06139af2764125a8f7bf441d2d47279141620ed36c4d5c60d8a9fb8228c0e1",
+    "blend_manifest_12": "reports/improvement/12/blend_manifest.json",
+    "blend_manifest_12_sha256": "8328a8da9fc8098ebb1b816a2d4004957644c51991b8ef0995cd6936be38497c",
+    "eligible_population": {
+      "market_type": "WIN",
+      "rule": "market_type == 'WIN' and position.notna() (labelled, priced win-market rows); PLACE rows are a different price book (D24) and are out of this scorecard's scope.",
+      "race_grouping_key": "race_uid",
+      "head_to_head_extra_filter": "models.head_to_head.head_to_head additionally requires a COMPLETE odds book (every runner in the race priced on the pre-off price column) before a race counts toward the log-loss scorecard \u2014 identical rule applied to every candidate and the market line."
+    },
+    "decision_cutoff": {
+      "assumption": "10-minutes-before-off feature freeze (CONTRACTS.md provisional research assumption, not a deployed cutoff constant)",
+      "price_used_for_decision_and_market_benchmark": "pre-off (morningwap -> ppwap fallback), never odds_finish (closing/settlement price, CLV reference only)"
+    }
+  },
+  "data": {
+    "rebuilt_matrix_path": "data/audit/10/training_rebuilt.parquet",
+    "rebuilt_matrix_sha256": "9ee4e299a03f82868c0ad20dd2e81c7c9826d3aec4131b1f3ec87ddb697836bd",
+    "step10_dev_oos_predictions": "data/audit/10/dev_oos_predictions.parquet",
+    "step12_eval_panel_scored": "data/audit/12/eval_panel_scored.parquet",
+    "step12_eval_panel_scored_sha256": "29c2b2db2f55e490a3bfa6255206b5ce4ac07169f5ebc4aefee3ba7dd5e3ddc0"
+  },
+  "windows": {
+    "dev_core": {
+      "start": "2024-01-01",
+      "end_exclusive": "2026-08-08",
+      "n_rows": 263982,
+      "n_races": 29888
+    },
+    "dev_oos": {
+      "start": "2026-08-08",
+      "end_exclusive": "2026-08-28",
+      "n_rows": 5561,
+      "n_races": 618,
+      "role": "Primary development scorecard slice for ALL candidates (race-level log loss vs the de-vigged market). NOT the reserved final holdout."
+    },
+    "final_holdout_RESERVED_UNTOUCHED": {
+      "start": "2026-08-28",
+      "end": "2026-09-17",
+      "n_rows": 6754,
+      "n_races": 708,
+      "policy": "Reserved for step17's single frozen-selection evaluation. Step 10 must not load these rows into any fit, tuning CV, calibration carve or head-to-head scoring call. Its coverage (row/null counts only, no performance metric) was inspected in step06's candidate build; no model has ever been scored against it. If step17 finds this window has since been inspected for anything beyond coverage, it must say so rather than silently treating it as still-untouched."
+    },
+    "blend_dev": {
+      "start": "2026-02-01",
+      "end_exclusive": "2026-06-13",
+      "role": "select the power-blend exponents (alpha, beta). Nothing else."
+    },
+    "calib": {
+      "start": "2026-06-13",
+      "end_exclusive": "2026-08-08",
+      "role": "LATER reserved calibration period: fit the calibrator candidates on the already-selected blend. Overlaps the already-observed 2026-06-13..2026-07-25 window on purpose \u2014 that window is barred from being a NEW TEST (AGENTS.md), not from being development FITTING data, and no performance claim is made from it."
+    },
+    "eval": {
+      "start": "2026-08-08",
+      "end_exclusive": "2026-08-28",
+      "role": "step 10's frozen dev-OOS panel (618 races / 5,561 runners). Reporting only; never used to choose an exponent, a calibrator or a threshold."
+    }
+  },
+  "xgboost_candidate": {
+    "model": "xgboost.XGBClassifier, tree_method=hist (CPU)",
+    "reason_cpu_not_gpu": "CatBoost already owns the GPU in this experiment session (models/tuner.py _hardware_params); XGBoost's histogram method is fast enough on this CPU for this row/column count. Avoids any GPU-driver interaction between two boosted-tree libraries sharing one session (AGENTS.md: avoid concurrent GPU training).",
+    "target": "won (scope-matched to step 10's CatBoost scorecard, D24 \u2014 WIN-market rows only, no PLACE/place-market model trained here)",
+    "branches": [
+      "indep (PRICE_FREE_FEATURE_COLS)",
+      "market (FEATURE_COLS)"
+    ],
+    "tuning_budget": {
+      "protocol": "Optuna TPE, whole-race walk-forward CV (models.split_utils.group_time_series_split) on dev_core, row-level log-loss objective on the unweighted validation fold \u2014 same shape as models/tuner.py's CatBoost study, matched n_trials/cv_folds.",
+      "n_trials_matched": 6,
+      "cv_folds_matched": 5
+    },
+    "output_dir": "data/audit/13/models_xgboost/"
+  },
+  "oof_blend_protocol": {
+    "purpose": "chronological out-of-fold predictions for CatBoost, LightGBM and XGBoost over dev_core, used ONLY to select simple blend weights (no stacker fit here \u2014 scope allows a simple blend and the result below did not warrant a stacking meta-learner).",
+    "method": "models.split_utils.group_time_series_split(dev_core, n_splits) expanding-window walk-forward; FIXED hyperparameters per model (no re-tuning per fold \u2014 same economisation step 12 used for its conditional-logit walk-forward, extended here to 3 GBDT families instead of a matched-cost full re-tune, which is outside this stage's CPU budget, same disclosed limitation as step 12).",
+    "n_splits": 6,
+    "hyperparam_sources": {
+      "catboost_indep": "data/audit/10/models_catboost/catboost_s10idp_meta.json",
+      "catboost_market": "data/audit/10/models_catboost/catboost_s10mkt_meta.json",
+      "lgbm_indep": "models.lgbm_softmax._DEFAULT_PARAMS (no Optuna tuning exists for LightGBM in this codebase \u2014 same disclosed asymmetry as step 10's run_manifest.json tuning_budget note)",
+      "lgbm_market": "models.lgbm_softmax._DEFAULT_PARAMS",
+      "xgboost_indep": "this stage's own freshly-tuned best_params (xgboost_candidate above)",
+      "xgboost_market": "this stage's own freshly-tuned best_params"
+    },
+    "weight_selection_window": "blend_dev (from windows.blend_dev)",
+    "calibration_fit_window": "calib (from windows.calib), OOF rows only (genuinely out-of-fold, never rows the scored model itself trained on)",
+    "weight_grid": "each model's weight in {0, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0} (0 allowed \u2014 XGBoost/any member may be excluded, never forced to an equal share), exhaustive over the simplex points, scored by models.blend.race_level_log_loss on OOF rows only.",
+    "candidates": [
+      "cb_lgbm (2-model)",
+      "cb_lgbm_xgb (3-model)"
+    ],
+    "blend_form": "weighted geometric mean in log-space: p \u221d prod(p_i ** w_i), renormalised within race (same normalisation rule as models.blend.power_blend, generalised from 2 to N inputs)."
+  },
+  "evaluation": {
+    "panel": "eval (= step 10's dev_oos, 618 races / 5,561 runners), reused from data/audit/12/eval_panel_scored.parquet with XGBoost's own probability columns merged in \u2014 NEVER used to select a hyperparameter, a blend weight or a calibrator.",
+    "metrics": "race log loss, Brier, ECE, sample counts (models.head_to_head.head_to_head); whole-race-clustered bootstrap CI95 for each candidate's gap vs the market and for the 3-model-minus-2-model blend delta (race-level resampling, never a per-runner resample).",
+    "diversity": "pairwise Pearson correlation of OOF probabilities/residuals between CatBoost, LightGBM and XGBoost on the blend_dev OOF rows."
+  },
+  "champion_artifacts_untouched": [
+    "models/catboost_*_v3*.bin",
+    "models/catboost_*_v3*_calib.pkl",
+    "models/lgbm_won_v3.txt",
+    "models/lgbm_v3_meta.json"
+  ],
+  "output_paths": {
+    "manifest": "reports/improvement/13/manifest.json",
+    "xgboost_models": "data/audit/13/models_xgboost/",
+    "eval_panel_with_xgb": "data/audit/13/eval_panel_scored_with_xgb.parquet",
+    "oof_blend_dev": "data/audit/13/oof_blend_dev.parquet",
+    "blend_weights": "data/audit/13/blend_weights.json",
+    "scorecard": "reports/improvement/13/scorecard_13.json"
+  }
+}

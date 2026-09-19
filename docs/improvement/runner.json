@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "codex": {
+    "executable": "codex",
+    "model": "gpt-6-astra",
+    "sandbox": "workspace-write",
+    "approval_policy": "never",
+    "ignore_user_config": true,
+    "windows_sandbox": "elevated",
+    "network_access": true
+  },
+  "claude": {
+    "executable": "claude",
+    "models": {
+      "Claude Sonnet 5": "claude-sonnet-5",
+      "Claude Opus 5": "claude-opus-5",
+      "Claude Fable 5.1": "claude-fable-5-1"
+    },
+    "permission_mode": "acceptEdits",
+    "allowed_tools": [
+      "Bash",
+      "Read",
+      "Edit",
+      "Write",
+      "Glob",
+      "Grep"
+    ]
+  },
+  "runtime_overrides": {
+    "Codex — GPT-6 Astra": {
+      "model": "Claude Sonnet 5",
+      "reason": "Codex usage limit was reached before step 01 on 2026-09-19; continue automatically through the available signed-in Claude CLI."
+    }
+  },
+  "limits": {
+    "max_stage_minutes": 180,
+    "max_run_hours": 12,
+    "max_attempts_per_stage": 2,
+    "heartbeat_seconds": 30
+  },
+  "performance": {
+    "cpu_workers": 2,
+    "parallel_tests": true
+  },
+  "hosted_trial": {
+    "model": "deepseek/deepseek-v4.1-flash",
+    "max_cost_usd": 5,
+    "max_requests": 1200,
+    "max_output_tokens": 800,
+    "provider_max_input_per_million_usd": 0.3,
+    "provider_max_output_per_million_usd": 1.2
+  }
+}

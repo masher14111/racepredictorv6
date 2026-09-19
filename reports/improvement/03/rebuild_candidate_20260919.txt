@@ -1,0 +1,31 @@
+2026-09-19 02:10:16 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 02:10:16 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 02:10:16 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+[02:10:16] loading C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\data\unified_races.parquet
+[02:10:17] raw unified rows: 651154
+[02:10:28] raw per-runner market_type membership (full dataset):
+market_type
+(PLACE, WIN)    324170
+(WIN,)            1925
+(PLACE,)           312
+Name: count, dtype: int64
+[02:10:28] sampled 8000 races -> 148450 raw rows for the full-pipeline rebuild
+[02:14:06] build_training_matrix (labelled rows only, sampled races) took 217.6s
+[02:14:06] candidate labelled training rows: 125260
+market_type
+WIN      62714
+PLACE    62546
+Name: count, dtype: int64
+[02:14:06] duplicate (race_uid, horse_id, market_type) keys: 0
+[02:14:06] candidate per-race market_type membership:
+market_type
+(PLACE, WIN)    7018
+(WIN,)            64
+(PLACE,)           6
+Name: count, dtype: int64
+[02:14:06] WIN rows: 62714  PLACE rows: 62546
+[02:14:06] WIN race_uid count: 7082  PLACE race_uid count: 7024
+[02:14:10] reordering invariance across ALL 52 priced races in data/unified_races.parquet (forward/reversed/shuffled): True (0 mismatches)
+[02:14:10] wrote candidate matrix to C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\data\audit\03\training_market_fixed.parquet
+[02:14:10] summary: {'raw_rows': 148450, 'candidate_rows': 125260, 'win_rows': 62714, 'place_rows': 62546, 'duplicate_race_runner_market_keys': 0, 'reordering_invariant_on_sample_race': True}
+[02:14:10] ALL CHECKS PASSED

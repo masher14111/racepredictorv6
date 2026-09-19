@@ -1,0 +1,157 @@
+{
+  "frozen_at_utc": "2026-09-19T09:06:26.782006+00:00",
+  "purpose": "Step 12 market-combination protocol: select a normalized power blend of the INDEPENDENT (price-free) probability and the REFERENCE de-vigged market probability on chronological walk-forward development predictions, fit a small predetermined set of calibrators on a LATER reserved calibration period, and report only on step 10's untouched dev-OOS panel. Frozen BEFORE any exponent or calibrator is fitted.",
+  "inherits": {
+    "manifest": "reports/improvement/10/run_manifest.json",
+    "manifest_sha256": "9d06139af2764125a8f7bf441d2d47279141620ed36c4d5c60d8a9fb8228c0e1",
+    "eligible_population": {
+      "market_type": "WIN",
+      "rule": "market_type == 'WIN' and position.notna() (labelled, priced win-market rows); PLACE rows are a different price book (D24) and are out of this scorecard's scope.",
+      "race_grouping_key": "race_uid",
+      "head_to_head_extra_filter": "models.head_to_head.head_to_head additionally requires a COMPLETE odds book (every runner in the race priced on the pre-off price column) before a race counts toward the log-loss scorecard \u2014 identical rule applied to every candidate and the market line."
+    },
+    "decision_cutoff": {
+      "assumption": "10-minutes-before-off feature freeze (CONTRACTS.md provisional research assumption, not a deployed cutoff constant)",
+      "price_used_for_decision_and_market_benchmark": "pre-off (morningwap -> ppwap fallback), never odds_finish (closing/settlement price, CLV reference only)"
+    }
+  },
+  "data": {
+    "rebuilt_matrix_path": "data/audit/10/training_rebuilt.parquet",
+    "rebuilt_matrix_sha256": "9ee4e299a03f82868c0ad20dd2e81c7c9826d3aec4131b1f3ec87ddb697836bd",
+    "step10_dev_oos_predictions": "data/audit/10/dev_oos_predictions.parquet",
+    "step10_dev_oos_predictions_sha256": "eb97bdefdd6f970aa36f72fafb8dc2df708df1d24ea5a25eec9bb22039bb0cda",
+    "step10_scorecard": "reports/improvement/10/scorecard.json",
+    "step10_scorecard_sha256": "11a4665d4fcf6f908dc3575b55ef4f1e60b44e48b0b40856e8ba54ceea5e2d45"
+  },
+  "code_hashes": {
+    "models/blend.py": "c0835902fb61fc3e92922b99e30e5e1432465421a5a89e465876a10805170dfa",
+    "models/calibration.py": "a5bc7a2aa1e427482247b1c7e51de2bf5982db067712d108088b8c07de5b090a",
+    "models/devig.py": "5d035de0bbdb58533e145d5b9ffae2aef98442b6c45d2a85cb36d39baecc6f98",
+    "models/head_to_head.py": "d69ad4f2c253b7a025e4593b472386a6c07d814bcf17deabf5aff8c05304f184",
+    "models/conditional_logit.py": "4eea033af11c0410e2e2f5eb1dd9a5f9b3c32dcd2134d31ea5b0ebad5833aafb",
+    "models/split_utils.py": "cd237035071a8bd3cd3d451fca9cee17bdda32b5645b0d78655b0fbfb33f6d55",
+    "models/features.py": "b9b622dcde8ba879dbd8e2b754604c6d7004cdacba609defc0c8bfa48d160030",
+    "features/lgbm_adapter.py": "fadc52235888031fec0835fd9f54c50a147fd581a99e4a6dd40994264e070c66"
+  },
+  "price_roles": {
+    "independent_probability": "price-free model output; no price column of any kind enters it (models.features.PRICE_FREE_FEATURE_COLS minus MARKET_DERIVED_FEATURE_COLS, D40)",
+    "reference_market_probability": "models.devig.devig(bet_price) over a COMPLETE book only. bet_price is the pre-off reference price (ppwap -> morningwap, backtest.data.PanelConfig); never odds_finish/sp (settlement) and never a best-of-N executable overlay.",
+    "executable_quote": "the bookmaker price actually backable (odds_decimal / odds_by_book / execution.snapshots). Used ONLY for EV, stake and settlement. It is not an argument of models.blend.power_blend and must not move any probability."
+  },
+  "windows": {
+    "blend_dev": {
+      "start": "2026-02-01",
+      "end_exclusive": "2026-06-13",
+      "role": "select the power-blend exponents (alpha, beta). Nothing else."
+    },
+    "calib": {
+      "start": "2026-06-13",
+      "end_exclusive": "2026-08-08",
+      "role": "LATER reserved calibration period: fit the calibrator candidates on the already-selected blend. Overlaps the already-observed 2026-06-13..2026-07-25 window on purpose \u2014 that window is barred from being a NEW TEST (AGENTS.md), not from being development FITTING data, and no performance claim is made from it."
+    },
+    "eval": {
+      "start": "2026-08-08",
+      "end_exclusive": "2026-08-28",
+      "role": "step 10's frozen dev-OOS panel (618 races / 5,561 runners). Reporting only; never used to choose an exponent, a calibrator or a threshold."
+    },
+    "final_holdout_RESERVED_UNTOUCHED": {
+      "start": "2026-08-28",
+      "end": "2026-09-17",
+      "policy": "Not loaded by any step-12 script. Step 17 only."
+    }
+  },
+  "walk_forward": {
+    "boundaries": [
+      "2026-02-01",
+      "2026-03-01",
+      "2026-04-01",
+      "2026-05-01",
+      "2026-06-01",
+      "2026-06-13",
+      "2026-07-01",
+      "2026-08-01",
+      "2026-08-08"
+    ],
+    "scheme": "expanding window: block [b_i, b_i+1) is scored by a model fitted on every labelled WIN row with day < b_i (from 2024-01-01), whole races only. No hyperparameter is re-tuned per block.",
+    "model_family": "models.conditional_logit.ConditionalLogitModel",
+    "l2_source": "reports/improvement/10/scorecard.json conditional_logit_tuning (independent + market branches) \u2014 reused verbatim, NOT re-tuned here, so the walk-forward panel introduces no new selection.",
+    "disclosed_limitation": "Only the conditional-logit family gets its own walk-forward panel; a CatBoost or LightGBM walk-forward over the same 8 blocks is outside this stage's CPU budget. Their combined arms on the eval panel therefore reuse the exponents selected on the conditional-logit panel (a TRANSFER, labelled as such in the scorecard), not exponents fitted to their own out-of-sample predictions."
+  },
+  "blend_grid": {
+    "form": "p \u221d p_independent**alpha * p_reference**beta, renormalised within race",
+    "alpha": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "beta": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0,
+      1.25,
+      1.5
+    ],
+    "n_points": 63,
+    "boundary_controls": {
+      "independent_only": [
+        1.0,
+        0.0
+      ],
+      "market_only": [
+        0.0,
+        1.0
+      ]
+    },
+    "selection_metric": "race-level log loss (models.blend.race_level_log_loss)"
+  },
+  "calibrator_candidates": [
+    {
+      "name": "none",
+      "role": "UNCALIBRATED CONTROL \u2014 the blend, renormalised only."
+    },
+    {
+      "name": "sigmoid",
+      "impl": "models.calibration.SigmoidCalibrator (Platt on the logit)"
+    },
+    {
+      "name": "isotonic",
+      "impl": "models.calibration.IsotonicCalibrator"
+    },
+    {
+      "name": "odds_band",
+      "impl": "models.calibration.OddsBandCalibrator fit on the REFERENCE price",
+      "note": "price-conditional by construction, therefore MARKET-ADJUSTED, not an ability estimate. Fitted and applied on the reference price, never on an executable quote."
+    }
+  ],
+  "post_calibration_rule": "every calibrated probability is renormalised within its complete race (models.calibration.normalize_within_race) before scoring, so all candidates and the market line are compared as probability vectors that sum to 1.",
+  "reported_breakdowns": [
+    "odds band (models.head_to_head.ODDS_BANDS, reference pre-off price)",
+    "field size band",
+    "racing regime (surface x distance category)",
+    "region (UK / IRE)",
+    "selected-bet subset (EV = p*bet_price - 1 >= config.yaml value.min_expected_value = 0.05)"
+  ],
+  "output_paths": {
+    "walkforward_panel": "data/audit/12/walkforward_oos.parquet",
+    "blend_artifacts": "data/audit/12/blend/",
+    "calibrator_artifacts": "data/audit/12/calibrators/",
+    "scorecard": "reports/improvement/12/scorecard_12.json",
+    "breakdowns": "reports/improvement/12/breakdowns/",
+    "invariance": "reports/improvement/12/price_invariance.json"
+  },
+  "promoted_artifacts_untouched": [
+    "models/catboost_*_v3*.bin",
+    "models/catboost_*_v3*_calib.pkl",
+    "models/fl_oddsband_v3nf_calib.pkl",
+    "models/lgbm_won_v3.txt",
+    "models/lgbm_v3_meta.json"
+  ]
+}

@@ -1,0 +1,3 @@
+rows 72112
+strict=False : rows differing after ROW SHUFFLE: 15360 / 70005 (21.94%)  max|delta|=1.0000
+strict=True : rows differing after ROW SHUFFLE: 4651 / 68563 (6.78%)  max|delta|=0.1500

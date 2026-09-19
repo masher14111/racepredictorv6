@@ -1,0 +1,15 @@
+model,target,variant,brier,ece,auc
+v3,won,raw,0.2967,0.4187,0.7886
+v3,won,calibrated,0.0904,0.0054,0.7876
+v3,won,cal+norm,0.0965,0.0473,0.7625
+v3,placed_2,raw,0.2625,0.3214,0.7854
+v3,placed_2,calibrated,0.1446,0.0073,0.7854
+v3,showed,raw,0.2328,0.2263,0.7868
+v3,showed,calibrated,0.175,0.012,0.7868
+v3nf,won,raw,0.2708,0.4067,0.6703
+v3nf,won,calibrated,0.0999,0.0024,0.6703
+v3nf,won,cal+norm,0.1033,0.0468,0.6413
+v3nf,placed_2,raw,0.255,0.294,0.6777
+v3nf,placed_2,calibrated,0.1671,0.0058,0.6777
+v3nf,showed,raw,0.2397,0.1833,0.6862
+v3nf,showed,calibrated,0.2057,0.0079,0.6862

@@ -1,0 +1,34 @@
+2026-09-19 06:52:51 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 06:52:51 | WARNING  | config | RP env var RP_CPU_WORKERS has no matching config path — skipped
+2026-09-19 06:52:51 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 06:52:51 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+
+D1 execution.snapshots.race_uid venue collapse
+       distinct race_uid=35,107  with >1 venue=4 (0.0114%)
+         2024-05-17T15:25:00+00:00: ['Kilbeggan', 'Newmarket']
+         2024-07-13T14:50:00+00:00: ['Chester', 'Wexford']
+         2024-05-17T15:15:00+00:00: ['Leopardstown', 'York']
+       (step 08 Defect 3 reproduced — reported, not fixed here)
+
+D2 paper ticket ledger (read-only)
+       rows=988  decisions={'PASS': 988}  settled=0
+  [PASS] no CANDIDATE ticket is mis-reported as a wager-free PASS decisions={'PASS': 988}
+  [PASS] settled count is consistent with candidate count settled=0 candidates=0
+
+D3 odds_snapshots point-in-time / append-only (real db, read-only)
+       rows=3,547  max fetched_at=2026-09-18T23:49:12.164694+00:00
+  [PASS] no snapshot row is stamped in the future future_rows=0
+  [PASS] append-only triggers present on odds_snapshots triggers=['odds_snapshots_no_update', 'odds_snapshots_no_delete']
+  [PASS] latest_quote(as_of just before the newest fetch) does not return that newest quote as_of=2026-09-18T23:49:11.164694+00:00 got=2026-09-18 23:46:21.919943+00:00
+  [PASS] UPDATE on odds_snapshots is refused (IntegrityError)
+
+D4 settlement identity + idempotency (synthetic, isolated)
+  [PASS] same off-time at two venues yields two distinct settlement keys ('york', '2026-05-17T16:15', 'alpha') vs ('leopardstown', '2026-05-17T16:15', 'alpha')
+  [PASS] York key resolves to York's own result (position 1) got=1
+  [PASS] Leopardstown key resolves to its own result (position 7) got=7
+  [PASS] day/venue fallback is venue-scoped got=1
+  [PASS] two disagreeing results under one identity are marked ambiguous ambiguous={('id', ('york', '2026-05-17', 'h1')), ('key', ('york', '2026-05-17T16:15', 'alpha')), ('name', ('york', 'alpha', '2026-05-17'))}
+       (idempotency covered by the named targeted tests — see stage note)
+
+============================================================
+PASS: execution-layer identity, point-in-time and idempotency checks hold

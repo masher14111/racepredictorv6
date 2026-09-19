@@ -1,0 +1,33 @@
+{
+  "by_window": {
+    "dev_core": {
+      "races": 29888,
+      "races_with_archived_text": 21,
+      "rows": 263982,
+      "rows_with_archived_text": 227
+    },
+    "dev_oos": {
+      "races": 618,
+      "races_with_archived_text": 0,
+      "rows": 5561,
+      "rows_with_archived_text": 0
+    },
+    "final_holdout_RESERVED": {
+      "races": 708,
+      "races_with_archived_text": 0,
+      "rows": 6754,
+      "rows_with_archived_text": 0
+    }
+  },
+  "conclusion": "ZERO archived-text races in dev_oos or final_holdout; only 21 races (a single archived day) inside dev_core. A pre-registered chronological comparison across development windows cannot be executed on any genuine out-of-sample fold \u2014 DEFERRED_DATA, not a NO-GO model finding.",
+  "manifest": "reports/improvement/10/run_manifest.json",
+  "matrix": "data/audit/10/training_rebuilt.parquet",
+  "text_archive_coverage": {
+    "earliest_fetched_at": "2026-06-17T06:44:35.573383+00:00",
+    "latest_fetched_at": "2026-06-17T06:44:35.573383+00:00",
+    "races": 21,
+    "rows": 243,
+    "sources": 1,
+    "unknown_published_at": 243
+  }
+}

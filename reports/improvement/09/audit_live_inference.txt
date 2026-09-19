@@ -1,0 +1,5 @@
+2026-09-19 06:28:06 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 06:28:06 | WARNING  | config | RP env var RP_CPU_WORKERS has no matching config path — skipped
+2026-09-19 06:28:06 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 06:28:06 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+inference rows: 0

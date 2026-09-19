@@ -1,0 +1,875 @@
+{
+  "selected": {
+    "name": "edge0.020_ev0.050_short_lt_4",
+    "params": {
+      "min_edge": 0.02,
+      "min_expected_value": 0.05,
+      "odds_band": "short_lt_4",
+      "odds_min": 1.0,
+      "odds_max": 4.0
+    }
+  },
+  "n_strategies_tried": 64,
+  "correction": "sidak",
+  "alpha": 0.05,
+  "adjusted_alpha": 0.0008011366433465783,
+  "train_score": -0.06603513490887222,
+  "validation_score": -0.0684924336137426,
+  "test_score": -0.09227489600588801,
+  "test_scored_at": "2026-07-27T21:27:01+00:00",
+  "selection_bias_note": "64 strategy variant(s) were scored on the training window; 16 were carried to validation and the single winner was scored on the test window exactly once. A family-wise alpha of 0.05 becomes 0.0008011 under the sidak correction for 64 comparison(s). The reported test score is a single draw from one window and does not by itself establish an edge.",
+  "reused_lock": false,
+  "lock_path": "data/execution/selection_lock.json",
+  "candidates": [
+    {
+      "name": "edge0.020_ev0.050_all",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.05,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.23660031567522435,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.050_short_lt_4",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.05,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.06603513490887222,
+      "validation_score": -0.0684924336137426,
+      "selected": true
+    },
+    {
+      "name": "edge0.020_ev0.050_mid_4_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.05,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13348476633103282,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.050_long_ge_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.05,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24603825111641933,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.080_all",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.08,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.23662231882920784,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.080_short_lt_4",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.08,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.06786392895644923,
+      "validation_score": -0.07770088486400127,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.080_mid_4_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.08,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13264152664572423,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.080_long_ge_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.08,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24603825111641933,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.120_all",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.12,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.23667247509760458,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.120_short_lt_4",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.12,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.06788714760065806,
+      "validation_score": -0.08357808629958122,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.120_mid_4_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.12,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13101662088140498,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.120_long_ge_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.12,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24603086252918402,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.200_all",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.2,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.23691142831508025,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.200_short_lt_4",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.2,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.0667465075086876,
+      "validation_score": -0.09529403278724753,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.200_mid_4_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.2,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13069204545616844,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.020_ev0.200_long_ge_12",
+      "params": {
+        "min_edge": 0.02,
+        "min_expected_value": 0.2,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24597074576597835,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.050_all",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.05,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.2354806464878124,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.050_short_lt_4",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.05,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.06878060354581288,
+      "validation_score": -0.07537822309309947,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.050_mid_4_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.05,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13459337155328194,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.050_long_ge_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.05,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24693264509622337,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.080_all",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.08,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.23552411726810982,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.080_short_lt_4",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.08,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.0693836908301478,
+      "validation_score": -0.08058688543142896,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.080_mid_4_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.08,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13426476944963556,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.080_long_ge_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.08,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24693264509622337,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.120_all",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.12,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.23557412215696394,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.120_short_lt_4",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.12,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.06655984499895896,
+      "validation_score": -0.08357808629958122,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.120_mid_4_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.12,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13352065524900267,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.120_long_ge_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.12,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24693264509622337,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.200_all",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.2,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.23588355681047218,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.200_short_lt_4",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.2,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.0667465075086876,
+      "validation_score": -0.09529403278724753,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.200_mid_4_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.2,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.1329083000747868,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.030_ev0.200_long_ge_12",
+      "params": {
+        "min_edge": 0.03,
+        "min_expected_value": 0.2,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.24693264509622337,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.050_all",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.05,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.22442013608660163,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.050_short_lt_4",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.05,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.07402656749833073,
+      "validation_score": -0.07764411604859273,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.050_mid_4_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.05,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13409285179734767,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.050_long_ge_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.05,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.2431636794835545,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.080_all",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.08,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.22442013608660163,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.080_short_lt_4",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.08,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.07311951810241925,
+      "validation_score": -0.07739019767609485,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.080_mid_4_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.08,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13406563126038357,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.080_long_ge_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.08,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.2431636794835545,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.120_all",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.12,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.2245160036184049,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.120_short_lt_4",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.12,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.07072876673144683,
+      "validation_score": -0.07530497023906613,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.120_mid_4_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.12,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13395828739671262,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.120_long_ge_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.12,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.2431636794835545,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.200_all",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.2,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.2247806298031696,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.200_short_lt_4",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.2,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.0667465075086876,
+      "validation_score": -0.08123919839077184,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.200_mid_4_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.2,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13399488638424645,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.050_ev0.200_long_ge_12",
+      "params": {
+        "min_edge": 0.05,
+        "min_expected_value": 0.2,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.2431636794835545,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.050_all",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.05,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.2069449933171431,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.050_short_lt_4",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.05,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.07809701317978188,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.050_mid_4_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.05,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13475331523429168,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.050_long_ge_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.05,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.23803374211260228,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.080_all",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.08,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.2069449933171431,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.080_short_lt_4",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.08,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.07809701317978188,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.080_mid_4_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.08,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13475331523429168,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.080_long_ge_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.08,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.23803374211260228,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.120_all",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.12,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.20696702839361789,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.120_short_lt_4",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.12,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.07621151427681283,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.120_mid_4_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.12,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13475331523429168,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.120_long_ge_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.12,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.23803374211260228,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.200_all",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.2,
+        "odds_band": "all",
+        "odds_min": 1.0,
+        "odds_max": null
+      },
+      "train_score": -0.20711256900462877,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.200_short_lt_4",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.2,
+        "odds_band": "short_lt_4",
+        "odds_min": 1.0,
+        "odds_max": 4.0
+      },
+      "train_score": -0.07428891013273371,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.200_mid_4_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.2,
+        "odds_band": "mid_4_12",
+        "odds_min": 4.0,
+        "odds_max": 12.0
+      },
+      "train_score": -0.13475331523429168,
+      "validation_score": null,
+      "selected": false
+    },
+    {
+      "name": "edge0.080_ev0.200_long_ge_12",
+      "params": {
+        "min_edge": 0.08,
+        "min_expected_value": 0.2,
+        "odds_band": "long_ge_12",
+        "odds_min": 12.0,
+        "odds_max": null
+      },
+      "train_score": -0.23803374211260228,
+      "validation_score": null,
+      "selected": false
+    }
+  ],
+  "windows": {
+    "train": [
+      "2025-01-01",
+      "2025-11-05",
+      44584
+    ],
+    "validation": [
+      "2025-11-06",
+      "2026-02-20",
+      13204
+    ],
+    "test": [
+      "2026-02-22",
+      "2026-05-25",
+      14229
+    ]
+  },
+  "written_at": "2026-07-27T21:27:01+00:00"
+}

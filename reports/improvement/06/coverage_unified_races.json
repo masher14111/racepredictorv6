@@ -1,0 +1,111 @@
+{
+  "dataset": "unified_races",
+  "rows": 651154,
+  "columns": 50,
+  "date_min": "2023-12-31",
+  "date_max": "2026-09-19",
+  "days_stale": 0,
+  "is_stale": false,
+  "missing_calendar_days_recent": [
+    "2026-09-18"
+  ],
+  "all_null_columns": [
+    "sp",
+    "timeform_rating",
+    "pace_rating",
+    "class_change",
+    "historical_win_rate",
+    "historical_place_rate",
+    "jockey_win_rate"
+  ],
+  "watched_fill": {
+    "timeform_rating": {
+      "present": true,
+      "non_null": 0,
+      "rows": 651154,
+      "fill_fraction": 0.0
+    },
+    "rating_rank": {
+      "present": false
+    },
+    "pace_bias": {
+      "present": false
+    },
+    "race_class": {
+      "present": true,
+      "non_null": 18,
+      "rows": 651154,
+      "fill_fraction": 2.764323032646655e-05
+    },
+    "class_change": {
+      "present": true,
+      "non_null": 0,
+      "rows": 651154,
+      "fill_fraction": 0.0
+    },
+    "recent_form_avg": {
+      "present": false
+    },
+    "going_speed": {
+      "present": true,
+      "non_null": 15,
+      "rows": 651154,
+      "fill_fraction": 2.303602527205546e-05
+    },
+    "going_speed_v2": {
+      "present": false
+    },
+    "position": {
+      "present": true,
+      "non_null": 550813,
+      "rows": 651154,
+      "fill_fraction": 0.8459028125451122
+    }
+  },
+  "by_source": {
+    "betsp": {
+      "rows": 649890,
+      "date_min": "2023-12-31",
+      "date_max": "2026-09-17"
+    },
+    "boylesports": {
+      "rows": 283,
+      "date_min": "2026-09-19",
+      "date_max": "2026-09-19"
+    },
+    "livescorebet": {
+      "rows": 622,
+      "date_min": "2026-09-19",
+      "date_max": "2026-09-19"
+    },
+    "paddy_power": {
+      "rows": 331,
+      "date_min": "2026-09-19",
+      "date_max": "2026-09-19"
+    },
+    "timeform": {
+      "rows": 28,
+      "date_min": "2026-06-13",
+      "date_max": "2026-06-13"
+    }
+  },
+  "provider_shift_alerts": [
+    {
+      "date": "2026-09-19",
+      "source": "betsp",
+      "day_share": 0.0,
+      "trailing_7d_share": 1.0
+    },
+    {
+      "date": "2026-09-19",
+      "source": "livescorebet",
+      "day_share": 0.503,
+      "trailing_7d_share": 0.0
+    }
+  ],
+  "by_region": {
+    "UK": 470820,
+    "IRE": 179070,
+    "nan": 1264
+  }
+}

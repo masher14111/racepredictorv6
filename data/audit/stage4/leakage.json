@@ -1,0 +1,411 @@
+{
+  "provenance": {
+    "passed": true,
+    "failures": [],
+    "details": {
+      "n_price_free": 40,
+      "n_full": 54,
+      "price_free_cols": [
+        "field_size",
+        "going_speed",
+        "class_change",
+        "distance_furlongs",
+        "recent_form_avg",
+        "recent_form_wins",
+        "recent_form_runs",
+        "timeform_rating",
+        "rating_rank",
+        "pace_bias",
+        "historical_win_rate",
+        "historical_place_rate",
+        "jockey_win_rate",
+        "trainer_win_rate",
+        "jt_combo_win_rate",
+        "jt_combo_runs",
+        "going_pref_win_rate",
+        "going_pref_place_rate",
+        "days_since_last_run",
+        "horse_career_runs",
+        "course_win_rate",
+        "course_place_rate",
+        "course_runs",
+        "distance_win_rate",
+        "distance_place_rate",
+        "distance_runs",
+        "horse_speed",
+        "horse_speed_rank",
+        "speed_trend",
+        "race_complexity",
+        "class_par_speed",
+        "class_par_rank",
+        "trainer_hot_strike_rate",
+        "trainer_form_zscore",
+        "jockey_hot_strike_rate",
+        "jockey_form_zscore",
+        "speed_distance_profile",
+        "hot_connection",
+        "hot_connection_z",
+        "freshness_band"
+      ]
+    }
+  },
+  "empirical": {
+    "passed": true,
+    "failures": [],
+    "table": [
+      {
+        "feature": "field_size",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": 0.05874450971068231,
+        "corr_won": -0.12218415758890203,
+        "n": 140159
+      },
+      {
+        "feature": "going_speed",
+        "present": true,
+        "null_pct": 79.38324823526129,
+        "pcorr_move": 0.012696727249222392,
+        "corr_won": -0.0020357744633246804,
+        "n": 28908
+      },
+      {
+        "feature": "class_change",
+        "present": true,
+        "null_pct": 100.0,
+        "pcorr_move": null,
+        "corr_won": null,
+        "n": 0
+      },
+      {
+        "feature": "distance_furlongs",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": -0.00030348422810473125,
+        "corr_won": 0.030776565705808116,
+        "n": 140159
+      },
+      {
+        "feature": "recent_form_avg",
+        "present": true,
+        "null_pct": 100.0,
+        "pcorr_move": null,
+        "corr_won": null,
+        "n": 0
+      },
+      {
+        "feature": "recent_form_wins",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": 0.0,
+        "corr_won": 0.0,
+        "n": 140159
+      },
+      {
+        "feature": "recent_form_runs",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": 0.0,
+        "corr_won": 0.0,
+        "n": 140159
+      },
+      {
+        "feature": "timeform_rating",
+        "present": true,
+        "null_pct": 100.0,
+        "pcorr_move": null,
+        "corr_won": null,
+        "n": 0
+      },
+      {
+        "feature": "rating_rank",
+        "present": true,
+        "null_pct": 100.0,
+        "pcorr_move": null,
+        "corr_won": null,
+        "n": 0
+      },
+      {
+        "feature": "pace_bias",
+        "present": true,
+        "null_pct": 100.0,
+        "pcorr_move": null,
+        "corr_won": null,
+        "n": 0
+      },
+      {
+        "feature": "historical_win_rate",
+        "present": true,
+        "null_pct": 15.49412683797885,
+        "pcorr_move": -0.0055428123814281905,
+        "corr_won": 0.08123813321918359,
+        "n": 118707
+      },
+      {
+        "feature": "historical_place_rate",
+        "present": true,
+        "null_pct": 15.49412683797885,
+        "pcorr_move": -0.01280491715595507,
+        "corr_won": 0.13603325833645644,
+        "n": 118707
+      },
+      {
+        "feature": "jockey_win_rate",
+        "present": true,
+        "null_pct": 0.735889065595268,
+        "pcorr_move": 0.0013645189058404574,
+        "corr_won": 0.0913379309054629,
+        "n": 139202
+      },
+      {
+        "feature": "trainer_win_rate",
+        "present": true,
+        "null_pct": 0.6075444323540079,
+        "pcorr_move": -0.005283486698022365,
+        "corr_won": 0.09534606564442957,
+        "n": 139345
+      },
+      {
+        "feature": "jt_combo_win_rate",
+        "present": true,
+        "null_pct": 14.117212131357942,
+        "pcorr_move": 0.006539387610336943,
+        "corr_won": 0.08318548093159946,
+        "n": 120806
+      },
+      {
+        "feature": "jt_combo_runs",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": -0.012737412263724468,
+        "corr_won": 0.05530316246569537,
+        "n": 140159
+      },
+      {
+        "feature": "going_pref_win_rate",
+        "present": true,
+        "null_pct": 30.746212438269023,
+        "pcorr_move": -0.00849964613301789,
+        "corr_won": 0.07763904385710159,
+        "n": 97458
+      },
+      {
+        "feature": "going_pref_place_rate",
+        "present": true,
+        "null_pct": 30.746212438269023,
+        "pcorr_move": -0.020675167637685336,
+        "corr_won": 0.1222948295969022,
+        "n": 97458
+      },
+      {
+        "feature": "days_since_last_run",
+        "present": true,
+        "null_pct": 13.566167238637314,
+        "pcorr_move": -0.010513477754217274,
+        "corr_won": -0.011212180076699477,
+        "n": 121375
+      },
+      {
+        "feature": "horse_career_runs",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": -0.02376871020636798,
+        "corr_won": 0.001818958757021919,
+        "n": 140159
+      },
+      {
+        "feature": "course_win_rate",
+        "present": true,
+        "null_pct": 67.19120560252225,
+        "pcorr_move": 0.006889463374431537,
+        "corr_won": 0.08006425406646989,
+        "n": 46307
+      },
+      {
+        "feature": "course_place_rate",
+        "present": true,
+        "null_pct": 67.19120560252225,
+        "pcorr_move": -0.005689382785966549,
+        "corr_won": 0.12098411619880714,
+        "n": 46307
+      },
+      {
+        "feature": "course_runs",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": -0.015555227121285415,
+        "corr_won": 0.005264478786062731,
+        "n": 140159
+      },
+      {
+        "feature": "distance_win_rate",
+        "present": true,
+        "null_pct": 21.995759046901593,
+        "pcorr_move": -0.0044196689009683085,
+        "corr_won": 0.0801459234879226,
+        "n": 109706
+      },
+      {
+        "feature": "distance_place_rate",
+        "present": true,
+        "null_pct": 21.995759046901593,
+        "pcorr_move": -0.015831854898233248,
+        "corr_won": 0.1329514467773508,
+        "n": 109706
+      },
+      {
+        "feature": "distance_runs",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": -0.023434365972035444,
+        "corr_won": 0.014582632414276781,
+        "n": 140159
+      },
+      {
+        "feature": "horse_speed",
+        "present": true,
+        "null_pct": 15.49412683797885,
+        "pcorr_move": 0.00026341314620599186,
+        "corr_won": 0.14391846247899703,
+        "n": 118707
+      },
+      {
+        "feature": "horse_speed_rank",
+        "present": true,
+        "null_pct": 15.49412683797885,
+        "pcorr_move": 0.015613650936510992,
+        "corr_won": -0.15335760868188433,
+        "n": 118707
+      },
+      {
+        "feature": "speed_trend",
+        "present": true,
+        "null_pct": 15.884043413967245,
+        "pcorr_move": 0.00729221304245873,
+        "corr_won": 0.05541384105011744,
+        "n": 118155
+      },
+      {
+        "feature": "race_complexity",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": 0.06057304799446714,
+        "corr_won": -0.12443703835764643,
+        "n": 140159
+      },
+      {
+        "feature": "class_par_speed",
+        "present": true,
+        "null_pct": 15.49412683797885,
+        "pcorr_move": 0.00026341314620599186,
+        "corr_won": 0.14391846247899703,
+        "n": 118707
+      },
+      {
+        "feature": "class_par_rank",
+        "present": true,
+        "null_pct": 15.49412683797885,
+        "pcorr_move": 0.015613650936510992,
+        "corr_won": -0.15335760868188433,
+        "n": 118707
+      },
+      {
+        "feature": "trainer_hot_strike_rate",
+        "present": true,
+        "null_pct": 2.106526045590246,
+        "pcorr_move": -0.007923983037573641,
+        "corr_won": 0.1788514850572721,
+        "n": 137335
+      },
+      {
+        "feature": "trainer_form_zscore",
+        "present": true,
+        "null_pct": 5.89757540247203,
+        "pcorr_move": 0.0,
+        "corr_won": 0.0,
+        "n": 132389
+      },
+      {
+        "feature": "jockey_hot_strike_rate",
+        "present": true,
+        "null_pct": 2.265561786780503,
+        "pcorr_move": -0.006169971734066353,
+        "corr_won": 0.1736420578077144,
+        "n": 137127
+      },
+      {
+        "feature": "jockey_form_zscore",
+        "present": true,
+        "null_pct": 4.936385703523897,
+        "pcorr_move": 0.0,
+        "corr_won": 0.0,
+        "n": 133574
+      },
+      {
+        "feature": "speed_distance_profile",
+        "present": true,
+        "null_pct": 15.49412683797885,
+        "pcorr_move": -0.010357998008369456,
+        "corr_won": 0.10270029367166734,
+        "n": 118707
+      },
+      {
+        "feature": "hot_connection",
+        "present": true,
+        "null_pct": 2.596188722412879,
+        "pcorr_move": -0.00015802306199281082,
+        "corr_won": 0.1476382909639712,
+        "n": 136712
+      },
+      {
+        "feature": "hot_connection_z",
+        "present": true,
+        "null_pct": 9.067129823386624,
+        "pcorr_move": 0.0,
+        "corr_won": 0.0,
+        "n": 128132
+      },
+      {
+        "feature": "freshness_band",
+        "present": true,
+        "null_pct": 0.0,
+        "pcorr_move": 0.004182508757458207,
+        "corr_won": 0.02677173234324632,
+        "n": 140159
+      }
+    ]
+  },
+  "append_invariance": {
+    "price_free": {
+      "passed": false,
+      "failures": [
+        "race_complexity: 247617 value drift + 0 nan-flip rows on pre-cutoff data (future data changed the past)"
+      ],
+      "details": {
+        "n_overlap": 247617,
+        "cutoff": "2026-06-12 00:00:00+00:00",
+        "drift": {
+          "race_complexity": {
+            "value_drift_rows": 247617,
+            "nan_flip_rows": 0
+          }
+        }
+      }
+    },
+    "full_list": {
+      "passed": false,
+      "failures": [
+        "race_complexity: 247617 value drift + 0 nan-flip rows on pre-cutoff data (future data changed the past)"
+      ]
+    },
+    "backup_sha256": "1C20FA97BDC982F5CC3DAEF5F8881D88E300B16A3C0891219575C27B031B9246"
+  },
+  "weight_channel": {
+    "passed": true,
+    "failures": [],
+    "details": {
+      "n_priced": 227254,
+      "match_frac": 1.0
+    }
+  }
+}

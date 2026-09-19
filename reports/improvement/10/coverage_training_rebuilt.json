@@ -1,0 +1,150 @@
+{
+  "dataset": "training_rebuilt_10",
+  "rows": 551815,
+  "columns": 117,
+  "date_min": "2024-01-01",
+  "date_max": "2026-09-17",
+  "days_stale": 2,
+  "is_stale": false,
+  "missing_calendar_days_recent": [],
+  "all_null_columns": [
+    "race_id",
+    "selection_id",
+    "src_race_id",
+    "draw",
+    "weight_lbs",
+    "age",
+    "official_rating",
+    "equipment",
+    "colour",
+    "sex",
+    "runner_status",
+    "market_id",
+    "market_name",
+    "odds_decimal",
+    "sp",
+    "ew_places",
+    "ew_reduction",
+    "ew_margin",
+    "is_low_odds",
+    "currency",
+    "timeform_rating",
+    "pace_rating",
+    "race_class",
+    "class_change",
+    "recent_form",
+    "validation_status",
+    "validation_reasons",
+    "market_field_size",
+    "market_booksum",
+    "recent_form_avg",
+    "rating_rank",
+    "pace_bias",
+    "ew_value_index",
+    "odds_drift"
+  ],
+  "watched_fill": {
+    "timeform_rating": {
+      "present": true,
+      "non_null": 0,
+      "rows": 551815,
+      "fill_fraction": 0.0
+    },
+    "rating_rank": {
+      "present": true,
+      "non_null": 0,
+      "rows": 551815,
+      "fill_fraction": 0.0
+    },
+    "pace_bias": {
+      "present": true,
+      "non_null": 0,
+      "rows": 551815,
+      "fill_fraction": 0.0
+    },
+    "race_class": {
+      "present": true,
+      "non_null": 0,
+      "rows": 551815,
+      "fill_fraction": 0.0
+    },
+    "class_change": {
+      "present": true,
+      "non_null": 0,
+      "rows": 551815,
+      "fill_fraction": 0.0
+    },
+    "recent_form_avg": {
+      "present": true,
+      "non_null": 0,
+      "rows": 551815,
+      "fill_fraction": 0.0
+    },
+    "going_speed": {
+      "present": true,
+      "non_null": 113687,
+      "rows": 551815,
+      "fill_fraction": 0.20602375796236058
+    },
+    "going_speed_v2": {
+      "present": true,
+      "non_null": 399431,
+      "rows": 551815,
+      "fill_fraction": 0.723849478539003
+    },
+    "position": {
+      "present": true,
+      "non_null": 551815,
+      "rows": 551815,
+      "fill_fraction": 1.0
+    },
+    "going_is_all_weather": {
+      "present": true,
+      "non_null": 550681,
+      "rows": 551815,
+      "fill_fraction": 0.9979449634388337
+    },
+    "race_complexity_v2": {
+      "present": true,
+      "non_null": 551815,
+      "rows": 551815,
+      "fill_fraction": 1.0
+    },
+    "race_market_entropy": {
+      "present": true,
+      "non_null": 549891,
+      "rows": 551815,
+      "fill_fraction": 0.9965133242119188
+    },
+    "trainer_form_zscore": {
+      "present": true,
+      "non_null": 394095,
+      "rows": 551815,
+      "fill_fraction": 0.7141795710518923
+    },
+    "jockey_form_zscore": {
+      "present": true,
+      "non_null": 442534,
+      "rows": 551815,
+      "fill_fraction": 0.8019608020804074
+    },
+    "trainer_hot_strike_rate": {
+      "present": true,
+      "non_null": 404506,
+      "rows": 551815,
+      "fill_fraction": 0.733046401420766
+    }
+  },
+  "by_source": {
+    "betsp": {
+      "rows": 551815,
+      "date_min": "2024-01-01",
+      "date_max": "2026-09-17"
+    }
+  },
+  "provider_shift_alerts": [],
+  "by_region": {
+    "UK": 395892,
+    "IRE": 155923
+  }
+}

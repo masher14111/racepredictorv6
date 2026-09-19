@@ -1,0 +1,349 @@
+{
+  "generated_at": "2026-09-19T18:38:43+00:00",
+  "day": "2026-09-19",
+  "model_verdict": {
+    "go": false,
+    "verdict": "NO-GO",
+    "source": "data\\audit\\stage4\\final_evaluation.json",
+    "available": true,
+    "window": [
+      "2026-06-13",
+      "2026-07-25"
+    ],
+    "n_races": 904,
+    "n_runners": 7922,
+    "headline_line": "audit_independent",
+    "lines": {
+      "audit_independent": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.873997624461691,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": -0.18621322373131566,
+        "logloss_delta_ci95": [
+          -0.22507052056836044,
+          -0.14620101841695424
+        ],
+        "beats_market_logloss": false,
+        "beats_best_devig": false,
+        "significant": false,
+        "model_ece": 0.01624687830123363,
+        "market_ece": 0.008664567285319693
+      },
+      "audit_market_adjusted": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6817336640114835,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.0060507367188917804,
+        "logloss_delta_ci95": [
+          -0.006444386847118044,
+          0.017957473248171776
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.007782264829144432,
+        "market_ece": 0.008664567285319693
+      },
+      "audit_market_adjusted_sigmoid": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6849862514716225,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.002798149258752769,
+        "logloss_delta_ci95": [
+          -0.003541981774795022,
+          0.009543142187701869
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.008601828582529997,
+        "market_ece": 0.008664567285319693
+      },
+      "audit_grouped_temperature": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.8663179832748948,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": -0.17853358254451956,
+        "logloss_delta_ci95": [
+          -0.2181577453098706,
+          -0.13767278746211153
+        ],
+        "beats_market_logloss": false,
+        "beats_best_devig": false,
+        "significant": false,
+        "model_ece": 0.010081661166557454,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3nf_independent": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.8690219714435659,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": -0.18123757071319058,
+        "logloss_delta_ci95": [
+          -0.2228288943580508,
+          -0.14192477141791382
+        ],
+        "beats_market_logloss": false,
+        "beats_best_devig": false,
+        "significant": false,
+        "model_ece": 0.010142317666158215,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3nf_market_adjusted_sigmoid_refit": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6805838429632534,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.007200557767121918,
+        "logloss_delta_ci95": [
+          0.0010712854421223495,
+          0.014539834440484067
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": true,
+        "model_ece": 0.008441229521914036,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3nf_market_adjusted": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.679190927639613,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.008593473090762194,
+        "logloss_delta_ci95": [
+          -0.005769631664357911,
+          0.020066134241146054
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.006976750449540907,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_v3_priced": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6765999312010622,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.011184469529313068,
+        "logloss_delta_ci95": [
+          -0.0035831628575882734,
+          0.027539733883952765
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.006769169152301803,
+        "market_ece": 0.008664567285319693
+      },
+      "frozen_lgbm": {
+        "n_races": 904,
+        "n_runners": 7922,
+        "model_log_loss": 1.6772362435533896,
+        "market_log_loss": 1.6877844007303753,
+        "logloss_delta": 0.01054815717698565,
+        "logloss_delta_ci95": [
+          -0.00462992970677723,
+          0.026812527393418998
+        ],
+        "beats_market_logloss": true,
+        "beats_best_devig": true,
+        "significant": false,
+        "model_ece": 0.003897898663773891,
+        "market_ece": 0.008664567285319693
+      }
+    },
+    "best_devig_method": "shin",
+    "best_devig_log_loss": 1.6856753637072701,
+    "mean_clv_log": -0.1341686933114934,
+    "clv_ci95": [
+      -0.1388757257132935,
+      -0.12946166090969327
+    ],
+    "clv_positive": false,
+    "beat_close_rate": 0.2645796516031305,
+    "drift_ok": false,
+    "drift_threshold": 0.2,
+    "drift_failures": [
+      [
+        "going_speed",
+        4.9159
+      ],
+      [
+        "horse_career_runs",
+        0.3009
+      ]
+    ],
+    "reasons": [
+      "logloss_edge_not_significant:delta=-0.18621 ci95=[-0.22507,-0.14620]",
+      "loses_to_best_devig:shin=1.68568",
+      "clv_not_positive:mean=-0.13417 ci95_lower=-0.13888",
+      "drift_gate_failed:going_speed=4.916, horse_career_runs=0.301"
+    ],
+    "checked_at": "2026-09-19T13:43:40+00:00"
+  },
+  "forward_gate": {
+    "passed": false,
+    "state_label": "FORWARD GATE NOT MET (9 of 9 criteria failed)",
+    "criteria": [
+      {
+        "name": "model_go",
+        "passed": false,
+        "observed": "NO-GO",
+        "required": "Stage-4 model verdict == GO",
+        "detail": {
+          "reasons": [
+            "logloss_edge_not_significant:delta=-0.18621 ci95=[-0.22507,-0.14620]",
+            "loses_to_best_devig:shin=1.68568",
+            "clv_not_positive:mean=-0.13417 ci95_lower=-0.13888",
+            "drift_gate_failed:going_speed=4.916, horse_career_runs=0.301"
+          ],
+          "source": "data\\audit\\stage4\\final_evaluation.json",
+          "available": true
+        }
+      },
+      {
+        "name": "min_weeks",
+        "passed": false,
+        "observed": 0.0,
+        "required": ">= 8 weeks of forward tracking",
+        "detail": {
+          "weeks_elapsed": 0.0,
+          "min_weeks": 8.0
+        }
+      },
+      {
+        "name": "min_qualified_bets",
+        "passed": false,
+        "observed": 0,
+        "required": ">= 200 qualified bets",
+        "detail": {
+          "n_qualified_bets": 0
+        }
+      },
+      {
+        "name": "min_qualified_races",
+        "passed": false,
+        "observed": 0,
+        "required": ">= 150 qualified races",
+        "detail": {
+          "n_qualified_races": 0
+        }
+      },
+      {
+        "name": "positive_mean_clv",
+        "passed": false,
+        "observed": null,
+        "required": "mean CLV > 0",
+        "detail": {
+          "mean_clv": null,
+          "note": "CLV is the single best forward indicator that a bet was +EV; Stage 4 measured -13.4%."
+        }
+      },
+      {
+        "name": "clv_ci_lower",
+        "passed": false,
+        "observed": null,
+        "required": "95% race-clustered CI lower bound > 0",
+        "detail": {
+          "clv_ci95": null,
+          "clustered_by": "race",
+          "resamples": 1000
+        }
+      },
+      {
+        "name": "ae_stable",
+        "passed": false,
+        "observed": null,
+        "required": "0.9 <= A/E <= 1.1",
+        "detail": {
+          "ae": null,
+          "ae_min": 0.9,
+          "ae_max": 1.1
+        }
+      },
+      {
+        "name": "calibration",
+        "passed": false,
+        "observed": null,
+        "required": "ECE <= 0.03",
+        "detail": {
+          "ece": null,
+          "bins": 10
+        }
+      },
+      {
+        "name": "drawdown",
+        "passed": false,
+        "observed": null,
+        "required": "max drawdown <= 0.1 of bankroll",
+        "detail": {
+          "max_drawdown_pct": null
+        }
+      }
+    ],
+    "failed": [
+      "model_go",
+      "min_weeks",
+      "min_qualified_bets",
+      "min_qualified_races",
+      "positive_mean_clv",
+      "clv_ci_lower",
+      "ae_stable",
+      "calibration",
+      "drawdown"
+    ],
+    "weeks_elapsed": 0.0,
+    "n_qualified_bets": 0,
+    "n_qualified_races": 0,
+    "evidence_kind": "forward",
+    "evaluated_at": "2026-09-19T18:38:43+00:00",
+    "summary": "Forward-release gate NOT met: 9 of 9 criteria failed (model_go, min_weeks, min_qualified_bets, min_qualified_races, positive_mean_clv, clv_ci_lower, ae_stable, calibration, drawdown). Observed 0.0 weeks of forward evidence, 0 qualified bets across 0 qualified races. 0 criteria were met. The deployment stays paper-only."
+  },
+  "window": {
+    "status": "not_started",
+    "window_start": null,
+    "hashes": {},
+    "history": []
+  },
+  "window_reset_reasons": [],
+  "capture_active_today": false,
+  "gap_entries": [
+    [
+      "2026-09-19",
+      "scraper_outage"
+    ]
+  ],
+  "weeks_elapsed_qualifying": 0.0,
+  "deployment": "PAPER-ONLY",
+  "paper_only": true,
+  "issue": {
+    "issued": 308,
+    "duplicates": 0,
+    "seen": 308
+  },
+  "settle": {
+    "settled": 0,
+    "already_settled": 0,
+    "still_open": 0,
+    "unmeasurable_clv": 0
+  },
+  "paper": {
+    "n_tickets": 308,
+    "n_pass": 308,
+    "n_candidates": 0,
+    "n_settled": 0,
+    "n_open": 0,
+    "first_ticket": "2026-09-19T00:00:00+00:00",
+    "last_ticket": "2026-09-19T00:00:00+00:00"
+  },
+  "reports": {
+    "forward_validation": "C:\\Users\\mshr\\Documents\\Race Predictor v4\\Race Predictor v4\\data\\audit\\17\\replay\\after_fix\\stale_card_next_day\\reports\\forward_validation_20260919.md"
+  }
+}

@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "created": "2026-09-18",
+  "stage_count": 24,
+  "steps": [
+    {
+      "id": "01",
+      "slug": "checkpoint-and-contracts",
+      "title": "Checkpoint the project and agree data/evaluation contracts",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "Medium",
+      "depends": [],
+      "file": "docs/improvement/prompts/01-checkpoint-and-contracts.md"
+    },
+    {
+      "id": "02",
+      "slug": "whole-race-splits",
+      "title": "Repair chronological splits throughout training and tuning",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "depends": [
+        "01"
+      ],
+      "file": "docs/improvement/prompts/02-whole-race-splits.md"
+    },
+    {
+      "id": "03",
+      "slug": "canonical-markets",
+      "title": "Preserve WIN and PLACE market association when fusing data",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "depends": [
+        "01",
+        "02"
+      ],
+      "file": "docs/improvement/prompts/03-canonical-markets.md"
+    },
+    {
+      "id": "04",
+      "slug": "point-in-time-features",
+      "title": "Repair independent features and historical feature invariance",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "depends": [
+        "02",
+        "03"
+      ],
+      "file": "docs/improvement/prompts/04-point-in-time-features.md"
+    },
+    {
+      "id": "05",
+      "slug": "current-declarations",
+      "title": "Acquire current race declarations with source provenance",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "depends": [
+        "03",
+        "04"
+      ],
+      "file": "docs/improvement/prompts/05-current-declarations.md"
+    },
+    {
+      "id": "06",
+      "slug": "coverage-and-results-refresh",
+      "title": "Refresh results and repair measurable feature coverage",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "depends": [
+        "03",
+        "04",
+        "05"
+      ],
+      "file": "docs/improvement/prompts/06-coverage-and-results-refresh.md"
+    },
+    {
+      "id": "07",
+      "slug": "as-of-odds-capture",
+      "title": "Verify timestamped odds capture and executable-price replay",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "depends": [
+        "03",
+        "04"
+      ],
+      "file": "docs/improvement/prompts/07-as-of-odds-capture.md"
+    },
+    {
+      "id": "08",
+      "slug": "settlement-and-forward-report",
+      "title": "Repair settlement identity and forward-report accounting",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "depends": [
+        "03",
+        "06",
+        "07"
+      ],
+      "file": "docs/improvement/prompts/08-settlement-and-forward-report.md"
+    },
+    {
+      "id": "09",
+      "slug": "independent-foundation-review",
+      "title": "Independently audit the repaired data and evaluation foundations",
+      "model": "Claude Opus 5",
+      "effort": "Extra high (xhigh)",
+      "depends": [
+        "02",
+        "03",
+        "04",
+        "05",
+        "06",
+        "07",
+        "08"
+      ],
+      "file": "docs/improvement/prompts/09-independent-foundation-review.md"
+    },
+    {
+      "id": "10",
+      "slug": "corrected-frozen-baselines",
+      "title": "Build comparable baselines and freeze the experiment protocol",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "depends": [
+        "09"
+      ],
+      "file": "docs/improvement/prompts/10-corrected-frozen-baselines.md"
+    },
+    {
+      "id": "11",
+      "title": "Pilot measured speed, sectionals and normalized performance",
+      "depends": [
+        "10"
+      ],
+      "slug": "speed-and-sectionals",
+      "model": "Claude Opus 5",
+      "effort": "High",
+      "file": "docs/improvement/prompts/11-speed-and-sectionals.md"
+    },
+    {
+      "id": "12",
+      "title": "Learn market combination and calibrate race probabilities",
+      "depends": [
+        "10"
+      ],
+      "slug": "market-blend-and-calibration",
+      "model": "Claude Opus 5",
+      "effort": "High",
+      "file": "docs/improvement/prompts/12-market-blend-and-calibration.md"
+    },
+    {
+      "id": "13",
+      "title": "Test XGBoost as a third numerical model and measure ensemble gain",
+      "depends": [
+        "10",
+        "12"
+      ],
+      "slug": "ensemble-and-uncertainty",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "file": "docs/improvement/prompts/13-ensemble-and-uncertainty.md"
+    },
+    {
+      "id": "14",
+      "title": "Repair text extraction and preserve dated source comments",
+      "depends": [
+        "01",
+        "07"
+      ],
+      "slug": "text-extraction-and-archive",
+      "model": "Claude Sonnet 5",
+      "effort": "Medium",
+      "file": "docs/improvement/prompts/14-text-extraction-and-archive.md"
+    },
+    {
+      "id": "15",
+      "title": "Benchmark local and hosted LLM extraction against repaired regex",
+      "depends": [
+        "14"
+      ],
+      "slug": "local-llm-benchmark",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "file": "docs/improvement/prompts/15-local-llm-benchmark.md"
+    },
+    {
+      "id": "16",
+      "title": "Measure whether dated text features improve future forecasts",
+      "depends": [
+        "10",
+        "15"
+      ],
+      "allow_deferred": [
+        "15"
+      ],
+      "slug": "text-feature-ablation",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "High",
+      "file": "docs/improvement/prompts/16-text-feature-ablation.md"
+    },
+    {
+      "id": "17",
+      "title": "Review the integrated candidate for paper operation",
+      "depends": [
+        "09",
+        "10"
+      ],
+      "slug": "integrated-readiness-review",
+      "model": "Claude Fable 5.1",
+      "effort": "Extra high (xhigh)",
+      "review_of": [
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16"
+      ],
+      "file": "docs/improvement/prompts/17-integrated-readiness-review.md"
+    },
+    {
+      "id": "18",
+      "title": "Start frozen paper collection and hand over daily operation",
+      "depends": [
+        "17"
+      ],
+      "slug": "paper-forward-start",
+      "model": "Codex — GPT-6 Astra",
+      "effort": "Medium",
+      "file": "docs/improvement/prompts/18-paper-forward-start.md"
+    },
+    {
+      "id": "19",
+      "slug": "deepseek-shadow-integration",
+      "title": "Integrate capped OpenRouter DeepSeek into daily shadow extraction",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "depends": [
+        "18",
+        "15"
+      ],
+      "file": "docs/improvement/prompts/19-deepseek-shadow-integration.md"
+    },
+    {
+      "id": "20",
+      "slug": "daily-identity-cutoff-provenance",
+      "title": "Repair daily race identity, operating cutoff and prediction provenance",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "depends": [
+        "19"
+      ],
+      "file": "docs/improvement/prompts/20-daily-identity-cutoff-provenance.md"
+    },
+    {
+      "id": "21",
+      "slug": "paper-stakes-settlement-observations",
+      "title": "Make paper staking, settlement and shadow observations reliable",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "depends": [
+        "20"
+      ],
+      "file": "docs/improvement/prompts/21-paper-stakes-settlement-observations.md"
+    },
+    {
+      "id": "22",
+      "slug": "daily-source-health",
+      "title": "Make current declarations and daily source health trustworthy",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "depends": [
+        "21"
+      ],
+      "file": "docs/improvement/prompts/22-daily-source-health.md"
+    },
+    {
+      "id": "23",
+      "slug": "complete-shadow-bundle",
+      "title": "Build a consistent shadow model bundle and freeze fresh evaluation",
+      "model": "Claude Sonnet 5",
+      "effort": "High",
+      "depends": [
+        "22"
+      ],
+      "file": "docs/improvement/prompts/23-complete-shadow-bundle.md"
+    },
+    {
+      "id": "24",
+      "slug": "fresh-paper-readiness-audit",
+      "title": "Audit daily operation and hand off fresh paper evaluation",
+      "model": "Claude Opus 5",
+      "effort": "Extra high (xhigh)",
+      "depends": [
+        "19",
+        "20",
+        "21",
+        "22",
+        "23"
+      ],
+      "file": "docs/improvement/prompts/24-fresh-paper-readiness-audit.md"
+    }
+  ],
+  "extended": "2026-09-19"
+}

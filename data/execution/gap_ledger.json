@@ -1,0 +1,19 @@
+{
+  "days": {
+    "2026-07-28": {
+      "cause": "scraper_outage",
+      "recorded_at": "2026-07-28T16:23:21.160207+00:00",
+      "status": "gap"
+    },
+    "2026-09-18": {
+      "cause": null,
+      "recorded_at": "2026-09-18T14:47:51.229086+00:00",
+      "status": "captured"
+    },
+    "2026-09-19": {
+      "cause": null,
+      "recorded_at": "2026-09-19T14:18:29.980520+00:00",
+      "status": "captured"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "frozen_at": "2026-09-19T00:00:00+00:00",
+  "purpose": "Pre-registered chronological comparison of no-text / repaired-regex-text / hosted-LLM-text race forecasts, to run UNCHANGED once the text_archive corpus has timestamped history reaching into a development window step 10 never scored a text arm on.",
+  "prerequisite_evidence": {
+    "step10_manifest": "reports/improvement/10/run_manifest.json",
+    "step15_frozen_protocol": "reports/improvement/15/frozen_protocol.json",
+    "coverage_report": "reports/improvement/16/coverage_report.json"
+  },
+  "windows_reused_verbatim_from_step10": {
+    "dev_core": ["2024-01-01", "2026-08-07"],
+    "dev_oos": ["2026-08-08", "2026-08-27"],
+    "final_holdout_RESERVED_UNTOUCHED": ["2026-08-28", "2026-09-17"]
+  },
+  "eligible_population": "market_type == 'WIN', race_uid grouping, identical to step 10's run_manifest.json eligible_population -- no new eligibility rule.",
+  "text_join": {
+    "module": "features/text_features_v1.py::attach_text_features",
+    "group_version": 1,
+    "decision_cutoff": "race off-time (parsed from race_uid) minus PREDICTION_CUTOFF_MINUTES_BEFORE_OFF (10, CONTRACTS.md provisional research assumption)",
+    "lookup": "llm.text_archive.TextArchive.as_of(archive_key(race_uid), runner_key, as_of=cutoff) -- filters strictly on fetched_at <= cutoff, never archived_at or published_at",
+    "exclusions": [
+      "records whose race_uid does not parse to a local datetime",
+      "records with no resolvable runner_key (missing horse_name AND horse_id)",
+      "any archived version fetched after the decision cutoff (a later report/edit)"
+    ]
+  },
+  "arms": [
+    {"name": "no_text", "feature_cols": "step10 INDEPENDENT_FEATURE_COLS / FINAL_FEATURE_COLS, unchanged"},
+    {"name": "regex_text", "feature_cols": "no_text + features.text_features_v1.CANDIDATE_TEXT_FEATURE_COLS, extractor=TextFeatureExtractor(enabled=True, backend='regex')"},
+    {"name": "hosted_text", "feature_cols": "no_text + CANDIDATE_TEXT_FEATURE_COLS, extractor=llm.hosted_adapter.OpenRouterBackend(model='deepseek/deepseek-v4.1-flash', reasoning_effort='low', max_output_tokens=1600) -- included ONLY because step 15 produced valid reviewed evidence for this exact configuration"}
+  ],
+  "model_families_reused_verbatim_from_step10": ["conditional_logit", "lightgbm_grouped_softmax"],
+  "each_arm_run_independent_and_market_assisted": true,
+  "tuning_budget": "6 trials / 5-fold walk-forward CV, matching step 10's run_manifest.json tuning_budget -- no new budget chosen for this stage",
+  "metrics": [
+    "race-level log loss (models.head_to_head.head_to_head)",
+    "runner-level Brier score",
+    "calibration (ECE / odds-band A-E, mirroring step 12's calibration audit)",
+    "subgroup counts: rows/races per arm, per window, with vs without archived text at cutoff",
+    "race-clustered bootstrap CI95 of the paired log-loss delta (mirrors step 11/13's paired_bootstrap)",
+    "cost (USD/1000 comments), latency (ms), schema_valid_rate -- reused from step 15's scorecards for the hosted arm, not re-measured unless the corpus changes"
+  ],
+  "reporting_requirement": "Both the common-coverage comparison (rows where ALL three arms have a resolvable value) and full operational coverage (every eligible row, missing text scored as the no-text default) must be reported side by side, so a result cannot look better merely because text-covered races are easier.",
+  "prohibited": [
+    "loading final_holdout_RESERVED_UNTOUCHED rows into any fit, CV fold, or score",
+    "retrofitting a published_at onto an unknown-published_at archive row",
+    "treating a common-coverage-only result as if it were the full-population result",
+    "claiming forecast improvement from a comparison that does not include a genuine out-of-sample (dev_oos or later) window"
+  ],
+  "status_rule": "If coverage_report.json shows zero archived-text races in dev_oos AND final_holdout, this protocol CANNOT be executed as a real ablation -- record DEFERRED_DATA (Candidate enabled: no) and keep text features disabled, per prompts/16-text-feature-ablation.md's own exception clause. A smoke-test run restricted to dev_core's own archived day is permitted ONLY to prove the harness executes end-to-end; it must never be reported as satisfying this protocol's acceptance criteria."
+}

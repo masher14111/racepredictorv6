@@ -1,0 +1,70 @@
+# Secrets — never commit
+config.local.yaml
+.env
+*.local.yaml
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Data artifacts
+data/*.parquet
+data/**/*.parquet
+data/races.db
+data/races.db-wal
+data/races.db-shm
+data/cache/
+!data/cache/.gitkeep
+
+# Dev scratch files
+data/_*
+
+# Logs
+logs/
+*.log
+
+# Trained model artifacts (regenerable)
+models/*.bin
+models/*.pkl
+models/*.json
+models/*.txt
+models/reference_features.parquet
+
+# Local experiment binaries and database backups; keep code/metrics/manifests tracked.
+data/backups/
+data/audit/**/backups/
+data/audit/**/models_*/
+data/audit/**/*.db*
+data/audit/**/*.pkl
+data/audit/**/*.bin
+reports/testrun/
+
+# Playwright MCP scratch
+.playwright-mcp/
+
+# Root-level Paddy Power dev scratch (JSON + DOM/network dumps)
+paddy-*.json
+paddy-*.txt
+
+# Backtest / holdout run artifacts + scraped raw history (regenerable)
+data/backtests/
+data/historical/
+
+# Stage-5 execution stores (regenerable from the archive by scripts/paper_betting).
+# The selection locks and stage5_run.json are NOT ignored: they are the audit
+# record of which strategy was chosen and when the test window was scored, and a
+# superseded lock is the only surviving disclosure that the window was re-used.
+data/execution/*.db
+data/execution/*.db-wal
+data/execution/*.db-shm
+
+# Dev scratch: screenshots, coverage, tooling caches
+*.png
+.coverage
+.smoke-shots/
+.impeccable/
+setup-preview.html

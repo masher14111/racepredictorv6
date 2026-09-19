@@ -1,0 +1,5 @@
+reason,n_rows,n_races
+non_win_market_row,111630,12522
+no_valid_preoff_price,11,6
+implausible_field_size(<2|>40),7,7
+extreme_booksum(<0.8|>1.8),5478,946

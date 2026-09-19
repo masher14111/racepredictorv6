@@ -1,0 +1,31 @@
+2026-09-19 03:10:29 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 03:10:29 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 03:10:29 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+[03:10:29] loading C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\data\unified_races.parquet
+[03:10:29] raw unified rows: 651154
+[03:10:29] sampled 8000 races -> 148450 raw rows
+[03:14:06] build_training_matrix took 217.0s; 125260 labelled rows
+[03:14:06] fitted+saved scale: {'field_size': {'mean': 9.424641996313625, 'std': 3.6178923835539614, 'n': 14106}, 'race_class_std': {'mean': 0.0, 'std': 1.0, 'n': 0}, 'recent_form_std': {'mean': 0.0, 'std': 1.0, 'n': 0}, 'rating_std': {'mean': 0.0, 'std': 1.0, 'n': 0}}
+[03:14:07] wrote candidate matrix: C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\data\audit\04\training_pit_fixed.parquet
+[03:14:07] runner-races with both WIN+PLACE rows in this sample: 7018 races / 124994 rows
+[03:14:31] days_since_last_run WIN/PLACE-sibling mismatches: 0
+[03:14:31] horse_career_runs WIN/PLACE-sibling mismatches: 0
+[03:14:31] race_complexity_v2 non-null: 125260 / 125260
+[03:14:31] race_market_entropy non-null: 124915 / 125260
+[03:14:31] race_complexity_v2 vs market columns correlation (informational only — see comment above; NOT evidence of a market dependency):
+implied_prob          -0.261909
+overround_norm_prob   -0.336978
+log_odds               0.264899
+market_rank            0.481009
+Name: race_complexity_v2, dtype: float64
+[03:18:02] component field_size: base non-null 125260/125260, appended non-null 125260/125260
+[03:18:02] component race_class_std: base non-null 0/125260, appended non-null 0/125260
+[03:18:02] component recent_form_std: base non-null 0/125260, appended non-null 0/125260
+[03:18:02] component rating_std: base non-null 0/125260, appended non-null 0/125260
+[03:18:02] append-invariance join: 125260 / 125260 base rows matched
+[03:18:02] append-invariance race_complexity_v2: 0 changed / 125260
+[03:18:02] append-invariance days_since_last_run: 0 changed / 125260
+[03:18:02] append-invariance horse_career_runs: 0 changed / 125260
+[03:18:02] append-invariance historical_win_rate: 0 changed / 125260
+[03:18:02] append-invariance trainer_hot_strike_rate: 0 changed / 125260
+CANDIDATE_OK

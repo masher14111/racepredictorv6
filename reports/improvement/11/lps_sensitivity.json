@@ -1,0 +1,97 @@
+{
+  "default_lengths_per_second": 5.0,
+  "family_is_robust_to_the_constant": false,
+  "fill_pct": {
+    "4.0": {
+      "msf_distance": 59.33,
+      "msf_going": 71.55,
+      "msf_last": 85.87,
+      "msf_mean3": 85.89,
+      "msf_mean6": 85.89,
+      "msf_rank": 85.89,
+      "msf_trend": 85.89
+    },
+    "5.0": {
+      "msf_distance": 59.33,
+      "msf_going": 71.55,
+      "msf_last": 85.87,
+      "msf_mean3": 85.89,
+      "msf_mean6": 85.89,
+      "msf_rank": 85.89,
+      "msf_trend": 85.89
+    },
+    "6.0": {
+      "msf_distance": 59.33,
+      "msf_going": 71.55,
+      "msf_last": 85.87,
+      "msf_mean3": 85.89,
+      "msf_mean6": 85.89,
+      "msf_rank": 85.89,
+      "msf_trend": 85.89
+    }
+  },
+  "min_spearman_across_all": 0.979712,
+  "pearson_vs_default": {
+    "4.0": {
+      "msf_distance": 0.995062,
+      "msf_going": 0.994916,
+      "msf_last": 0.994492,
+      "msf_mean3": 0.994907,
+      "msf_mean6": 0.995107,
+      "msf_rank": 0.987347,
+      "msf_trend": 0.994183
+    },
+    "5.0": {
+      "msf_distance": 1.0,
+      "msf_going": 1.0,
+      "msf_last": 1.0,
+      "msf_mean3": 1.0,
+      "msf_mean6": 1.0,
+      "msf_rank": 1.0,
+      "msf_trend": 1.0
+    },
+    "6.0": {
+      "msf_distance": 0.997048,
+      "msf_going": 0.996871,
+      "msf_last": 0.996694,
+      "msf_mean3": 0.996853,
+      "msf_mean6": 0.996944,
+      "msf_rank": 0.99067,
+      "msf_trend": 0.996643
+    }
+  },
+  "spearman_vs_default": {
+    "4.0": {
+      "msf_distance": 0.995774,
+      "msf_going": 0.995715,
+      "msf_last": 0.995571,
+      "msf_mean3": 0.995621,
+      "msf_mean6": 0.995708,
+      "msf_rank": 0.984,
+      "msf_trend": 0.979712
+    },
+    "5.0": {
+      "msf_distance": 1.0,
+      "msf_going": 1.0,
+      "msf_last": 1.0,
+      "msf_mean3": 1.0,
+      "msf_mean6": 1.0,
+      "msf_rank": 1.0,
+      "msf_trend": 1.0
+    },
+    "6.0": {
+      "msf_distance": 0.997523,
+      "msf_going": 0.997437,
+      "msf_last": 0.997374,
+      "msf_mean3": 0.997369,
+      "msf_mean6": 0.997409,
+      "msf_rank": 0.988027,
+      "msf_trend": 0.985287
+    }
+  },
+  "values_tested": [
+    4.0,
+    5.0,
+    6.0
+  ]
+}

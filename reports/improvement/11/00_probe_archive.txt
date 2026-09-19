@@ -1,0 +1,60 @@
+days sampled          : 40
+documents read        : 1243
+race documents        : 1203
+winning_time present  : 1185 (98.50%)
+distance present      : 1203 (100.00%)
+sectional-like keys   : NONE
+
+margin monotone non-decreasing (cumulative-compatible): 34
+margin decreases somewhere (INCREMENTAL, cumulative impossible): 373
+too short to judge   : 23
+
+surfaces: {'TURF': 892, 'ALLWEATHER': 186, 'POLYTRACK': 125}
+race_class: {'5': 307, '4': 243, '': 203, '6': 192, '3': 103, '1': 101, '2': 54}
+
+distinct finish_distance tokens: 101
+  '½'            956
+  'nk'           772
+  '¾'            692
+  '1 ¼'          584
+  '1'            500
+  '1 ½'          467
+  'hd'           404
+  '1 ¾'          403
+  '2'            306
+  '2 ¼'          302
+  'sh'           287
+  '2 ½'          284
+  '2 ¾'          230
+  '3'            188
+  '3 ½'          174
+  '3 ¼'          173
+  '5 ½'          172
+  'nse'          162
+  '6'            146
+  '5'            145
+  '4'            133
+  '4 ¼'          126
+  '6 ½'          124
+  '3 ¾'          120
+  '11'           117
+  '4 ¾'          113
+  '7'            108
+  '4 ½'          104
+  '8'            84
+  '7 ½'          83
+  '12'           77
+  '10'           69
+  '13'           63
+  '9'            61
+  '9 ½'          61
+  '8 ½'          56
+  '14'           55
+  '15'           52
+  '16'           50
+  '18'           39
+  '17'           36
+  '20'           35
+  '23'           31
+  '19'           27
+  '21'           26

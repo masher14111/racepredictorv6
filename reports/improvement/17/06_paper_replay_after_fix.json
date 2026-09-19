@@ -1,0 +1,369 @@
+{
+ "label": "after_fix",
+ "ran_at_utc": "2026-09-19T13:43:41.311588+00:00",
+ "results": [
+  {
+   "check": "live model verdict is NO-GO and sourced from the stage-4 evaluation",
+   "ok": true,
+   "detail": {
+    "verdict": "NO-GO",
+    "source": "data\\audit\\stage4\\final_evaluation.json",
+    "reasons": [
+     "logloss_edge_not_significant:delta=-0.18621 ci95=[-0.22507,-0.14620]",
+     "loses_to_best_devig:shin=1.68568",
+     "clv_not_positive:mean=-0.13417 ci95_lower=-0.13888",
+     "drift_gate_failed:going_speed=4.916, horse_career_runs=0.301"
+    ]
+   }
+  },
+  {
+   "check": "execution.paper_only is true and the loaded config is provisional",
+   "ok": true,
+   "detail": {
+    "clamps_applied": []
+   }
+  },
+  {
+   "check": "R1 real card replay: every decision is PASS, zero CANDIDATE under NO-GO",
+   "ok": true,
+   "detail": {
+    "card_generated_at": "2026-09-18T19:33:43.213673+01:00",
+    "races": 26,
+    "runners": 308,
+    "tickets": 308,
+    "by_decision": {
+     "PASS": 308
+    },
+    "issue": {
+     "issued": 308,
+     "duplicates": 0,
+     "seen": 308
+    },
+    "deployment": "PAPER-ONLY"
+   }
+  },
+  {
+   "check": "R1 every PASS carries the model_validation NO-GO reason (disclosed, not silent)",
+   "ok": true,
+   "detail": {
+    "top_reasons": [
+     [
+      "executable_price:age_unknown",
+      308
+     ],
+     [
+      "model_validation:NO-GO",
+      308
+     ],
+     [
+      "model_validation:logloss_edge_not_significant",
+      308
+     ],
+     [
+      "model_validation:loses_to_best_devig",
+      308
+     ],
+     [
+      "model_validation:clv_not_positive",
+      308
+     ],
+     [
+      "model_validation:drift_gate_failed",
+      308
+     ],
+     [
+      "source_health:paddy_power",
+      298
+     ],
+     [
+      "source_health:boylesports",
+      52
+     ],
+     [
+      "source_health:livescorebet",
+      52
+     ],
+     [
+      "runner_history:no_prior_form",
+      44
+     ],
+     [
+      "overround:1.5192>1.2500",
+      25
+     ],
+     [
+      "overround:1.5545>1.2500",
+      19
+     ]
+    ]
+   }
+  },
+  {
+   "check": "R1 identity: ticket ids unique; (race_uid, horse_key, market, bet_type) unique; all WIN; all paper_only",
+   "ok": true,
+   "detail": {
+    "n": 308,
+    "markets": [
+     "WIN"
+    ],
+    "missing_venue": 0,
+    "missing_horse_id": 0
+   }
+  },
+  {
+   "check": "R1 provenance GAP: a ticket records no model bundle/version/hash",
+   "ok": true,
+   "detail": {
+    "ticket_has_model_version_field": false,
+    "window_hashes_recorded": false
+   }
+  },
+  {
+   "check": "R2 same-day re-run issues nothing new (idempotent)",
+   "ok": true,
+   "detail": {
+    "issued": 0,
+    "duplicates": 308,
+    "seen": 308
+   }
+  },
+  {
+   "check": "R2 settlement under NO-GO touches nothing (no CANDIDATE exists to settle)",
+   "ok": true,
+   "detail": {
+    "settled": 0,
+    "already_settled": 0,
+    "still_open": 0,
+    "unmeasurable_clv": 0
+   }
+  },
+  {
+   "check": "forward gate: not passed, formal window not started, thresholds retained (8 wk / 200 / 150)",
+   "ok": true,
+   "detail": {
+    "window": "not_started",
+    "failed": [
+     "model_go",
+     "min_weeks",
+     "min_qualified_bets",
+     "min_qualified_races",
+     "positive_mean_clv",
+     "clv_ci_lower",
+     "ae_stable",
+     "calibration",
+     "drawdown"
+    ]
+   }
+  },
+  {
+   "check": "F0 control: with a STUB GO verdict and everything fresh the gate DOES issue candidates (so the PASSes below are caused by the fault injected, not by a vacuous gate)",
+   "ok": true,
+   "detail": {
+    "CANDIDATE": 1,
+    "PASS": 5
+   }
+  },
+  {
+   "check": "F1 real NO-GO verdict, everything else perfect -> all PASS",
+   "ok": true,
+   "detail": {
+    "PASS": 6
+   }
+  },
+  {
+   "check": "F2 stale executable quote (1,200 s > 900 s TTL) -> PASS even with a GO verdict",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "executable_price:stale=1200s>900s"
+    ]
+   }
+  },
+  {
+   "check": "F3 quote timestamp in the future -> PASS even with a GO verdict",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "executable_price:timestamp_in_future"
+    ]
+   }
+  },
+  {
+   "check": "F4 non-executable price source (consensus, no named bookmaker) -> PASS even with a GO verdict",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "executable_price:no_named_bookmaker"
+    ]
+   }
+  },
+  {
+   "check": "F5 incomplete reference book (race-level ev_eligible False) -> PASS even with a GO verdict",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "race_gate:incomplete_reference_book:5/6"
+    ]
+   }
+  },
+  {
+   "check": "F6 source health stale (3,600 s) -> PASS even with a GO verdict",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "source_health:livescorebet:stale=3600s>900s"
+    ]
+   }
+  },
+  {
+   "check": "F7 source health erroring -> PASS even with a GO verdict",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "source_health:livescorebet:status=error"
+    ]
+   }
+  },
+  {
+   "check": "F8 source health telemetry absent -> PASS even with a GO verdict",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "source_health:livescorebet:no_record"
+    ]
+   }
+  },
+  {
+   "check": "F9 only a MARKET-ADJUSTED probability available -> PASS (price echo can never qualify)",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "reasons": [
+     "calibrated_probability:market_adjusted_only"
+    ]
+   }
+  },
+  {
+   "check": "F10 verdict file missing or corrupt -> NO-GO (never default-GO)",
+   "ok": true,
+   "detail": {
+    "missing": [
+     "audit_artifact_missing:C:\\Users\\mshr\\Documents\\Race Predictor v4\\Race Predictor v4\\data\\audit\\17\\replay\\after_fix\\does_not_exist.json"
+    ],
+    "corrupt": [
+     "audit_artifact_unreadable:Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+    ]
+   }
+  },
+  {
+   "check": "F11 predictions file missing -> loop completes, issues nothing",
+   "ok": true,
+   "detail": {
+    "issued": 0,
+    "duplicates": 0,
+    "seen": 0
+   }
+  },
+  {
+   "check": "F12 a ticket built under a (stub) GO verdict is STILL paper_only while the forward gate is unmet",
+   "ok": true,
+   "detail": {
+    "paper_only": true,
+    "stake": null
+   }
+  },
+  {
+   "check": "F13 the ticket store REFUSES a non-paper ticket (RealMoneyTicketRefused)",
+   "ok": true,
+   "detail": {}
+  },
+  {
+   "check": "F14 config sets gates.require_model_validation=false under a real NO-GO verdict -> must STILL be all PASS",
+   "ok": true,
+   "detail": {
+    "decisions": {
+     "PASS": 6
+    },
+    "loaded_flag": true,
+    "clamps_applied": [
+     "gates.require_model_validation: false -> true"
+    ]
+   }
+  },
+  {
+   "check": "GAP-A no operating cutoff on the live loop: races already OFF at the decision instant are still ticketed (execution.safeguards.block_started_races is configured but never called by the loop)",
+   "ok": true,
+   "detail": {
+    "decision_instant_utc": "2026-09-18T18:38:43.213673+00:00",
+    "races_already_off": 2,
+    "their_runners_all_ticketed": 20
+   }
+  },
+  {
+   "check": "GAP-B a STALE card (refresh failed; yesterday's predictions.json still on disk) is re-ticketed in full the next day under new ticket ids - the loop checks only that the file exists",
+   "ok": true,
+   "detail": {
+    "issued_one_day_later_from_yesterdays_card": 308,
+    "all_PASS": true,
+    "exposure": "none under NO-GO; pollutes the PASS disclosure ledger"
+   }
+  },
+  {
+   "check": "GAP-C identity: one physical race emitted twice when two odds sources disagree on the off-time by a minute -> two ticket sets for the same runners",
+   "ok": true,
+   "detail": {
+    "duplicated_fields": [
+     "Dundalk x2 (10 runners)"
+    ]
+   }
+  },
+  {
+   "check": "ALERT the notifier is INACTIVE in this session (RP_DISABLE_NOTIFICATIONS / no channel) - this replay cannot send an external message",
+   "ok": true,
+   "detail": {
+    "RP_DISABLE_NOTIFICATIONS_set": true,
+    "active": false
+   }
+  },
+  {
+   "check": "ALERT dedupe (isolated store): a repeated fingerprint is suppressed; a genuinely NEW price re-alerts",
+   "ok": true,
+   "detail": {
+    "first_seen": false,
+    "repeat_seen": true,
+    "new_price_seen": false
+   }
+  },
+  {
+   "check": "ISOLATION: no real store was modified by this replay (sha256 + mtime before/after)",
+   "ok": true,
+   "detail": {
+    "changed": [],
+    "isolated_dir": "data/audit/17/replay/after_fix"
+   }
+  }
+ ]
+}

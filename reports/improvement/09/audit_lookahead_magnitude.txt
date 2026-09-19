@@ -1,0 +1,7 @@
+source: data\audit\06\training_refreshed.parquet  rows=551,815  race_uid off-times parsed: 100.00%
+
+[trainer_id] counted same-day priors=271,978; of those, 126,408 (46.48%) ran LATER than the row being scored
+       rows scored with >=1 not-yet-run 'prior': 70,137 of 276,538 runner-events (25.36%)
+
+[jockey_id] counted same-day priors=265,480; of those, 132,594 (49.95%) ran LATER than the row being scored
+       rows scored with >=1 not-yet-run 'prior': 82,898 of 276,538 runner-events (29.98%)

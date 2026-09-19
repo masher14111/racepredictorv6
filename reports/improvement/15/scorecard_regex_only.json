@@ -1,0 +1,98 @@
+{
+  "corpus_size_scored": 243,
+  "reviewed_label_count": 60,
+  "schema_version": 2,
+  "regex_prompt_version": 1,
+  "hosted_prompt_version": 1,
+  "regex": {
+    "backend": "regex",
+    "n_scored": 243,
+    "schema_valid_rate": 1.0,
+    "latency_ms": {
+      "mean": 0.21517201647887757,
+      "p50": 0.21460000061779283,
+      "p95": 0.2910200015321606,
+      "max": 0.6576999985554721
+    },
+    "cost_usd_per_1000": 0.0,
+    "confusion_vs_reviewed_labels": {
+      "ground_excuse": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 0,
+        "tn": 60,
+        "pred_unknown": 0,
+        "label_unknown": 60,
+        "n": 60,
+        "precision": null,
+        "recall": null
+      },
+      "distance_excuse": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 1,
+        "tn": 59,
+        "pred_unknown": 0,
+        "label_unknown": 55,
+        "n": 60,
+        "precision": null,
+        "recall": 0.0
+      },
+      "trip_trouble": {
+        "tp": 0,
+        "fp": 0,
+        "fn": 2,
+        "tn": 58,
+        "pred_unknown": 0,
+        "label_unknown": 58,
+        "n": 60,
+        "precision": null,
+        "recall": 0.0
+      },
+      "headgear_first_time": {
+        "tp": 5,
+        "fp": 1,
+        "fn": 1,
+        "tn": 53,
+        "pred_unknown": 0,
+        "label_unknown": 52,
+        "n": 60,
+        "precision": 0.8333333333333334,
+        "recall": 0.8333333333333334
+      },
+      "returning_from_layoff": {
+        "tp": 2,
+        "fp": 0,
+        "fn": 16,
+        "tn": 42,
+        "pred_unknown": 0,
+        "label_unknown": 42,
+        "n": 60,
+        "precision": 1.0,
+        "recall": 0.1111111111111111
+      },
+      "course_winner": {
+        "tp": 1,
+        "fp": 0,
+        "fn": 5,
+        "tn": 54,
+        "pred_unknown": 0,
+        "label_unknown": 49,
+        "n": 60,
+        "precision": 1.0,
+        "recall": 0.16666666666666666
+      }
+    }
+  },
+  "hosted": {
+    "status": "NOT_REQUESTED"
+  },
+  "local_qwen3.5_9b": {
+    "status": "DEFERRED_DATA",
+    "reason": "not evaluated in this invocation"
+  },
+  "local_hermes4_14b": {
+    "status": "DEFERRED_DATA",
+    "reason": "not evaluated in this invocation"
+  }
+}

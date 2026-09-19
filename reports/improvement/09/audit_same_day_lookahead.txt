@@ -1,0 +1,26 @@
+source: data\audit\06\training_refreshed.parquet  rows=551,815
+row order is time-ordered within a day? (sample day 2026-09-17, race_time monotonic across rows: False)
+
+[trainer_id] rows with >=1 SAME-DAY prior counted: 222,830 / 551,815 (40.38%);  mean same-day priors=0.77  max=20
+
+[jockey_id] rows with >=1 SAME-DAY prior counted: 270,955 / 551,815 (49.10%);  mean same-day priors=0.95  max=20
+
+[horse_id] rows with >=1 SAME-DAY prior counted: 2 / 551,815 (0.00%);  mean same-day priors=0.00  max=1
+
+--- placeholder / pooled entity ids ---
+
+[jockey_id] distinct=1,756  null_rows=0
+   id='752c7e961048d3be'  rows=6,507  distinct_horses=1,875  names=['Billy Loughnane']
+   id='4ceafecc778599c8'  rows=5,778  distinct_horses=1,675  names=['Rossa Ryan']
+   id='6226675ff39d761d'  rows=5,679  distinct_horses=1,463  names=['L Morris']
+   id='9ed02da61277d967'  rows=4,781  distinct_horses=1,414  names=['Oisin Murphy']
+   id='041aad0e97c25353'  rows=4,541  distinct_horses=1,164  names=['Jason Hart']
+   worst (entity,race) horse pile-ups: [(('e3f0bf10b8cc4488', 'York|2026-07-25T14:00'), 21), (('e3f0bf10b8cc4488', 'York|2026-07-25T13:30'), 17), (('e3f0bf10b8cc4488', 'Ascot|2026-07-25T14:55'), 16)]
+
+[trainer_id] distinct=1,429  null_rows=0
+   id='2c0b17cb73796a7c'  rows=6,432  distinct_horses=320  names=['T D Easterby']
+   id='6870c8a68d174a0b'  rows=5,783  distinct_horses=538  names=['G Elliott']
+   id='db6c11adfad68247'  rows=5,634  distinct_horses=563  names=["J P O'Brien"]
+   id='4623fd1177bae306'  rows=5,556  distinct_horses=511  names=['A M Balding']
+   id='cc7a896fdfb9ea3e'  rows=5,416  distinct_horses=210  names=['A W Carroll']
+   worst (entity,race) horse pile-ups: [(('e3f0bf10b8cc4488', 'York|2026-07-25T14:00'), 21), (('e3f0bf10b8cc4488', 'York|2026-07-25T13:30'), 17), (('e3f0bf10b8cc4488', 'Gowran Park|2026-07-25T14:44'), 16)]

@@ -1,0 +1,39 @@
+========================================================================
+Step 12 — executable-quote / reference-book / non-runner invariance
+eval window 2026-08-08..2026-08-28  blend alpha=0.1 beta=1.0
+========================================================================
+
+raw probe slice: 12,963 rows / 710 races
+scored base frame: 5,561 runner rows
+
+A. perturb ONLY the executable quote (odds_decimal, sp)
+   perturbed: odds_decimal (was 100% null), sp (was 100% null)
+  [PASS] independent (price-free) probability is unmoved by an executable quote — max|delta|=0.000e+00
+  [PASS] reference market probability is unmoved by an executable quote — max|delta|=0.000e+00
+  [PASS] blended probability is unmoved by an executable quote — max|delta|=0.000e+00
+  [INFO] market-ASSISTED branch max|delta| = 5.453e-01 over 13 reacting feature(s): ['implied_prob', 'overround_norm_prob', 'log_odds', 'market_rank', 'odds_value_delta', 'race_complexity', 'form_market_disagreement', 'price_steam_pct', 'relative_market_share', 'market_book_pct', 'is_steaming', 'is_drifting', 'market_confidence']
+
+B. control — perturb ONLY the reference price (morningwap, ppwap)
+  [PASS] independent probability STILL unmoved when the reference price moves — max|delta|=0.000e+00
+  [PASS] reference probability DOES move (probe is not vacuous) — max|delta|=5.716e-01
+
+C. missing / incomplete reference book
+  [PASS] every runner of an incomplete-book race has a NaN reference prob — 556/556 rows
+  [PASS] every runner of an incomplete-book race has a NaN blend (never partial)
+  [PASS] complete races are untouched by another race's missing price
+  [PASS] the independent ability estimate survives a missing reference price
+
+D. non-runner withdrawal
+  [PASS] survivors renormalise to exactly 1.0 after a withdrawal — max|sum-1|=2.220e-16 over 200 races
+  [PASS] a withdrawal does not reorder the survivors — reordered_races=0
+  [PASS] no probability is imputed for the withdrawn runner — the row leaves the field; the blend is computed over the survivors only
+
+E. audit of the SHIPPED favourite-longshot price adjustment
+  live rows with both prices: 308; executable/reference price ratio mean 1.0143
+  served value_win_prob uses the EXECUTABLE price (models.predictor._effective_decimal) while the artifact was FIT on the reference price (docs/calibration/fit_fl_recalibrator.py: bet_price=ppwap)
+  |p(exec) - p(reference)|: mean 0.00092, max 0.05275
+  a +10% move in the EXECUTABLE quote alone shifts the served probability by mean 0.00793, max 0.04319
+  [INFO] this is the shipped live path, NOT this stage's blend: models.blend.power_blend has no price argument at all. Recorded as a finding; no production behaviour changed in this stage.
+
+========================================================================
+PASS: an executable quote cannot move ability or the reference line

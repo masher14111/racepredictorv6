@@ -1,0 +1,1675 @@
+{
+  "window": {
+    "start": "2026-06-13",
+    "end": "2026-07-25"
+  },
+  "n_window_rows": 7922,
+  "n_common_rows": 7922,
+  "n_common_races": 904,
+  "audit_final_model": {
+    "train_rows": 135442,
+    "train_max_date": "2026-06-11 00:00:00+00:00",
+    "calibration_method": "sigmoid",
+    "temperature": 0.9866804052133487,
+    "feature_count": 39,
+    "excluded_features": [
+      "race_complexity"
+    ]
+  },
+  "head_to_head": {
+    "audit_independent": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.873997624461691,
+      "model_log_loss_ci95": [
+        1.8340979054216622,
+        1.9132157522235753
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": -0.18621322373131566,
+      "logloss_delta_ci95": [
+        -0.22507052056836044,
+        -0.14620101841695424
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": false,
+      "logloss_delta_frac_boot_positive": 0.0,
+      "model_brier": 0.09226616386345071,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.01624687830123363,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": -0.0059664065482421536,
+      "brier_delta_ci95": [
+        -0.007660709269518617,
+        -0.004435705841621836
+      ]
+    },
+    "audit_market_adjusted": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.6817336640114835,
+      "model_log_loss_ci95": [
+        1.6273382318676863,
+        1.7316705966162815
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": 0.0060507367188917804,
+      "logloss_delta_ci95": [
+        -0.006444386847118044,
+        0.017957473248171776
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": true,
+      "logloss_delta_frac_boot_positive": 0.839,
+      "model_brier": 0.08598570420237459,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.007782264829144432,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": 0.00031405311283397297,
+      "brier_delta_ci95": [
+        -6.236702661175847e-05,
+        0.0007548253676332228
+      ]
+    },
+    "audit_market_adjusted_sigmoid": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.6849862514716225,
+      "model_log_loss_ci95": [
+        1.6303409211652204,
+        1.7337248727748185
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": 0.002798149258752769,
+      "logloss_delta_ci95": [
+        -0.003541981774795022,
+        0.009543142187701869
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": true,
+      "logloss_delta_frac_boot_positive": 0.798,
+      "model_brier": 0.08611333329353767,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.008601828582529997,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": 0.00018642402167089178,
+      "brier_delta_ci95": [
+        -4.925380296924952e-05,
+        0.0004658154525651596
+      ]
+    },
+    "audit_grouped_temperature": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.8663179832748948,
+      "model_log_loss_ci95": [
+        1.822151110322488,
+        1.9080536508656494
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": -0.17853358254451956,
+      "logloss_delta_ci95": [
+        -0.2181577453098706,
+        -0.13767278746211153
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": false,
+      "logloss_delta_frac_boot_positive": 0.0,
+      "model_brier": 0.09206206115777214,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.010081661166557454,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": -0.005762303842563585,
+      "brier_delta_ci95": [
+        -0.0075108142420816535,
+        -0.004144027127235178
+      ]
+    },
+    "frozen_v3nf_independent": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.8690219714435659,
+      "model_log_loss_ci95": [
+        1.8279859024224525,
+        1.9087019246428585
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": -0.18123757071319058,
+      "logloss_delta_ci95": [
+        -0.2228288943580508,
+        -0.14192477141791382
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": false,
+      "logloss_delta_frac_boot_positive": 0.0,
+      "model_brier": 0.09214111837794467,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.010142317666158215,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": -0.005841361062736111,
+      "brier_delta_ci95": [
+        -0.007510147696211389,
+        -0.004266058477449652
+      ]
+    },
+    "frozen_v3nf_market_adjusted_sigmoid_refit": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.6805838429632534,
+      "model_log_loss_ci95": [
+        1.6264724554376253,
+        1.7302279509675311
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": 0.007200557767121918,
+      "logloss_delta_ci95": [
+        0.0010712854421223495,
+        0.014539834440484067
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": true,
+      "logloss_delta_frac_boot_positive": 0.99,
+      "model_brier": 0.08599996258999715,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.008441229521914036,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": 0.0002997947252114108,
+      "brier_delta_ci95": [
+        4.9427947642964255e-05,
+        0.0005997143899070225
+      ]
+    },
+    "frozen_v3nf_market_adjusted": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.679190927639613,
+      "model_log_loss_ci95": [
+        1.6226746282713236,
+        1.732983328078645
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": 0.008593473090762194,
+      "logloss_delta_ci95": [
+        -0.005769631664357911,
+        0.020066134241146054
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": true,
+      "logloss_delta_frac_boot_positive": 0.894,
+      "model_brier": 0.0859115927414531,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.006976750449540907,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": 0.0003881645737554562,
+      "brier_delta_ci95": [
+        -9.422775450675402e-05,
+        0.0008458794098231282
+      ]
+    },
+    "frozen_v3_priced": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.6765999312010622,
+      "model_log_loss_ci95": [
+        1.6197176099215678,
+        1.7279364782813846
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": 0.011184469529313068,
+      "logloss_delta_ci95": [
+        -0.0035831628575882734,
+        0.027539733883952765
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": true,
+      "logloss_delta_frac_boot_positive": 0.915,
+      "model_brier": 0.08608682016665209,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.006769169152301803,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": 0.00021293714855646906,
+      "brier_delta_ci95": [
+        -0.0005265418176168439,
+        0.0009816412852644337
+      ]
+    },
+    "frozen_lgbm": {
+      "n_races": 904,
+      "n_runners": 7922,
+      "model_log_loss": 1.6772362435533896,
+      "model_log_loss_ci95": [
+        1.6219399848613572,
+        1.7272908014651327
+      ],
+      "market_log_loss": 1.6877844007303753,
+      "logloss_delta_market_minus_model": 0.01054815717698565,
+      "logloss_delta_ci95": [
+        -0.00462992970677723,
+        0.026812527393418998
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": true,
+      "logloss_delta_frac_boot_positive": 0.925,
+      "model_brier": 0.0860089668197967,
+      "market_brier": 0.08629975731520856,
+      "model_ece": 0.003897898663773891,
+      "market_ece": 0.008664567285319693,
+      "brier_delta_market_minus_model": 0.0002907904954118634,
+      "brier_delta_ci95": [
+        -0.00035937930760788307,
+        0.0010201955968365897
+      ]
+    }
+  },
+  "subgroups": {
+    "odds_band": {
+      "audit_independent": [
+        {
+          "group": "11.0-21.0",
+          "n": 1661,
+          "actual": 79,
+          "expected": 154.2,
+          "ae": 0.512,
+          "ae_ci95": [
+            0.413,
+            0.634
+          ],
+          "mean_prob": 0.0928,
+          "win_rate": 0.0476
+        },
+        {
+          "group": "2.0-3.0",
+          "n": 342,
+          "actual": 124,
+          "expected": 78.2,
+          "ae": 1.586,
+          "ae_ci95": [
+            1.371,
+            1.815
+          ],
+          "mean_prob": 0.2286,
+          "win_rate": 0.3626
+        },
+        {
+          "group": "21.0-51.0",
+          "n": 1355,
+          "actual": 51,
+          "expected": 97.0,
+          "ae": 0.526,
+          "ae_ci95": [
+            0.401,
+            0.687
+          ],
+          "mean_prob": 0.0716,
+          "win_rate": 0.0376
+        },
+        {
+          "group": "3.0-5.0",
+          "n": 980,
+          "actual": 253,
+          "expected": 161.8,
+          "ae": 1.564,
+          "ae_ci95": [
+            1.404,
+            1.735
+          ],
+          "mean_prob": 0.1651,
+          "win_rate": 0.2582
+        },
+        {
+          "group": "5.0-8.0",
+          "n": 1299,
+          "actual": 207,
+          "expected": 176.0,
+          "ae": 1.176,
+          "ae_ci95": [
+            1.036,
+            1.33
+          ],
+          "mean_prob": 0.1355,
+          "win_rate": 0.1594
+        },
+        {
+          "group": "51.0+",
+          "n": 1255,
+          "actual": 4,
+          "expected": 62.5,
+          "ae": 0.064,
+          "ae_ci95": [
+            0.025,
+            0.164
+          ],
+          "mean_prob": 0.0498,
+          "win_rate": 0.0032
+        },
+        {
+          "group": "8.0-11.0",
+          "n": 869,
+          "actual": 91,
+          "expected": 100.5,
+          "ae": 0.905,
+          "ae_ci95": [
+            0.744,
+            1.096
+          ],
+          "mean_prob": 0.1157,
+          "win_rate": 0.1047
+        },
+        {
+          "group": "<2.0 (odds-on)",
+          "n": 161,
+          "actual": 96,
+          "expected": 44.4,
+          "ae": 2.164,
+          "ae_ci95": [
+            1.884,
+            2.428
+          ],
+          "mean_prob": 0.2755,
+          "win_rate": 0.5963
+        }
+      ],
+      "audit_market_adjusted": [
+        {
+          "group": "11.0-21.0",
+          "n": 1661,
+          "actual": 79,
+          "expected": 102.0,
+          "ae": 0.774,
+          "ae_ci95": [
+            0.624,
+            0.959
+          ],
+          "mean_prob": 0.0614,
+          "win_rate": 0.0476
+        },
+        {
+          "group": "2.0-3.0",
+          "n": 342,
+          "actual": 124,
+          "expected": 143.1,
+          "ae": 0.866,
+          "ae_ci95": [
+            0.749,
+            0.991
+          ],
+          "mean_prob": 0.4184,
+          "win_rate": 0.3626
+        },
+        {
+          "group": "21.0-51.0",
+          "n": 1355,
+          "actual": 51,
+          "expected": 43.4,
+          "ae": 1.174,
+          "ae_ci95": [
+            0.896,
+            1.533
+          ],
+          "mean_prob": 0.0321,
+          "win_rate": 0.0376
+        },
+        {
+          "group": "3.0-5.0",
+          "n": 980,
+          "actual": 253,
+          "expected": 243.7,
+          "ae": 1.038,
+          "ae_ci95": [
+            0.932,
+            1.152
+          ],
+          "mean_prob": 0.2487,
+          "win_rate": 0.2582
+        },
+        {
+          "group": "5.0-8.0",
+          "n": 1299,
+          "actual": 207,
+          "expected": 195.0,
+          "ae": 1.061,
+          "ae_ci95": [
+            0.935,
+            1.201
+          ],
+          "mean_prob": 0.1501,
+          "win_rate": 0.1594
+        },
+        {
+          "group": "51.0+",
+          "n": 1255,
+          "actual": 4,
+          "expected": 14.7,
+          "ae": 0.273,
+          "ae_ci95": [
+            0.106,
+            0.7
+          ],
+          "mean_prob": 0.0117,
+          "win_rate": 0.0032
+        },
+        {
+          "group": "8.0-11.0",
+          "n": 869,
+          "actual": 91,
+          "expected": 89.5,
+          "ae": 1.016,
+          "ae_ci95": [
+            0.835,
+            1.231
+          ],
+          "mean_prob": 0.103,
+          "win_rate": 0.1047
+        },
+        {
+          "group": "<2.0 (odds-on)",
+          "n": 161,
+          "actual": 96,
+          "expected": 90.2,
+          "ae": 1.064,
+          "ae_ci95": [
+            0.926,
+            1.194
+          ],
+          "mean_prob": 0.5603,
+          "win_rate": 0.5963
+        }
+      ],
+      "market_note": "market A/E == 1 by construction after de-vig"
+    },
+    "field_size": {
+      "audit_independent": [
+        {
+          "group": "12-15",
+          "n": 1664,
+          "actual": 127,
+          "expected": 128.1,
+          "ae": 0.992,
+          "ae_ci95": [
+            0.838,
+            1.17
+          ],
+          "mean_prob": 0.077,
+          "win_rate": 0.0763
+        },
+        {
+          "group": "16+",
+          "n": 805,
+          "actual": 41,
+          "expected": 56.0,
+          "ae": 0.733,
+          "ae_ci95": [
+            0.543,
+            0.983
+          ],
+          "mean_prob": 0.0695,
+          "win_rate": 0.0509
+        },
+        {
+          "group": "2-5",
+          "n": 732,
+          "actual": 169,
+          "expected": 151.3,
+          "ae": 1.117,
+          "ae_ci95": [
+            0.976,
+            1.271
+          ],
+          "mean_prob": 0.2067,
+          "win_rate": 0.2309
+        },
+        {
+          "group": "6-8",
+          "n": 2123,
+          "actual": 306,
+          "expected": 288.1,
+          "ae": 1.062,
+          "ae_ci95": [
+            0.957,
+            1.177
+          ],
+          "mean_prob": 0.1357,
+          "win_rate": 0.1441
+        },
+        {
+          "group": "9-11",
+          "n": 2598,
+          "actual": 262,
+          "expected": 251.2,
+          "ae": 1.043,
+          "ae_ci95": [
+            0.929,
+            1.169
+          ],
+          "mean_prob": 0.0967,
+          "win_rate": 0.1008
+        }
+      ],
+      "audit_market_adjusted": [
+        {
+          "group": "12-15",
+          "n": 1664,
+          "actual": 127,
+          "expected": 124.5,
+          "ae": 1.02,
+          "ae_ci95": [
+            0.862,
+            1.204
+          ],
+          "mean_prob": 0.0748,
+          "win_rate": 0.0763
+        },
+        {
+          "group": "16+",
+          "n": 805,
+          "actual": 41,
+          "expected": 41.4,
+          "ae": 0.99,
+          "ae_ci95": [
+            0.734,
+            1.328
+          ],
+          "mean_prob": 0.0515,
+          "win_rate": 0.0509
+        },
+        {
+          "group": "2-5",
+          "n": 732,
+          "actual": 169,
+          "expected": 178.9,
+          "ae": 0.944,
+          "ae_ci95": [
+            0.826,
+            1.075
+          ],
+          "mean_prob": 0.2445,
+          "win_rate": 0.2309
+        },
+        {
+          "group": "6-8",
+          "n": 2123,
+          "actual": 306,
+          "expected": 317.3,
+          "ae": 0.964,
+          "ae_ci95": [
+            0.869,
+            1.069
+          ],
+          "mean_prob": 0.1494,
+          "win_rate": 0.1441
+        },
+        {
+          "group": "9-11",
+          "n": 2598,
+          "actual": 262,
+          "expected": 259.6,
+          "ae": 1.009,
+          "ae_ci95": [
+            0.899,
+            1.131
+          ],
+          "mean_prob": 0.0999,
+          "win_rate": 0.1008
+        }
+      ],
+      "market_note": "market A/E == 1 by construction after de-vig"
+    },
+    "month": {
+      "audit_independent": [
+        {
+          "group": "2026-06",
+          "n": 3315,
+          "actual": 372,
+          "expected": 367.7,
+          "ae": 1.012,
+          "ae_ci95": [
+            0.919,
+            1.113
+          ],
+          "mean_prob": 0.1109,
+          "win_rate": 0.1122
+        },
+        {
+          "group": "2026-07",
+          "n": 4607,
+          "actual": 533,
+          "expected": 506.9,
+          "ae": 1.051,
+          "ae_ci95": [
+            0.97,
+            1.138
+          ],
+          "mean_prob": 0.11,
+          "win_rate": 0.1157
+        }
+      ],
+      "audit_market_adjusted": [
+        {
+          "group": "2026-06",
+          "n": 3315,
+          "actual": 372,
+          "expected": 378.6,
+          "ae": 0.982,
+          "ae_ci95": [
+            0.892,
+            1.081
+          ],
+          "mean_prob": 0.1142,
+          "win_rate": 0.1122
+        },
+        {
+          "group": "2026-07",
+          "n": 4607,
+          "actual": 533,
+          "expected": 543.1,
+          "ae": 0.981,
+          "ae_ci95": [
+            0.906,
+            1.062
+          ],
+          "mean_prob": 0.1179,
+          "win_rate": 0.1157
+        }
+      ],
+      "market_note": "market A/E == 1 by construction after de-vig"
+    },
+    "venue_top12": {
+      "audit_independent": [
+        {
+          "group": "Cork",
+          "n": 235,
+          "actual": 20,
+          "expected": 15.8,
+          "ae": 1.265,
+          "ae_ci95": [
+            0.829,
+            1.9
+          ],
+          "mean_prob": 0.0673,
+          "win_rate": 0.0851
+        },
+        {
+          "group": "Doncaster",
+          "n": 368,
+          "actual": 44,
+          "expected": 41.5,
+          "ae": 1.061,
+          "ae_ci95": [
+            0.801,
+            1.391
+          ],
+          "mean_prob": 0.1126,
+          "win_rate": 0.1196
+        },
+        {
+          "group": "Leopardstown",
+          "n": 240,
+          "actual": 22,
+          "expected": 19.2,
+          "ae": 1.146,
+          "ae_ci95": [
+            0.767,
+            1.687
+          ],
+          "mean_prob": 0.08,
+          "win_rate": 0.0917
+        },
+        {
+          "group": "Limerick",
+          "n": 222,
+          "actual": 22,
+          "expected": 15.1,
+          "ae": 1.453,
+          "ae_ci95": [
+            0.973,
+            2.133
+          ],
+          "mean_prob": 0.0682,
+          "win_rate": 0.0991
+        },
+        {
+          "group": "Lingfield",
+          "n": 263,
+          "actual": 34,
+          "expected": 29.1,
+          "ae": 1.169,
+          "ae_ci95": [
+            0.85,
+            1.585
+          ],
+          "mean_prob": 0.1106,
+          "win_rate": 0.1293
+        },
+        {
+          "group": "Newbury",
+          "n": 241,
+          "actual": 26,
+          "expected": 28.4,
+          "ae": 0.914,
+          "ae_ci95": [
+            0.633,
+            1.3
+          ],
+          "mean_prob": 0.118,
+          "win_rate": 0.1079
+        },
+        {
+          "group": "Newcastle",
+          "n": 266,
+          "actual": 23,
+          "expected": 22.6,
+          "ae": 1.016,
+          "ae_ci95": [
+            0.685,
+            1.486
+          ],
+          "mean_prob": 0.0851,
+          "win_rate": 0.0865
+        },
+        {
+          "group": "Newmarket",
+          "n": 328,
+          "actual": 49,
+          "expected": 54.1,
+          "ae": 0.906,
+          "ae_ci95": [
+            0.697,
+            1.165
+          ],
+          "mean_prob": 0.1649,
+          "win_rate": 0.1494
+        },
+        {
+          "group": "Nottingham",
+          "n": 217,
+          "actual": 38,
+          "expected": 31.3,
+          "ae": 1.216,
+          "ae_ci95": [
+            0.905,
+            1.605
+          ],
+          "mean_prob": 0.144,
+          "win_rate": 0.1751
+        },
+        {
+          "group": "OTHER",
+          "n": 4572,
+          "actual": 543,
+          "expected": 515.4,
+          "ae": 1.054,
+          "ae_ci95": [
+            0.973,
+            1.14
+          ],
+          "mean_prob": 0.1127,
+          "win_rate": 0.1188
+        },
+        {
+          "group": "Royal Ascot",
+          "n": 384,
+          "actual": 21,
+          "expected": 37.5,
+          "ae": 0.56,
+          "ae_ci95": [
+            0.369,
+            0.842
+          ],
+          "mean_prob": 0.0976,
+          "win_rate": 0.0547
+        },
+        {
+          "group": "Windsor",
+          "n": 262,
+          "actual": 29,
+          "expected": 31.9,
+          "ae": 0.91,
+          "ae_ci95": [
+            0.642,
+            1.269
+          ],
+          "mean_prob": 0.1217,
+          "win_rate": 0.1107
+        },
+        {
+          "group": "Wolverhampton",
+          "n": 324,
+          "actual": 34,
+          "expected": 32.8,
+          "ae": 1.038,
+          "ae_ci95": [
+            0.752,
+            1.415
+          ],
+          "mean_prob": 0.1011,
+          "win_rate": 0.1049
+        }
+      ],
+      "audit_market_adjusted": [
+        {
+          "group": "Cork",
+          "n": 235,
+          "actual": 20,
+          "expected": 18.2,
+          "ae": 1.1,
+          "ae_ci95": [
+            0.72,
+            1.651
+          ],
+          "mean_prob": 0.0774,
+          "win_rate": 0.0851
+        },
+        {
+          "group": "Doncaster",
+          "n": 368,
+          "actual": 44,
+          "expected": 44.9,
+          "ae": 0.981,
+          "ae_ci95": [
+            0.741,
+            1.285
+          ],
+          "mean_prob": 0.1219,
+          "win_rate": 0.1196
+        },
+        {
+          "group": "Leopardstown",
+          "n": 240,
+          "actual": 22,
+          "expected": 22.1,
+          "ae": 0.995,
+          "ae_ci95": [
+            0.666,
+            1.464
+          ],
+          "mean_prob": 0.0921,
+          "win_rate": 0.0917
+        },
+        {
+          "group": "Limerick",
+          "n": 222,
+          "actual": 22,
+          "expected": 18.9,
+          "ae": 1.165,
+          "ae_ci95": [
+            0.78,
+            1.71
+          ],
+          "mean_prob": 0.0851,
+          "win_rate": 0.0991
+        },
+        {
+          "group": "Lingfield",
+          "n": 263,
+          "actual": 34,
+          "expected": 33.9,
+          "ae": 1.004,
+          "ae_ci95": [
+            0.73,
+            1.361
+          ],
+          "mean_prob": 0.1287,
+          "win_rate": 0.1293
+        },
+        {
+          "group": "Newbury",
+          "n": 241,
+          "actual": 26,
+          "expected": 27.5,
+          "ae": 0.944,
+          "ae_ci95": [
+            0.654,
+            1.342
+          ],
+          "mean_prob": 0.1143,
+          "win_rate": 0.1079
+        },
+        {
+          "group": "Newcastle",
+          "n": 266,
+          "actual": 23,
+          "expected": 22.4,
+          "ae": 1.027,
+          "ae_ci95": [
+            0.692,
+            1.501
+          ],
+          "mean_prob": 0.0842,
+          "win_rate": 0.0865
+        },
+        {
+          "group": "Newmarket",
+          "n": 328,
+          "actual": 49,
+          "expected": 52.9,
+          "ae": 0.926,
+          "ae_ci95": [
+            0.712,
+            1.191
+          ],
+          "mean_prob": 0.1613,
+          "win_rate": 0.1494
+        },
+        {
+          "group": "Nottingham",
+          "n": 217,
+          "actual": 38,
+          "expected": 39.3,
+          "ae": 0.968,
+          "ae_ci95": [
+            0.72,
+            1.278
+          ],
+          "mean_prob": 0.181,
+          "win_rate": 0.1751
+        },
+        {
+          "group": "OTHER",
+          "n": 4572,
+          "actual": 543,
+          "expected": 553.6,
+          "ae": 0.981,
+          "ae_ci95": [
+            0.906,
+            1.061
+          ],
+          "mean_prob": 0.1211,
+          "win_rate": 0.1188
+        },
+        {
+          "group": "Royal Ascot",
+          "n": 384,
+          "actual": 21,
+          "expected": 22.5,
+          "ae": 0.935,
+          "ae_ci95": [
+            0.616,
+            1.404
+          ],
+          "mean_prob": 0.0585,
+          "win_rate": 0.0547
+        },
+        {
+          "group": "Windsor",
+          "n": 262,
+          "actual": 29,
+          "expected": 30.8,
+          "ae": 0.94,
+          "ae_ci95": [
+            0.664,
+            1.312
+          ],
+          "mean_prob": 0.1177,
+          "win_rate": 0.1107
+        },
+        {
+          "group": "Wolverhampton",
+          "n": 324,
+          "actual": 34,
+          "expected": 34.8,
+          "ae": 0.977,
+          "ae_ci95": [
+            0.708,
+            1.332
+          ],
+          "mean_prob": 0.1074,
+          "win_rate": 0.1049
+        }
+      ],
+      "market_note": "market A/E == 1 by construction after de-vig"
+    },
+    "region": {
+      "audit_independent": [
+        {
+          "group": "IRE",
+          "n": 2092,
+          "actual": 196,
+          "expected": 160.4,
+          "ae": 1.222,
+          "ae_ci95": [
+            1.068,
+            1.394
+          ],
+          "mean_prob": 0.0767,
+          "win_rate": 0.0937
+        },
+        {
+          "group": "UK",
+          "n": 5830,
+          "actual": 709,
+          "expected": 714.2,
+          "ae": 0.993,
+          "ae_ci95": [
+            0.926,
+            1.063
+          ],
+          "mean_prob": 0.1225,
+          "win_rate": 0.1216
+        }
+      ],
+      "audit_market_adjusted": [
+        {
+          "group": "IRE",
+          "n": 2092,
+          "actual": 196,
+          "expected": 186.8,
+          "ae": 1.049,
+          "ae_ci95": [
+            0.918,
+            1.198
+          ],
+          "mean_prob": 0.0893,
+          "win_rate": 0.0937
+        },
+        {
+          "group": "UK",
+          "n": 5830,
+          "actual": 709,
+          "expected": 734.9,
+          "ae": 0.965,
+          "ae_ci95": [
+            0.9,
+            1.033
+          ],
+          "mean_prob": 0.1261,
+          "win_rate": 0.1216
+        }
+      ],
+      "market_note": "market A/E == 1 by construction after de-vig"
+    },
+    "data_completeness": {
+      "audit_independent": [
+        {
+          "group": "unknown",
+          "n": 7922,
+          "actual": 905,
+          "expected": 874.6,
+          "ae": 1.035,
+          "ae_ci95": [
+            0.973,
+            1.1
+          ],
+          "mean_prob": 0.1104,
+          "win_rate": 0.1142
+        }
+      ],
+      "audit_market_adjusted": [
+        {
+          "group": "unknown",
+          "n": 7922,
+          "actual": 905,
+          "expected": 921.7,
+          "ae": 0.982,
+          "ae_ci95": [
+            0.923,
+            1.044
+          ],
+          "mean_prob": 0.1164,
+          "win_rate": 0.1142
+        }
+      ],
+      "market_note": "market A/E == 1 by construction after de-vig"
+    }
+  },
+  "clv": {
+    "all_common_rows": {
+      "n": 7922,
+      "mean_clv_log": -0.1341686933114934,
+      "mean_clv_ci95": [
+        -0.1388757257132935,
+        -0.12946166090969327
+      ],
+      "beat_close_rate": 0.2645796516031305,
+      "beat_close_ci95": [
+        0.2549817420655017,
+        0.27440577433401847
+      ]
+    }
+  },
+  "ev_simulation": {
+    "audit_independent": {
+      "n_bets": 4597,
+      "roi": -0.23392791472699587,
+      "strike_rate": 0.05982162279747662,
+      "strike_rate_ci95": [
+        0.05332645610815194,
+        0.0670518677185149
+      ],
+      "clv": {
+        "n": 4597,
+        "mean_clv_log": -0.17464679934888194,
+        "mean_clv_ci95": [
+          -0.1815880730703234,
+          -0.16770552562744048
+        ],
+        "beat_close_rate": 0.22862736567326516,
+        "beat_close_ci95": [
+          0.21671701170849828,
+          0.24099089981794936
+        ]
+      },
+      "integrity": [
+        {
+          "name": "lookahead_bias",
+          "status": "OK",
+          "message": "OK: First bet (2026-06-13) is after the train cutoff (2026-06-11).",
+          "detail": {
+            "first_bet_date": "2026-06-13",
+            "last_bet_date": "2026-07-25",
+            "train_cutoff": "2026-06-11"
+          }
+        },
+        {
+          "name": "course_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; course check not applicable.",
+          "detail": {
+            "n_courses": 48,
+            "n_profitable": 10
+          }
+        },
+        {
+          "name": "season_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; season check not applicable.",
+          "detail": {
+            "n_quarters": 2,
+            "n_profitable": 0
+          }
+        },
+        {
+          "name": "band_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; band check not applicable.",
+          "detail": {
+            "n_bands": 6,
+            "n_profitable": 3
+          }
+        },
+        {
+          "name": "clv_leakage",
+          "status": "OK",
+          "message": "OK: Mean log CLV = -0.1746 (beat-close rate 22.9%).",
+          "detail": {
+            "mean_clv_log": -0.17464679934888194,
+            "clv_beat_rate": 0.22862736567326516,
+            "n_bets": 4597
+          }
+        },
+        {
+          "name": "non_runner_impact",
+          "status": "OK",
+          "message": "Non-runner data not available \u2014 check skipped.",
+          "detail": {}
+        },
+        {
+          "name": "liquidity",
+          "status": "WARN",
+          "message": "WARN: Matched-volume data absent \u2014 liquidity unknown. Real execution costs (especially on outsiders) cannot be verified.",
+          "detail": {}
+        },
+        {
+          "name": "minimum_backtest_length",
+          "status": "OK",
+          "message": "OK: 4597 bets; non-positive Sharpe (-10.97) \u2014 no positive edge to defend against overfitting.",
+          "detail": {
+            "n_bets": 4597,
+            "annual_sharpe": -10.968975076774727,
+            "psr": 0.00010104295402246265
+          }
+        }
+      ]
+    },
+    "audit_market_adjusted": {
+      "n_bets": 2962,
+      "roi": -0.08519989871708307,
+      "strike_rate": 0.10060769750168805,
+      "strike_rate_ci95": [
+        0.09028656363874854,
+        0.11196348235157003
+      ],
+      "clv": {
+        "n": 2962,
+        "mean_clv_log": -0.13839197301905354,
+        "mean_clv_ci95": [
+          -0.14679742907139995,
+          -0.12998651696670713
+        ],
+        "beat_close_rate": 0.28291694800810263,
+        "beat_close_ci95": [
+          0.2669851970799083,
+          0.2994110662943731
+        ]
+      },
+      "integrity": [
+        {
+          "name": "lookahead_bias",
+          "status": "OK",
+          "message": "OK: First bet (2026-06-13) is after the train cutoff (2026-06-11).",
+          "detail": {
+            "first_bet_date": "2026-06-13",
+            "last_bet_date": "2026-07-25",
+            "train_cutoff": "2026-06-11"
+          }
+        },
+        {
+          "name": "course_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; course check not applicable.",
+          "detail": {
+            "n_courses": 48,
+            "n_profitable": 16
+          }
+        },
+        {
+          "name": "season_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; season check not applicable.",
+          "detail": {
+            "n_quarters": 2,
+            "n_profitable": 0
+          }
+        },
+        {
+          "name": "band_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; band check not applicable.",
+          "detail": {
+            "n_bands": 6,
+            "n_profitable": 4
+          }
+        },
+        {
+          "name": "clv_leakage",
+          "status": "OK",
+          "message": "OK: Mean log CLV = -0.1384 (beat-close rate 28.3%).",
+          "detail": {
+            "mean_clv_log": -0.13839197301905354,
+            "clv_beat_rate": 0.28291694800810263,
+            "n_bets": 2962
+          }
+        },
+        {
+          "name": "non_runner_impact",
+          "status": "OK",
+          "message": "Non-runner data not available \u2014 check skipped.",
+          "detail": {}
+        },
+        {
+          "name": "liquidity",
+          "status": "WARN",
+          "message": "WARN: Matched-volume data absent \u2014 liquidity unknown. Real execution costs (especially on outsiders) cannot be verified.",
+          "detail": {}
+        },
+        {
+          "name": "minimum_backtest_length",
+          "status": "OK",
+          "message": "OK: 2962 bets; non-positive Sharpe (-2.91) \u2014 no positive edge to defend against overfitting.",
+          "detail": {
+            "n_bets": 2962,
+            "annual_sharpe": -2.9139196291734226,
+            "psr": 0.16160916513066215
+          }
+        }
+      ]
+    },
+    "frozen_v3nf_market_adjusted": {
+      "n_bets": 2490,
+      "roi": -0.17931817991967874,
+      "strike_rate": 0.11646586345381527,
+      "strike_rate_ci95": [
+        0.10445261809773373,
+        0.12966072735291556
+      ],
+      "clv": {
+        "n": 2490,
+        "mean_clv_log": -0.12937419222967636,
+        "mean_clv_ci95": [
+          -0.13864847493422894,
+          -0.12009990952512377
+        ],
+        "beat_close_rate": 0.3008032128514056,
+        "beat_close_ci95": [
+          0.2831078582542099,
+          0.3191122667128288
+        ]
+      },
+      "integrity": [
+        {
+          "name": "lookahead_bias",
+          "status": "OK",
+          "message": "OK: First bet (2026-06-13) is after the train cutoff (2026-06-11).",
+          "detail": {
+            "first_bet_date": "2026-06-13",
+            "last_bet_date": "2026-07-25",
+            "train_cutoff": "2026-06-11"
+          }
+        },
+        {
+          "name": "course_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; course check not applicable.",
+          "detail": {
+            "n_courses": 48,
+            "n_profitable": 9
+          }
+        },
+        {
+          "name": "season_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; season check not applicable.",
+          "detail": {
+            "n_quarters": 2,
+            "n_profitable": 0
+          }
+        },
+        {
+          "name": "band_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; band check not applicable.",
+          "detail": {
+            "n_bands": 6,
+            "n_profitable": 3
+          }
+        },
+        {
+          "name": "clv_leakage",
+          "status": "OK",
+          "message": "OK: Mean log CLV = -0.1294 (beat-close rate 30.1%).",
+          "detail": {
+            "mean_clv_log": -0.12937419222967636,
+            "clv_beat_rate": 0.3008032128514056,
+            "n_bets": 2490
+          }
+        },
+        {
+          "name": "non_runner_impact",
+          "status": "OK",
+          "message": "Non-runner data not available \u2014 check skipped.",
+          "detail": {}
+        },
+        {
+          "name": "liquidity",
+          "status": "WARN",
+          "message": "WARN: Matched-volume data absent \u2014 liquidity unknown. Real execution costs (especially on outsiders) cannot be verified.",
+          "detail": {}
+        },
+        {
+          "name": "minimum_backtest_length",
+          "status": "OK",
+          "message": "OK: 2490 bets; non-positive Sharpe (-6.35) \u2014 no positive edge to defend against overfitting.",
+          "detail": {
+            "n_bets": 2490,
+            "annual_sharpe": -6.345507575996925,
+            "psr": 0.015764215409623153
+          }
+        }
+      ]
+    },
+    "frozen_v3nf_market_adjusted_sigmoid_refit": {
+      "n_bets": 2621,
+      "roi": -0.167557902327356,
+      "strike_rate": 0.10263258298359405,
+      "strike_rate_ci95": [
+        0.09158959305569261,
+        0.11483871103701909
+      ],
+      "clv": {
+        "n": 2621,
+        "mean_clv_log": -0.1352912517685852,
+        "mean_clv_ci95": [
+          -0.14416248103018514,
+          -0.12642002250698525
+        ],
+        "beat_close_rate": 0.28882106066386876,
+        "beat_close_ci95": [
+          0.2717890030417506,
+          0.3064712622634015
+        ]
+      },
+      "integrity": [
+        {
+          "name": "lookahead_bias",
+          "status": "OK",
+          "message": "OK: First bet (2026-06-13) is after the train cutoff (2026-06-11).",
+          "detail": {
+            "first_bet_date": "2026-06-13",
+            "last_bet_date": "2026-07-25",
+            "train_cutoff": "2026-06-11"
+          }
+        },
+        {
+          "name": "course_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; course check not applicable.",
+          "detail": {
+            "n_courses": 48,
+            "n_profitable": 10
+          }
+        },
+        {
+          "name": "season_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; season check not applicable.",
+          "detail": {
+            "n_quarters": 2,
+            "n_profitable": 0
+          }
+        },
+        {
+          "name": "band_cherrypicking",
+          "status": "OK",
+          "message": "Loss-making overall; band check not applicable.",
+          "detail": {
+            "n_bands": 6,
+            "n_profitable": 4
+          }
+        },
+        {
+          "name": "clv_leakage",
+          "status": "OK",
+          "message": "OK: Mean log CLV = -0.1353 (beat-close rate 28.9%).",
+          "detail": {
+            "mean_clv_log": -0.1352912517685852,
+            "clv_beat_rate": 0.28882106066386876,
+            "n_bets": 2621
+          }
+        },
+        {
+          "name": "non_runner_impact",
+          "status": "OK",
+          "message": "Non-runner data not available \u2014 check skipped.",
+          "detail": {}
+        },
+        {
+          "name": "liquidity",
+          "status": "WARN",
+          "message": "WARN: Matched-volume data absent \u2014 liquidity unknown. Real execution costs (especially on outsiders) cannot be verified.",
+          "detail": {}
+        },
+        {
+          "name": "minimum_backtest_length",
+          "status": "OK",
+          "message": "OK: 2621 bets; non-positive Sharpe (-5.81) \u2014 no positive edge to defend against overfitting.",
+          "detail": {
+            "n_bets": 2621,
+            "annual_sharpe": -5.80772893049053,
+            "psr": 0.024516477017607938
+          }
+        }
+      ]
+    }
+  },
+  "drift": {
+    "psi_by_feature": [
+      {
+        "feature": "going_speed",
+        "psi": 4.9159
+      },
+      {
+        "feature": "horse_career_runs",
+        "psi": 0.3009
+      },
+      {
+        "feature": "distance_furlongs",
+        "psi": 0.1379
+      },
+      {
+        "feature": "trainer_hot_strike_rate",
+        "psi": 0.0778
+      },
+      {
+        "feature": "speed_distance_profile",
+        "psi": 0.069
+      },
+      {
+        "feature": "speed_trend",
+        "psi": 0.0652
+      },
+      {
+        "feature": "freshness_band",
+        "psi": 0.0573
+      },
+      {
+        "feature": "distance_runs",
+        "psi": 0.0549
+      },
+      {
+        "feature": "jt_combo_runs",
+        "psi": 0.0389
+      },
+      {
+        "feature": "trainer_win_rate",
+        "psi": 0.0328
+      },
+      {
+        "feature": "historical_place_rate",
+        "psi": 0.0313
+      },
+      {
+        "feature": "jockey_hot_strike_rate",
+        "psi": 0.0312
+      },
+      {
+        "feature": "jockey_win_rate",
+        "psi": 0.03
+      },
+      {
+        "feature": "days_since_last_run",
+        "psi": 0.0236
+      },
+      {
+        "feature": "going_pref_place_rate",
+        "psi": 0.0233
+      },
+      {
+        "feature": "field_size",
+        "psi": 0.0197
+      },
+      {
+        "feature": "horse_speed",
+        "psi": 0.0154
+      },
+      {
+        "feature": "class_par_speed",
+        "psi": 0.0154
+      },
+      {
+        "feature": "hot_connection",
+        "psi": 0.0151
+      },
+      {
+        "feature": "going_pref_win_rate",
+        "psi": 0.0112
+      },
+      {
+        "feature": "historical_win_rate",
+        "psi": 0.0105
+      },
+      {
+        "feature": "distance_place_rate",
+        "psi": 0.0104
+      },
+      {
+        "feature": "distance_win_rate",
+        "psi": 0.0087
+      },
+      {
+        "feature": "jt_combo_win_rate",
+        "psi": 0.007
+      },
+      {
+        "feature": "course_place_rate",
+        "psi": 0.0039
+      },
+      {
+        "feature": "course_runs",
+        "psi": 0.0022
+      },
+      {
+        "feature": "horse_speed_rank",
+        "psi": 0.0016
+      },
+      {
+        "feature": "class_par_rank",
+        "psi": 0.0016
+      },
+      {
+        "feature": "course_win_rate",
+        "psi": 0.0007
+      },
+      {
+        "feature": "recent_form_wins",
+        "psi": 0.0
+      },
+      {
+        "feature": "recent_form_runs",
+        "psi": 0.0
+      },
+      {
+        "feature": "trainer_form_zscore",
+        "psi": 0.0
+      },
+      {
+        "feature": "jockey_form_zscore",
+        "psi": 0.0
+      },
+      {
+        "feature": "hot_connection_z",
+        "psi": 0.0
+      }
+    ],
+    "worst_psi": 4.9159,
+    "gate": "FAIL",
+    "note": "PSI < 0.1 stable, 0.1-0.2 moderate, > 0.2 major shift (models.retrain_trigger convention)",
+    "monthly_race_logloss": {
+      "2026-06": {
+        "n_races": 371,
+        "model_log_loss": 1.8835154368843154,
+        "market_log_loss": 1.6949903298902163,
+        "delta": -0.1885251069940992
+      },
+      "2026-07": {
+        "n_races": 533,
+        "model_log_loss": 1.8673726555896577,
+        "market_log_loss": 1.6827686414089853,
+        "delta": -0.1846040141806724
+      }
+    }
+  },
+  "market_devig_method_baselines": {
+    "proportional": {
+      "n_races": 904,
+      "race_log_loss": 1.6877844007303753
+    },
+    "power": {
+      "n_races": 904,
+      "race_log_loss": 1.6863104903888642
+    },
+    "shin": {
+      "n_races": 904,
+      "race_log_loss": 1.6856753637072701
+    },
+    "note": "the F-L market-adjusted lines must be read against the BEST de-vig baseline, not proportional: price-conditioned recalibration is itself a margin-removal correction"
+  }
+}

@@ -1,0 +1,7 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Race Predictor">
+  <rect x="1" y="1" width="30" height="30" rx="7" fill="#bc484b"/>
+  <rect x="1.6" y="1.6" width="28.8" height="28.8" rx="7" fill="none" stroke="#ffffff" stroke-opacity="0.18"/>
+  <path d="M11 7v18" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M11 8h12v8H11z" stroke="#ffffff" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M11 8h3v2h-3zM17 8h3v2h-3zM14 10h3v2h-3zM11 12h3v2h-3zM17 12h3v2h-3z" fill="#ffffff" opacity="0.95"/>
+</svg>

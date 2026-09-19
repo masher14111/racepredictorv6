@@ -1,0 +1,38 @@
+{
+  "livescorebet": {
+    "status": "ok",
+    "last_attempt_at": "2026-09-19T14:07:44.579177+00:00",
+    "last_success_at": "2026-09-19T14:07:44.579177+00:00",
+    "total_successes": 15,
+    "total_failures": 0,
+    "success_rate": 1.0,
+    "last_row_count": 395,
+    "last_race_count": 36,
+    "last_rejection_reason": null,
+    "proxy_reachable": true
+  },
+  "boylesports": {
+    "status": "ok",
+    "last_attempt_at": "2026-09-19T14:10:29.435647+00:00",
+    "last_success_at": "2026-09-19T14:10:29.435647+00:00",
+    "total_successes": 10,
+    "total_failures": 356,
+    "success_rate": 0.0273224043715847,
+    "last_row_count": 218,
+    "last_race_count": 19,
+    "last_rejection_reason": null,
+    "proxy_reachable": false
+  },
+  "paddy_power": {
+    "status": "ok",
+    "last_attempt_at": "2026-09-19T14:10:30.181277+00:00",
+    "last_success_at": "2026-09-19T14:10:30.181277+00:00",
+    "total_successes": 15,
+    "total_failures": 0,
+    "success_rate": 1.0,
+    "last_row_count": 389,
+    "last_race_count": 37,
+    "last_rejection_reason": null,
+    "proxy_reachable": true
+  }
+}

@@ -1,0 +1,13 @@
+2026-09-19 08:40:53 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 08:40:53 | WARNING  | config | RP env var RP_CPU_WORKERS has no matching config path — skipped
+2026-09-19 08:40:53 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 08:40:53 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+[PASS] condlogit[indep] reload vs scorecard: n=5561 max|delta|=0
+[PASS] condlogit[market] reload vs scorecard: n=5561 max|delta|=0
+2026-09-19 08:40:54 | INFO     | backtest.data | backtest.data: panel 5561 rows (dropped 0 w/o price+outcome); 0 features; 2026-08-08 00:00:00+00:00 -> 2026-08-27 00:00:00+00:00
+2026-09-19 08:40:54 | INFO     | models.lgbm_softmax | LGBMSoftmax loaded: data\audit\10\models_lgbm_indep\lgbm_won.txt (31 features)
+[PASS] lgbm[indep] reload vs scorecard: reload_log_loss=1.91176045 scorecard_log_loss=1.91176045 |delta|=0
+2026-09-19 08:40:54 | INFO     | models.lgbm_softmax | LGBMSoftmax loaded: data\audit\10\models_lgbm_market\lgbm_won.txt (44 features)
+[PASS] lgbm[market] reload vs scorecard: reload_log_loss=1.70664453 scorecard_log_loss=1.70664453 |delta|=0
+
+RELOAD_PARITY: PASS — every saved artifact reproduces its own scored dev_oos probabilities on reload

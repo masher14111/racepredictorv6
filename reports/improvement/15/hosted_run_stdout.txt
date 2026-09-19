@@ -1,0 +1,16 @@
+{
+  "corpus_size_scored": 243,
+  "reviewed_label_count": 60,
+  "schema_version": 2,
+  "regex_prompt_version": 1,
+  "hosted_prompt_version": 1,
+  "local_qwen3.5_9b": {
+    "status": "DEFERRED_DATA",
+    "reason": "not evaluated in this invocation"
+  },
+  "local_hermes4_14b": {
+    "status": "DEFERRED_DATA",
+    "reason": "not evaluated in this invocation"
+  }
+}
+written -> C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\reports\improvement\15\scorecard_hosted.json

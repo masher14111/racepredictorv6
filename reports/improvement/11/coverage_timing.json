@@ -1,0 +1,525 @@
+{
+  "by_going_top": {
+    "(blank)": {
+      "races": 872,
+      "usable": 7,
+      "usable_pct": 0.8
+    },
+    "Good": {
+      "races": 4170,
+      "usable": 4131,
+      "usable_pct": 99.06
+    },
+    "Good (Good to Firm in places)": {
+      "races": 2300,
+      "usable": 2292,
+      "usable_pct": 99.65
+    },
+    "Good (Good to Soft in places)": {
+      "races": 1509,
+      "usable": 1497,
+      "usable_pct": 99.2
+    },
+    "Good (Good to Yielding in places)": {
+      "races": 755,
+      "usable": 751,
+      "usable_pct": 99.47
+    },
+    "Good to Firm": {
+      "races": 1703,
+      "usable": 1702,
+      "usable_pct": 99.94
+    },
+    "Good to Firm (Good in places)": {
+      "races": 2000,
+      "usable": 1996,
+      "usable_pct": 99.8
+    },
+    "Good to Soft": {
+      "races": 1155,
+      "usable": 1142,
+      "usable_pct": 98.87
+    },
+    "Good to Soft (Good in places)": {
+      "races": 871,
+      "usable": 861,
+      "usable_pct": 98.85
+    },
+    "Good to Soft (Soft in places)": {
+      "races": 903,
+      "usable": 903,
+      "usable_pct": 100.0
+    },
+    "Heavy": {
+      "races": 1024,
+      "usable": 943,
+      "usable_pct": 92.09
+    },
+    "Soft": {
+      "races": 1690,
+      "usable": 1651,
+      "usable_pct": 97.69
+    },
+    "Soft (Good to Soft in places)": {
+      "races": 743,
+      "usable": 736,
+      "usable_pct": 99.06
+    },
+    "Standard": {
+      "races": 6786,
+      "usable": 6734,
+      "usable_pct": 99.23
+    },
+    "Standard / Slow": {
+      "races": 1522,
+      "usable": 1506,
+      "usable_pct": 98.95
+    }
+  },
+  "by_handicap": {
+    "False": {
+      "races": 11929,
+      "usable": 11442,
+      "usable_pct": 95.92
+    },
+    "True": {
+      "races": 20902,
+      "usable": 20150,
+      "usable_pct": 96.4
+    }
+  },
+  "by_month": {
+    "2024-01": {
+      "races": 905,
+      "usable": 787,
+      "usable_pct": 86.96
+    },
+    "2024-02": {
+      "races": 809,
+      "usable": 740,
+      "usable_pct": 91.47
+    },
+    "2024-03": {
+      "races": 895,
+      "usable": 854,
+      "usable_pct": 95.42
+    },
+    "2024-04": {
+      "races": 1055,
+      "usable": 913,
+      "usable_pct": 86.54
+    },
+    "2024-05": {
+      "races": 1245,
+      "usable": 1217,
+      "usable_pct": 97.75
+    },
+    "2024-06": {
+      "races": 1064,
+      "usable": 1058,
+      "usable_pct": 99.44
+    },
+    "2024-07": {
+      "races": 1103,
+      "usable": 1074,
+      "usable_pct": 97.37
+    },
+    "2024-08": {
+      "races": 1071,
+      "usable": 1063,
+      "usable_pct": 99.25
+    },
+    "2024-09": {
+      "races": 991,
+      "usable": 957,
+      "usable_pct": 96.57
+    },
+    "2024-10": {
+      "races": 1221,
+      "usable": 1181,
+      "usable_pct": 96.72
+    },
+    "2024-11": {
+      "races": 974,
+      "usable": 935,
+      "usable_pct": 96.0
+    },
+    "2024-12": {
+      "races": 910,
+      "usable": 892,
+      "usable_pct": 98.02
+    },
+    "2025-01": {
+      "races": 938,
+      "usable": 763,
+      "usable_pct": 81.34
+    },
+    "2025-02": {
+      "races": 796,
+      "usable": 737,
+      "usable_pct": 92.59
+    },
+    "2025-03": {
+      "races": 872,
+      "usable": 866,
+      "usable_pct": 99.31
+    },
+    "2025-04": {
+      "races": 1007,
+      "usable": 988,
+      "usable_pct": 98.11
+    },
+    "2025-05": {
+      "races": 1226,
+      "usable": 1226,
+      "usable_pct": 100.0
+    },
+    "2025-06": {
+      "races": 1027,
+      "usable": 1026,
+      "usable_pct": 99.9
+    },
+    "2025-07": {
+      "races": 1067,
+      "usable": 1067,
+      "usable_pct": 100.0
+    },
+    "2025-08": {
+      "races": 1037,
+      "usable": 1032,
+      "usable_pct": 99.52
+    },
+    "2025-09": {
+      "races": 997,
+      "usable": 990,
+      "usable_pct": 99.3
+    },
+    "2025-10": {
+      "races": 1164,
+      "usable": 1142,
+      "usable_pct": 98.11
+    },
+    "2025-11": {
+      "races": 957,
+      "usable": 915,
+      "usable_pct": 95.61
+    },
+    "2025-12": {
+      "races": 904,
+      "usable": 894,
+      "usable_pct": 98.89
+    },
+    "2026-01": {
+      "races": 951,
+      "usable": 783,
+      "usable_pct": 82.33
+    },
+    "2026-02": {
+      "races": 813,
+      "usable": 751,
+      "usable_pct": 92.37
+    },
+    "2026-03": {
+      "races": 865,
+      "usable": 851,
+      "usable_pct": 98.38
+    },
+    "2026-04": {
+      "races": 1006,
+      "usable": 977,
+      "usable_pct": 97.12
+    },
+    "2026-05": {
+      "races": 1213,
+      "usable": 1192,
+      "usable_pct": 98.27
+    },
+    "2026-06": {
+      "races": 1005,
+      "usable": 1002,
+      "usable_pct": 99.7
+    },
+    "2026-07": {
+      "races": 1119,
+      "usable": 1114,
+      "usable_pct": 99.55
+    },
+    "2026-08": {
+      "races": 1007,
+      "usable": 992,
+      "usable_pct": 98.51
+    },
+    "2026-09": {
+      "races": 615,
+      "usable": 613,
+      "usable_pct": 99.67
+    },
+    "2026-10": {
+      "races": 2,
+      "usable": 0,
+      "usable_pct": 0.0
+    }
+  },
+  "by_race_class": {
+    "(blank)": {
+      "races": 6849,
+      "usable": 6551,
+      "usable_pct": 95.65
+    },
+    "1": {
+      "races": 2074,
+      "usable": 2026,
+      "usable_pct": 97.69
+    },
+    "2": {
+      "races": 1752,
+      "usable": 1687,
+      "usable_pct": 96.29
+    },
+    "3": {
+      "races": 2419,
+      "usable": 2283,
+      "usable_pct": 94.38
+    },
+    "4": {
+      "races": 7113,
+      "usable": 6776,
+      "usable_pct": 95.26
+    },
+    "5": {
+      "races": 7833,
+      "usable": 7547,
+      "usable_pct": 96.35
+    },
+    "6": {
+      "races": 4791,
+      "usable": 4722,
+      "usable_pct": 98.56
+    }
+  },
+  "by_race_type": {
+    "chase": {
+      "races": 4195,
+      "usable": 3863,
+      "usable_pct": 92.09
+    },
+    "flat": {
+      "races": 21451,
+      "usable": 21050,
+      "usable_pct": 98.13
+    },
+    "hurdle": {
+      "races": 7149,
+      "usable": 6643,
+      "usable_pct": 92.92
+    },
+    "nhf": {
+      "races": 36,
+      "usable": 36,
+      "usable_pct": 100.0
+    }
+  },
+  "by_surface": {
+    "ALLWEATHER": {
+      "races": 4628,
+      "usable": 4572,
+      "usable_pct": 98.79
+    },
+    "POLYTRACK": {
+      "races": 3705,
+      "usable": 3656,
+      "usable_pct": 98.68
+    },
+    "SAND": {
+      "races": 12,
+      "usable": 12,
+      "usable_pct": 100.0
+    },
+    "TURF": {
+      "races": 24486,
+      "usable": 23352,
+      "usable_pct": 95.37
+    }
+  },
+  "by_venue_top": {
+    "Carlisle": {
+      "races": 451,
+      "usable": 451,
+      "usable_pct": 100.0
+    },
+    "Catterick": {
+      "races": 491,
+      "usable": 476,
+      "usable_pct": 96.95
+    },
+    "Chelmsford City": {
+      "races": 714,
+      "usable": 697,
+      "usable_pct": 97.62
+    },
+    "Cork": {
+      "races": 433,
+      "usable": 419,
+      "usable_pct": 96.77
+    },
+    "Curragh": {
+      "races": 536,
+      "usable": 528,
+      "usable_pct": 98.51
+    },
+    "Doncaster": {
+      "races": 741,
+      "usable": 717,
+      "usable_pct": 96.76
+    },
+    "Dundalk": {
+      "races": 809,
+      "usable": 795,
+      "usable_pct": 98.27
+    },
+    "Fairyhouse": {
+      "races": 444,
+      "usable": 408,
+      "usable_pct": 91.89
+    },
+    "Haydock": {
+      "races": 519,
+      "usable": 498,
+      "usable_pct": 95.95
+    },
+    "Kempton": {
+      "races": 1325,
+      "usable": 1316,
+      "usable_pct": 99.32
+    },
+    "Leicester": {
+      "races": 521,
+      "usable": 469,
+      "usable_pct": 90.02
+    },
+    "Leopardstown": {
+      "races": 477,
+      "usable": 470,
+      "usable_pct": 98.53
+    },
+    "Lingfield": {
+      "races": 1429,
+      "usable": 1398,
+      "usable_pct": 97.83
+    },
+    "Naas": {
+      "races": 437,
+      "usable": 421,
+      "usable_pct": 96.34
+    },
+    "Newbury": {
+      "races": 589,
+      "usable": 573,
+      "usable_pct": 97.28
+    },
+    "Newcastle": {
+      "races": 1642,
+      "usable": 1609,
+      "usable_pct": 97.99
+    },
+    "Newmarket": {
+      "races": 699,
+      "usable": 694,
+      "usable_pct": 99.28
+    },
+    "Nottingham": {
+      "races": 425,
+      "usable": 387,
+      "usable_pct": 91.06
+    },
+    "Punchestown": {
+      "races": 476,
+      "usable": 444,
+      "usable_pct": 93.28
+    },
+    "Sandown": {
+      "races": 444,
+      "usable": 416,
+      "usable_pct": 93.69
+    },
+    "Southwell": {
+      "races": 1693,
+      "usable": 1665,
+      "usable_pct": 98.35
+    },
+    "Uttoxeter": {
+      "races": 442,
+      "usable": 426,
+      "usable_pct": 96.38
+    },
+    "Windsor": {
+      "races": 564,
+      "usable": 555,
+      "usable_pct": 98.4
+    },
+    "Wolverhampton": {
+      "races": 1826,
+      "usable": 1791,
+      "usable_pct": 98.08
+    },
+    "Yarmouth": {
+      "races": 470,
+      "usable": 470,
+      "usable_pct": 100.0
+    }
+  },
+  "date_range": [
+    "2024-01-01",
+    "2026-10-03"
+  ],
+  "distinct_races": 32831,
+  "documents_scanned": 33927,
+  "non_finisher_handling": {
+    "casualty_reasons": {
+      "BroughtDown": 173,
+      "CarriedOut": 22,
+      "Fell": 2173,
+      "PulledUp": 12028,
+      "RanOut": 78,
+      "Refused": 31,
+      "RefusedToRace": 118,
+      "SlippedUp": 65,
+      "UnseatedRider": 1541
+    },
+    "finished_rows": 279779,
+    "finished_rows_missing_beaten_lengths": 4,
+    "non_finisher_rows": 16230,
+    "non_finisher_share": 0.054829,
+    "non_finishers_all_null_time": true,
+    "runner_rows": 296009
+  },
+  "race_documents_parsed": 32831,
+  "sources": {
+    "sporting_life": 32831
+  },
+  "timestamp_eligibility": {
+    "available_from_equals_off_time": true,
+    "future_dated_leaks_no_timing": true,
+    "future_dated_race_documents": 2,
+    "future_dated_usable": 0,
+    "max_usable_race_date": "2026-09-18",
+    "min_race_date": "2024-01-01",
+    "today": "2026-09-19"
+  },
+  "unit_checks": {
+    "beaten_lengths_max": 312.35,
+    "beaten_lengths_nonnegative": true,
+    "distance_ge_5f_le_4p5m": true,
+    "distance_yards_max": 7554.0,
+    "distance_yards_min": 1094.0,
+    "winner_beaten_lengths_all_zero": true,
+    "winner_speed_within_envelope": true,
+    "winner_speed_yps_max": 23.72927059458002,
+    "winner_speed_yps_median": 16.984482359299005,
+    "winner_speed_yps_min": 9.038242473555737,
+    "winning_time_seconds_max": 657.45,
+    "winning_time_seconds_min": 55.27
+  },
+  "usable_race_pct": 96.23,
+  "usable_races": 31592
+}

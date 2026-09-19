@@ -1,0 +1,33 @@
+[PASS] 09 required prerequisite DONE: DONE
+[PASS] 10 required prerequisite DONE: DONE
+[PASS] 11 optional disposition recorded + stage note exists: DONE
+[PASS] 12 optional disposition recorded + stage note exists: DONE
+[PASS] 13 optional disposition recorded + stage note exists: DONE
+[PASS] 14 optional disposition recorded + stage note exists: DONE
+[PASS] 15 optional disposition recorded + stage note exists: DONE
+[PASS] 16 optional disposition recorded + stage note exists: DEFERRED_DATA
+[PASS] 16 deferred note has 'Candidate enabled: no' + 'Resume condition:': regex on stage note
+[PASS] 10 rebuilt matrix sha256 == frozen manifest: 9ee4e299a03f8286
+[PASS] 10 code-hash drift since freeze (informational; additive edits expected): {'changed_files': ['models/features.py']}
+[PASS] 10 unified_races sha256 unchanged since freeze (informational): {'unchanged': True}
+[PASS] 10 scorecard.json present: {'top_level_keys': ['candidates', 'conditional_logit_tuning', 'dev_oos_panel_races', 'dev_oos_panel_rows', 'manifest', 'market_only_baseline', 'weighting_ablation_dev_core_cv_log_loss']}
+[PASS] 13 eval panel shape: {'races': 618, 'rows': 5561}
+[PASS] 10-13 eval panel lies wholly inside dev_oos (no holdout rows): 2026-08-27
+[PASS] 10-13 panel probability columns: ['condlogit_indep_prob', 'condlogit_market_prob', 'catboost_indep_prob', 'catboost_market_prob', 'lgbm_indep_prob', 'lgbm_market_prob', 'market_ref_prob', 'xgboost_indep_prob', 'xgboost_market_prob']
+[PASS] 10-16 no stage artifact holds model probabilities on final-holdout rows: []
+[PASS] 10-16 scripts referencing the holdout window (for manual code-path review): {'reports\\improvement\\10\\02_freeze_manifest.py': [95, 98, 99, 158, 161, 162, 228], 'reports\\improvement\\10\\03_run_baselines.py': [4, 70], 'reports\\improvement\\10\\_smoke_run_baselines.py': [4, 70], 'reports\\improvement\\11\\02_build_experiment_matrix.py': [38, 145], 'reports\\improvement\\11\\03_run_ablation.py': [7, 73], 'reports\\improvement\\12\\01_freeze_manifest.py': [16, 84, 159, 161], 'reports\\improvement\\13\\01_freeze_manifest.py': [5, 65], 'reports\\improvement\\13\\02_train_xgboost.py': [8], 'reports\\improvement\\16\\00_coverage_report.py': [6, 60, 61, 62, 68, 72], 'reports\\improvement\\16\\01_smoke_harness.py': [5, 180]}
+2026-09-19 14:25:53 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 14:25:53 | WARNING  | config | RP env var RP_CPU_WORKERS has no matching config path — skipped
+2026-09-19 14:25:53 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 14:25:53 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+[PASS] 11/16 MEASURED_SPEED_FEATURE_COLS absent from FEATURE_COLS/PRICE_FREE_FEATURE_COLS: []
+[PASS] 11/16 CANDIDATE_TEXT_FEATURE_COLS absent from FEATURE_COLS/PRICE_FREE_FEATURE_COLS: []
+[PASS] 16 CANDIDATE_TEXT_FEATURE_COLS not merged into CANDIDATE_INDEPENDENT_FEATURE_COLS: 
+[PASS] 09 MARKET_DERIVED_FEATURE_COLS stripped from PRICE_FREE_FEATURE_COLS (D40): ['race_complexity']
+[PASS] 14-16 config.yaml llm.enabled is false: False
+[PASS] 10-16 importers of candidate-only modules outside tests/reports (must not be on the serving path): {'llm.hosted_adapter': ['features/text_features_v1.py [lazy, inside a function]', 'scripts/benchmark_extraction.py [top-level]'], 'llm.hosted_budget': ['features/text_features_v1.py [lazy, inside a function]', 'llm/hosted_adapter.py [top-level]', 'scripts/benchmark_extraction.py [top-level]'], 'features.text_features_v1': ['models/features.py [top-level]']}
+[PASS] 10-13 champion binaries are gitignored => earlier 'git status shows untouched' checks were vacuous: {'ignored': ['models/catboost_won_v3nf.bin', 'models/lgbm_won_v3.txt']}
+[PASS] 10-13 every served artifact under models/ has an mtime BEFORE the programme began (2026-09-18): []
+[PASS] 15 hosted budget ledger within caps (US$5 / 1,200): {'schema_version': 1, 'max_cost_usd': 5.0, 'max_requests': 1200, 'committed_cost_usd': 0.2835941871999998, 'committed_requests': 498, 'n_outstanding_reservations': 0}
+
+27/27 checks ok; wrote reports\improvement\17\01_dispositions.json

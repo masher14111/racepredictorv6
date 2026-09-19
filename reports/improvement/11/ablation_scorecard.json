@@ -1,0 +1,204 @@
+{
+  "matrix": "data/audit/11/training_measured.parquet",
+  "manifest": "reports/improvement/10/run_manifest.json",
+  "measured_family": [
+    "msf_last",
+    "msf_mean3",
+    "msf_mean6",
+    "msf_trend",
+    "msf_distance",
+    "msf_going",
+    "msf_rank"
+  ],
+  "dev_oos_panel_rows": 5561,
+  "dev_oos_panel_races": 618,
+  "tuning": {
+    "condlogit_indep_baseline": {
+      "l2": 0.0006026889128682511,
+      "cv_log_loss": 1.9632841058075088
+    },
+    "condlogit_indep_measured": {
+      "l2": 0.0074593432857265485,
+      "cv_log_loss": 1.956695523790375
+    },
+    "condlogit_market_baseline": {
+      "l2": 0.000602521573620386,
+      "cv_log_loss": 1.7213176281111355
+    },
+    "condlogit_market_measured": {
+      "l2": 0.0006026889128682511,
+      "cv_log_loss": 1.7215707730059049
+    }
+  },
+  "candidates": {
+    "condlogit_indep_baseline": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.921414720145937,
+        "brier_runner_level": 0.09092479177791819,
+        "ece": 0.012094529022425167
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.21738248980073127,
+        "brier_runner_level": -0.006202563964625776,
+        "ece": -0.003789777410598924
+      },
+      "model_beats_market_logloss": false
+    },
+    "condlogit_indep_measured": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.910874839061829,
+        "brier_runner_level": 0.09073630150778718,
+        "ece": 0.0112744810385281
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.2068426087166233,
+        "brier_runner_level": -0.006014073694494762,
+        "ece": -0.002969729426701857
+      },
+      "model_beats_market_logloss": false
+    },
+    "condlogit_market_baseline": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.7072939702528158,
+        "brier_runner_level": 0.08485514960791854,
+        "ece": 0.006174966234968734
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.0032617399076100284,
+        "brier_runner_level": -0.00013292179462612297,
+        "ece": 0.002129785376857509
+      },
+      "model_beats_market_logloss": false
+    },
+    "condlogit_market_measured": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.7074691286836394,
+        "brier_runner_level": 0.08489649418194078,
+        "ece": 0.005879240387609661
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.003436898338433636,
+        "brier_runner_level": -0.00017426636864836809,
+        "ece": 0.002425511224216582
+      },
+      "model_beats_market_logloss": false
+    },
+    "lgbm_indep_baseline": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 3347,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.32646552640369,
+        "brier_runner_level": 0.07613349382066822,
+        "ece": 0.1263818344786376
+      },
+      "market": {
+        "log_loss": 1.2158080224255907,
+        "brier_runner_level": 0.08204741142456172,
+        "ece": 0.1263818344786376
+      },
+      "gaps": {
+        "log_loss": -0.11065750397809926,
+        "brier_runner_level": 0.005913917603893495,
+        "ece": 0.0
+      },
+      "model_beats_market_logloss": false
+    },
+    "lgbm_indep_measured": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 3328,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.293288043933285,
+        "brier_runner_level": 0.07602871869783577,
+        "ece": 0.12890625
+      },
+      "market": {
+        "log_loss": 1.1836497537097979,
+        "brier_runner_level": 0.08173630195304474,
+        "ece": 0.12890625
+      },
+      "gaps": {
+        "log_loss": -0.10963829022348714,
+        "brier_runner_level": 0.005707583255208967,
+        "ece": 0.0
+      },
+      "model_beats_market_logloss": false
+    }
+  },
+  "paired_bootstrap": {
+    "condlogit_indep": {
+      "n_races": 618,
+      "base_race_log_loss": 1.9214147201459366,
+      "test_race_log_loss": 1.9108748390618298,
+      "mean_delta_base_minus_test": 0.01053988108410774,
+      "ci95_low": 0.0025028973300803307,
+      "ci95_high": 0.018661264003112875,
+      "prob_improvement": 0.9955,
+      "significant_improvement": true
+    },
+    "condlogit_market": {
+      "n_races": 618,
+      "base_race_log_loss": 1.7072939702528154,
+      "test_race_log_loss": 1.7074691286836399,
+      "mean_delta_base_minus_test": -0.00017515843082422362,
+      "ci95_low": -0.0014955152759360164,
+      "ci95_high": 0.0010940035794035105,
+      "prob_improvement": 0.374,
+      "significant_improvement": false
+    },
+    "lgbm_indep": {
+      "n_races": 167,
+      "base_race_log_loss": 1.3372053243544766,
+      "test_race_log_loss": 1.3266524510125817,
+      "mean_delta_base_minus_test": 0.010552873341895145,
+      "ci95_low": -0.0316994985190462,
+      "ci95_high": 0.05184910795167027,
+      "prob_improvement": 0.6905,
+      "significant_improvement": false
+    }
+  },
+  "market_only_baseline": {
+    "log_loss": 1.1836497537097979,
+    "brier_runner_level": 0.08173630195304474,
+    "ece": 0.12890625
+  }
+}

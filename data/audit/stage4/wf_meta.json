@@ -1,0 +1,1691 @@
+{
+  "config": {
+    "feature_cols": [
+      "field_size",
+      "going_speed",
+      "class_change",
+      "distance_furlongs",
+      "recent_form_avg",
+      "recent_form_wins",
+      "recent_form_runs",
+      "timeform_rating",
+      "rating_rank",
+      "pace_bias",
+      "historical_win_rate",
+      "historical_place_rate",
+      "jockey_win_rate",
+      "trainer_win_rate",
+      "jt_combo_win_rate",
+      "jt_combo_runs",
+      "going_pref_win_rate",
+      "going_pref_place_rate",
+      "days_since_last_run",
+      "horse_career_runs",
+      "course_win_rate",
+      "course_place_rate",
+      "course_runs",
+      "distance_win_rate",
+      "distance_place_rate",
+      "distance_runs",
+      "horse_speed",
+      "horse_speed_rank",
+      "speed_trend",
+      "class_par_speed",
+      "class_par_rank",
+      "trainer_hot_strike_rate",
+      "trainer_form_zscore",
+      "jockey_hot_strike_rate",
+      "jockey_form_zscore",
+      "speed_distance_profile",
+      "hot_connection",
+      "hot_connection_z",
+      "freshness_band"
+    ],
+    "min_train_days": 365,
+    "test_window_days": 30,
+    "final_test_start": "2026-06-13",
+    "iterations": 1000,
+    "early_stopping_rounds": 50,
+    "best_params": {
+      "learning_rate": 0.0143240917953084,
+      "depth": 7,
+      "l2_leaf_reg": 7.333086366709762,
+      "bagging_temperature": 1.084287711586704,
+      "random_strength": 0.15927601783384343,
+      "border_count": 233,
+      "auto_class_weights": null
+    },
+    "calibration_method": "auto",
+    "calibration_frac": 0.15,
+    "min_calib_rows": 200,
+    "fl_min_rows": 400,
+    "use_sample_weights": true,
+    "max_sample_weight": 20.0,
+    "task_type": "GPU",
+    "devices": "0",
+    "thread_count": -1,
+    "random_seed": 42
+  },
+  "excluded_features": [
+    "race_complexity"
+  ],
+  "n_scored": 72017,
+  "n_folds": 17,
+  "folds": [
+    {
+      "fold": 0,
+      "train_end": "2024-12-31",
+      "test_start": "2024-12-31",
+      "test_end": "2025-01-30",
+      "n_train": 61324,
+      "n_test": 2463,
+      "scored": true,
+      "calib_method": "isotonic",
+      "temperature": 0.9103,
+      "best_iteration": 141,
+      "fit_seconds": 13.1,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9241,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.02512562814070352,
+          "x_max": 0.5384615384615384,
+          "y_min": 0.2,
+          "y_max": 0.5,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 1.3812,
+          "odds_centre": 3.98,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5384615384615384,
+          "y_min": 0.0,
+          "y_max": 0.7142857142857143,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 1.85,
+          "odds_centre": 6.36,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5384615384615384,
+          "y_min": 0.0,
+          "y_max": 0.3,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 2.3153,
+          "odds_centre": 10.13,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5384615384615384,
+          "y_min": 0.0,
+          "y_max": 0.1875,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 2.8012,
+          "odds_centre": 16.46,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5384615384615384,
+          "y_min": 0.0,
+          "y_max": 0.2857142857142857,
+          "n_thresholds": 15
+        },
+        {
+          "log_odds_centre": 3.2644,
+          "odds_centre": 26.16,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5384615384615384,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 6
+        },
+        {
+          "log_odds_centre": 3.7883,
+          "odds_centre": 44.18,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.3939393939393939,
+          "y_min": 0.0,
+          "y_max": 0.0410958904109589,
+          "n_thresholds": 9
+        },
+        {
+          "log_odds_centre": 5.2114,
+          "odds_centre": 183.36,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.3939393939393939,
+          "y_min": 0.0,
+          "y_max": 0.019230769230769232,
+          "n_thresholds": 6
+        }
+      ]
+    },
+    {
+      "fold": 1,
+      "train_end": "2025-01-30",
+      "test_start": "2025-01-30",
+      "test_end": "2025-03-01",
+      "n_train": 63787,
+      "n_test": 3039,
+      "scored": true,
+      "calib_method": "isotonic",
+      "temperature": 0.9193,
+      "best_iteration": 324,
+      "fit_seconds": 21.9,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9255,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.02127659574468085,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 1.3795,
+          "odds_centre": 3.97,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0035714285714285713,
+          "x_max": 0.5,
+          "y_min": 0.0,
+          "y_max": 0.8,
+          "n_thresholds": 17
+        },
+        {
+          "log_odds_centre": 1.8466,
+          "odds_centre": 6.34,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5,
+          "y_min": 0.0,
+          "y_max": 0.4,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 2.3167,
+          "odds_centre": 10.14,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5,
+          "y_min": 0.0,
+          "y_max": 0.2727272727272727,
+          "n_thresholds": 15
+        },
+        {
+          "log_odds_centre": 2.8018,
+          "odds_centre": 16.47,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5,
+          "y_min": 0.0,
+          "y_max": 0.16666666666666666,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 3.2683,
+          "odds_centre": 26.27,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 3.7877,
+          "odds_centre": 44.16,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 8
+        },
+        {
+          "log_odds_centre": 5.249,
+          "odds_centre": 190.37,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.4166666666666667,
+          "y_min": 0.0,
+          "y_max": 0.008333333333333333,
+          "n_thresholds": 6
+        }
+      ]
+    },
+    {
+      "fold": 2,
+      "train_end": "2025-03-01",
+      "test_start": "2025-03-01",
+      "test_end": "2025-03-31",
+      "n_train": 66826,
+      "n_test": 4022,
+      "scored": true,
+      "calib_method": "isotonic",
+      "temperature": 0.9334,
+      "best_iteration": 387,
+      "fit_seconds": 7.5,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9251,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.002857142857142857,
+          "x_max": 0.3875,
+          "y_min": 0.0,
+          "y_max": 0.4666666666666667,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 1.383,
+          "odds_centre": 3.99,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.002857142857142857,
+          "x_max": 0.3875,
+          "y_min": 0.0,
+          "y_max": 0.41935483870967744,
+          "n_thresholds": 20
+        },
+        {
+          "log_odds_centre": 1.8424,
+          "odds_centre": 6.31,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.002857142857142857,
+          "x_max": 0.6,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 2.3176,
+          "odds_centre": 10.15,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.3875,
+          "y_min": 0.0,
+          "y_max": 0.18823529411764706,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 2.7959,
+          "odds_centre": 16.38,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.3875,
+          "y_min": 0.0,
+          "y_max": 0.1,
+          "n_thresholds": 15
+        },
+        {
+          "log_odds_centre": 3.2678,
+          "odds_centre": 26.25,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.3875,
+          "y_min": 0.0,
+          "y_max": 0.08641975308641975,
+          "n_thresholds": 12
+        },
+        {
+          "log_odds_centre": 3.7879,
+          "odds_centre": 44.16,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.3875,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 7
+        },
+        {
+          "log_odds_centre": 5.3044,
+          "odds_centre": 201.23,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.375,
+          "y_min": 0.0,
+          "y_max": 0.010309278350515464,
+          "n_thresholds": 8
+        }
+      ]
+    },
+    {
+      "fold": 3,
+      "train_end": "2025-03-31",
+      "test_start": "2025-03-31",
+      "test_end": "2025-04-30",
+      "n_train": 70848,
+      "n_test": 4607,
+      "scored": true,
+      "calib_method": "isotonic",
+      "temperature": 0.9795,
+      "best_iteration": 521,
+      "fit_seconds": 8.9,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9224,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004694835680751174,
+          "x_max": 0.4186046511627907,
+          "y_min": 0.0,
+          "y_max": 0.52,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 1.3815,
+          "odds_centre": 3.98,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.4186046511627907,
+          "y_min": 0.0,
+          "y_max": 0.38636363636363635,
+          "n_thresholds": 17
+        },
+        {
+          "log_odds_centre": 1.8393,
+          "odds_centre": 6.29,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.75,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 2.3159,
+          "odds_centre": 10.13,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.4186046511627907,
+          "y_min": 0.0,
+          "y_max": 0.2222222222222222,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 2.7997,
+          "odds_centre": 16.44,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.75,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 15
+        },
+        {
+          "log_odds_centre": 3.2689,
+          "odds_centre": 26.28,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.4186046511627907,
+          "y_min": 0.0,
+          "y_max": 0.08,
+          "n_thresholds": 9
+        },
+        {
+          "log_odds_centre": 3.7868,
+          "odds_centre": 44.11,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.4186046511627907,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 5
+        },
+        {
+          "log_odds_centre": 5.2506,
+          "odds_centre": 190.68,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.3497942386831276,
+          "y_min": 0.0,
+          "y_max": 0.038461538461538464,
+          "n_thresholds": 11
+        }
+      ]
+    },
+    {
+      "fold": 4,
+      "train_end": "2025-04-30",
+      "test_start": "2025-04-30",
+      "test_end": "2025-05-30",
+      "n_train": 75455,
+      "n_test": 4873,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 1.0094,
+      "best_iteration": 541,
+      "fit_seconds": 9.7,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9248,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.01947411711833637,
+          "x_max": 0.6617561211323423,
+          "y_min": 0.0,
+          "y_max": 0.6666666666666666,
+          "n_thresholds": 17
+        },
+        {
+          "log_odds_centre": 1.3867,
+          "odds_centre": 4.0,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.011368317187012684,
+          "x_max": 0.7452926507245066,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 21
+        },
+        {
+          "log_odds_centre": 1.8422,
+          "odds_centre": 6.31,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.010681756595350951,
+          "x_max": 0.8869431433059152,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 25
+        },
+        {
+          "log_odds_centre": 2.3132,
+          "odds_centre": 10.11,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.007564172768727531,
+          "x_max": 0.6882154330536019,
+          "y_min": 0.0,
+          "y_max": 0.3,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 2.7971,
+          "odds_centre": 16.4,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0045888614993476575,
+          "x_max": 0.8930011623704867,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 3.2657,
+          "odds_centre": 26.2,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004911383819642734,
+          "x_max": 0.46910518052995503,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 19
+        },
+        {
+          "log_odds_centre": 3.7826,
+          "odds_centre": 43.93,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.003385359633420407,
+          "x_max": 0.3568262804499688,
+          "y_min": 0.0,
+          "y_max": 0.022388059701492536,
+          "n_thresholds": 6
+        },
+        {
+          "log_odds_centre": 5.1881,
+          "odds_centre": 179.12,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0035237753844454033,
+          "x_max": 0.45157197401698557,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 10
+        }
+      ]
+    },
+    {
+      "fold": 5,
+      "train_end": "2025-05-30",
+      "test_start": "2025-05-30",
+      "test_end": "2025-06-29",
+      "n_train": 80328,
+      "n_test": 5181,
+      "scored": true,
+      "calib_method": "isotonic",
+      "temperature": 0.9463,
+      "best_iteration": 348,
+      "fit_seconds": 8.4,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.925,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.016666666666666666,
+          "x_max": 1.0,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 17
+        },
+        {
+          "log_odds_centre": 1.3851,
+          "odds_centre": 4.0,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5625,
+          "y_min": 0.0,
+          "y_max": 0.6666666666666666,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 1.8484,
+          "odds_centre": 6.35,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5625,
+          "y_min": 0.0,
+          "y_max": 0.42857142857142855,
+          "n_thresholds": 21
+        },
+        {
+          "log_odds_centre": 2.3127,
+          "odds_centre": 10.1,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.44672131147540983,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 15
+        },
+        {
+          "log_odds_centre": 2.7993,
+          "odds_centre": 16.43,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5625,
+          "y_min": 0.0,
+          "y_max": 0.14285714285714285,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 3.2703,
+          "odds_centre": 26.32,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5625,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 15
+        },
+        {
+          "log_odds_centre": 3.784,
+          "odds_centre": 43.99,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.2970588235294118,
+          "y_min": 0.0,
+          "y_max": 0.11764705882352941,
+          "n_thresholds": 8
+        },
+        {
+          "log_odds_centre": 5.0913,
+          "odds_centre": 162.6,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.44672131147540983,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 12
+        }
+      ]
+    },
+    {
+      "fold": 6,
+      "train_end": "2025-06-29",
+      "test_start": "2025-06-29",
+      "test_end": "2025-07-29",
+      "n_train": 85509,
+      "n_test": 5535,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 0.9976,
+      "best_iteration": 507,
+      "fit_seconds": 10.1,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9238,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.016706282695090505,
+          "x_max": 0.9456568701735165,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 19
+        },
+        {
+          "log_odds_centre": 1.3835,
+          "odds_centre": 3.99,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.016227110750507433,
+          "x_max": 0.8192931699969843,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 32
+        },
+        {
+          "log_odds_centre": 1.8457,
+          "odds_centre": 6.33,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.009503083028658602,
+          "x_max": 0.862999892037962,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 28
+        },
+        {
+          "log_odds_centre": 2.3136,
+          "odds_centre": 10.11,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004268439112077845,
+          "x_max": 0.6629979028011096,
+          "y_min": 0.0,
+          "y_max": 0.6666666666666666,
+          "n_thresholds": 20
+        },
+        {
+          "log_odds_centre": 2.7997,
+          "odds_centre": 16.44,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0038902467262793357,
+          "x_max": 0.8327665822037764,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 3.2716,
+          "odds_centre": 26.35,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0037507028783406414,
+          "x_max": 0.46486492215783987,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 3.7784,
+          "odds_centre": 43.75,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0027589456606394312,
+          "x_max": 0.4431271044420597,
+          "y_min": 0.0,
+          "y_max": 0.10526315789473684,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 5.0623,
+          "odds_centre": 157.95,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.002478768626370089,
+          "x_max": 0.4046308180313206,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 9
+        }
+      ]
+    },
+    {
+      "fold": 7,
+      "train_end": "2025-07-29",
+      "test_start": "2025-07-29",
+      "test_end": "2025-08-28",
+      "n_train": 91044,
+      "n_test": 3840,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 0.99,
+      "best_iteration": 372,
+      "fit_seconds": 9.9,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9188,
+          "odds_centre": 2.51,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.021970076645732386,
+          "x_max": 0.923498085763696,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 1.3822,
+          "odds_centre": 3.98,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.02236758879094121,
+          "x_max": 0.6978264529540815,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 20
+        },
+        {
+          "log_odds_centre": 1.845,
+          "odds_centre": 6.33,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.017409432540862694,
+          "x_max": 0.6918116152736479,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 22
+        },
+        {
+          "log_odds_centre": 2.3168,
+          "odds_centre": 10.14,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.010088218433323727,
+          "x_max": 0.44568149369848237,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 27
+        },
+        {
+          "log_odds_centre": 2.7973,
+          "odds_centre": 16.4,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.007712093059420511,
+          "x_max": 0.492106995320564,
+          "y_min": 0.0,
+          "y_max": 0.13333333333333333,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 3.2735,
+          "odds_centre": 26.4,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.006056557504327817,
+          "x_max": 0.4645606847023942,
+          "y_min": 0.0,
+          "y_max": 0.06722689075630252,
+          "n_thresholds": 12
+        },
+        {
+          "log_odds_centre": 3.7777,
+          "odds_centre": 43.71,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.005377234659605968,
+          "x_max": 0.39046385258989563,
+          "y_min": 0.0,
+          "y_max": 0.05,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 5.0671,
+          "odds_centre": 158.72,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004511916272991816,
+          "x_max": 0.7915862251974297,
+          "y_min": 0.0,
+          "y_max": 0.014084507042253521,
+          "n_thresholds": 16
+        }
+      ]
+    },
+    {
+      "fold": 8,
+      "train_end": "2025-08-28",
+      "test_start": "2025-08-28",
+      "test_end": "2025-09-27",
+      "n_train": 94884,
+      "n_test": 5455,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 1.0006,
+      "best_iteration": 434,
+      "fit_seconds": 10.9,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.923,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.028592696663432966,
+          "x_max": 0.6720190243131149,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 1.3853,
+          "odds_centre": 4.0,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.015733347922480545,
+          "x_max": 0.773493722542465,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 22
+        },
+        {
+          "log_odds_centre": 1.8433,
+          "odds_centre": 6.32,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.015018527513564748,
+          "x_max": 0.6020738775020485,
+          "y_min": 0.0,
+          "y_max": 0.2727272727272727,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 2.3167,
+          "odds_centre": 10.14,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.00833858107480937,
+          "x_max": 0.5949570115193149,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 19
+        },
+        {
+          "log_odds_centre": 2.7978,
+          "odds_centre": 16.41,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.00611478930729221,
+          "x_max": 0.43428362006013804,
+          "y_min": 0.0,
+          "y_max": 0.10526315789473684,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 3.2716,
+          "odds_centre": 26.35,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.008907506913346724,
+          "x_max": 0.3231134574241187,
+          "y_min": 0.0,
+          "y_max": 0.09090909090909091,
+          "n_thresholds": 12
+        },
+        {
+          "log_odds_centre": 3.7804,
+          "odds_centre": 43.83,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.005189581826595158,
+          "x_max": 0.41511219494071305,
+          "y_min": 0.0,
+          "y_max": 0.023668639053254437,
+          "n_thresholds": 12
+        },
+        {
+          "log_odds_centre": 5.076,
+          "odds_centre": 160.13,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.003312180238563647,
+          "x_max": 0.7884852759784309,
+          "y_min": 0.0,
+          "y_max": 0.1,
+          "n_thresholds": 8
+        }
+      ]
+    },
+    {
+      "fold": 9,
+      "train_end": "2025-09-27",
+      "test_start": "2025-09-27",
+      "test_end": "2025-10-27",
+      "n_train": 100339,
+      "n_test": 4379,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 1.0209,
+      "best_iteration": 921,
+      "fit_seconds": 15.1,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9225,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.04297117574330708,
+          "x_max": 0.6605805012012795,
+          "y_min": 0.3146853146853147,
+          "y_max": 1.0,
+          "n_thresholds": 12
+        },
+        {
+          "log_odds_centre": 1.3896,
+          "odds_centre": 4.01,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.01720504296330734,
+          "x_max": 0.6808205359712848,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 29
+        },
+        {
+          "log_odds_centre": 1.8405,
+          "odds_centre": 6.3,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.008454338420060927,
+          "x_max": 0.6318262015998405,
+          "y_min": 0.0,
+          "y_max": 0.2564102564102564,
+          "n_thresholds": 22
+        },
+        {
+          "log_odds_centre": 2.316,
+          "odds_centre": 10.14,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.007914211235267105,
+          "x_max": 0.7027456107024689,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 28
+        },
+        {
+          "log_odds_centre": 2.7957,
+          "odds_centre": 16.37,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.005485233687875728,
+          "x_max": 0.4526580558070824,
+          "y_min": 0.0,
+          "y_max": 0.4,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 3.2661,
+          "odds_centre": 26.21,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0060377869968170515,
+          "x_max": 0.3484453364341728,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 3.7812,
+          "odds_centre": 43.87,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.003673612608682814,
+          "x_max": 0.4958446305430431,
+          "y_min": 0.0,
+          "y_max": 0.045454545454545456,
+          "n_thresholds": 8
+        },
+        {
+          "log_odds_centre": 5.1032,
+          "odds_centre": 164.56,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0026005710318930753,
+          "x_max": 0.7684539936498018,
+          "y_min": 0.0,
+          "y_max": 0.047619047619047616,
+          "n_thresholds": 12
+        }
+      ]
+    },
+    {
+      "fold": 10,
+      "train_end": "2025-10-27",
+      "test_start": "2025-10-27",
+      "test_end": "2025-11-26",
+      "n_train": 104718,
+      "n_test": 3912,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 1.0094,
+      "best_iteration": 791,
+      "fit_seconds": 14.4,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.927,
+          "odds_centre": 2.53,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.013478309294040678,
+          "x_max": 0.7071190840637489,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 15
+        },
+        {
+          "log_odds_centre": 1.389,
+          "odds_centre": 4.01,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.011200509127016738,
+          "x_max": 0.6691839962331796,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 31
+        },
+        {
+          "log_odds_centre": 1.8387,
+          "odds_centre": 6.29,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0054026686403852355,
+          "x_max": 0.8753384280361939,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 21
+        },
+        {
+          "log_odds_centre": 2.3164,
+          "odds_centre": 10.14,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.005903394267298424,
+          "x_max": 0.7828269267152649,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 27
+        },
+        {
+          "log_odds_centre": 2.7955,
+          "odds_centre": 16.37,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004949953725176566,
+          "x_max": 0.45354142810801856,
+          "y_min": 0.0,
+          "y_max": 0.15789473684210525,
+          "n_thresholds": 20
+        },
+        {
+          "log_odds_centre": 3.2642,
+          "odds_centre": 26.16,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004350996342047986,
+          "x_max": 0.40281606940907033,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 3.7844,
+          "odds_centre": 44.01,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0032597782257144255,
+          "x_max": 0.662247122952525,
+          "y_min": 0.0,
+          "y_max": 0.09090909090909091,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 5.1215,
+          "odds_centre": 167.59,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0018302780381034898,
+          "x_max": 0.523970941238132,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 14
+        }
+      ]
+    },
+    {
+      "fold": 11,
+      "train_end": "2025-11-26",
+      "test_start": "2025-11-26",
+      "test_end": "2025-12-26",
+      "n_train": 108630,
+      "n_test": 3476,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 1.0068,
+      "best_iteration": 594,
+      "fit_seconds": 13.4,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9258,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.018306964529734807,
+          "x_max": 0.6922165351568288,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 1.3858,
+          "odds_centre": 4.0,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.013084491844685044,
+          "x_max": 0.8055405991860501,
+          "y_min": 0.0,
+          "y_max": 0.6666666666666666,
+          "n_thresholds": 28
+        },
+        {
+          "log_odds_centre": 1.8362,
+          "odds_centre": 6.27,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.007596860292328512,
+          "x_max": 0.9272451819314393,
+          "y_min": 0.0,
+          "y_max": 0.6666666666666666,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 2.317,
+          "odds_centre": 10.15,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.006950013950837535,
+          "x_max": 0.7553174603677001,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 27
+        },
+        {
+          "log_odds_centre": 2.794,
+          "odds_centre": 16.35,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.006583695732824787,
+          "x_max": 0.3910501346437785,
+          "y_min": 0.0,
+          "y_max": 0.2,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 3.2651,
+          "odds_centre": 26.18,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004836247942182777,
+          "x_max": 0.410326925610924,
+          "y_min": 0.0,
+          "y_max": 0.2,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 3.7871,
+          "odds_centre": 44.13,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004086897327882977,
+          "x_max": 0.6304735170965402,
+          "y_min": 0.0,
+          "y_max": 0.05714285714285714,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 5.1649,
+          "odds_centre": 175.02,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.002457831382480355,
+          "x_max": 0.5498932487961892,
+          "y_min": 0.0,
+          "y_max": 0.25,
+          "n_thresholds": 10
+        }
+      ]
+    },
+    {
+      "fold": 12,
+      "train_end": "2025-12-26",
+      "test_start": "2025-12-26",
+      "test_end": "2026-01-25",
+      "n_train": 112106,
+      "n_test": 4093,
+      "scored": true,
+      "calib_method": "isotonic",
+      "temperature": 0.9837,
+      "best_iteration": 428,
+      "fit_seconds": 12.4,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9243,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.015100671140939598,
+          "x_max": 0.6470588235294118,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 11
+        },
+        {
+          "log_odds_centre": 1.3858,
+          "odds_centre": 4.0,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004219409282700422,
+          "x_max": 0.6470588235294118,
+          "y_min": 0.0,
+          "y_max": 0.75,
+          "n_thresholds": 17
+        },
+        {
+          "log_odds_centre": 1.8356,
+          "odds_centre": 6.27,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.6470588235294118,
+          "y_min": 0.0,
+          "y_max": 0.75,
+          "n_thresholds": 17
+        },
+        {
+          "log_odds_centre": 2.3187,
+          "odds_centre": 10.16,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.6470588235294118,
+          "y_min": 0.0,
+          "y_max": 0.36,
+          "n_thresholds": 11
+        },
+        {
+          "log_odds_centre": 2.7938,
+          "odds_centre": 16.34,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.44654088050314467,
+          "y_min": 0.0,
+          "y_max": 0.12195121951219512,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 3.2687,
+          "odds_centre": 26.28,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.6470588235294118,
+          "y_min": 0.0,
+          "y_max": 0.08333333333333333,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 3.789,
+          "odds_centre": 44.21,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.44654088050314467,
+          "y_min": 0.0,
+          "y_max": 0.09090909090909091,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 5.1986,
+          "odds_centre": 181.02,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.44654088050314467,
+          "y_min": 0.0,
+          "y_max": 0.09090909090909091,
+          "n_thresholds": 9
+        }
+      ]
+    },
+    {
+      "fold": 13,
+      "train_end": "2026-01-25",
+      "test_start": "2026-01-25",
+      "test_end": "2026-02-24",
+      "n_train": 116199,
+      "n_test": 3086,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 1.0026,
+      "best_iteration": 710,
+      "fit_seconds": 15.2,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9274,
+          "odds_centre": 2.53,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.02015632815623891,
+          "x_max": 0.7443309002436075,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 1.3871,
+          "odds_centre": 4.0,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.013390032694052874,
+          "x_max": 0.8552257969585647,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 20
+        },
+        {
+          "log_odds_centre": 1.8382,
+          "odds_centre": 6.29,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.007810720793420956,
+          "x_max": 0.8535444377317197,
+          "y_min": 0.0,
+          "y_max": 0.75,
+          "n_thresholds": 20
+        },
+        {
+          "log_odds_centre": 2.3197,
+          "odds_centre": 10.17,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.006239864377269377,
+          "x_max": 0.706531662180525,
+          "y_min": 0.0,
+          "y_max": 0.3181818181818182,
+          "n_thresholds": 28
+        },
+        {
+          "log_odds_centre": 2.7958,
+          "odds_centre": 16.38,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.00527763453627865,
+          "x_max": 0.5698510128667554,
+          "y_min": 0.0,
+          "y_max": 0.16666666666666666,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 3.2693,
+          "odds_centre": 26.29,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.005469321999966408,
+          "x_max": 0.7706365668776062,
+          "y_min": 0.0,
+          "y_max": 0.05058365758754864,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 3.7924,
+          "odds_centre": 44.36,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.003453636987844068,
+          "x_max": 0.5807741876154894,
+          "y_min": 0.0,
+          "y_max": 0.09090909090909091,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 5.226,
+          "odds_centre": 186.04,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.002022792123484589,
+          "x_max": 0.597571995086768,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 13
+        }
+      ]
+    },
+    {
+      "fold": 14,
+      "train_end": "2026-02-24",
+      "test_start": "2026-02-24",
+      "test_end": "2026-03-26",
+      "n_train": 119285,
+      "n_test": 4054,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 0.9184,
+      "best_iteration": 9,
+      "fit_seconds": 10.6,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9289,
+          "odds_centre": 2.53,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.022374354879345717,
+          "x_max": 0.4241198483413769,
+          "y_min": 0.0,
+          "y_max": 0.6666666666666666,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 1.3808,
+          "odds_centre": 3.98,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.019830776080966932,
+          "x_max": 0.42559977878689076,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 25
+        },
+        {
+          "log_odds_centre": 1.8417,
+          "odds_centre": 6.31,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.014912478663603507,
+          "x_max": 0.4294012511397299,
+          "y_min": 0.0,
+          "y_max": 0.19811320754716982,
+          "n_thresholds": 24
+        },
+        {
+          "log_odds_centre": 2.3167,
+          "odds_centre": 10.14,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.013449415583349006,
+          "x_max": 0.4103497987087275,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 20
+        },
+        {
+          "log_odds_centre": 2.7941,
+          "odds_centre": 16.35,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.011975685702952234,
+          "x_max": 0.4182852185263714,
+          "y_min": 0.0,
+          "y_max": 0.12698412698412698,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 3.2708,
+          "odds_centre": 26.33,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.008296231032582507,
+          "x_max": 0.4152156314816228,
+          "y_min": 0.0,
+          "y_max": 0.04,
+          "n_thresholds": 14
+        },
+        {
+          "log_odds_centre": 3.7908,
+          "odds_centre": 44.29,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.008155484523424855,
+          "x_max": 0.3266485349709339,
+          "y_min": 0.0,
+          "y_max": 0.05063291139240506,
+          "n_thresholds": 8
+        },
+        {
+          "log_odds_centre": 5.2518,
+          "odds_centre": 190.9,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.007615869276825756,
+          "x_max": 0.3752555389019436,
+          "y_min": 0.0,
+          "y_max": 0.07142857142857142,
+          "n_thresholds": 12
+        }
+      ]
+    },
+    {
+      "fold": 15,
+      "train_end": "2026-03-26",
+      "test_start": "2026-03-26",
+      "test_end": "2026-04-25",
+      "n_train": 123339,
+      "n_test": 4891,
+      "scored": true,
+      "calib_method": "sigmoid",
+      "temperature": 1.0112,
+      "best_iteration": 682,
+      "fit_seconds": 16.8,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9234,
+          "odds_centre": 2.52,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.023203404515118535,
+          "x_max": 0.7009433769293644,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 17
+        },
+        {
+          "log_odds_centre": 1.3764,
+          "odds_centre": 3.96,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.012410189273013555,
+          "x_max": 0.893951515112159,
+          "y_min": 0.0,
+          "y_max": 0.6363636363636364,
+          "n_thresholds": 30
+        },
+        {
+          "log_odds_centre": 1.8412,
+          "odds_centre": 6.3,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.006916106018619428,
+          "x_max": 0.8680358913492838,
+          "y_min": 0.0,
+          "y_max": 0.8,
+          "n_thresholds": 18
+        },
+        {
+          "log_odds_centre": 2.3149,
+          "odds_centre": 10.12,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.005627913282715142,
+          "x_max": 0.719592267937465,
+          "y_min": 0.0,
+          "y_max": 0.25,
+          "n_thresholds": 24
+        },
+        {
+          "log_odds_centre": 2.7923,
+          "odds_centre": 16.32,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.006006839620894675,
+          "x_max": 0.5450272497139053,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 22
+        },
+        {
+          "log_odds_centre": 3.2708,
+          "odds_centre": 26.33,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.005131344637958787,
+          "x_max": 0.9293930831592031,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 12
+        },
+        {
+          "log_odds_centre": 3.7933,
+          "odds_centre": 44.4,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0034054575668517584,
+          "x_max": 0.5454904957714378,
+          "y_min": 0.0,
+          "y_max": 0.08333333333333333,
+          "n_thresholds": 10
+        },
+        {
+          "log_odds_centre": 5.2619,
+          "odds_centre": 192.84,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0021087324890998148,
+          "x_max": 0.5704408887806617,
+          "y_min": 0.0,
+          "y_max": 0.5,
+          "n_thresholds": 10
+        }
+      ]
+    },
+    {
+      "fold": 16,
+      "train_end": "2026-04-25",
+      "test_start": "2026-04-25",
+      "test_end": "2026-05-25",
+      "n_train": 128230,
+      "n_test": 5111,
+      "scored": true,
+      "calib_method": "isotonic",
+      "temperature": 0.9943,
+      "best_iteration": 471,
+      "fit_seconds": 16.2,
+      "fl_iso_bands": [
+        {
+          "log_odds_centre": 0.9208,
+          "odds_centre": 2.51,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.004796163069544364,
+          "x_max": 0.5245901639344261,
+          "y_min": 0.0,
+          "y_max": 0.5294117647058824,
+          "n_thresholds": 9
+        },
+        {
+          "log_odds_centre": 1.3766,
+          "odds_centre": 3.96,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5245901639344261,
+          "y_min": 0.0,
+          "y_max": 0.625,
+          "n_thresholds": 19
+        },
+        {
+          "log_odds_centre": 1.846,
+          "odds_centre": 6.33,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5245901639344261,
+          "y_min": 0.0,
+          "y_max": 0.4444444444444444,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 2.3155,
+          "odds_centre": 10.13,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5245901639344261,
+          "y_min": 0.0,
+          "y_max": 0.15384615384615385,
+          "n_thresholds": 13
+        },
+        {
+          "log_odds_centre": 2.7934,
+          "odds_centre": 16.34,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5245901639344261,
+          "y_min": 0.0,
+          "y_max": 0.2,
+          "n_thresholds": 16
+        },
+        {
+          "log_odds_centre": 3.2651,
+          "odds_centre": 26.18,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5245901639344261,
+          "y_min": 0.0,
+          "y_max": 0.3333333333333333,
+          "n_thresholds": 12
+        },
+        {
+          "log_odds_centre": 3.7886,
+          "odds_centre": 44.19,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5074626865671642,
+          "y_min": 0.0,
+          "y_max": 0.1,
+          "n_thresholds": 8
+        },
+        {
+          "log_odds_centre": 5.2221,
+          "odds_centre": 185.32,
+          "type": "IsotonicCalibrator",
+          "x_min": 0.0,
+          "x_max": 0.5245901639344261,
+          "y_min": 0.0,
+          "y_max": 1.0,
+          "n_thresholds": 7
+        }
+      ]
+    }
+  ]
+}

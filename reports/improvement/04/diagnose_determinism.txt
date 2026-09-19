@@ -1,0 +1,11 @@
+2026-09-19 02:58:53 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 02:58:53 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 02:58:53 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+[02:58:53] sample: 148450 raw rows
+[03:02:19] build 1: 205.8s, 125260 rows
+[03:05:46] build 2: 207.1s, 125260 rows
+[03:05:46] join: 125260 / 125260 matched
+[03:05:46] field_size: 0 differ / 125260
+[03:05:46] race_complexity_v2: 0 differ / 125260
+[03:05:46] overround_norm_prob: 0 differ / 125260
+[03:05:46] implied_prob: 0 differ / 125260

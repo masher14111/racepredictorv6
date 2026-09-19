@@ -1,0 +1,63 @@
+{
+  "candidates": {
+    "hosted_text": {
+      "converged": true,
+      "mean_race_log_loss": 1.877652827334927,
+      "n_eval_races": 21,
+      "n_eval_rows": 227,
+      "n_scored_races": 21,
+      "n_train_races": 29867,
+      "n_train_rows": 263755
+    },
+    "no_text": {
+      "converged": true,
+      "mean_race_log_loss": 1.877652827333579,
+      "n_eval_races": 21,
+      "n_eval_rows": 227,
+      "n_scored_races": 21,
+      "n_train_races": 29867,
+      "n_train_rows": 263755
+    },
+    "regex_text": {
+      "converged": true,
+      "mean_race_log_loss": 1.877652827334927,
+      "n_eval_races": 21,
+      "n_eval_rows": 227,
+      "n_scored_races": 21,
+      "n_train_races": 29867,
+      "n_train_rows": 263755
+    }
+  },
+  "coverage": {
+    "fit_core_hosted_rows_with_text": 0,
+    "fit_core_regex_rows_with_text": 0,
+    "smoke_eval_hosted_cache_hit_rows": 227,
+    "smoke_eval_hosted_rows_with_text": 227,
+    "smoke_eval_regex_rows_with_text": 227
+  },
+  "l2_reused_from_step10": 0.0006026889128682511,
+  "manifest": "reports/improvement/10/run_manifest.json",
+  "matrix": "data/audit/10/training_rebuilt.parquet",
+  "paired_bootstrap": {
+    "hosted_vs_no_text": {
+      "base_race_log_loss": 1.8776528273335797,
+      "ci95_high": 6.227611944649899e-12,
+      "ci95_low": -8.67516257242938e-12,
+      "mean_delta_base_minus_test": -1.3478477593290943e-12,
+      "n_races": 21,
+      "significant_improvement": false,
+      "test_race_log_loss": 1.877652827334927
+    },
+    "regex_vs_no_text": {
+      "base_race_log_loss": 1.8776528273335797,
+      "ci95_high": 6.227611944649899e-12,
+      "ci95_low": -8.67516257242938e-12,
+      "mean_delta_base_minus_test": -1.3478477593290943e-12,
+      "n_races": 21,
+      "significant_improvement": false,
+      "test_race_log_loss": 1.877652827334927
+    }
+  },
+  "reason": "coverage_report.json shows 0 archived-text races in dev_oos/final_holdout; this run scores only the single archived day, held out of a same-window training fit -- not a chronological future-window comparison. See frozen_protocol.json status_rule.",
+  "status": "SMOKE_TEST_NOT_ACCEPTANCE_ABLATION"
+}

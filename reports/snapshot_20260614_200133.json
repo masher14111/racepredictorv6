@@ -1,0 +1,625 @@
+{
+  "generated_at": "2026-06-14T20:01:33.631614+01:00",
+  "predictions": {
+    "generated_at": "2026-06-14T19:03:59.402463+01:00",
+    "model_targets": [
+      "won",
+      "placed_2",
+      "showed"
+    ],
+    "total_races": 7,
+    "total_runners": 297,
+    "races": [
+      {
+        "venue": "Monmouth Park",
+        "race_time": "2026-06-14T18:51:00+01:00",
+        "field_size": 44,
+        "each_way_available": true,
+        "selections": [
+          {
+            "rank": 1,
+            "horse_id": "18aeb294b5077bce",
+            "horse_name": "Elsie's Smile",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.5,
+            "implied_prob": 0.4,
+            "won_prob": 0.8767,
+            "placed_2_prob": 0.8956,
+            "showed_prob": 0.9322,
+            "composite_score": 0.8935,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 2,
+            "horse_id": "db547745433cd1de",
+            "horse_name": "Ms Sophistication",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.5,
+            "implied_prob": 0.4,
+            "won_prob": 0.8767,
+            "placed_2_prob": 0.8956,
+            "showed_prob": 0.9322,
+            "composite_score": 0.8935,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 3,
+            "horse_id": "913357d28697ce1e",
+            "horse_name": "Magneto",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.5,
+            "implied_prob": 0.4,
+            "won_prob": 0.8767,
+            "placed_2_prob": 0.8956,
+            "showed_prob": 0.9322,
+            "composite_score": 0.8935,
+            "each_way_value": false,
+            "low_odds": false
+          }
+        ],
+        "excluded_low_odds": []
+      },
+      {
+        "venue": "Laurel Park",
+        "race_time": "2026-06-14T19:00:00+01:00",
+        "field_size": 12,
+        "each_way_available": true,
+        "selections": [
+          {
+            "rank": 1,
+            "horse_id": "3cddc6708070ab1a",
+            "horse_name": "Notion In Motion",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.88,
+            "implied_prob": 0.3472,
+            "won_prob": 0.8354,
+            "placed_2_prob": 0.8938,
+            "showed_prob": 0.9259,
+            "composite_score": 0.8711,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 2,
+            "horse_id": "dc9cb8ff58259e03",
+            "horse_name": "Chimney Sweep",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 3.25,
+            "implied_prob": 0.3077,
+            "won_prob": 0.7948,
+            "placed_2_prob": 0.8936,
+            "showed_prob": 0.9161,
+            "composite_score": 0.8487,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 3,
+            "horse_id": "00ec6d7110491220",
+            "horse_name": "J C's Boys",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 4.0,
+            "implied_prob": 0.25,
+            "won_prob": 0.7552,
+            "placed_2_prob": 0.8821,
+            "showed_prob": 0.9033,
+            "composite_score": 0.8229,
+            "each_way_value": false,
+            "low_odds": false
+          }
+        ],
+        "excluded_low_odds": []
+      },
+      {
+        "venue": "Woodbine",
+        "race_time": "2026-06-14T19:30:00+01:00",
+        "field_size": 61,
+        "each_way_available": true,
+        "selections": [
+          {
+            "rank": 1,
+            "horse_id": "d6a90b2bc382a740",
+            "horse_name": "Ever Dangerous",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.63,
+            "implied_prob": 0.3802,
+            "won_prob": 0.844,
+            "placed_2_prob": 0.859,
+            "showed_prob": 0.8829,
+            "composite_score": 0.8563,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 2,
+            "horse_id": "e585c800cbc2f7ea",
+            "horse_name": "William T",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.63,
+            "implied_prob": 0.3802,
+            "won_prob": 0.844,
+            "placed_2_prob": 0.859,
+            "showed_prob": 0.8829,
+            "composite_score": 0.8563,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 3,
+            "horse_id": "9d91874c24b9fc4b",
+            "horse_name": "Crystal Pearl",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.88,
+            "implied_prob": 0.3472,
+            "won_prob": 0.8308,
+            "placed_2_prob": 0.8523,
+            "showed_prob": 0.8695,
+            "composite_score": 0.845,
+            "each_way_value": false,
+            "low_odds": false
+          }
+        ],
+        "excluded_low_odds": [
+          {
+            "rank": null,
+            "horse_id": "25abf483a9f06ee9",
+            "horse_name": "El Magnate",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 1.91,
+            "implied_prob": 0.5236,
+            "won_prob": 0.896,
+            "placed_2_prob": 0.9172,
+            "showed_prob": 0.9276,
+            "composite_score": 0.9087,
+            "each_way_value": false,
+            "low_odds": true
+          },
+          {
+            "rank": null,
+            "horse_id": "ed6f5c45f626b36f",
+            "horse_name": "Crystal Visions",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.1,
+            "implied_prob": 0.4762,
+            "won_prob": 0.8876,
+            "placed_2_prob": 0.9021,
+            "showed_prob": 0.9121,
+            "composite_score": 0.8968,
+            "each_way_value": false,
+            "low_odds": true
+          },
+          {
+            "rank": null,
+            "horse_id": "7eef52ccdc332d05",
+            "horse_name": "Patriotwave",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.38,
+            "implied_prob": 0.4202,
+            "won_prob": 0.8702,
+            "placed_2_prob": 0.8881,
+            "showed_prob": 0.8992,
+            "composite_score": 0.8814,
+            "each_way_value": false,
+            "low_odds": true
+          }
+        ]
+      },
+      {
+        "venue": "Belmont At The Big A",
+        "race_time": "2026-06-14T19:36:00+01:00",
+        "field_size": 51,
+        "each_way_available": true,
+        "selections": [
+          {
+            "rank": 1,
+            "horse_id": "9fceeef318655447",
+            "horse_name": "Griselda",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.63,
+            "implied_prob": 0.3802,
+            "won_prob": 0.8587,
+            "placed_2_prob": 0.883,
+            "showed_prob": 0.8971,
+            "composite_score": 0.8736,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 2,
+            "horse_id": "c7ace29902b95c63",
+            "horse_name": "Fraudster",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.75,
+            "implied_prob": 0.3636,
+            "won_prob": 0.8477,
+            "placed_2_prob": 0.8702,
+            "showed_prob": 0.8799,
+            "composite_score": 0.8609,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 3,
+            "horse_id": "9bdfd4a89dea446e",
+            "horse_name": "Emerald Ember",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.75,
+            "implied_prob": 0.3636,
+            "won_prob": 0.8477,
+            "placed_2_prob": 0.8702,
+            "showed_prob": 0.8799,
+            "composite_score": 0.8609,
+            "each_way_value": false,
+            "low_odds": false
+          }
+        ],
+        "excluded_low_odds": [
+          {
+            "rank": null,
+            "horse_id": "3d36ecba8327a079",
+            "horse_name": "Egyptian",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.38,
+            "implied_prob": 0.4202,
+            "won_prob": 0.8748,
+            "placed_2_prob": 0.892,
+            "showed_prob": 0.9242,
+            "composite_score": 0.8898,
+            "each_way_value": false,
+            "low_odds": true
+          },
+          {
+            "rank": null,
+            "horse_id": "d60e02886f4a07a4",
+            "horse_name": "Ocean Atlantique",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.38,
+            "implied_prob": 0.4202,
+            "won_prob": 0.8748,
+            "placed_2_prob": 0.892,
+            "showed_prob": 0.9242,
+            "composite_score": 0.8898,
+            "each_way_value": false,
+            "low_odds": true
+          }
+        ]
+      },
+      {
+        "venue": "Gulfstream",
+        "race_time": "2026-06-14T20:31:00+01:00",
+        "field_size": 51,
+        "each_way_available": true,
+        "selections": [
+          {
+            "rank": 1,
+            "horse_id": "8abf828c5aed4fa0",
+            "horse_name": "Great Venezuela",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.5,
+            "implied_prob": 0.4,
+            "won_prob": 0.8686,
+            "placed_2_prob": 0.886,
+            "showed_prob": 0.9085,
+            "composite_score": 0.8818,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 2,
+            "horse_id": "93c3c69f0f3297b7",
+            "horse_name": "Lord Eddard Stark",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.5,
+            "implied_prob": 0.4,
+            "won_prob": 0.8686,
+            "placed_2_prob": 0.886,
+            "showed_prob": 0.9085,
+            "composite_score": 0.8818,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 3,
+            "horse_id": "8c701b122d883da6",
+            "horse_name": "Tiffany Gold",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 3.25,
+            "implied_prob": 0.3077,
+            "won_prob": 0.8064,
+            "placed_2_prob": 0.846,
+            "showed_prob": 0.8627,
+            "composite_score": 0.8296,
+            "each_way_value": false,
+            "low_odds": false
+          }
+        ],
+        "excluded_low_odds": [
+          {
+            "rank": null,
+            "horse_id": "5069f0677b06085c",
+            "horse_name": "Storm The Pointe",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 1.91,
+            "implied_prob": 0.5236,
+            "won_prob": 0.9038,
+            "placed_2_prob": 0.9157,
+            "showed_prob": 0.9357,
+            "composite_score": 0.9138,
+            "each_way_value": false,
+            "low_odds": true
+          },
+          {
+            "rank": null,
+            "horse_id": "c5ca02c105496ce8",
+            "horse_name": "Redhotnotbothered",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.25,
+            "implied_prob": 0.4444,
+            "won_prob": 0.8845,
+            "placed_2_prob": 0.9041,
+            "showed_prob": 0.92,
+            "composite_score": 0.8975,
+            "each_way_value": false,
+            "low_odds": true
+          }
+        ]
+      },
+      {
+        "venue": "Churchill Downs",
+        "race_time": "2026-06-14T21:22:00+01:00",
+        "field_size": 53,
+        "each_way_available": true,
+        "selections": [
+          {
+            "rank": 1,
+            "horse_id": "1fc550eeffb1e1fc",
+            "horse_name": "Hesper",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.5,
+            "implied_prob": 0.4,
+            "won_prob": 0.8686,
+            "placed_2_prob": 0.8938,
+            "showed_prob": 0.9137,
+            "composite_score": 0.8852,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 2,
+            "horse_id": "cdd011495b6b41c9",
+            "horse_name": "Heartbeat",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.63,
+            "implied_prob": 0.3802,
+            "won_prob": 0.8549,
+            "placed_2_prob": 0.8839,
+            "showed_prob": 0.9021,
+            "composite_score": 0.8731,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 3,
+            "horse_id": "5b0c8d0faa2bd8fe",
+            "horse_name": "Nobals",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 3.25,
+            "implied_prob": 0.3077,
+            "won_prob": 0.8063,
+            "placed_2_prob": 0.8612,
+            "showed_prob": 0.8722,
+            "composite_score": 0.836,
+            "each_way_value": false,
+            "low_odds": false
+          }
+        ],
+        "excluded_low_odds": [
+          {
+            "rank": null,
+            "horse_id": "3a5816af22e3c104",
+            "horse_name": "Lunar Loop",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.2,
+            "implied_prob": 0.4545,
+            "won_prob": 0.8967,
+            "placed_2_prob": 0.9072,
+            "showed_prob": 0.9288,
+            "composite_score": 0.9062,
+            "each_way_value": false,
+            "low_odds": true
+          },
+          {
+            "rank": null,
+            "horse_id": "32fa299cf3f50cbc",
+            "horse_name": "Good Mojo",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.25,
+            "implied_prob": 0.4444,
+            "won_prob": 0.8894,
+            "placed_2_prob": 0.9072,
+            "showed_prob": 0.923,
+            "composite_score": 0.9015,
+            "each_way_value": false,
+            "low_odds": true
+          }
+        ]
+      },
+      {
+        "venue": "Santa Anita",
+        "race_time": "2026-06-14T21:32:00+01:00",
+        "field_size": 25,
+        "each_way_available": true,
+        "selections": [
+          {
+            "rank": 1,
+            "horse_id": "245ae17a35ebbdbe",
+            "horse_name": "Can't Sleep",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 3.0,
+            "implied_prob": 0.3333,
+            "won_prob": 0.8516,
+            "placed_2_prob": 0.9021,
+            "showed_prob": 0.9418,
+            "composite_score": 0.8848,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 2,
+            "horse_id": "b46582c78e3eabec",
+            "horse_name": "Nylie",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 3.0,
+            "implied_prob": 0.3333,
+            "won_prob": 0.8516,
+            "placed_2_prob": 0.9021,
+            "showed_prob": 0.9418,
+            "composite_score": 0.8848,
+            "each_way_value": false,
+            "low_odds": false
+          },
+          {
+            "rank": 3,
+            "horse_id": "ab1cd358c152cd8a",
+            "horse_name": "Wizard Of Westwood",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 3.25,
+            "implied_prob": 0.3077,
+            "won_prob": 0.831,
+            "placed_2_prob": 0.8831,
+            "showed_prob": 0.9345,
+            "composite_score": 0.8673,
+            "each_way_value": false,
+            "low_odds": false
+          }
+        ],
+        "excluded_low_odds": [
+          {
+            "rank": null,
+            "horse_id": "568780db747e4f1b",
+            "horse_name": "Thirty Two Chunk",
+            "jockey": "<NA>",
+            "trainer": "<NA>",
+            "decimal_odds": 2.25,
+            "implied_prob": 0.4444,
+            "won_prob": 0.8897,
+            "placed_2_prob": 0.9169,
+            "showed_prob": 0.9567,
+            "composite_score": 0.9113,
+            "each_way_value": false,
+            "low_odds": true
+          }
+        ]
+      }
+    ]
+  },
+  "bets": [],
+  "performance_summary": {
+    "total_bets": 0,
+    "pending_bets": 0,
+    "win_rate": 0.0,
+    "place_rate": 0.0,
+    "total_staked": 0.0,
+    "total_profit": 0.0,
+    "roi_pct": 0.0,
+    "bankroll": 1000.0,
+    "initial_bankroll": 1000.0,
+    "max_drawdown_pct": 0.0,
+    "stop_loss_active": false
+  },
+  "model_meta": {
+    "targets": {
+      "won": {
+        "best_params": {},
+        "test_auc": 0.7883072833876112,
+        "band_aucs": {
+          "favourite": 0.7132700556068434,
+          "mid": 0.699227145121427,
+          "underdog": 0.736994777944005
+        }
+      },
+      "placed_2": {
+        "best_params": {},
+        "test_auc": 0.7850251485269875,
+        "band_aucs": {
+          "favourite": 0.7205012188059072,
+          "mid": 0.6984697289874175,
+          "underdog": 0.736322618574944
+        }
+      },
+      "showed": {
+        "best_params": {},
+        "test_auc": 0.7867153606156242,
+        "band_aucs": {
+          "favourite": 0.7294106158776431,
+          "mid": 0.7101301620072393,
+          "underdog": 0.7288632898625195
+        }
+      }
+    },
+    "feature_cols": [
+      "implied_prob",
+      "overround_norm_prob",
+      "log_odds",
+      "market_rank",
+      "field_size",
+      "going_speed",
+      "class_change",
+      "distance_furlongs",
+      "recent_form_avg",
+      "recent_form_wins",
+      "recent_form_runs",
+      "timeform_rating",
+      "rating_rank",
+      "pace_bias",
+      "historical_win_rate",
+      "historical_place_rate",
+      "jockey_win_rate",
+      "trainer_win_rate",
+      "jt_combo_win_rate",
+      "jt_combo_runs",
+      "going_pref_win_rate",
+      "going_pref_place_rate",
+      "ew_value_index",
+      "odds_drift",
+      "odds_value_delta",
+      "horse_speed",
+      "horse_speed_rank",
+      "race_complexity"
+    ],
+    "train_rows": 198538,
+    "test_rows": 49635
+  }
+}

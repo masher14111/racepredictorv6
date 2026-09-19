@@ -1,0 +1,68 @@
+rows 260490
+cols 102
+date range 2024-01-01 00:00:00+00:00
+2026-07-25 00:00:00+00:00
+market_type
+WIN      148860
+PLACE    111630
+Name: count, dtype: int64
+columns with race id candidates: ['race_id', 'race_uid']
+race_col race_id
+train/test shared races: 1
+fit/calibration shared races: 1
+fit/early-stop shared races: 1
+train/test shared races (test_size=0.2): 1
+fit/calibration shared races: 1
+fit/early-stop shared races: 1
+quicksort 0 train/test shared: 1
+quicksort 1 train/test shared: 1
+quicksort 2 train/test shared: 1
+stable 0 train/test shared: 1
+stable 1 train/test shared: 1
+stable 2 train/test shared: 1
+boundary date 2026-01-14 00:00:00+00:00 rows on that date: 238
+race_id train/test shared: 1
+race_uid train/test shared: 28
+race_id fit/calib shared: 1
+race_id fit/earlystop shared: 1
+race_uid fit/calib shared: 13
+race_uid fit/earlystop shared: 45
+training.parquet mtime: Mon Jul 27 09:28:22 2026
+n unique race_id: 0
+n unique race_uid: 29512
+  race_id                      race_uid                 race_date
+0    None    Doncaster|2026-03-28T13:20 2026-03-28 00:00:00+00:00
+1    None        Ascot|2026-05-01T14:00 2026-05-01 00:00:00+00:00
+2    None      Sandown|2026-05-28T17:42 2026-05-28 00:00:00+00:00
+3    None  Royal Ascot|2026-06-17T18:10 2026-06-17 00:00:00+00:00
+4    None      Sandown|2026-07-03T14:25 2026-07-03 00:00:00+00:00
+5    None      Newbury|2026-07-17T16:10 2026-07-17 00:00:00+00:00
+6    None    Newmarket|2024-11-02T12:32 2024-11-02 00:00:00+00:00
+7    None    Lingfield|2025-04-23T17:20 2025-04-23 00:00:00+00:00
+8    None      Windsor|2025-05-12T18:03 2025-05-12 00:00:00+00:00
+9    None         Bath|2025-07-16T16:20 2025-07-16 00:00:00+00:00
+race_id with >1 race_uid: 0 of 1
+race_uid with >1 race_id: 0 of 29512
+timeform_rating null_frac= 1.0
+rating_rank null_frac= 1.0
+pace_bias null_frac= 1.0
+race_class null_frac= 1.0
+class_change null_frac= 1.0
+recent_form_avg null_frac= 1.0
+going_speed filled frac: 0.2092441168566932
+spotlight rows: 243
+date-like cols: ['race_date', 'race_time']
+race_date race_date
+2026-06-17T17:00    30
+2026-06-17T14:30    28
+2026-06-17T17:35    25
+2026-06-17T18:10    25
+2026-06-17T15:40    15
+Name: count, dtype: int64
+race_time race_time
+16:00    30
+13:30    28
+16:35    25
+17:10    25
+14:40    15
+Name: count, dtype: int64

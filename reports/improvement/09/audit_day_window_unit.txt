@@ -1,0 +1,11 @@
+source: data\audit\06\training_refreshed.parquet  slice rows=116,825  race_date resolution='us'  ticks/day=86,400,000,000
+
+[trainer_id]
+  repaired  : mean n(14d)=18.11  mean n(90d)=79.80  short==long on 9.48% of comparable rows
+  pre-repair: mean n(14d)=108.03  short==long on 100.00% of comparable rows  (window was 14,000 days)
+
+[jockey_id]
+  repaired  : mean n(14d)=20.23  mean n(90d)=87.31  short==long on 9.22% of comparable rows
+  pre-repair: mean n(14d)=118.01  short==long on 100.00% of comparable rows  (window was 14,000 days)
+
+repaired trainer_form_zscore: non-null 70.58%  exactly-zero among non-null 5.05%  std=0.9109

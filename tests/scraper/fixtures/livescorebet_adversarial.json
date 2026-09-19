@@ -1,0 +1,86 @@
+{
+  "currentEvent": [
+    {
+      "id": "SBTE_TEST_1",
+      "name": "Ascot: 14:00",
+      "startTime": "2026-07-25 13:00:00",
+      "racingData": {
+        "racetrackName": "Ascot"
+      },
+      "markets": [
+        {
+          "id": "SBTM_MATCH_1",
+          "name": "Best Finishing Position",
+          "type": "2100041750",
+          "groupRanks": [
+            {"marketGroupId": 766, "rank": 1000000}
+          ],
+          "selections": [
+            {"id": "pair-1", "name": "Alpha (Alpha - Bravo)", "kind": "REGULAR", "odds": 1.8},
+            {"id": "pair-2", "name": "Bravo (Alpha - Bravo)", "kind": "REGULAR", "odds": 2.0}
+          ]
+        },
+        {
+          "id": "SBTM_SPECIAL_1",
+          "name": "Pre-packs",
+          "type": "2100045751",
+          "groupRanks": [
+            {"marketGroupId": 761, "rank": 500000}
+          ],
+          "selections": [
+            {"id": "special-1", "name": "Alpha & Bravo Both To Finish In The Top 3", "kind": "REGULAR", "odds": 3.0}
+          ]
+        },
+        {
+          "id": "SBTM_UNKNOWN_1",
+          "name": "Mystery Offer",
+          "type": "999999",
+          "groupRanks": [
+            {"marketGroupId": 9999, "rank": 1}
+          ],
+          "selections": [
+            {"id": "unknown-1", "name": "Betting Without Alpha - Bravo To Win", "kind": "REGULAR", "odds": 2.5}
+          ]
+        },
+        {
+          "id": "SBTM_WIN_1",
+          "name": "To win",
+          "type": "1001558122",
+          "groupRanks": [
+            {"marketGroupId": 758, "rank": 100200},
+            {"marketGroupId": 759, "rank": 300000}
+          ],
+          "eachWay": {"place": "2", "odds": "4"},
+          "selections": [
+            {"id": "runner-1", "name": "Alpha", "kind": "REGULAR", "odds": 2.5},
+            {"id": "runner-2", "name": "Bravo", "kind": "REGULAR", "odds": 3.5},
+            {"id": "runner-3", "name": "Charlie", "kind": "REGULAR", "odds": 4.0}
+          ]
+        },
+        {
+          "id": "SBTM_DISTANCE_1",
+          "name": "Winning Distance",
+          "type": "1003376784",
+          "groupRanks": [
+            {"marketGroupId": 761, "rank": 500300}
+          ],
+          "selections": [
+            {"id": "distance-1", "name": "Alpha by 2 Lengths or more", "kind": "REGULAR", "odds": 5.0}
+          ]
+        },
+        {
+          "id": "SBTM_WITHOUT_1",
+          "name": "Without 1 (Alpha)",
+          "type": "2100047311",
+          "groupRanks": [
+            {"marketGroupId": 764, "rank": 800000}
+          ],
+          "selections": [
+            {"id": "without-1", "name": "Bravo", "kind": "REGULAR", "odds": 2.1},
+            {"id": "without-2", "name": "Charlie", "kind": "REGULAR", "odds": 2.2}
+          ]
+        }
+      ]
+    }
+  ]
+}

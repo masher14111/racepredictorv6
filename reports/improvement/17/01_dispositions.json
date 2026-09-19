@@ -1,0 +1,380 @@
+{
+ "checks": [
+  {
+   "stage": "09",
+   "check": "required prerequisite DONE",
+   "ok": true,
+   "detail": "DONE"
+  },
+  {
+   "stage": "10",
+   "check": "required prerequisite DONE",
+   "ok": true,
+   "detail": "DONE"
+  },
+  {
+   "stage": "11",
+   "check": "optional disposition recorded + stage note exists",
+   "ok": true,
+   "detail": "DONE"
+  },
+  {
+   "stage": "12",
+   "check": "optional disposition recorded + stage note exists",
+   "ok": true,
+   "detail": "DONE"
+  },
+  {
+   "stage": "13",
+   "check": "optional disposition recorded + stage note exists",
+   "ok": true,
+   "detail": "DONE"
+  },
+  {
+   "stage": "14",
+   "check": "optional disposition recorded + stage note exists",
+   "ok": true,
+   "detail": "DONE"
+  },
+  {
+   "stage": "15",
+   "check": "optional disposition recorded + stage note exists",
+   "ok": true,
+   "detail": "DONE"
+  },
+  {
+   "stage": "16",
+   "check": "optional disposition recorded + stage note exists",
+   "ok": true,
+   "detail": "DEFERRED_DATA"
+  },
+  {
+   "stage": "16",
+   "check": "deferred note has 'Candidate enabled: no' + 'Resume condition:'",
+   "ok": true,
+   "detail": "regex on stage note"
+  },
+  {
+   "stage": "10",
+   "check": "rebuilt matrix sha256 == frozen manifest",
+   "ok": true,
+   "detail": "9ee4e299a03f8286"
+  },
+  {
+   "stage": "10",
+   "check": "code-hash drift since freeze (informational; additive edits expected)",
+   "ok": true,
+   "detail": {
+    "changed_files": [
+     "models/features.py"
+    ]
+   }
+  },
+  {
+   "stage": "10",
+   "check": "unified_races sha256 unchanged since freeze (informational)",
+   "ok": true,
+   "detail": {
+    "unchanged": true
+   }
+  },
+  {
+   "stage": "10",
+   "check": "scorecard.json present",
+   "ok": true,
+   "detail": {
+    "top_level_keys": [
+     "candidates",
+     "conditional_logit_tuning",
+     "dev_oos_panel_races",
+     "dev_oos_panel_rows",
+     "manifest",
+     "market_only_baseline",
+     "weighting_ablation_dev_core_cv_log_loss"
+    ]
+   }
+  },
+  {
+   "stage": "13",
+   "check": "eval panel shape",
+   "ok": true,
+   "detail": {
+    "races": 618,
+    "rows": 5561
+   }
+  },
+  {
+   "stage": "10-13",
+   "check": "eval panel lies wholly inside dev_oos (no holdout rows)",
+   "ok": true,
+   "detail": "2026-08-27"
+  },
+  {
+   "stage": "10-13",
+   "check": "panel probability columns",
+   "ok": true,
+   "detail": [
+    "condlogit_indep_prob",
+    "condlogit_market_prob",
+    "catboost_indep_prob",
+    "catboost_market_prob",
+    "lgbm_indep_prob",
+    "lgbm_market_prob",
+    "market_ref_prob",
+    "xgboost_indep_prob",
+    "xgboost_market_prob"
+   ]
+  },
+  {
+   "stage": "10-16",
+   "check": "no stage artifact holds model probabilities on final-holdout rows",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "stage": "10-16",
+   "check": "scripts referencing the holdout window (for manual code-path review)",
+   "ok": true,
+   "detail": {
+    "reports\\improvement\\10\\02_freeze_manifest.py": [
+     95,
+     98,
+     99,
+     158,
+     161,
+     162,
+     228
+    ],
+    "reports\\improvement\\10\\03_run_baselines.py": [
+     4,
+     70
+    ],
+    "reports\\improvement\\10\\_smoke_run_baselines.py": [
+     4,
+     70
+    ],
+    "reports\\improvement\\11\\02_build_experiment_matrix.py": [
+     38,
+     145
+    ],
+    "reports\\improvement\\11\\03_run_ablation.py": [
+     7,
+     73
+    ],
+    "reports\\improvement\\12\\01_freeze_manifest.py": [
+     16,
+     84,
+     159,
+     161
+    ],
+    "reports\\improvement\\13\\01_freeze_manifest.py": [
+     5,
+     65
+    ],
+    "reports\\improvement\\13\\02_train_xgboost.py": [
+     8
+    ],
+    "reports\\improvement\\16\\00_coverage_report.py": [
+     6,
+     60,
+     61,
+     62,
+     68,
+     72
+    ],
+    "reports\\improvement\\16\\01_smoke_harness.py": [
+     5,
+     180
+    ]
+   }
+  },
+  {
+   "stage": "11/16",
+   "check": "MEASURED_SPEED_FEATURE_COLS absent from FEATURE_COLS/PRICE_FREE_FEATURE_COLS",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "stage": "11/16",
+   "check": "CANDIDATE_TEXT_FEATURE_COLS absent from FEATURE_COLS/PRICE_FREE_FEATURE_COLS",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "stage": "16",
+   "check": "CANDIDATE_TEXT_FEATURE_COLS not merged into CANDIDATE_INDEPENDENT_FEATURE_COLS",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "stage": "09",
+   "check": "MARKET_DERIVED_FEATURE_COLS stripped from PRICE_FREE_FEATURE_COLS (D40)",
+   "ok": true,
+   "detail": [
+    "race_complexity"
+   ]
+  },
+  {
+   "stage": "14-16",
+   "check": "config.yaml llm.enabled is false",
+   "ok": true,
+   "detail": false
+  },
+  {
+   "stage": "10-16",
+   "check": "importers of candidate-only modules outside tests/reports (must not be on the serving path)",
+   "ok": true,
+   "detail": {
+    "llm.hosted_adapter": [
+     "features/text_features_v1.py [lazy, inside a function]",
+     "scripts/benchmark_extraction.py [top-level]"
+    ],
+    "llm.hosted_budget": [
+     "features/text_features_v1.py [lazy, inside a function]",
+     "llm/hosted_adapter.py [top-level]",
+     "scripts/benchmark_extraction.py [top-level]"
+    ],
+    "features.text_features_v1": [
+     "models/features.py [top-level]"
+    ]
+   }
+  },
+  {
+   "stage": "10-13",
+   "check": "champion binaries are gitignored => earlier 'git status shows untouched' checks were vacuous",
+   "ok": true,
+   "detail": {
+    "ignored": [
+     "models/catboost_won_v3nf.bin",
+     "models/lgbm_won_v3.txt"
+    ]
+   }
+  },
+  {
+   "stage": "10-13",
+   "check": "every served artifact under models/ has an mtime BEFORE the programme began (2026-09-18)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "stage": "15",
+   "check": "hosted budget ledger within caps (US$5 / 1,200)",
+   "ok": true,
+   "detail": {
+    "schema_version": 1,
+    "max_cost_usd": 5.0,
+    "max_requests": 1200,
+    "committed_cost_usd": 0.2835941871999998,
+    "committed_requests": 498,
+    "n_outstanding_reservations": 0
+   }
+  }
+ ],
+ "champion_artifacts": {
+  "catboost_placed_2_v3.bin": {
+   "sha256": "2592a8618091c3e8adbe669ff1cb0d8d68d676195427233820d907e54304520b",
+   "bytes": 176160,
+   "mtime_utc": "2026-06-18T23:07:34+00:00"
+  },
+  "catboost_placed_2_v3_calib.pkl": {
+   "sha256": "129a63034f3cc5794716a924b36c1d866812f456907426709d6ab06ab88bd0a8",
+   "bytes": 89,
+   "mtime_utc": "2026-06-18T23:07:34+00:00"
+  },
+  "catboost_placed_2_v3nf.bin": {
+   "sha256": "dca4a3d5996e91f909f7c8a2a2efc129986c4ff100a50f5ed36b085e920f582b",
+   "bytes": 125520,
+   "mtime_utc": "2026-06-17T09:44:40+00:00"
+  },
+  "catboost_placed_2_v3nf_calib.pkl": {
+   "sha256": "f28c43654d73d303a6580a64d7e88ba5a83eb0dde52953bc7fc62830908341b2",
+   "bytes": 1880,
+   "mtime_utc": "2026-06-17T09:44:40+00:00"
+  },
+  "catboost_showed_v3.bin": {
+   "sha256": "df3c49077e89d85871130933fa54f5b7adb3fc388907804e6c835a9b3279e1fd",
+   "bytes": 203408,
+   "mtime_utc": "2026-06-18T23:07:36+00:00"
+  },
+  "catboost_showed_v3_calib.pkl": {
+   "sha256": "cdb0e60dbebeaa7ed6464022b8c52c2eb20aa306a0b15010280ca20158b9368a",
+   "bytes": 2528,
+   "mtime_utc": "2026-06-18T23:07:36+00:00"
+  },
+  "catboost_showed_v3nf.bin": {
+   "sha256": "cba0b8be018d760bdd1255ab9937b856056e61a2b8d88af8ba9bc92e9a1581b1",
+   "bytes": 783296,
+   "mtime_utc": "2026-06-17T10:19:42+00:00"
+  },
+  "catboost_showed_v3nf_calib.pkl": {
+   "sha256": "d23855220b7e5d322c7a6799afe8bb73545266d0d3230150ff08e15c83569e69",
+   "bytes": 89,
+   "mtime_utc": "2026-06-17T10:19:42+00:00"
+  },
+  "catboost_v3_meta.json": {
+   "sha256": "6736659c023d6a984a915b5a5f04b3497002b22687e36a64081424719d36b161",
+   "bytes": 9843,
+   "mtime_utc": "2026-06-18T23:07:36+00:00"
+  },
+  "catboost_v3nf_meta.json": {
+   "sha256": "0dd6f43cc05e4fb54665411e012dcf35c5d21e40a56df6f6f8533ef2c205ae78",
+   "bytes": 10949,
+   "mtime_utc": "2026-06-17T10:19:42+00:00"
+  },
+  "catboost_won_v3.bin": {
+   "sha256": "a064701968d1023b88483c60d6beb04246db4c44191b9250fdadbd51a8715e32",
+   "bytes": 135152,
+   "mtime_utc": "2026-06-18T23:07:32+00:00"
+  },
+  "catboost_won_v3_calib.pkl": {
+   "sha256": "a4c7681e8bede68f7741c4817e0a28bbc475f0ab7135873b55ecf4bd33569cc3",
+   "bytes": 89,
+   "mtime_utc": "2026-06-18T23:07:32+00:00"
+  },
+  "catboost_won_v3nf.bin": {
+   "sha256": "9d45ef36cae6feb26ddd8c5c3130e3423b736b24e1960e46033359523bcb518b",
+   "bytes": 1359192,
+   "mtime_utc": "2026-06-17T09:14:16+00:00"
+  },
+  "catboost_won_v3nf_calib.pkl": {
+   "sha256": "27c992adcddcc22e531e25ddc37899addd07728c4f8688c7f3c4d04ef7a91fd3",
+   "bytes": 89,
+   "mtime_utc": "2026-06-17T09:14:16+00:00"
+  },
+  "drift_report.json": {
+   "sha256": "4e46e7a0a4f8c619c74e03f3bb6889cbb92125860aaccf014ff3cbec27ad01bf",
+   "bytes": 4304,
+   "mtime_utc": "2026-06-14T19:01:18+00:00"
+  },
+  "fl_oddsband_v3nf_calib.pkl": {
+   "sha256": "ecced5eee2cd7b609fe0a09d5b5a61d96b2b745a28bab4cfaabea300555631b1",
+   "bytes": 491,
+   "mtime_utc": "2026-07-27T08:45:02+00:00"
+  },
+  "fl_oddsband_v3nf_calib_meta.json": {
+   "sha256": "c94e619906e0db43031db472e0124ed2f8c288ba7c3d96818e78af46caca8be8",
+   "bytes": 974,
+   "mtime_utc": "2026-07-27T08:45:02+00:00"
+  },
+  "lgbm_v3_meta.json": {
+   "sha256": "280c26349400e7c4773254efacfd2c300a75e5007d03cd2fe3f86cdd9b7760b5",
+   "bytes": 13538,
+   "mtime_utc": "2026-06-18T23:01:48+00:00"
+  },
+  "lgbm_won_v3.meta.json": {
+   "sha256": "c07254b75d50b53417f5d5443d2ddb9eae546d44df7b4ac44c839fad38a01191",
+   "bytes": 1891,
+   "mtime_utc": "2026-06-18T23:01:48+00:00"
+  },
+  "lgbm_won_v3.txt": {
+   "sha256": "2cb869453916c6b55dfa80f5c48b7c435ca1147c9181c7e2f10ecfa0ee848948",
+   "bytes": 976532,
+   "mtime_utc": "2026-06-18T23:01:48+00:00"
+  },
+  "reference_features.parquet": {
+   "sha256": "075dda07b82fa232ea9b7acfa9ca7f8447f93cfc37420aac4366ce9365776728",
+   "bytes": 22324058,
+   "mtime_utc": "2026-06-18T23:07:36+00:00"
+  }
+ }
+}

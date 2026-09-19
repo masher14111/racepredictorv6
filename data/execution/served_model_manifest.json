@@ -1,0 +1,20 @@
+{
+  "version_tag": "v3",
+  "value_model_tag": "v3nf",
+  "files": {
+    "catboost_v3_meta.json": "6736659c023d6a984a915b5a5f04b3497002b22687e36a64081424719d36b161",
+    "catboost_won_v3.bin": "a064701968d1023b88483c60d6beb04246db4c44191b9250fdadbd51a8715e32",
+    "catboost_won_v3_calib.pkl": "a4c7681e8bede68f7741c4817e0a28bbc475f0ab7135873b55ecf4bd33569cc3",
+    "catboost_placed_2_v3.bin": "2592a8618091c3e8adbe669ff1cb0d8d68d676195427233820d907e54304520b",
+    "catboost_placed_2_v3_calib.pkl": "129a63034f3cc5794716a924b36c1d866812f456907426709d6ab06ab88bd0a8",
+    "catboost_showed_v3.bin": "df3c49077e89d85871130933fa54f5b7adb3fc388907804e6c835a9b3279e1fd",
+    "catboost_showed_v3_calib.pkl": "cdb0e60dbebeaa7ed6464022b8c52c2eb20aa306a0b15010280ca20158b9368a",
+    "catboost_won_v3nf.bin": "9d45ef36cae6feb26ddd8c5c3130e3423b736b24e1960e46033359523bcb518b",
+    "catboost_won_v3nf_calib.pkl": "27c992adcddcc22e531e25ddc37899addd07728c4f8688c7f3c4d04ef7a91fd3",
+    "fl_oddsband_v3nf_calib.pkl": "ecced5eee2cd7b609fe0a09d5b5a61d96b2b745a28bab4cfaabea300555631b1"
+  },
+  "model_content_hash": "80671d06a88e62965c810be1e5c97ac47fc4bf95f8e535fb5ccf7bf202c11b7c",
+  "feature_schema_version": "408e09ed1a5aaff0",
+  "n_feature_cols": 54,
+  "generated_at": "2026-09-19T17:55:52.081044+01:00"
+}

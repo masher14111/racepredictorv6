@@ -1,0 +1,15 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dashboard",
+      "runtimeExecutable": "pwsh",
+      "runtimeArgs": [
+        "-NoProfile",
+        "-Command",
+        "Set-Location 'C:\\Users\\mshr\\Documents\\Race Predictor v4\\Race Predictor v4'; & '.\\.venv\\Scripts\\python.exe' -m streamlit run ui/app.py --server.headless true --server.port 8502"
+      ],
+      "port": 8502
+    }
+  ]
+}

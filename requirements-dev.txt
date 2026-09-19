@@ -1,0 +1,11 @@
+-r requirements.txt
+
+pytest
+pytest-mock
+pytest-xdist
+respx
+psutil
+
+# Diverse base learner for the ensemble experiment (models/ensemble_experiment.py)
+# only — imported lazily, never on the serving path. See memory/model-13-ensemble.md.
+xgboost

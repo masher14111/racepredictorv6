@@ -1,0 +1,13 @@
+{
+  "condition": "reasoning_effort_unset_default (implicit high/unbounded reasoning), max_output_tokens=800",
+  "n_found_in_cache": 243,
+  "n_corpus": 243,
+  "schema_valid_rate": 0.2757201646090535,
+  "schema_failure_count": 176,
+  "total_cost_usd": 0.19011884999999998,
+  "cost_usd_per_1000": 0.782382098765432,
+  "mean_completion_tokens": 725.201646090535,
+  "mean_reasoning_tokens": 693.1028806584362,
+  "latency_ms_mean": 7338.351790946559,
+  "note": "Reconstructed from real cached OpenRouter responses on disk (data/cache/llm/), located by recomputing the pre-fix cache key formula (no reasoning_effort/max_output_tokens component) \u2014 not a fresh API call, no new spend. Documents the reasoning-effort/schema-validity finding that motivated adding explicit reasoning control (see D47)."
+}

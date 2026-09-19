@@ -1,0 +1,182 @@
+{
+  "manifest": "reports/improvement/12/blend_manifest.json",
+  "manifest_sha256": "8328a8da9fc8098ebb1b816a2d4004957644c51991b8ef0995cd6936be38497c",
+  "panel": "data/audit/12/walkforward_oos.parquet",
+  "panel_sha256": "b8e6fb04100de7930a44aa76e73b2bfc4e3948003db8e9ad83f5486451af48c4",
+  "window": {
+    "start": "2026-06-13",
+    "end_exclusive": "2026-08-08",
+    "role": "LATER reserved calibration period: fit the calibrator candidates on the already-selected blend. Overlaps the already-observed 2026-06-13..2026-07-25 window on purpose \u2014 that window is barred from being a NEW TEST (AGENTS.md), not from being development FITTING data, and no performance claim is made from it."
+  },
+  "n_rows": 16606,
+  "n_races": 1874,
+  "promotion_rule": "fit on the first 70% of calib races, score race-level log loss (after within-race normalisation) on the last 30%, lowest wins including the uncalibrated control; winner refit on all of calib. Committed before any eval-panel scoring in this stage.",
+  "odds_column_used_by_odds_band": "bet_price \u2014 the pre-off REFERENCE price. Never an executable best-of-N quote (see reports/improvement/12/fl_recalibration_audit.json).",
+  "lines": {
+    "market_only": {
+      "model_prob_col": "condlogit_indep_prob",
+      "alpha": 0.0,
+      "beta": 1.0,
+      "blend": {
+        "artifact": null,
+        "fixed_control": true
+      },
+      "n_scoreable_rows": 16606,
+      "candidates": {
+        "none": {
+          "artifact": null,
+          "calib_val_tail_race_log_loss": 1.712483525206869,
+          "n_bands": null
+        },
+        "sigmoid": {
+          "artifact": "data/audit/12/calibrators\\market_only__sigmoid.pkl",
+          "calib_val_tail_race_log_loss": 1.711701529021277,
+          "n_bands": null
+        },
+        "isotonic": {
+          "artifact": "data/audit/12/calibrators\\market_only__isotonic.pkl",
+          "calib_val_tail_race_log_loss": 1.7323372272745838,
+          "n_bands": null
+        },
+        "odds_band": {
+          "artifact": "data/audit/12/calibrators\\market_only__odds_band.pkl",
+          "calib_val_tail_race_log_loss": 1.7553703233062026,
+          "n_bands": 8
+        }
+      },
+      "promoted_by_rule": "sigmoid"
+    },
+    "indep_only": {
+      "model_prob_col": "condlogit_indep_prob",
+      "alpha": 1.0,
+      "beta": 0.0,
+      "blend": {
+        "artifact": null,
+        "fixed_control": true
+      },
+      "n_scoreable_rows": 16606,
+      "candidates": {
+        "none": {
+          "artifact": null,
+          "calib_val_tail_race_log_loss": 1.9994783769019266,
+          "n_bands": null
+        },
+        "sigmoid": {
+          "artifact": "data/audit/12/calibrators\\indep_only__sigmoid.pkl",
+          "calib_val_tail_race_log_loss": 1.9995645304369503,
+          "n_bands": null
+        },
+        "isotonic": {
+          "artifact": "data/audit/12/calibrators\\indep_only__isotonic.pkl",
+          "calib_val_tail_race_log_loss": 2.0032800933834447,
+          "n_bands": null
+        },
+        "odds_band": {
+          "artifact": "data/audit/12/calibrators\\indep_only__odds_band.pkl",
+          "calib_val_tail_race_log_loss": 1.7625420799460894,
+          "n_bands": 8
+        }
+      },
+      "promoted_by_rule": "odds_band"
+    },
+    "combined_indep": {
+      "model_prob_col": "condlogit_indep_prob",
+      "alpha": 0.0,
+      "beta": 1.0,
+      "blend": {
+        "artifact": "data/audit/12/blend\\combined_indep.json",
+        "sha256": "b9396468b3c0e6af535567d828beab10e95c813424b6c885c6c814c4c3a06cb0"
+      },
+      "n_scoreable_rows": 16606,
+      "candidates": {
+        "none": {
+          "artifact": null,
+          "calib_val_tail_race_log_loss": 1.712483525206869,
+          "n_bands": null
+        },
+        "sigmoid": {
+          "artifact": "data/audit/12/calibrators\\combined_indep__sigmoid.pkl",
+          "calib_val_tail_race_log_loss": 1.711701529021277,
+          "n_bands": null
+        },
+        "isotonic": {
+          "artifact": "data/audit/12/calibrators\\combined_indep__isotonic.pkl",
+          "calib_val_tail_race_log_loss": 1.7323372272745838,
+          "n_bands": null
+        },
+        "odds_band": {
+          "artifact": "data/audit/12/calibrators\\combined_indep__odds_band.pkl",
+          "calib_val_tail_race_log_loss": 1.7553703233062026,
+          "n_bands": 8
+        }
+      },
+      "promoted_by_rule": "sigmoid"
+    },
+    "combined_indep_forced": {
+      "model_prob_col": "condlogit_indep_prob",
+      "alpha": 0.1,
+      "beta": 1.0,
+      "blend": {
+        "artifact": "data/audit/12/blend\\combined_indep_forced.json",
+        "sha256": "4cd0466cb2210042cb7aba30e45ab2ba192db4e8217aa1db898879f757ede1d6"
+      },
+      "n_scoreable_rows": 16606,
+      "candidates": {
+        "none": {
+          "artifact": null,
+          "calib_val_tail_race_log_loss": 1.716495306517156,
+          "n_bands": null
+        },
+        "sigmoid": {
+          "artifact": "data/audit/12/calibrators\\combined_indep_forced__sigmoid.pkl",
+          "calib_val_tail_race_log_loss": 1.7168472800746835,
+          "n_bands": null
+        },
+        "isotonic": {
+          "artifact": "data/audit/12/calibrators\\combined_indep_forced__isotonic.pkl",
+          "calib_val_tail_race_log_loss": 1.7401686879389069,
+          "n_bands": null
+        },
+        "odds_band": {
+          "artifact": "data/audit/12/calibrators\\combined_indep_forced__odds_band.pkl",
+          "calib_val_tail_race_log_loss": 1.7665638603986338,
+          "n_bands": 8
+        }
+      },
+      "promoted_by_rule": "none"
+    },
+    "combined_market": {
+      "model_prob_col": "condlogit_market_prob",
+      "alpha": 0.5,
+      "beta": 0.5,
+      "blend": {
+        "artifact": "data/audit/12/blend\\combined_market.json",
+        "sha256": "b5e07a253ac50c28417b556038066343130b3846c98a91780c7fda23425977f6"
+      },
+      "n_scoreable_rows": 16606,
+      "candidates": {
+        "none": {
+          "artifact": null,
+          "calib_val_tail_race_log_loss": 1.7107745732586987,
+          "n_bands": null
+        },
+        "sigmoid": {
+          "artifact": "data/audit/12/calibrators\\combined_market__sigmoid.pkl",
+          "calib_val_tail_race_log_loss": 1.7106233090095635,
+          "n_bands": null
+        },
+        "isotonic": {
+          "artifact": "data/audit/12/calibrators\\combined_market__isotonic.pkl",
+          "calib_val_tail_race_log_loss": 1.7276466956693497,
+          "n_bands": null
+        },
+        "odds_band": {
+          "artifact": "data/audit/12/calibrators\\combined_market__odds_band.pkl",
+          "calib_val_tail_race_log_loss": 1.747273579889744,
+          "n_bands": 8
+        }
+      },
+      "promoted_by_rule": "sigmoid"
+    }
+  }
+}

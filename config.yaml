@@ -1,0 +1,550 @@
+database_path: data/races.db
+
+proxy_pool:
+  enabled: true
+  # Real proxy creds live in git-ignored config.local.yaml (or RP_ env vars),
+  # which the config loader deep-merges over this list. Format: http://LOGIN:PASSWORD@HOST:PORT
+  proxies: []
+  rotating_gateway: true # the configured proxy is a rotating residential gateway (fresh exit IP per request): a 403 means that IP was flagged, not the gateway — so retry with a new IP instead of blacklisting the endpoint and dropping to a direct (Cloudflare-blocked) connection
+  country: ie # geo-target exit IPs to Ireland (DataImpulse __cr.ie username suffix); credential stays in config.local.yaml
+  health_check_url: "https://icanhazip.com"
+  health_check_interval: 300 # seconds between background probes (0 = disabled)
+  blacklist_cooldown: 300 # seconds a failing proxy is skipped before retry (non-rotating pools only)
+  max_failures: 3 # consecutive failures before blacklisting (non-rotating pools only)
+  destination_urls: # per-bookmaker probe targets for check_destinations(); a 200 here proves the actual endpoint is reachable, unlike the generic health_check_url above
+    livescorebet: https://www.livescorebet.com/horse-racing
+    boylesports: https://www.boylesports.com/sports/horse-racing
+    paddy_power: https://www.paddypower.com/horse-racing
+
+staleness:
+  max_age_seconds: 900 # live odds older than this (by fetched_at) never feed EV/bet decisions, regardless of validation_status
+
+timezone: Europe/Dublin
+
+scrape_interval: 3600 # seconds between scrape cycles
+
+each_way_threshold: 8.0 # minimum odds to consider each-way bet
+
+low_odds_threshold: 2.0 # odds_decimal below this flags is_low_odds (odds-on)
+gbp_eur_rate: 1.18 # static GBP→EUR rate for GUI monetary display
+uk_ire_only: true # drop all non-UK/IRE racing at normalize (the model's training scope); set false to keep global meetings
+
+livescorebet:
+  horse_racing_url: https://www.livescorebet.com/horse-racing
+  parquet_path: data/live_odds.parquet
+  # Keep only these country nodes from the racinghome feed (it lists global
+  # racing — US/AUS/FRA/etc.). Matched case-insensitively against the feed's
+  # `type: Country` node names. Set to [] to scrape every country.
+  countries: ["UK & Ireland"]
+
+betsp_historical:
+  rolling_years: 3
+  regions: [uk, ire]
+  markets: [win, place]
+  # Sporting Life is the working source: per-race detail pages expose the full
+  # field (finish_position, jockey, trainer, going, exact time) as clean typed
+  # __NEXT_DATA__ JSON — validated 2026-06-13 at 100% join fill on 2024-01-19.
+  # racing_post dropped: its daily page is summary-only (winner per race), so it
+  # would need the same per-race rewrite for no gain over SL's clean JSON.
+  # at_the_races dropped: serves a JS "Client Challenge" that needs a headless
+  # browser (wired separately via Firecrawl).
+  results_sources: [sporting_life]
+  source_priority: [sporting_life]
+  max_days_per_run: 0
+  parquet_path: data/historical/betsp.parquet
+  raw_path: data/historical/raw
+  backbone_workers: 25 # parallel threads for Betfair SP CSV downloads
+  enrichment_workers: 30 # parallel threads per results source — feeds the per-domain rps/concurrency cap
+
+boylesports:
+  horse_racing_url: https://www.boylesports.com/sports/horse-racing
+  # Confirmed via DevTools 2026-06-12: server-rendered MVC site, NO JSON API.
+  # Race-card index is an HTML partial; per-event odds are in the event page HTML.
+  race_card_url: https://www.boylesports.com/sports/horse-racing/race-card?partial=true&widget=true
+  exclude_regions: [virtuals, international, usa, canada, france, australia, south-africa] # region slugs to drop (simulated + non-UK/IRE meetings)
+  # Allowlist of region slugs to KEEP. Takes precedence over exclude_regions and
+  # is the real guard: with uk_ire_only: true every foreign event is fetched
+  # (a full proxy request against a Cloudflare site) and then binned at
+  # normalize. On 2026-09-18 that meant scraping Churchill Downs, Gulfstream,
+  # Philadelphia, Laurel Park and Delaware Park for nothing, while the UK/IRE
+  # events we wanted were 403ing. Applied fail-safe: if it ever matches no
+  # events the scraper logs the slugs it actually saw and falls back to
+  # exclude_regions, so a renamed slug cannot silently empty the card.
+  include_regions: [uk-ire-featured]
+  # Concurrent curl_cffi event fetches. Tuned 2026-06-15 over 3 consecutive runs:
+  # 8 workers @ rps 10 = ~572 rows in 45s, clean every run; 16/20 tripped Cloudflare
+  # 403s (collapsed to 71 rows on 2/3 runs). 8 is the reliable ceiling.
+  scrape_workers: 8
+  # Sticky-session tier (tried before the rotating ones). The rotating gateway
+  # gives a fresh exit IP per request and the stateless tiers keep no cookies, so
+  # every event page reached Cloudflare as a new visitor with no cf_clearance —
+  # which is why the index fetched fine on 2026-09-18 and the event burst then
+  # 403'd. This tier pins ONE Irish IP and ONE cookie jar for the pass.
+  sticky_session: true
+  sticky_workers: 1 # serial on purpose: the point is to look like one person
+  sticky_ttl_minutes: 10 # DataImpulse sessttl; a pass should finish well inside this
+  # Botasaurus anti-detect browser tier, tried before Playwright/Selenium — those
+  # launch vanilla headless Chrome (navigator.webdriver set, CDP artifacts, giveaway
+  # UA), which Cloudflare rejects on sight, so they were never really a second
+  # chance. Optional dependency: pip install botasaurus-driver. Absent = skipped.
+  botasaurus: true
+  botasaurus_headless: false # headed is markedly harder to detect, but OPENS A VISIBLE
+    # BROWSER WINDOW during a daily run. Set true for an unattended/scheduled run,
+    # accepting a lower success chance.
+  botasaurus_max_events: 20 # a browser pass is slow; cap the event pages it will open
+  botasaurus_wait_seconds: 2 # settle time after each event navigation
+  # Chromium binary to drive. Blank = real Chrome if installed (best fingerprint),
+  # else Playwright's bundled Chromium, which is what works on this machine and
+  # needs no extra install. Verified 2026-09-18: cleared Cloudflare and parsed
+  # 38 runner rows off Dundalk when every HTTP tier was getting 403.
+  botasaurus_chrome_path: ""
+  # Races a tier must cover before the chain stops. Cloudflare typically lets the
+  # index through then 403s most event pages, so a cheap tier "succeeds" with one
+  # race on the card — on 2026-09-18 curl_cffi returned 14 rows from 1 race and
+  # that stopped the chain before Botasaurus ran, which delivers 80 from 9. Below
+  # this bar a result is kept as a fallback but the next tier still runs.
+  min_races_accept: 3
+
+paddypower:
+  curl_attempts: 3 # curl_cffi retries (rotate proxy IP per 403/transient) before browser tiers
+
+# Firecrawl — the LAST fetch tier for BoyleSports/Paddy Power, and the only PAID
+# one. Tiers 1-4 (curl_cffi, httpx, Playwright, Selenium) all egress through the
+# residential proxy pool, so when Cloudflare flags the pool they fail together;
+# Firecrawl fetches server-side from its own infrastructure instead. It only runs
+# after every free tier has failed, so a normal day never touches it.
+# The API key is NOT stored here — set the FIRECRAWL_API_KEY environment variable
+# (or firecrawl.api_key in the git-ignored config.local.yaml). No key = tier is
+# skipped with a log line, never a hard failure.
+firecrawl:
+  # OFF by default — measured, not assumed. Probed 2026-09-18 against both books
+  # in all three proxy modes (auto / stealth / enhanced), on the BoyleSports
+  # race-card partial, the BoyleSports main card, and the Paddy Power JSON API:
+  # every single one returned HTTP 403. Firecrawl's own plumbing is fine (a
+  # control fetch of example.com succeeded), so this is the books refusing
+  # Firecrawl's egress, not a bug here. Leaving it enabled would burn ~41 credits
+  # per fully-blocked run for nothing, and right now every run is fully blocked.
+  # Flip to true to re-test — the wiring, budget and tests are all in place.
+  enabled: false
+  max_pages_per_run: 50 # HARD per-process credit cap. BoyleSports worst case is
+    # 1 index + boylesports_max_events pages, Paddy Power is 1. Once spent, further
+    # calls raise instead of billing on. Lower it to throttle spend; 0 disables.
+  boylesports_max_events: 40 # cap event pages on the paid tier (free tiers use boylesports.max_events)
+  workers: 4 # concurrent Firecrawl calls — server-side, so this does not load the book
+  proxy: auto # basic | enhanced | auto — auto lets Firecrawl escalate on a challenge
+  country: IE # both books geo-tailor their cards; a US exit returns a different market set
+  language: en-GB
+  timeout_ms: 60000
+  wait_for_ms: 0 # extra render delay before capture; raise if a card comes back empty
+
+timeform:
+  racecards_url: https://www.timeform.com/horse-racing/racecards
+  rolling_years: 3
+  regions: [uk, ire]
+  request_delay: 1.5 # seconds between page fetches
+  lookback_months: 12
+  lookback_runs: 20
+  place_positions: 3 # top-N finish counts as a place
+  max_events_per_run: 0 # 0 = unlimited
+  parquet_path: data/historical/timeform.parquet
+  raw_path: data/historical/raw
+  session_cookie: "" # secret — set in git-ignored config.local.yaml to unlock TFR/pace
+  going_speed_map:
+    firm: 5
+    good-to-firm: 4
+    good: 3
+    good-to-soft: 2
+    soft: 1
+    heavy: 0
+
+model:
+  test_size: 0.2
+  cv_folds: 5
+  optuna_trials: 50
+  early_stopping_rounds: 50
+  iterations: 1000
+  # ── hyperparameter tuning (models/tuner.py) ───────────────────────────────
+  # Optuna study config. CV folds are STRICTLY CHRONOLOGICAL (TimeSeriesSplit),
+  # so each fold trains only on rows earlier than its validation slice — no
+  # peeking at the future. The objective optimises a calibration-aware metric
+  # (log-loss by default) instead of raw AUC, because well-ranked-but-inflated
+  # probabilities (the known A/E≈0.2 issue) score badly on log-loss/Brier and
+  # the study is rewarded for picking class-weighting that keeps probs honest.
+  tuning:
+    metric: logloss # logloss | brier | auc — what the study minimises/maximises
+    pruner: median # median | hyperband | none — kills unpromising trials early
+    pruner_warmup_trials: 5 # median pruner: trials run fully before pruning starts
+    # Search space (CatBoost). [lo, hi] pairs; *_log ranges are sampled in log space.
+    learning_rate: [5.0e-4, 0.3] # log
+    depth: [4, 10]
+    l2_leaf_reg: [1.0, 30.0] # log — widened from 10 to allow stronger regularisation
+    bagging_temperature: [0.0, 2.0] # widened from 1.0 (Bayesian bagging aggressiveness)
+    random_strength: [1.0e-9, 10.0] # log
+    border_count: [32, 254] # GPU rejects 255
+    # Class-imbalance handling is itself a tuned choice. "scale_pos_weight" enables
+    # a tuned positive-class multiplier; the others are CatBoost auto schemes. Letting
+    # the study pick (and possibly "none") lets log-loss steer away from the
+    # double-correction that inflated raw probabilities (baseline audit C5).
+    class_weight_modes: [Balanced, SqrtBalanced, "none", scale_pos_weight]
+    scale_pos_weight: [1.0, 25.0] # log — only used when mode == scale_pos_weight
+  show_positions: 3 # position <= N counts as "showed"
+  targets: [won, placed_2, showed]
+  model_dir: models
+  max_sample_weight: 20 # cap on odds-inverse sample weight
+  version_tag: v3 # filename tag for .bin / meta.json artefacts
+  # ── probability calibration ──────────────────────────────────────────────
+  # Training uses auto_class_weights + odds-inverse sample weights to boost
+  # ranking/recall, which inflates raw probabilities (A/E far below 1). An
+  # calibrator fit on a time-ordered holdout slice maps them back to true
+  # frequencies. All methods are monotone, so AUC/ranking is unchanged.
+  #   isotonic — non-parametric monotone fit (flexible, needs rows)
+  #   sigmoid  — Platt scaling (1-param logistic; robust on small slices)
+  #   auto     — fit both, keep the lower-Brier one on a held-out sub-fold
+  #   none     — serve raw probabilities (not recommended; A/E far below 1)
+  calibration_method: auto # isotonic | sigmoid | auto | none
+  calibration_size: 0.15 # fraction of train rows (most recent, time-ordered) held out to fit the calibrator
+  # ── hardware ─────────────────────────────────────────────────────────────
+  task_type: GPU # GPU | CPU — auto-falls back to CPU if no compatible GPU is present
+  devices: "0" # GPU device id(s); ignored on CPU
+  thread_count: -1 # CPU threads (-1 = all cores); ignored on GPU
+  random_seed: 42 # seed for CV fold shuffling — fix for reproducible tuning runs
+
+# Value-betting layer: turns calibrated probabilities into "who to bet on".
+# Uses the PRICE-FREE model (model_tag) for an estimate independent of the
+# market, then compares to the market price → edge + expected value (EV).
+value:
+  enabled: true
+  model_tag: v3nf # price-free model whose calibrated win-prob drives the honest edge
+  # Favourite-longshot recalibration of the price-free win prob (OddsBandCalibrator,
+  # models/fl_oddsband_v3nf_calib.pkl; built by docs/calibration/fit_fl_recalibrator).
+  # The price-free model is calibrated by its own probability bucket but biased
+  # conditional on the market price (under-rates favourites, over-rates longshots);
+  # this remaps value_win_prob against the pre-off price so value_edge / expected_value
+  # / value_bet use the corrected prob. Disable to serve the raw market-independent
+  # calibration; an absent artifact degrades to that automatically. See calib-fl-02/03.
+  fl_recalibration: true
+  min_expected_value: 0.05 # flag a value bet when EV per unit win-stake >= this (5%)
+  min_odds: 2.0 # ignore very short prices for value flags
+  # Longshot gate. RE-TUNED 2026-06-17 on CLV after the favourite-longshot
+  # recalibration was wired in (see memory/calib-fl-04-backtest.md). The
+  # recalibration flattened A/E across every odds band (was 2.80 odds-on .. 0.17
+  # longshot; now ~0.94..0.78), so the cap is no longer about A/E collapse — it is
+  # now CLV-driven: closing-line value is least-negative on the shortest-priced
+  # favourites (band [2.0,4.0], CLV ~-4%) and worsens monotonically as longer
+  # prices are admitted ([2.0,6.0] ~-6%, band-all -12..-15%). Tightened 6.0 -> 4.0
+  # to take the best CLV/A/E combination that still carries a real EV gate.
+  # NB CLV is still negative everywhere => treat picks as provisional / paper.
+  max_odds: 4.0
+  # ── value-edge layer (find_value_bets / models.value.ValueConfig) ──────────
+  devig: true # strip the book over-round so edge = model_prob - FAIR implied prob
+  # Probability-edge gates. Kept OFF (0.0). PRE-recalibration these were validated
+  # HARMFUL — gating on model-vs-price edge selected the runners the model most
+  # over-rated (its own miscalibration), pushing in-selection A/E below 1. POST-
+  # recalibration (calib-fl-04) that no longer holds: a mild edge gate keeps A/E
+  # ~0.9 and lifts yield, but it does NOT improve CLV, so for a CLV-first selection
+  # they stay off. The odds band + EV gate are the effective levers; these remain
+  # config-driven as a yield knob.
+  min_edge_pct: 0.0 # back iff model_prob >= fair_implied * (1 + this)
+  min_abs_edge: 0.0 # back iff model_prob - fair_implied >= this (absolute pp)
+  min_prob: 0.0 # minimum model win probability
+  min_confidence: 0.40 # minimum confidence score [0,1] (support x field x odds-reliability)
+  require_support: true # require prior in-window form (blocks the formless-longshot trap)
+  reliable_max_odds: 8.0 # odds at/below which the model's odds-reliability (confidence) is full
+  kelly_cap: 0.05 # max single suggested stake as a fraction of bankroll
+
+# Bankroll & staking layer (utils/bet_tracker.py). Drives the P&L sidebar in the
+# Streamlit UI and decides how much to stake on each recommended bet.
+# Recommended PAPER stake shown on the race card (utils/stake_advice.py).
+# Fractional Kelly on the CALIBRATED win prob, clamped to [min_stake, max_stake].
+# No edge = no bet = 0.00, which is the honest answer for most runners — the
+# minimum is a floor for real edges, not a participation prize.
+# Note the arithmetic: full Kelly can never exceed the whole bankroll, so at
+# bankroll 1000 x kelly_fraction 0.25 the practical maximum is 250. The 800
+# ceiling only binds with a bigger bankroll or a bolder fraction; it is a guard
+# rail, not a dial for manufacturing confidence.
+staking:
+  bankroll: 1000.0 # € the stake is sized against
+  kelly_fraction: 0.25 # quarter-Kelly; raise only with forward evidence
+  min_stake: 0.50 # € floor for a genuine edge
+  max_stake: 800.0 # € hard ceiling
+
+bet_tracker:
+  initial_bankroll: 1000.0 # starting balance (€) the bankroll is seeded with on first run
+  flat_stake: 10.0 # fixed amount (€) staked per bet under the "flat" strategy
+  kelly_fraction: 0.25 # fraction of the full Kelly stake to bet (0.25 = quarter-Kelly; lower = safer/smaller bets)
+  stop_loss_pct: 0.20 # halt new bets once the bankroll drops this fraction below its start (0.20 = -20% drawdown)
+
+# ── Stage 5: realistic execution, forward validation & betting safeguards ─────
+# Read `execution/config.py` (ExecutionConfig.from_config) for the loader.
+#
+# EVERY NUMBER BELOW IS A RISK CEILING, NOT A PROFITABILITY CLAIM. Stage 4
+# (reports/calibration_audit_20260727.md, data/audit/stage4/final_evaluation.json)
+# issued MODEL NO-GO: the price-free line loses to the de-vigged pre-off market by
+# 0.186 race log-loss (95% CI excludes 0) and CLV is -13.4%. While that stands the
+# system is PAPER-ONLY and emits no real-money recommendation at ANY setting here.
+# Do not raise a ceiling or loosen a gate without forward evidence that clears
+# `execution.forward_gate` — loosening to manufacture recommendations is the exact
+# failure mode this stage exists to prevent.
+execution:
+  # Permanent kill switch. Real-money display requires paper_only == false AND a
+  # model GO AND a passing forward gate. Honoured fail-closed: an absent or
+  # unreadable config leaves it true, and no code path may flip it at runtime.
+  paper_only: true
+
+  # ── point-in-time odds snapshots (execution/snapshots.py, migration 4) ─────
+  snapshots:
+    enabled: true # append every scraped price to the immutable odds_snapshots table
+    # Snapshots are keyed (race_uid, horse_key, bookmaker, market_type, fetched_at)
+    # and the table is append-only, enforced by SQLite RAISE(ABORT) triggers on
+    # UPDATE/DELETE. A backtest may only ever read rows with fetched_at <= as_of.
+    max_age_seconds: 900 # a snapshot older than this is stale and cannot be executed on
+    retention_days: 400 # keep at least a full season of price history before pruning is even considered
+
+  # ── execution frictions modelled by the walk-forward simulator ─────────────
+  # (execution/frictions.py). Defaults are deliberately pessimistic: an optimistic
+  # friction model is indistinguishable from having no friction model at all.
+  frictions:
+    decision_latency_seconds: 30.0 # model output -> human/bot decides
+    placement_latency_seconds: 15.0 # bet request -> bookmaker acknowledgement
+    max_price_age_seconds: 300.0 # refuse to bet on a quote older than this at decision time
+    # Price actually obtained = the newest snapshot at (decision time + latency),
+    # never the closing price. If no snapshot exists in-window the bet is a
+    # no-fill, not a fill at the last known price.
+    allow_stale_fill: false # never fill from a quote older than max_price_age_seconds
+    rejection_rate: 0.05 # fraction of requests bounced by the book (unavailable/price changed)
+    suspension_rate: 0.02 # fraction of markets suspended between decision and placement
+    adverse_move_only: false # true = only fill when the price moved against us (worst case)
+    max_stake_per_bet: 50.0 # bookmaker liability ceiling (€) on the offered price; excess is unmatched
+    exchange_commission: 0.02 # net-winnings commission applied to exchange sources only
+    exchange_sources: [betfair, betdaq, smarkets, matchbook] # sources treated as exchanges
+    best_odds_guaranteed: false # NEVER assume BOG; only per-bet recorded evidence enables it
+    rule_4_enabled: true # apply Rule 4 deductions when a non-runner is withdrawn after bet time
+    dead_heat_enabled: true # divide stake by the number of horses dead-heating for the place
+    void_non_runners: true # a bet on a horse that becomes a non-runner is voided, stake returned
+
+  # ── conservative provisional staking (execution/staking.py) ───────────────
+  # 0.10 fractional Kelly is a PROVISIONAL setting for an unvalidated model, not
+  # a Kelly-optimal choice. These caps bind before Kelly, so the Kelly fraction
+  # can only ever make a stake smaller.
+  staking:
+    kelly_fraction: 0.10 # fraction of full Kelly (0.10 = tenth-Kelly)
+    max_stake_pct_bankroll: 0.005 # <= 0.5% of bankroll on any single bet
+    max_race_exposure_pct: 0.005 # <= 0.5% of bankroll across ALL bets in one race
+    max_daily_exposure_pct: 0.03 # <= 3% of bankroll staked in one racing day
+    min_stake: 0.50 # below this the ticket is dropped rather than rounded up
+    stake_rounding: 0.10 # round stakes down to this increment
+    allow_accumulators: false # multiples are never permitted
+    allow_correlated_bets: false # at most one bet per race per runner; no same-race doubles
+
+  # ── bankroll & candidate-issuance safeguards (execution/safeguards.py) ─────
+  safeguards:
+    bankroll_stop_loss_pct: 0.20 # halt all issuance once bankroll is this far below its start
+    daily_loss_limit_pct: 0.02 # halt for the rest of the day after losing 2% of bankroll
+    block_started_races: true # never issue/place a ticket for a race at or past its off time
+    started_race_buffer_seconds: 60 # treat a race as started this many seconds before the off
+    block_duplicates: true # one open ticket per (race, horse, bet_type)
+    block_stale_sources: true # refuse any source failing utils/source_health thresholds
+    max_source_age_seconds: 900 # a source whose last success is older than this is stale
+    max_open_tickets: 25 # circuit breaker on runaway issuance
+
+  # ── candidate gate: PASS unless EVERY condition below is satisfied ─────────
+  # (execution/gates.py). Default is PASS ("no bet"); each entry is a condition
+  # that must be affirmatively met for a candidate to be issued at all.
+  gates:
+    require_complete_card: true # full declared field present for the race
+    require_runner_history: true # the runner has supported prior in-window form
+    require_calibrated_probability: true # an independent, calibrated model prob exists
+    require_reference_market: true # a complete reference book to de-vig against
+    require_executable_price: true # a live, in-age executable price at a named bookmaker
+    require_source_health: true # every contributing source is healthy and fresh
+    require_model_validation: true # Stage-4 model verdict must be GO
+    min_edge: 0.02 # model_prob - fair_implied, absolute (2 percentage points)
+    min_expected_value: 0.05 # EV per unit stake
+    min_field_size: 5 # skip tiny fields where de-vig and Rule 4 dominate
+    max_overround: 1.25 # reject races whose reference book is this loose
+
+  # ── anti-threshold-mining selection protocol (execution/selection.py) ──────
+  # Thresholds are tuned on TRAIN folds, selected ONCE, and evaluated ONCE on an
+  # untouched TEST window. The number of strategies tried is recorded and the
+  # multiple-testing correction is reported alongside every headline number.
+  selection:
+    train_fraction: 0.6 # chronological share of the eligible window used for tuning
+    validation_fraction: 0.2 # used to pick the single winner among tuned candidates
+    # remaining 0.2 is the untouched TEST window; it is scored exactly once
+    max_strategies: 64 # hard cap on the grid; every evaluated point counts as a test
+    correction: sidak # multiple-testing correction reported (bonferroni | sidak | none)
+    alpha: 0.05 # family-wise error rate the correction targets
+    seed: 20260727 # deterministic fold + bootstrap seed
+    bootstrap_resamples: 1000 # race-clustered bootstrap draws for every interval
+    lock_file: data/execution/selection_lock.json # records the one selected strategy + when
+
+  # ── forward-release gate (execution/forward_gate.py) ──────────────────────
+  # ALL criteria must hold on FORWARD (shadow/paper) evidence only — backtest
+  # results can never satisfy this gate. Config-driven, but loosening any value
+  # invalidates prior evidence and restarts the clock.
+  forward_gate:
+    min_weeks: 8 # at least eight calendar weeks of forward tracking
+    min_qualified_bets: 200 # meaningful qualified sample, not just elapsed time
+    min_qualified_races: 150 # spread across races, not concentrated in a few cards
+    require_positive_mean_clv: true # mean CLV must be positive...
+    clv_ci_lower_above: 0.0 # ...with the 95% interval lower bound strictly above this
+    ae_min: 0.90 # actual/expected must sit inside a stable band
+    ae_max: 1.10
+    max_calibration_ece: 0.03 # expected calibration error ceiling
+    max_drawdown_pct: 0.10 # peak-to-trough bankroll drawdown ceiling
+    require_model_go: true # a Stage-4 style model GO is a precondition, not a substitute
+
+  # ── report + artifact locations (execution/report.py) ─────────────────────
+  reports:
+    dir: reports # dated forward-validation + candidates reports land here
+    artifact_dir: data/execution # machine-readable JSON the UI and tests read
+    currency: "€"
+
+retrain:
+  psi_threshold: 0.2 # PSI > this on any feature flags drift (>0.2 = major shift)
+  ks_pvalue_threshold: 0.05 # KS two-sample p-value < this also flags drift
+  min_drift_features: 1 # how many features must drift to trigger retraining
+  archive_keep: 5 # number of past model versions to retain in models/archive/
+  auc_decay_threshold: 0.05 # warn if new AUC drops > 5% relative to previous run
+
+# ── one-shot full-rebuild orchestrator (pipeline_full.py) ──────────────────────
+# "Use my full PC": rebuild everything as fast as the machine safely allows. The
+# CatBoost line runs on the GPU (model.task_type=GPU) and the LightGBM line on the
+# CPU, so the two trainers are launched CONCURRENTLY in separate processes — they
+# contend for different hardware. max_workers caps the CPU fan-out so the two jobs
+# never oversubscribe all cores (leave 2 free on this 12-core box → UI stays live).
+orchestration:
+  max_workers: 10 # CPU worker ceiling shared across the concurrent trainers (12 cores − 2)
+  lgbm_threads: -1 # LightGBM num_threads when it has the CPU to itself (-1 = all cores); auto-capped to a share of max_workers when CatBoost also falls back to CPU
+
+# ── new feature families (post model-10) ──────────────────────────────────
+features:
+  trainer_form:
+    short_window_days: 14 # recent window for "hot" detection
+    long_window_days: 90 # baseline window for comparison
+    min_runners_in_window: 5 # minimum runners to compute rate
+  jockey_form:
+    short_window_days: 14 # recent window for "hot" detection
+    long_window_days: 90 # baseline window for comparison
+    min_runners_in_window: 5 # minimum runners to compute rate
+  class_par:
+    base_class: 5 # baseline class level for speed adjustment
+    points_per_level: 2.0 # speed points per class level above/below base
+
+rate_limits:
+  global:
+    max_rps: 0 # 0 = no global cap; set e.g. 5.0 to cap all scrapers combined
+    max_concurrent: 0 # 0 = unlimited global concurrency
+  domains:
+    # LivescoreBet gateway API (JSON, not Cloudflare). The proxy rotates a fresh
+    # IP per request, so the gateway never sees concentrated load from one
+    # address — we can fan out the per-event fetches concurrently (same rationale
+    # as the Sporting Life backbone below). This is the main scrape speedup:
+    # ~50 events at concurrency 10 instead of a 1-req/s single lane.
+    "gateway-ie.livescorebet.com":
+      rps: 10.0
+      max_concurrent: 10
+    "www.livescorebet.com":
+      rps: 4.0
+      max_concurrent: 4
+    # BoyleSports – Cloudflare-protected, but the proxy rotates a fresh IP per
+    # request so 403s are per-IP, not per-domain. Tuned 2026-06-15 over 3 runs:
+    # rps 10 / concurrent 10 (= boylesports.scrape_workers) clears CF cleanly
+    # (~572 rows in 45s every run); 20/16 tripped adaptive 403s. This is the
+    # reliable ceiling — do not raise without re-running the 3-run reliability check.
+    "www.boylesports.com":
+      rps: 10.0
+      max_concurrent: 10
+    # Paddy Power API – single JSON call per scrape; curl_cffi tier retries up to
+    # 3× on 403/transient (rotating proxy IP), so a little rps headroom for retries.
+    "apisms.paddypower.com":
+      rps: 3.0
+      max_concurrent: 2
+    # Firecrawl API – the paid tier-5 fetcher. This lane throttles OUR calls to
+    # Firecrawl, not Firecrawl's calls to the book. Matches firecrawl.workers so a
+    # burst of event pages can't trip Firecrawl's own 429 rate limit.
+    "api.firecrawl.dev":
+      rps: 4.0
+      max_concurrent: 4
+    # Timeform – mirrors existing request_delay: 1.5 s (~0.67 req/s)
+    "www.timeform.com":
+      rps: 0.67
+      max_concurrent: 1
+    # Betfair SP – proxy-rotated + threaded; per-IP quota resets each request
+    "promo.betfair.com":
+      rps: 25.0
+      max_concurrent: 25
+    # Results enrichment sources – proxy-rotated; conservative to avoid bans
+    "www.racingpost.com":
+      rps: 5.0
+      max_concurrent: 5
+    # Proxy rotates a fresh residential IP per request, so SL never sees
+    # concentrated load from one address — we can run as hot as the Betfair
+    # backbone (rps 25-30) without per-IP throttling risk. Gates backfill speed.
+    "www.sportinglife.com":
+      rps: 30.0
+      max_concurrent: 30
+    "www.attheraces.com":
+      rps: 5.0
+      max_concurrent: 5
+
+reporter:
+  enabled: false # set true to start the background scheduler on import
+  interval_hours: 24 # how often the scheduler calls generate()
+  output_dir: reports # relative to project root
+
+# Optional local-LLM text→feature extractor (llm/text_features.py). OFF by
+# default and OFF the probability hot path — never produces win prob or EV, and
+# its flags are NOT in models.features.FEATURE_COLS until a real text feed exists.
+llm:
+  enabled: false # set true only once a free-text source is persisted on disk
+  backend: regex # "ollama" (local model) or "regex" (deterministic fallback)
+  cache_ttl: 2592000 # seconds to cache extracted features (30 days)
+  ollama:
+    host: http://localhost:11434
+    model: llama3.1
+    timeout: 30
+  # Stage 19: capped OpenRouter DeepSeek SHADOW extraction over already-archived
+  # (llm/text_archive.py) comments -- writes to llm_shadow_extractions only, never
+  # to a model feature. Independent of `enabled`/`backend` above: this can run
+  # while `enabled: false` keeps numeric text features out of every forecast.
+  # Fails closed (no-op, recorded reason) with no OPENROUTER_API_KEY, unverifiable
+  # pricing or an exhausted data/cache/llm/hosted_budget_ledger.json cap.
+  hosted_shadow:
+    enabled: true
+    model: deepseek/deepseek-v4.1-flash
+    reasoning_effort: low # unset lets a reasoning model spend its whole budget on chain-of-thought (D47)
+    max_output_tokens: 1600
+    max_retries: 2
+    timeout_s: 30
+    batch_size_per_run: 25 # bounds one daily cycle's latency/provider exposure
+    price_ceiling_input_per_million_usd: 0.3
+    price_ceiling_output_per_million_usd: 1.2
+    max_cost_usd: 5 # PROGRAMME-lifetime total, shared with the step 15 benchmark
+    max_requests: 1200 # PROGRAMME-lifetime total, shared with the step 15 benchmark
+
+logging:
+  max_bytes: 5242880 # 5 MiB — rotate log file when it exceeds this size
+  backup_count: 2 # number of .1 / .2 rotated files to keep alongside the live log
+
+notifications:
+  enabled: true # set true once bot_token + chat_id are filled in
+  channels:
+    telegram:
+      enabled: true
+      # Real token + chat_id live in git-ignored config.local.yaml (or RP_ env
+      # vars: RP_NOTIFICATIONS__CHANNELS__TELEGRAM__BOT_TOKEN / __CHAT_ID).
+      bot_token: "" # set in config.local.yaml
+      chat_id: "" # set in config.local.yaml
+  events:
+    race_soon_minutes: 10 # fire race_soon alert when race_time - now() <= this
+    odds_drop_threshold_pct: 5 # fire odds_drop alert when odds shorten by >= this %
+      # Lowered from 10 on 2026-09-18: at 10 a real day's movement produced no
+      # alerts at all (biggest in-window move was Kilcrea Rock at -8.3%). 5 still
+      # sits well above ordinary tick noise.
+    # Only alert on races starting within this many minutes. Races that have
+    # ALREADY STARTED never alert, whatever this is set to. predictions.json
+    # holds the whole day, so without this a rebuild re-announced top-pick
+    # changes and price moves for racing that had already been run. 0 = no
+    # upper bound (still excludes started races).
+    alert_window_minutes: 180

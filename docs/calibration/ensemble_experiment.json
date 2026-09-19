@@ -1,0 +1,114 @@
+{
+  "target": "won",
+  "feature_cols": [
+    "field_size",
+    "going_speed",
+    "class_change",
+    "distance_furlongs",
+    "recent_form_avg",
+    "recent_form_wins",
+    "recent_form_runs",
+    "timeform_rating",
+    "rating_rank",
+    "pace_bias",
+    "historical_win_rate",
+    "historical_place_rate",
+    "jockey_win_rate",
+    "trainer_win_rate",
+    "jt_combo_win_rate",
+    "jt_combo_runs",
+    "going_pref_win_rate",
+    "going_pref_place_rate",
+    "horse_speed",
+    "horse_speed_rank",
+    "race_complexity"
+  ],
+  "rows": {
+    "core": 168758,
+    "cal": 29780,
+    "test": 49635
+  },
+  "base_rate_test": 0.11798126322151707,
+  "calibration_methods": {
+    "cb": "sigmoid",
+    "xgb": "sigmoid",
+    "lr": "sigmoid"
+  },
+  "stack_method": "sigmoid",
+  "stack_coef": {
+    "cb": 1.8810392979493247,
+    "xgb": 0.5855356269492058,
+    "lr": 2.1131036843806013,
+    "intercept": -4.4417682612134
+  },
+  "stack_market_coef": {
+    "cb": 2.4789142538964564,
+    "xgb": -0.386815137251916,
+    "lr": 0.34669779485520846,
+    "market": 3.3939416338918855,
+    "intercept": -4.310575194834759
+  },
+  "metrics": {
+    "cb": {
+      "auc": 0.670773786153553,
+      "logloss": 0.34327078157108704,
+      "brier": 0.09987400914544217,
+      "ece": 0.001649701085071365
+    },
+    "xgb": {
+      "auc": 0.6676679311524589,
+      "logloss": 0.34395530124161044,
+      "brier": 0.09998702296521629,
+      "ece": 0.002784492095564549
+    },
+    "lr": {
+      "auc": 0.6656724642444658,
+      "logloss": 0.3446416631763848,
+      "brier": 0.10011448471502926,
+      "ece": 0.005070771681892656
+    },
+    "avg_raw": {
+      "auc": 0.6721699255057412,
+      "logloss": 0.34308605444563123,
+      "brier": 0.09979826187620579,
+      "ece": 0.005592681810742413
+    },
+    "avg_calib": {
+      "auc": 0.6721699255057412,
+      "logloss": 0.34295786979416554,
+      "brier": 0.09977743051019607,
+      "ece": 0.004089800277281268
+    },
+    "stack_raw": {
+      "auc": 0.6716031856385718,
+      "logloss": 0.3432197015330906,
+      "brier": 0.09983879644511279,
+      "ece": 0.004799279204799048
+    },
+    "stack_calib": {
+      "auc": 0.6716031856385718,
+      "logloss": 0.3431904432366922,
+      "brier": 0.09982674135496446,
+      "ece": 0.002753415335738778
+    },
+    "market_only": {
+      "auc": 0.7446883666776634,
+      "logloss": 0.3560453907809858,
+      "brier": 0.11001848383607236,
+      "ece": 0.08005790830348024
+    },
+    "stack+market_calib": {
+      "auc": 0.7493816627966323,
+      "logloss": 0.3201770392686758,
+      "brier": 0.09391509811611101,
+      "ece": 0.008492071850426981
+    }
+  },
+  "latency_ms_per_1k": {
+    "catboost": 1.86,
+    "xgboost": 7.61,
+    "logreg": 1.22,
+    "stack_total": 8.74
+  },
+  "wall_seconds": 49.9
+}

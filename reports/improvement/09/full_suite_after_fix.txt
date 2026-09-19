@@ -1,0 +1,8 @@
+.......................................                                  [100%]
+============================== warnings summary ===============================
+tests/utils/test_timezone_bucketing.py::test_unparseable_values_become_nat_not_an_exception
+  C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\timezone.py:51: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+    parsed = pd.to_datetime(series, utc=True, errors="coerce")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2343 passed, 1 warning in 140.10s (0:02:20)

@@ -1,0 +1,18 @@
+{
+  "source_table": "text_archive",
+  "total_rows_seen": 243,
+  "distinct_dates": [
+    "2026-06-17"
+  ],
+  "distinct_sources": [
+    "sporting_life_spotlight"
+  ],
+  "target_min": 500,
+  "target_max": 1000,
+  "target_met": false,
+  "gap": "243 distinct comments from 1 source(s) on 1 calendar date(s) (['2026-06-17']); target was 500-1000 across DATES AND SOURCES (plural). Shortfall is both volume and diversity \u2014 text_archive currently only has Stage 14's backfilled single-day Spotlight import (D46); no live scrape has run in this programme yet.",
+  "prompt_dev_count": 20,
+  "blind_eval_count": 223,
+  "reviewed_sample_count": 60,
+  "reviewed_sample_note": "The first 60 blind_eval records (deterministic, content-hash order) are labelled by a single LLM reviewer (Claude Sonnet 5, this stage) reading the raw text directly against the TEXT_FEATURES definitions in llm/text_features.py. These are NOT human-reviewed gold labels \u2014 review_status='single_reviewer_llm_unverified' in labels_reviewed.jsonl, no second reviewer or adjudication step."
+}

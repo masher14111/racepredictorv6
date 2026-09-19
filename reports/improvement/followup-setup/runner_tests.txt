@@ -1,0 +1,37 @@
+[2026-09-19T14:40:58+00:00] [--] Sequential programme started. Each stage uses a fresh session and verified memory handoff.
+[2026-09-19T14:40:58+00:00] [01] A bounded test stage | Codex � GPT-6 Astra | High
+[2026-09-19T14:40:58+00:00] [01] Saved stage baseline and ownership checkpoint before CLI launch.
+[2026-09-19T14:40:58+00:00] [01] CLI failed for stage 01 (exit 1). model unavailable
+[2026-09-19T14:40:58+00:00] [--] Sequential programme started. Each stage uses a fresh session and verified memory handoff.
+[2026-09-19T14:40:58+00:00] [01] A bounded test stage | Codex � GPT-6 Astra | High
+[2026-09-19T14:40:58+00:00] [01] Ready to launch stage 01; no model called and no ledger changed.
+[2026-09-19T14:40:58+00:00] [--] Sequential programme started. Each stage uses a fresh session and verified memory handoff.
+[2026-09-19T14:40:58+00:00] [01] A bounded test stage | Codex � GPT-6 Astra | High
+[2026-09-19T14:40:58+00:00] [01] Saved stage baseline and ownership checkpoint before CLI launch.
+[2026-09-19T14:40:58+00:00] [01] CLI failed for stage 01 (exit 1). API error
+[2026-09-19T14:40:58+00:00] [--] Sequential programme started. Each stage uses a fresh session and verified memory handoff.
+[2026-09-19T14:40:58+00:00] [01] A bounded test stage | Codex � GPT-6 Astra | High
+[2026-09-19T14:40:58+00:00] [01] Saved stage baseline and ownership checkpoint before CLI launch.
+[2026-09-19T14:40:58+00:00] [01] Stage 01 verified: DONE.
+[2026-09-19T14:40:58+00:00] [01] Requested step limit reached. Next stage: 02.
+Reviewed runtime configuration adopted; in-flight stage baseline is unchanged.
+[2026-09-19T14:40:59+00:00] [--] Sequential programme started. Each stage uses a fresh session and verified memory handoff.
+[2026-09-19T14:40:59+00:00] [01] A bounded test stage | Codex � GPT-6 Astra | High
+[2026-09-19T14:40:59+00:00] [01] Saved stage baseline and ownership checkpoint before CLI launch.
+[2026-09-19T14:40:59+00:00] [01] Own-stage verification failed; bounded repair attempt follows: Stage 01 has no accepted disposition (status PENDING). Exit zero is not completion.
+[2026-09-19T14:40:59+00:00] [01] Stage 01 verified: DONE.
+[2026-09-19T14:40:59+00:00] [01] Requested step limit reached. Next stage: 02.
+[2026-09-19T14:40:59+00:00] [--] Sequential programme started. Each stage uses a fresh session and verified memory handoff.
+[2026-09-19T14:40:59+00:00] [01] A bounded test stage | Codex � GPT-6 Astra | High
+[2026-09-19T14:40:59+00:00] [01] Saved stage baseline and ownership checkpoint before CLI launch.
+[2026-09-19T14:40:59+00:00] [01] Stage 01 verified: DONE.
+[2026-09-19T14:40:59+00:00] [01] Clean stop requested. No next stage started; resume with run.
+[2026-09-19T14:41:03+00:00] [--] Sequential programme started. Each stage uses a fresh session and verified memory handoff.
+[2026-09-19T14:41:03+00:00] [01] A bounded test stage | Codex � GPT-6 Astra | High
+[2026-09-19T14:41:03+00:00] [01] Saved stage baseline and ownership checkpoint before CLI launch.
+[2026-09-19T14:41:03+00:00] [01] Protected supervisor/validation files changed during the stage: ['tools/improvement_memory.py']. Review before resuming.
+...........................
+----------------------------------------------------------------------
+Ran 27 tests in 5.286s
+
+OK

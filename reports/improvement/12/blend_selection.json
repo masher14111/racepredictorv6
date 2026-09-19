@@ -1,0 +1,681 @@
+{
+  "manifest": "reports/improvement/12/blend_manifest.json",
+  "panel": "data/audit/12/walkforward_oos.parquet",
+  "period": "blend_dev",
+  "window": {
+    "start": "2026-02-01",
+    "end_exclusive": "2026-06-13",
+    "role": "select the power-blend exponents (alpha, beta). Nothing else."
+  },
+  "n_rows": 35296,
+  "n_races": 4138,
+  "market_only_race_log_loss": 1.6822274863308497,
+  "lines": {
+    "combined_indep": {
+      "artifact": "data/audit/12/blend\\combined_indep.json",
+      "alpha": 0.0,
+      "beta": 1.0,
+      "blend_dev_race_log_loss": 1.68222748633085,
+      "boundary_independent_only_alpha1_beta0": 1.9135807030264245,
+      "boundary_market_only_alpha0_beta1": 1.68222748633085,
+      "grid": [
+        {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "race_log_loss": 2.0579988181923063
+        },
+        {
+          "alpha": 0.0,
+          "beta": 0.25,
+          "race_log_loss": 1.8783231876293152
+        },
+        {
+          "alpha": 0.0,
+          "beta": 0.5,
+          "race_log_loss": 1.764477832834304
+        },
+        {
+          "alpha": 0.0,
+          "beta": 0.75,
+          "race_log_loss": 1.7032211093828058
+        },
+        {
+          "alpha": 0.0,
+          "beta": 1.0,
+          "race_log_loss": 1.68222748633085
+        },
+        {
+          "alpha": 0.0,
+          "beta": 1.25,
+          "race_log_loss": 1.6919877714571563
+        },
+        {
+          "alpha": 0.0,
+          "beta": 1.5,
+          "race_log_loss": 1.7255062792339964
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.0,
+          "race_log_loss": 2.030943705194289
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.25,
+          "race_log_loss": 1.8604570383628347
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.5,
+          "race_log_loss": 1.7544532643434818
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.75,
+          "race_log_loss": 1.6994923219895017
+        },
+        {
+          "alpha": 0.1,
+          "beta": 1.0,
+          "race_log_loss": 1.6834590865948749
+        },
+        {
+          "alpha": 0.1,
+          "beta": 1.25,
+          "race_log_loss": 1.6971298866453275
+        },
+        {
+          "alpha": 0.1,
+          "beta": 1.5,
+          "race_log_loss": 1.733745827368252
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.0,
+          "race_log_loss": 2.0067550630777227
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.25,
+          "race_log_loss": 1.8453410701859312
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.5,
+          "race_log_loss": 1.7469667430857914
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.75,
+          "race_log_loss": 1.6980685516468985
+        },
+        {
+          "alpha": 0.2,
+          "beta": 1.0,
+          "race_log_loss": 1.6867763684363106
+        },
+        {
+          "alpha": 0.2,
+          "beta": 1.25,
+          "race_log_loss": 1.7041606986151199
+        },
+        {
+          "alpha": 0.2,
+          "beta": 1.5,
+          "race_log_loss": 1.7437001682260014
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.0,
+          "race_log_loss": 1.9854245524336607
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.25,
+          "race_log_loss": 1.83293985086486
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.5,
+          "race_log_loss": 1.7419673356248713
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.75,
+          "race_log_loss": 1.698892524001903
+        },
+        {
+          "alpha": 0.3,
+          "beta": 1.0,
+          "race_log_loss": 1.6921210598131138
+        },
+        {
+          "alpha": 0.3,
+          "beta": 1.25,
+          "race_log_loss": 1.7130238831463203
+        },
+        {
+          "alpha": 0.3,
+          "beta": 1.5,
+          "race_log_loss": 1.7553165551206573
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.0,
+          "race_log_loss": 1.9669348842601786
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.25,
+          "race_log_loss": 1.823210111784042
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.5,
+          "race_log_loss": 1.7393980277741559
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.75,
+          "race_log_loss": 1.7019026258620522
+        },
+        {
+          "alpha": 0.4,
+          "beta": 1.0,
+          "race_log_loss": 1.6994319213875388
+        },
+        {
+          "alpha": 0.4,
+          "beta": 1.25,
+          "race_log_loss": 1.7236611337018448
+        },
+        {
+          "alpha": 0.4,
+          "beta": 1.5,
+          "race_log_loss": 1.7685409320878689
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.0,
+          "race_log_loss": 1.9512598036194801
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.25,
+          "race_log_loss": 1.8161010708472032
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.5,
+          "race_log_loss": 1.7391963216009247
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.75,
+          "race_log_loss": 1.7070335522399573
+        },
+        {
+          "alpha": 0.5,
+          "beta": 1.0,
+          "race_log_loss": 1.708645314487169
+        },
+        {
+          "alpha": 0.5,
+          "beta": 1.25,
+          "race_log_loss": 1.7360126272594132
+        },
+        {
+          "alpha": 0.5,
+          "beta": 1.5,
+          "race_log_loss": 1.7833183018544863
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.0,
+          "race_log_loss": 1.9383641819770032
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.25,
+          "race_log_loss": 1.8115549113009226
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.5,
+          "race_log_loss": 1.7412949250921128
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.75,
+          "race_log_loss": 1.714216974537104
+        },
+        {
+          "alpha": 0.6,
+          "beta": 1.0,
+          "race_log_loss": 1.7196957689194081
+        },
+        {
+          "alpha": 0.6,
+          "beta": 1.25,
+          "race_log_loss": 1.7500174850330226
+        },
+        {
+          "alpha": 0.6,
+          "beta": 1.5,
+          "race_log_loss": 1.7995930868602021
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.0,
+          "race_log_loss": 1.9207279938134165
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.25,
+          "race_log_loss": 1.8098886455468657
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.5,
+          "race_log_loss": 1.7521044281995675
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.75,
+          "race_log_loss": 1.7344568903006383
+        },
+        {
+          "alpha": 0.8,
+          "beta": 1.0,
+          "race_log_loss": 1.7470401449811455
+        },
+        {
+          "alpha": 0.8,
+          "beta": 1.25,
+          "race_log_loss": 1.7827411564211841
+        },
+        {
+          "alpha": 0.8,
+          "beta": 1.5,
+          "race_log_loss": 1.8364117609962323
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.0,
+          "race_log_loss": 1.9135807030264245
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.25,
+          "race_log_loss": 1.817634360129416
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.5,
+          "race_log_loss": 1.771221159003802
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.75,
+          "race_log_loss": 1.7620403763055357
+        },
+        {
+          "alpha": 1.0,
+          "beta": 1.0,
+          "race_log_loss": 1.780925209950927
+        },
+        {
+          "alpha": 1.0,
+          "beta": 1.25,
+          "race_log_loss": 1.8213403510009987
+        },
+        {
+          "alpha": 1.0,
+          "beta": 1.5,
+          "race_log_loss": 1.8785534633745444
+        }
+      ]
+    },
+    "combined_indep_forced": {
+      "artifact": "data/audit/12/blend\\combined_indep_forced.json",
+      "alpha": 0.1,
+      "beta": 1.0,
+      "blend_dev_race_log_loss": 1.6834590865948749,
+      "constraint": "alpha >= 0.1",
+      "note": "diagnostic arm; shares combined_* grid, no separate search"
+    },
+    "combined_market": {
+      "artifact": "data/audit/12/blend\\combined_market.json",
+      "alpha": 0.5,
+      "beta": 0.5,
+      "blend_dev_race_log_loss": 1.6816514762578625,
+      "boundary_independent_only_alpha1_beta0": 1.6824277555481624,
+      "boundary_market_only_alpha0_beta1": 1.68222748633085,
+      "grid": [
+        {
+          "alpha": 0.0,
+          "beta": 0.0,
+          "race_log_loss": 2.0579988181923063
+        },
+        {
+          "alpha": 0.0,
+          "beta": 0.25,
+          "race_log_loss": 1.8783231876293152
+        },
+        {
+          "alpha": 0.0,
+          "beta": 0.5,
+          "race_log_loss": 1.764477832834304
+        },
+        {
+          "alpha": 0.0,
+          "beta": 0.75,
+          "race_log_loss": 1.7032211093828058
+        },
+        {
+          "alpha": 0.0,
+          "beta": 1.0,
+          "race_log_loss": 1.68222748633085
+        },
+        {
+          "alpha": 0.0,
+          "beta": 1.25,
+          "race_log_loss": 1.6919877714571563
+        },
+        {
+          "alpha": 0.0,
+          "beta": 1.5,
+          "race_log_loss": 1.7255062792339964
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.0,
+          "race_log_loss": 1.9739981869046999
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.25,
+          "race_log_loss": 1.8234632366737995
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.5,
+          "race_log_loss": 1.7332354241171217
+        },
+        {
+          "alpha": 0.1,
+          "beta": 0.75,
+          "race_log_loss": 1.6900674537963347
+        },
+        {
+          "alpha": 0.1,
+          "beta": 1.0,
+          "race_log_loss": 1.6828150205618304
+        },
+        {
+          "alpha": 0.1,
+          "beta": 1.25,
+          "race_log_loss": 1.703131674722554
+        },
+        {
+          "alpha": 0.1,
+          "beta": 1.5,
+          "race_log_loss": 1.7448637246673355
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.0,
+          "race_log_loss": 1.902970801628296
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.25,
+          "race_log_loss": 1.7792994079941526
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.5,
+          "race_log_loss": 1.710205126855201
+        },
+        {
+          "alpha": 0.2,
+          "beta": 0.75,
+          "race_log_loss": 1.683122681839964
+        },
+        {
+          "alpha": 0.2,
+          "beta": 1.0,
+          "race_log_loss": 1.6881486593262187
+        },
+        {
+          "alpha": 0.2,
+          "beta": 1.25,
+          "race_log_loss": 1.71795574631792
+        },
+        {
+          "alpha": 0.2,
+          "beta": 1.5,
+          "race_log_loss": 1.7671083379506092
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.0,
+          "race_log_loss": 1.8439745055488233
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.25,
+          "race_log_loss": 1.7447080447321932
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.5,
+          "race_log_loss": 1.6944539555621128
+        },
+        {
+          "alpha": 0.3,
+          "beta": 0.75,
+          "race_log_loss": 1.68170750419915
+        },
+        {
+          "alpha": 0.3,
+          "beta": 1.0,
+          "race_log_loss": 1.6977389618703167
+        },
+        {
+          "alpha": 0.3,
+          "beta": 1.25,
+          "race_log_loss": 1.7360989673861547
+        },
+        {
+          "alpha": 0.3,
+          "beta": 1.5,
+          "race_log_loss": 1.7919683666342017
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.0,
+          "race_log_loss": 1.7959573668761553
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.25,
+          "race_log_loss": 1.7186420849297666
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.5,
+          "race_log_loss": 1.6851706344315238
+        },
+        {
+          "alpha": 0.4,
+          "beta": 0.75,
+          "race_log_loss": 1.6852354900341202
+        },
+        {
+          "alpha": 0.4,
+          "beta": 1.0,
+          "race_log_loss": 1.711158019960497
+        },
+        {
+          "alpha": 0.4,
+          "beta": 1.25,
+          "race_log_loss": 1.7572420831696196
+        },
+        {
+          "alpha": 0.4,
+          "beta": 1.5,
+          "race_log_loss": 1.8192018121366864
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.0,
+          "race_log_loss": 1.757840486913238
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.25,
+          "race_log_loss": 1.7001566764219271
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.5,
+          "race_log_loss": 1.6816514762578625
+        },
+        {
+          "alpha": 0.5,
+          "beta": 0.75,
+          "race_log_loss": 1.6931963401197831
+        },
+        {
+          "alpha": 0.5,
+          "beta": 1.0,
+          "race_log_loss": 1.7280290711861819
+        },
+        {
+          "alpha": 0.5,
+          "beta": 1.25,
+          "race_log_loss": 1.781101578908994
+        },
+        {
+          "alpha": 0.5,
+          "beta": 1.5,
+          "race_log_loss": 1.8485926457941004
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.0,
+          "race_log_loss": 1.7285836331596862
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.25,
+          "race_log_loss": 1.6884161609383908
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.5,
+          "race_log_loss": 1.683285024914708
+        },
+        {
+          "alpha": 0.6,
+          "beta": 0.75,
+          "race_log_loss": 1.705142986905471
+        },
+        {
+          "alpha": 0.6,
+          "beta": 1.0,
+          "race_log_loss": 1.7480187257275892
+        },
+        {
+          "alpha": 0.6,
+          "beta": 1.25,
+          "race_log_loss": 1.807424944673153
+        },
+        {
+          "alpha": 0.6,
+          "beta": 1.5,
+          "race_log_loss": 1.8799476659398804
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.0,
+          "race_log_loss": 1.6929067984420805
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.25,
+          "race_log_loss": 1.6823357937606227
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.5,
+          "race_log_loss": 1.6999418398265362
+        },
+        {
+          "alpha": 0.8,
+          "beta": 0.75,
+          "race_log_loss": 1.739463614721294
+        },
+        {
+          "alpha": 0.8,
+          "beta": 1.0,
+          "race_log_loss": 1.7962019589829568
+        },
+        {
+          "alpha": 0.8,
+          "beta": 1.25,
+          "race_log_loss": 1.8665856227925919
+        },
+        {
+          "alpha": 0.8,
+          "beta": 1.5,
+          "race_log_loss": 1.9478758796866107
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.0,
+          "race_log_loss": 1.6824277555481624
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.25,
+          "race_log_loss": 1.695586927916891
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.5,
+          "race_log_loss": 1.731603094370222
+        },
+        {
+          "alpha": 1.0,
+          "beta": 0.75,
+          "race_log_loss": 1.7855543761508388
+        },
+        {
+          "alpha": 1.0,
+          "beta": 1.0,
+          "race_log_loss": 1.8537046352352484
+        },
+        {
+          "alpha": 1.0,
+          "beta": 1.25,
+          "race_log_loss": 1.9331910519559121
+        },
+        {
+          "alpha": 1.0,
+          "beta": 1.5,
+          "race_log_loss": 2.021804079509009
+        }
+      ]
+    },
+    "combined_market_forced": {
+      "artifact": "data/audit/12/blend\\combined_market_forced.json",
+      "alpha": 0.5,
+      "beta": 0.5,
+      "blend_dev_race_log_loss": 1.6816514762578625,
+      "constraint": "alpha >= 0.1",
+      "note": "diagnostic arm; shares combined_* grid, no separate search"
+    }
+  }
+}

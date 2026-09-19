@@ -1,0 +1,80 @@
+{
+  "attachments": {
+    "races": {
+      "race-1": {
+        "raceId": "race-1",
+        "venue": "Ascot"
+      }
+    },
+    "markets": {
+      "primary-win": {
+        "marketId": "primary-win",
+        "raceId": "race-1",
+        "marketType": "WIN",
+        "marketName": "Win or Each Way",
+        "marketTime": "2026-07-25T13:00:00.000Z",
+        "eachwayAvailable": true,
+        "numberOfPlaces": 2,
+        "placeFraction": {"numerator": 1, "denominator": 4},
+        "runners": [
+          {
+            "selectionId": "runner-1",
+            "runnerName": "Alpha",
+            "runnerStatus": "ACTIVE",
+            "winRunnerOdds": {"trueOdds": {"decimalOdds": {"decimalOdds": 2.5}}}
+          },
+          {
+            "selectionId": "runner-2",
+            "runnerName": "Bravo",
+            "runnerStatus": "ACTIVE",
+            "winRunnerOdds": {"trueOdds": {"decimalOdds": {"decimalOdds": 3.5}}}
+          },
+          {
+            "selectionId": "runner-3",
+            "runnerName": "Charlie",
+            "runnerStatus": "ACTIVE",
+            "winRunnerOdds": {"trueOdds": {"decimalOdds": {"decimalOdds": 4.0}}}
+          },
+          {
+            "selectionId": "10518227",
+            "runnerName": "Unnamed Favourite",
+            "runnerStatus": "ACTIVE"
+          },
+          {
+            "selectionId": "10518230",
+            "runnerName": "Unnamed 2nd Favourite",
+            "runnerStatus": "ACTIVE"
+          }
+        ]
+      },
+      "specials": {
+        "marketId": "specials",
+        "raceId": "race-1",
+        "marketType": "SPECIAL",
+        "marketName": "Racing Specials",
+        "marketTime": "2026-07-25T13:00:00.000Z",
+        "eachwayAvailable": false,
+        "runners": [
+          {
+            "selectionId": "special-1",
+            "runnerName": "Alpha And Bravo Both To Finish In The Top 3",
+            "runnerStatus": "ACTIVE",
+            "winRunnerOdds": {"trueOdds": {"decimalOdds": {"decimalOdds": 3.0}}}
+          },
+          {
+            "selectionId": "special-2",
+            "runnerName": "Betting Without Alpha - Bravo To Win",
+            "runnerStatus": "ACTIVE",
+            "winRunnerOdds": {"trueOdds": {"decimalOdds": {"decimalOdds": 2.5}}}
+          },
+          {
+            "selectionId": "special-3",
+            "runnerName": "Alpha To Win By 2 Lengths Or More",
+            "runnerStatus": "ACTIVE",
+            "winRunnerOdds": {"trueOdds": {"decimalOdds": {"decimalOdds": 5.0}}}
+          }
+        ]
+      }
+    }
+  }
+}

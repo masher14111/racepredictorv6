@@ -1,0 +1,58 @@
+{
+  "A_executable_quote": {
+    "perturbed_columns": [
+      "odds_decimal",
+      "sp"
+    ],
+    "max_abs_delta_independent": 0.0,
+    "max_abs_delta_reference": 0.0,
+    "max_abs_delta_blend": 0.0,
+    "max_abs_delta_market_assisted": 0.5453270738461575,
+    "market_assisted_features_that_moved": [
+      "implied_prob",
+      "overround_norm_prob",
+      "log_odds",
+      "market_rank",
+      "odds_value_delta",
+      "race_complexity",
+      "form_market_disagreement",
+      "price_steam_pct",
+      "relative_market_share",
+      "market_book_pct",
+      "is_steaming",
+      "is_drifting",
+      "market_confidence"
+    ],
+    "n_rows_compared": 5561
+  },
+  "B_reference_price_control": {
+    "max_abs_delta_independent": 0.0,
+    "max_abs_delta_reference": 0.5716125184728712
+  },
+  "C_incomplete_reference_book": {
+    "n_races_holed": 61,
+    "n_rows_affected": 556,
+    "reference_nan_rows": 556,
+    "blend_nan_rows": 556,
+    "independent_still_defined_rows": 556
+  },
+  "D_non_runner": {
+    "n_races_tested": 200,
+    "max_abs_sum_minus_one": 2.220446049250313e-16,
+    "races_reordered": 0
+  },
+  "E_fl_recalibration_audit": {
+    "status": "measured",
+    "n_live_rows": 308,
+    "mean_executable_over_reference": 1.0143235104528474,
+    "mean_abs_prob_shift_exec_vs_reference": 0.0009234105320104419,
+    "max_abs_prob_shift_exec_vs_reference": 0.05274974746508246,
+    "mean_abs_prob_shift_from_10pct_quote_move": 0.007934912836021636,
+    "max_abs_prob_shift_from_10pct_quote_move": 0.043191450603726145,
+    "finding": "models.predictor._score_value feeds _apply_fl_recalibration the EXECUTABLE best-of-N board price (_effective_decimal) while the shipped artifact was fitted on the pre-off REFERENCE price (ppwap). The served value_win_prob therefore moves when a bookmaker moves only its quote, and is evaluated in a systematically longer odds band than it was fit for. value_win_prob_independent (what execution.gates prefers) is unaffected."
+  },
+  "_summary": {
+    "passed": true,
+    "failures": []
+  }
+}

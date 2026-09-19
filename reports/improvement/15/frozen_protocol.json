@@ -1,0 +1,19 @@
+{
+  "frozen_at": "2026-09-19T11:16:16.096195+00:00",
+  "schema_version": 2,
+  "regex_prompt_version": 1,
+  "hosted_prompt_version": 1,
+  "feature_names": [
+    "ground_excuse",
+    "distance_excuse",
+    "trip_trouble",
+    "headgear_first_time",
+    "returning_from_layoff",
+    "course_winner"
+  ],
+  "hosted_system_prompt_sha256": "f57581c0970dfb24640f4ebcc740e3b708ab21ebafab74a197d6868e98f7e981",
+  "hosted_user_prompt_template_sha256": "28d2b5841c5f404d6775c4de03274b77d0d2e4ade661f3d99937a4698de9ec0b",
+  "hosted_system_prompt": "You extract structured facts from UK/Irish horse-racing preview comments. You have no identity beyond this task; never mention what model or company you are. You cannot browse or use tools \u2014 use only the supplied comment text. Never use outside knowledge of real horses, trainers or race results; if the comment doesn't state something, the correct answer is unknown, never a guess from memory.",
+  "hosted_user_prompt_template": "For each feature below, decide whether the comment supports it (true), explicitly contradicts it (false), or does not address it at all (unknown). Respond with ONLY a single JSON object whose keys are exactly the feature names; each value is {\"value\": true|false|\"unknown\", \"evidence\": \"<exact short phrase copied verbatim from the comment, or empty string for unknown/false with no quotable phrase>\"}. No commentary, no markdown fences, no extra keys.\n\nFeatures:\n- ground_excuse: the going/ground did not suit the horse, or it wants different ground (NOT true merely because ground is mentioned \u2014 only when the text says the ground is or was a problem for this horse)\n- distance_excuse: the race distance/trip was too short or too long, or stamina was in doubt\n- trip_trouble: the horse met in-running trouble: hampered, no clear run, short of room, stumbled, badly drawn, or lost its action\n- headgear_first_time: the horse wears headgear (blinkers, cheekpieces, hood, visor) for the first time\n- returning_from_layoff: the horse is returning from an absence, layoff or long break\n- course_winner: the horse has previously won at this course (course or course-and-distance winner)\n\nComment:\n\"\"\"<COMMENT_PLACEHOLDER>\"\"\"\n",
+  "note": "Frozen before any step15 scoring run (regex or hosted). A later prompt/schema wording change must bump the relevant *_VERSION and re-run scoring from scratch, not be silently compared against these hashes."
+}

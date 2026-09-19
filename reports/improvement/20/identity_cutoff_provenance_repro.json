@@ -1,0 +1,154 @@
+{
+  "ran_at_utc": "2026-09-19T15:45:20.419180+00:00",
+  "results": [
+    {
+      "check": "same off-time different venues -> distinct race_key per venue, no cross-venue mixing",
+      "ok": true,
+      "detail": {
+        "race_keys": [
+          "leopardstown|2024-05-17T16:15",
+          "york|2024-05-17T16:15"
+        ],
+        "issued": 4
+      }
+    },
+    {
+      "check": "repeat run / restart is idempotent: no new tickets, ticket_ids unchanged",
+      "ok": true,
+      "detail": {
+        "first": {
+          "issued": 2,
+          "duplicates": 0,
+          "seen": 2,
+          "predictions_reject_reason": null
+        },
+        "second": {
+          "issued": 0,
+          "duplicates": 2,
+          "seen": 2,
+          "predictions_reject_reason": null
+        },
+        "stored": 2
+      }
+    },
+    {
+      "check": "stale next-day replay is refused (no retroactive issuance under today's stamp)",
+      "ok": true,
+      "detail": {
+        "issue": {
+          "issued": 0,
+          "duplicates": 0,
+          "seen": 0,
+          "predictions_reject_reason": "predictions_stale:86400s"
+        }
+      }
+    },
+    {
+      "check": "Dublin DST spring-forward: same local day either side of the clock jump is accepted",
+      "ok": true,
+      "detail": {
+        "issue": {
+          "issued": 1,
+          "duplicates": 0,
+          "seen": 1,
+          "predictions_reject_reason": null
+        }
+      }
+    },
+    {
+      "check": "mixed-precision timestamps parse; provenance resolves onto every ticket and matches the config's own fingerprint",
+      "ok": true,
+      "detail": {
+        "n_tickets": 1,
+        "sample": {
+          "ticket_id": "c80e88015e41e0b4dfe7",
+          "issued_at": "2026-09-19T12:00:00+00:00",
+          "as_of": "2026-09-19T12:00:00+00:00",
+          "race_uid": "2026-09-19T15:40:00+00:00",
+          "race_id": null,
+          "race_time": "2026-09-19T15:40:00+00:00",
+          "venue": "Naas",
+          "race_key": "naas|2026-09-19T15:40",
+          "horse_key": "horsea",
+          "horse_id": "Naa0",
+          "horse_name": "Horse A",
+          "bookmaker": "livescorebet",
+          "market_type": "WIN",
+          "bet_type": "win",
+          "offered_odds": 8.0,
+          "quote_fetched_at": null,
+          "quote_age_seconds": null,
+          "model_prob": 0.2,
+          "market_adjusted_prob": 0.16,
+          "fair_odds": 8.26,
+          "market_prob": 0.14285714285714285,
+          "edge": 0.07893462469733657,
+          "expected_value": 0.6000000000000001,
+          "max_stake": 50.0,
+          "stake": null,
+          "ew_places": null,
+          "ew_reduction": null,
+          "data_quality": "poor",
+          "validation_state": "MODEL NO-GO / FORWARD GATE FORWARD GATE NOT MET (9 OF 9 CRITERIA FAILED)",
+          "decision": "PASS",
+          "pass_reasons": [
+            "executable_price:age_unknown",
+            "source_health:livescorebet:stale=5855s>900s",
+            "model_validation:NO-GO",
+            "model_validation:logloss_edge_not_significant:delta=-0.18621 ci95=[-0.22507,-0.14620]",
+            "model_validation:loses_to_best_devig:shin=1.68568",
+            "model_validation:clv_not_positive:mean=-0.13417 ci95_lower=-0.13888",
+            "model_validation:drift_gate_failed:going_speed=4.916, horse_career_runs=0.301",
+            "field_size:1<5"
+          ],
+          "reasons_passed": [
+            "complete_card",
+            "runner_history",
+            "calibrated_probability",
+            "reference_market",
+            "operating_cutoff",
+            "overround",
+            "min_edge",
+            "min_expected_value"
+          ],
+          "paper_only": true,
+          "model_verdict": "NO-GO",
+          "forward_gate_state": "FORWARD GATE NOT MET (9 OF 9 CRITERIA FAILED)",
+          "model_content_hash": "sha256:deadbeef",
+          "feature_schema_version": "v3nf",
+          "config_hash": "9bfacd373d307a5e",
+          "prediction_cycle_id": "cycle-2026-09-19",
+          "provenance_complete": true,
+          "is_candidate": false
+        }
+      }
+    },
+    {
+      "check": "an already-off race PASSes with operating_cutoff, never silently dropped nor a candidate",
+      "ok": true,
+      "detail": {
+        "reasons_by_horse": {
+          "Naa0": [
+            "executable_price:age_unknown",
+            "source_health:livescorebet:stale=5855s>900s",
+            "model_validation:NO-GO",
+            "model_validation:logloss_edge_not_significant:delta=-0.18621 ci95=[-0.22507,-0.14620]",
+            "model_validation:loses_to_best_devig:shin=1.68568",
+            "model_validation:clv_not_positive:mean=-0.13417 ci95_lower=-0.13888",
+            "model_validation:drift_gate_failed:going_speed=4.916, horse_career_runs=0.301",
+            "operating_cutoff:started_or_within_buffer:-120s<=60s",
+            "field_size:1<5"
+          ]
+        }
+      }
+    },
+    {
+      "check": "changed model content -> different model_content_hash; unchanged feature list -> same schema version",
+      "ok": true,
+      "detail": {
+        "before": "d3c40b7da065780fae65d817e277f8be4ce3d3506e9bc834fb6a792588792a17",
+        "after": "782e74be95f04de2bbe0da40d04a0e2f39a6b76b05250b5f0342150c611850cc"
+      }
+    }
+  ]
+}

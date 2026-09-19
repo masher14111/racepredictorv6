@@ -1,0 +1,11 @@
+source: data\audit\10\training_rebuilt.parquet  slice rows=116,825  last 200 days
+windowed_rates[trainer_id, strict=False] rate: rows differing after ROW SHUFFLE: 0 / 114566 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_rates[trainer_id, strict=False] n_runs: rows differing after ROW SHUFFLE: 0 / 116825 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_rates[jockey_id, strict=False] rate: rows differing after ROW SHUFFLE: 0 / 114717 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_rates[jockey_id, strict=False] n_runs: rows differing after ROW SHUFFLE: 0 / 116825 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_rates[horse_id, strict=True] rate: rows differing after ROW SHUFFLE: 0 / 80829 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_rates[horse_id, strict=True] n_runs: rows differing after ROW SHUFFLE: 0 / 116825 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_win_rate_days[trainer_id] rate: rows differing after ROW SHUFFLE: 0 / 86494 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_win_rate_days[trainer_id] n: rows differing after ROW SHUFFLE: 0 / 116825 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_win_rate_days[jockey_id] rate: rows differing after ROW SHUFFLE: 0 / 95895 (0.00%)  max|delta|=0.0000  null-mismatch=0
+windowed_win_rate_days[jockey_id] n: rows differing after ROW SHUFFLE: 0 / 116825 (0.00%)  max|delta|=0.0000  null-mismatch=0

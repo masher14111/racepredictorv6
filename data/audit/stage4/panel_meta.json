@@ -1,0 +1,32 @@
+{
+  "source": "C:\\Users\\mshr\\Desktop\\Race Predictor v4\\data\\features\\training.parquet",
+  "source_sha256": "3E7CDE9869D86ED2BB8701CB5BE6F5244F6A728B20B869857662AC8C1E54AD99",
+  "n_input_rows": 260490,
+  "n_panel_rows": 143364,
+  "n_races": 16039,
+  "date_min": "2024-01-01 00:00:00+00:00",
+  "date_max": "2026-07-25 00:00:00+00:00",
+  "book_complete_frac": 0.7976758460980441,
+  "exclusions": [
+    {
+      "reason": "non_win_market_row",
+      "n_rows": 111630,
+      "n_races": 12522
+    },
+    {
+      "reason": "no_valid_preoff_price",
+      "n_rows": 11,
+      "n_races": 6
+    },
+    {
+      "reason": "implausible_field_size(<2|>40)",
+      "n_rows": 7,
+      "n_races": 7
+    },
+    {
+      "reason": "extreme_booksum(<0.8|>1.8)",
+      "n_rows": 5478,
+      "n_races": 946
+    }
+  ]
+}

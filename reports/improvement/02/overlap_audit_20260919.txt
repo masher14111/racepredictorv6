@@ -1,0 +1,32 @@
+2026-09-19 01:09:43 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 01:09:43 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 01:09:43 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+rows=260490 unique race_uid=29512 test_size=0.2 calibration_size=0.15
+
+[whole-df] train=208392 test=52098  train/test shared race_uid = 0
+
+[target=won] rows: fit=159414 early_stop=17714 calib=31264 test=52098
+  shared race_uid test/calib: 0
+  shared race_uid test/fit: 0
+  shared race_uid test/early_stop: 0
+  shared race_uid calib/fit: 0
+  shared race_uid calib/early_stop: 0
+  shared race_uid fit/early_stop: 0
+
+[target=placed_2] rows: fit=159414 early_stop=17714 calib=31264 test=52098
+  shared race_uid test/calib: 0
+  shared race_uid test/fit: 0
+  shared race_uid test/early_stop: 0
+  shared race_uid calib/fit: 0
+  shared race_uid calib/early_stop: 0
+  shared race_uid fit/early_stop: 0
+
+[target=showed] rows: fit=159414 early_stop=17714 calib=31264 test=52098
+  shared race_uid test/calib: 0
+  shared race_uid test/fit: 0
+  shared race_uid test/early_stop: 0
+  shared race_uid calib/fit: 0
+  shared race_uid calib/early_stop: 0
+  shared race_uid fit/early_stop: 0
+
+RESULT: zero overlap on every boundary, every target

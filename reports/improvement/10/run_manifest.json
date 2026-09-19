@@ -1,0 +1,113 @@
+{
+  "frozen_at_utc": "2026-09-19T06:33:24.516859+00:00",
+  "purpose": "Step 10 comparability protocol: market-only, conditional-logit, CatBoost and grouped-softmax LightGBM baselines, independent vs market-assisted, on one eligible-race/cutoff protocol. Frozen BEFORE any candidate is trained or tuned.",
+  "data": {
+    "unified_races_path": "data/unified_races.parquet",
+    "unified_races_sha256": "849abb3e8c6fdf0a07a76bb68246c1a57d137490fc97362f546c1646fe4cf284",
+    "rebuilt_matrix_path": "data/audit/10/training_rebuilt.parquet",
+    "rebuilt_matrix_sha256": "9ee4e299a03f82868c0ad20dd2e81c7c9826d3aec4131b1f3ec87ddb697836bd",
+    "rebuilt_matrix_rows": 551815,
+    "rebuilt_matrix_win_rows": 276297,
+    "pipeline_fixes_included": [
+      "D26",
+      "D27",
+      "D33",
+      "D38",
+      "D39",
+      "D40",
+      "D41"
+    ]
+  },
+  "code_hashes": {
+    "features/builder.py": "c0ec449c900d894b64b7cbea4b6098e991c1520563028aadcd7156c8c40718d0",
+    "features/derive.py": "0f256366d95f04796b29acd9566a6bdf9cefabb553d5e509b30d93ce81a1c23d",
+    "features/engine.py": "f226646f3538d116cfdc8ad9e429b4e907f5aae594f358eb829c228292ad4ebe",
+    "features/_trailing_fast.py": "41a477b6d0736164341d015c23a4e5a68b5188c0e0fa8a92c3ee317739b2dddf",
+    "features/_trainer_form.py": "b5e755ff6691de3a59b303c902cf4bcef4ee05972799e6d2b525490fd1c32b2a",
+    "features/_jockey_form.py": "351bc85c96b6fecfe3ec26dae38805a5791b7c3d702bd8d5b58e47160d9591ad",
+    "features/fuse.py": "9d5325b8e4e16d181b3479a0e0350f7132e3a8dfe2e09ab0f4b4db167e7883eb",
+    "features/labels.py": "8d8d6212629c9f53f53054c6947dadcb7e606fdb415091c35fc446e963627893",
+    "features/lgbm_adapter.py": "fadc52235888031fec0835fd9f54c50a147fd581a99e4a6dd40994264e070c66",
+    "models/features.py": "bafa8fa29f011446659e94ab0260da58557fa161a7b803bab5d2e716294a2eea",
+    "models/split_utils.py": "cd237035071a8bd3cd3d451fca9cee17bdda32b5645b0d78655b0fbfb33f6d55",
+    "models/train.py": "778e2d90c51bc70ad0fb0903ce1bf861871122ae30858fa4848b66bcf434233a",
+    "models/train_lgbm.py": "cc6b48793b69e61f5387c7492cc11bf77cce141c50516c072b197e73a34083db",
+    "models/tuner.py": "158f1bc4826d03a1ae10aed31ec4267c71a4702004b280e99e1dca98ae0641c3",
+    "models/lgbm_softmax.py": "db1ec6e4254ec81fd7ae363683375e0d854ce6ae0cec64fdec15062dc52c6af0",
+    "models/conditional_logit.py": "4eea033af11c0410e2e2f5eb1dd9a5f9b3c32dcd2134d31ea5b0ebad5833aafb",
+    "models/head_to_head.py": "d69ad4f2c253b7a025e4593b472386a6c07d814bcf17deabf5aff8c05304f184",
+    "models/devig.py": "5d035de0bbdb58533e145d5b9ffae2aef98442b6c45d2a85cb36d39baecc6f98",
+    "models/calibration.py": "a5bc7a2aa1e427482247b1c7e51de2bf5982db067712d108088b8c07de5b090a",
+    "backtest/data.py": "e5876d2123848939fb47be0ef8fa89e36cf1c971d933302df36f9de3bea88009",
+    "backtest/holdout.py": "7ea8cabb92afa73068dbb0aec9e611a77f20a13c976f739865fda48bdd8f31c5"
+  },
+  "eligible_population": {
+    "market_type": "WIN",
+    "rule": "market_type == 'WIN' and position.notna() (labelled, priced win-market rows); PLACE rows are a different price book (D24) and are out of this scorecard's scope.",
+    "race_grouping_key": "race_uid",
+    "head_to_head_extra_filter": "models.head_to_head.head_to_head additionally requires a COMPLETE odds book (every runner in the race priced on the pre-off price column) before a race counts toward the log-loss scorecard \u2014 identical rule applied to every candidate and the market line."
+  },
+  "decision_cutoff": {
+    "assumption": "10-minutes-before-off feature freeze (CONTRACTS.md provisional research assumption, not a deployed cutoff constant)",
+    "price_used_for_decision_and_market_benchmark": "pre-off (morningwap -> ppwap fallback), never odds_finish (closing/settlement price, CLV reference only)"
+  },
+  "windows": {
+    "data_max_date": "2026-09-17",
+    "dev_core": {
+      "start": "2024-01-01",
+      "end_exclusive": "2026-08-08",
+      "n_rows": 263982,
+      "n_races": 29888
+    },
+    "dev_oos": {
+      "start": "2026-08-08",
+      "end_exclusive": "2026-08-28",
+      "n_rows": 5561,
+      "n_races": 618,
+      "role": "Primary development scorecard slice for ALL candidates (race-level log loss vs the de-vigged market). NOT the reserved final holdout."
+    },
+    "final_holdout_RESERVED_UNTOUCHED": {
+      "start": "2026-08-28",
+      "end": "2026-09-17",
+      "n_rows": 6754,
+      "n_races": 708,
+      "policy": "Reserved for step17's single frozen-selection evaluation. Step 10 must not load these rows into any fit, tuning CV, calibration carve or head-to-head scoring call. Its coverage (row/null counts only, no performance metric) was inspected in step06's candidate build; no model has ever been scored against it. If step17 finds this window has since been inspected for anything beyond coverage, it must say so rather than silently treating it as still-untouched."
+    },
+    "already_observed_excluded": {
+      "window": [
+        "2026-06-13",
+        "2026-07-25"
+      ],
+      "source": "data/audit/stage4/final_evaluation.json",
+      "note": "Verified non-overlapping with the windows above."
+    }
+  },
+  "calibration": {
+    "carve": "most-recent whole-race-group 15% of dev_core (models.split_utils.chronological_group_split), matching models/train.py's existing calibration_size=0.15 default -- not re-tuned for this stage."
+  },
+  "tuning_budget": {
+    "protocol": "Optuna TPE, whole-race walk-forward CV (models.split_utils.group_time_series_split) on dev_core, race-level log loss objective for the conditional logit; CatBoost's own existing calibration-aware Optuna study (models/tuner.py) uses the SAME n_trials/cv_folds via models.train.train(trials=...).",
+    "n_trials_matched": 6,
+    "cv_folds_matched": 5,
+    "note": "n_trials bounded down from config.yaml's default optuna_trials=50 to fit this stage's CPU-only, up-to-2-worker performance budget; cv_folds kept at config.yaml's existing default (5) and matched for the conditional logit's tune_l2. LightGBM (models.train_lgbm) has no Optuna search in this codebase -- it early-stops a single chronological train/validation split at its existing default hyperparameters (models/lgbm_softmax._DEFAULT_PARAMS). This is a real, disclosed asymmetry in tuning effort across model families, not a matched budget for LightGBM specifically."
+  },
+  "weighting_schemes_compared": [
+    "existing odds-inverse sample weight (models.train._sample_weights, capped)",
+    "unweighted (uniform sample weight)",
+    "race-weighted (uniform weight but rescaled so every race contributes equal total weight regardless of field size)"
+  ],
+  "candidate_output_paths": {
+    "conditional_logit": "data/audit/10/models_condlogit/",
+    "catboost": "data/audit/10/models_catboost/",
+    "lgbm_market": "data/audit/10/models_lgbm_market/",
+    "lgbm_independent": "data/audit/10/models_lgbm_indep/",
+    "dev_oos_predictions": "data/audit/10/dev_oos_predictions.parquet",
+    "scorecard": "reports/improvement/10/scorecard.json"
+  },
+  "champion_artifacts_untouched": [
+    "models/catboost_*_v3*.bin",
+    "models/catboost_*_v3*_calib.pkl",
+    "models/lgbm_won_v3.txt",
+    "models/lgbm_v3_meta.json"
+  ]
+}

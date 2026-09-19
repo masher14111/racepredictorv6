@@ -1,0 +1,6 @@
+2026-09-19 12:01:48 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 12:01:48 | WARNING  | config | RP env var RP_CPU_WORKERS has no matching config path — skipped
+2026-09-19 12:01:48 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 12:01:48 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+backfill_text_archive: archived 243 rows from data/spotlight.parquet
+text_archive coverage: {'rows': 243, 'races': 21, 'sources': 1, 'earliest_fetched_at': '2026-06-17T06:44:35.573383+00:00', 'latest_fetched_at': '2026-06-17T06:44:35.573383+00:00', 'unknown_published_at': 243}

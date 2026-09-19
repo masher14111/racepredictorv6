@@ -1,0 +1,653 @@
+{
+  "calibration_method_comparison": {
+    "note": "walk-forward validation folds only; the final window is untouched",
+    "arms": {
+      "raw_normalized": {
+        "race_log_loss": 1.9139912812720152,
+        "runner_brier": 0.09368397697502547,
+        "ece": 0.011022559136608769
+      },
+      "marginal_calib_then_normalize (production)": {
+        "race_log_loss": 1.8942856034692208,
+        "runner_brier": 0.09318619464940181,
+        "ece": 0.006787448395369501
+      },
+      "grouped_softmax_temperature": {
+        "race_log_loss": 1.8948468762285395,
+        "runner_brier": 0.09331726295462547,
+        "ece": 0.006250336591126698
+      },
+      "fl_market_adjusted_then_normalize": {
+        "race_log_loss": 1.7431661067723485,
+        "runner_brier": 0.08683837080244536,
+        "ece": 0.00446883589352709
+      }
+    },
+    "winner_by_race_log_loss": "fl_market_adjusted_then_normalize"
+  },
+  "fl_ablation": {
+    "brier_independent": 0.09485746446002746,
+    "brier_crossfit_adjusted": 0.08786980867239153,
+    "brier_insample_adjusted": 0.08626046178164558,
+    "insample_optimism_brier": 0.0016093468907459468,
+    "note": "crossfit = per-fold F-L (every row scored by a recalibrator fit strictly before its fold); insample = one F-L fit on all OOS rows then applied to the same rows",
+    "corr_with_inverse_price": {
+      "independent": 0.5780387488891185,
+      "crossfit_adjusted": 0.9250503371283111
+    },
+    "within_price_bin_auc": {
+      "independent": 0.5488618847920933,
+      "crossfit_adjusted": 0.5364839482407604
+    },
+    "manufactured_edge": {
+      "n_all": 4932,
+      "n_band_2_4": 2484,
+      "realized_ae_band_2_4": 0.9215768443410649,
+      "flat_yield_band_2_4": -0.019421135265700485,
+      "note": "rows whose EV is positive ONLY after the F-L market adjustment; their realized A/E and flat yield measure whether price-conditioning manufactures phantom edge"
+    },
+    "price_shock_offset_frac": {
+      "median": 0.7727399135520354,
+      "note": "fraction of a +5% price improvement's EV gain absorbed by the price-conditioned recalibration (0 = none, price-free behaviour; 1 = fully absorbed, pure price echo)"
+    }
+  },
+  "extremes": {
+    "base_calibrator": {
+      "type": "SigmoidCalibrator",
+      "a": 1.1004147231141623,
+      "b": 0.4844926870347943,
+      "can_emit_zero": false,
+      "can_emit_one": false
+    },
+    "fl_bands": [
+      {
+        "odds_centre": 1.64,
+        "type": "SigmoidCalibrator",
+        "a": 0.1638970951859727,
+        "b": 0.569879036665614,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 2.51,
+        "type": "SigmoidCalibrator",
+        "a": 0.06005917044557354,
+        "b": -0.29992374475947764,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 3.97,
+        "type": "SigmoidCalibrator",
+        "a": 0.3632164563123645,
+        "b": -0.5134420013145045,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 6.33,
+        "type": "SigmoidCalibrator",
+        "a": 0.17421855886329538,
+        "b": -1.4319117798311738,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 10.16,
+        "type": "SigmoidCalibrator",
+        "a": 0.12241222738501763,
+        "b": -1.9974104139819773,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 16.36,
+        "type": "SigmoidCalibrator",
+        "a": 0.32646782307311106,
+        "b": -2.0691270805633977,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 26.13,
+        "type": "SigmoidCalibrator",
+        "a": 0.38856840258343095,
+        "b": -2.395577476582089,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 44.36,
+        "type": "SigmoidCalibrator",
+        "a": 0.21929179903155152,
+        "b": -3.0965156468590465,
+        "emits_zero_below_x_min": false
+      },
+      {
+        "odds_centre": 178.56,
+        "type": "SigmoidCalibrator",
+        "a": 1.0540263233059426,
+        "b": -2.297693750566747,
+        "emits_zero_below_x_min": false
+      }
+    ],
+    "grid": {
+      "n_grid": 3417,
+      "zero_cells": [],
+      "one_cells": [],
+      "any_zero": false,
+      "any_one": false
+    },
+    "support_hit_rate_oos": {
+      "n": 72017,
+      "below_support_frac": 0.0,
+      "above_support_frac": 0.0,
+      "clamped_frac": 0.0
+    },
+    "portability": [
+      {
+        "band": "[1.0,2.0)",
+        "fit_frac": 0.0198,
+        "live_frac": 0.0253,
+        "shift": 0.0055
+      },
+      {
+        "band": "[2.0,3.0)",
+        "fit_frac": 0.0434,
+        "live_frac": 0.0309,
+        "shift": -0.0125
+      },
+      {
+        "band": "[3.0,5.0)",
+        "fit_frac": 0.1245,
+        "live_frac": 0.1039,
+        "shift": -0.0206
+      },
+      {
+        "band": "[5.0,8.0)",
+        "fit_frac": 0.1659,
+        "live_frac": 0.1713,
+        "shift": 0.0054
+      },
+      {
+        "band": "[8.0,13.0)",
+        "fit_frac": 0.1722,
+        "live_frac": 0.2388,
+        "shift": 0.0666
+      },
+      {
+        "band": "[13.0,21.0)",
+        "fit_frac": 0.148,
+        "live_frac": 0.1292,
+        "shift": -0.0188
+      },
+      {
+        "band": "[21.0,34.0)",
+        "fit_frac": 0.1047,
+        "live_frac": 0.1124,
+        "shift": 0.0077
+      },
+      {
+        "band": "[34.0,60.0)",
+        "fit_frac": 0.0836,
+        "live_frac": 0.118,
+        "shift": 0.0343
+      },
+      {
+        "band": "[60.0,inf)",
+        "fit_frac": 0.1378,
+        "live_frac": 0.0702,
+        "shift": -0.0676
+      }
+    ],
+    "live_cache_extremes": {
+      "value_win_prob": {
+        "n": 356,
+        "zeros": 20,
+        "ones": 0
+      },
+      "value_win_prob_independent": {
+        "n": 0,
+        "zeros": 0,
+        "ones": 0
+      },
+      "won_prob": {
+        "n": 356,
+        "zeros": 0,
+        "ones": 0
+      },
+      "won_prob_normalized": {
+        "n": 356,
+        "zeros": 0,
+        "ones": 0
+      },
+      "catboost_win_prob": {
+        "n": 356,
+        "zeros": 0,
+        "ones": 0
+      },
+      "lgbm_win_prob": {
+        "n": 356,
+        "zeros": 0,
+        "ones": 0
+      },
+      "market_prob": {
+        "n": 356,
+        "zeros": 0,
+        "ones": 0
+      }
+    },
+    "oos_zero_one_counts": {
+      "p_ind": {
+        "zeros": 610,
+        "ones": 0
+      },
+      "p_adj": {
+        "zeros": 3154,
+        "ones": 21
+      },
+      "p_adj_sig": {
+        "zeros": 0,
+        "ones": 0
+      },
+      "norm_ind": {
+        "zeros": 610,
+        "ones": 0
+      },
+      "norm_adj": {
+        "zeros": 3154,
+        "ones": 0
+      }
+    }
+  },
+  "fl_band_method_selection": {
+    "note": "extremes fix selected on VALIDATION folds only: sigmoid F-L bands vs production isotonic bands",
+    "arms": {
+      "norm_adj": {
+        "race_log_loss": 1.7431661067723485,
+        "runner_brier": 0.08683837080244536,
+        "ece": 0.00446883589352709,
+        "exact_zeros": 3154,
+        "exact_ones": 21
+      },
+      "norm_adj_sig": {
+        "race_log_loss": 1.7052328254635123,
+        "runner_brier": 0.08664130008975261,
+        "ece": 0.005143809161506796,
+        "exact_zeros": 0,
+        "exact_ones": 0
+      }
+    },
+    "decision": "sigmoid",
+    "rationale": "sigmoid bands emit no exact 0/1 (a 0.0 win claim is unfalsifiable overconfidence); adopted unless materially worse on race log-loss (+0.002 tolerance)"
+  },
+  "ae_by_odds_band": {
+    "independent": [
+      {
+        "group": "11.0-21.0",
+        "n": 14775,
+        "actual": 921,
+        "expected": 1458.3,
+        "ae": 0.632,
+        "ae_ci95": [
+          0.593,
+          0.672
+        ],
+        "mean_prob": 0.0987,
+        "win_rate": 0.0623
+      },
+      {
+        "group": "2.0-3.0",
+        "n": 3122,
+        "actual": 1227,
+        "expected": 683.3,
+        "ae": 1.796,
+        "ae_ci95": [
+          1.718,
+          1.874
+        ],
+        "mean_prob": 0.2189,
+        "win_rate": 0.393
+      },
+      {
+        "group": "21.0-51.0",
+        "n": 12158,
+        "actual": 380,
+        "expected": 942.7,
+        "ae": 0.403,
+        "ae_ci95": [
+          0.365,
+          0.445
+        ],
+        "mean_prob": 0.0775,
+        "win_rate": 0.0313
+      },
+      {
+        "group": "3.0-5.0",
+        "n": 8969,
+        "actual": 2194,
+        "expected": 1574.7,
+        "ae": 1.393,
+        "ae_ci95": [
+          1.343,
+          1.445
+        ],
+        "mean_prob": 0.1756,
+        "win_rate": 0.2446
+      },
+      {
+        "group": "5.0-8.0",
+        "n": 11948,
+        "actual": 1766,
+        "expected": 1674.9,
+        "ae": 1.054,
+        "ae_ci95": [
+          1.01,
+          1.101
+        ],
+        "mean_prob": 0.1402,
+        "win_rate": 0.1478
+      },
+      {
+        "group": "51.0+",
+        "n": 11331,
+        "actual": 74,
+        "expected": 579.4,
+        "ae": 0.128,
+        "ae_ci95": [
+          0.102,
+          0.16
+        ],
+        "mean_prob": 0.0511,
+        "win_rate": 0.0065
+      },
+      {
+        "group": "8.0-11.0",
+        "n": 8289,
+        "actual": 802,
+        "expected": 966.9,
+        "ae": 0.829,
+        "ae_ci95": [
+          0.776,
+          0.886
+        ],
+        "mean_prob": 0.1167,
+        "win_rate": 0.0968
+      },
+      {
+        "group": "<2.0 (odds-on)",
+        "n": 1425,
+        "actual": 872,
+        "expected": 392.9,
+        "ae": 2.219,
+        "ae_ci95": [
+          2.127,
+          2.31
+        ],
+        "mean_prob": 0.2757,
+        "win_rate": 0.6119
+      }
+    ],
+    "market_adjusted": [
+      {
+        "group": "11.0-21.0",
+        "n": 14775,
+        "actual": 921,
+        "expected": 939.7,
+        "ae": 0.98,
+        "ae_ci95": [
+          0.921,
+          1.043
+        ],
+        "mean_prob": 0.0636,
+        "win_rate": 0.0623
+      },
+      {
+        "group": "2.0-3.0",
+        "n": 3122,
+        "actual": 1227,
+        "expected": 1177.0,
+        "ae": 1.043,
+        "ae_ci95": [
+          0.997,
+          1.088
+        ],
+        "mean_prob": 0.377,
+        "win_rate": 0.393
+      },
+      {
+        "group": "21.0-51.0",
+        "n": 12158,
+        "actual": 380,
+        "expected": 375.4,
+        "ae": 1.012,
+        "ae_ci95": [
+          0.917,
+          1.117
+        ],
+        "mean_prob": 0.0309,
+        "win_rate": 0.0313
+      },
+      {
+        "group": "3.0-5.0",
+        "n": 8969,
+        "actual": 2194,
+        "expected": 2249.4,
+        "ae": 0.975,
+        "ae_ci95": [
+          0.94,
+          1.011
+        ],
+        "mean_prob": 0.2508,
+        "win_rate": 0.2446
+      },
+      {
+        "group": "5.0-8.0",
+        "n": 11948,
+        "actual": 1766,
+        "expected": 1824.7,
+        "ae": 0.968,
+        "ae_ci95": [
+          0.927,
+          1.01
+        ],
+        "mean_prob": 0.1527,
+        "win_rate": 0.1478
+      },
+      {
+        "group": "51.0+",
+        "n": 11331,
+        "actual": 74,
+        "expected": 113.7,
+        "ae": 0.651,
+        "ae_ci95": [
+          0.519,
+          0.816
+        ],
+        "mean_prob": 0.01,
+        "win_rate": 0.0065
+      },
+      {
+        "group": "8.0-11.0",
+        "n": 8289,
+        "actual": 802,
+        "expected": 840.9,
+        "ae": 0.954,
+        "ae_ci95": [
+          0.893,
+          1.018
+        ],
+        "mean_prob": 0.1015,
+        "win_rate": 0.0968
+      },
+      {
+        "group": "<2.0 (odds-on)",
+        "n": 1425,
+        "actual": 872,
+        "expected": 593.2,
+        "ae": 1.47,
+        "ae_ci95": [
+          1.409,
+          1.53
+        ],
+        "mean_prob": 0.4163,
+        "win_rate": 0.6119
+      }
+    ],
+    "market_adjusted_sigmoid_bands": [
+      {
+        "group": "11.0-21.0",
+        "n": 14775,
+        "actual": 921,
+        "expected": 935.2,
+        "ae": 0.985,
+        "ae_ci95": [
+          0.925,
+          1.048
+        ],
+        "mean_prob": 0.0633,
+        "win_rate": 0.0623
+      },
+      {
+        "group": "2.0-3.0",
+        "n": 3122,
+        "actual": 1227,
+        "expected": 1172.6,
+        "ae": 1.046,
+        "ae_ci95": [
+          1.001,
+          1.092
+        ],
+        "mean_prob": 0.3756,
+        "win_rate": 0.393
+      },
+      {
+        "group": "21.0-51.0",
+        "n": 12158,
+        "actual": 380,
+        "expected": 374.7,
+        "ae": 1.014,
+        "ae_ci95": [
+          0.918,
+          1.119
+        ],
+        "mean_prob": 0.0308,
+        "win_rate": 0.0313
+      },
+      {
+        "group": "3.0-5.0",
+        "n": 8969,
+        "actual": 2194,
+        "expected": 2255.1,
+        "ae": 0.973,
+        "ae_ci95": [
+          0.938,
+          1.009
+        ],
+        "mean_prob": 0.2514,
+        "win_rate": 0.2446
+      },
+      {
+        "group": "5.0-8.0",
+        "n": 11948,
+        "actual": 1766,
+        "expected": 1824.7,
+        "ae": 0.968,
+        "ae_ci95": [
+          0.927,
+          1.01
+        ],
+        "mean_prob": 0.1527,
+        "win_rate": 0.1478
+      },
+      {
+        "group": "51.0+",
+        "n": 11331,
+        "actual": 74,
+        "expected": 116.6,
+        "ae": 0.635,
+        "ae_ci95": [
+          0.506,
+          0.796
+        ],
+        "mean_prob": 0.0103,
+        "win_rate": 0.0065
+      },
+      {
+        "group": "8.0-11.0",
+        "n": 8289,
+        "actual": 802,
+        "expected": 839.1,
+        "ae": 0.956,
+        "ae_ci95": [
+          0.895,
+          1.021
+        ],
+        "mean_prob": 0.1012,
+        "win_rate": 0.0968
+      },
+      {
+        "group": "<2.0 (odds-on)",
+        "n": 1425,
+        "actual": 872,
+        "expected": 574.2,
+        "ae": 1.519,
+        "ae_ci95": [
+          1.455,
+          1.581
+        ],
+        "mean_prob": 0.4029,
+        "win_rate": 0.6119
+      }
+    ]
+  },
+  "wf_head_to_head": {
+    "independent": {
+      "n_races": 8220,
+      "n_runners": 72017,
+      "model_log_loss": 1.8942856034692208,
+      "model_log_loss_ci95": [
+        1.8809787170764878,
+        1.9071216952622152
+      ],
+      "market_log_loss": 1.7079795009252035,
+      "logloss_delta_market_minus_model": -0.18630610254401736,
+      "logloss_delta_ci95": [
+        -0.19970721257816537,
+        -0.17312933029892913
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": false,
+      "logloss_delta_frac_boot_positive": 0.0,
+      "model_brier": 0.09322180582433746,
+      "market_brier": 0.08651295906495583,
+      "model_ece": 0.006787448395369501,
+      "market_ece": 0.002284329356547296,
+      "brier_delta_market_minus_model": -0.0067088467593816314,
+      "brier_delta_ci95": [
+        -0.007326080353828904,
+        -0.0061470555684567515
+      ]
+    },
+    "market_adjusted": {
+      "n_races": 8220,
+      "n_runners": 72017,
+      "model_log_loss": 1.7431661067723485,
+      "model_log_loss_ci95": [
+        1.7204264524366386,
+        1.7671805047455986
+      ],
+      "market_log_loss": 1.7079795009252035,
+      "logloss_delta_market_minus_model": -0.03518660584714506,
+      "logloss_delta_ci95": [
+        -0.054439466992416904,
+        -0.019612245281673008
+      ],
+      "delta_positive_is_model_better": true,
+      "model_beats_market_logloss": false,
+      "logloss_delta_frac_boot_positive": 0.0,
+      "model_brier": 0.08686241040749393,
+      "market_brier": 0.08651295906495583,
+      "model_ece": 0.00446883589352709,
+      "market_ece": 0.002284329356547296,
+      "brier_delta_market_minus_model": -0.00034945134253809573,
+      "brier_delta_ci95": [
+        -0.0005943982278776561,
+        -0.00011296951301301359
+      ]
+    }
+  }
+}

@@ -1,0 +1,39 @@
+source: data\audit\06\training_refreshed.parquet  rows=551,815  cols=117
+
+C1 identity uniqueness
+  [PASS] no duplicate (race_uid, horse_id, market_type) dups=0
+       market_type counts: {'WIN': 276297, 'PLACE': 275518}
+
+C2 WIN vs PLACE book separation
+       odds_decimal never populated in one book (cols=[]) — checking morningwap instead
+       morningwap both-book runners=275,277 identical=0.0200
+  [PASS] WIN/PLACE morningwap are not universally identical identical_fraction=0.0200
+  [PASS] finishing position agrees across a runner's WIN/PLACE rows agree=1.0000 n=275,277
+
+C3a labelled-matrix sanity (field_size is a FULL-field count, so a
+    label-filtered matrix must satisfy field_size >= observed rows)
+  [PASS] field_size >= rows of that race's own book in the labelled matrix violating_rows=0
+  [PASS] market_rank never exceeds its own book's FULL field size bad_rows=0
+
+C5 price-free provenance (structural mutation probe) + C3b/C4b full-field invariants on a freshly derived, pre-label-filter frame
+2026-09-19 06:19:44 | INFO     | config | Merged secrets overlay from config.local.yaml
+2026-09-19 06:19:44 | WARNING  | config | RP env var RP_CPU_WORKERS has no matching config path — skipped
+2026-09-19 06:19:44 | WARNING  | config | RP env var RP_DISABLE_NOTIFICATIONS has no matching config path — skipped
+2026-09-19 06:19:44 | INFO     | config | Config loaded from C:\Users\mshr\Documents\Race Predictor v4\Race Predictor v4\utils\..\config.yaml
+       probe slice raw rows=2,354 over 120 races
+  [PASS] field_size == rows of that race's own book (pre-label-filter) mismatched_rows=0 of 2,354
+  [PASS] overround_norm_prob sums to 1 inside each book (pre-label-filter) max|sum-1|=2.22e-16 priced_rows=2,163
+  [PASS] market_rank <= own book field size (pre-label-filter) bad_rows=0
+       PRICE/market features that moved (expected): ['implied_prob', 'overround_norm_prob', 'log_odds', 'market_rank', 'odds_value_delta', 'price_steam_pct', 'relative_market_share', 'market_book_pct', 'is_steaming', 'is_drifting', 'market_confidence', 'form_market_disagreement', 'race_market_entropy']
+  [FAIL] no price-free / candidate-independent feature reacts to a market-price perturbation reacting=[('race_complexity', 2354)]
+
+C6 non-runner handling
+       runner_status: {<NA>: 551815}
+       jockey_connections_source: {'declared': 551815}
+       trainer_connections_source: {'declared': 551815}
+       rows with null position in a LABELLED matrix: 0 (must be 0)
+  [PASS] labelled matrix carries no unresolved position 
+
+============================================================
+FAIL:
+  - no price-free / candidate-independent feature reacts to a market-price perturbation reacting=[('race_complexity', 2354)]

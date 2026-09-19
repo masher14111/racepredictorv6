@@ -1,0 +1,74 @@
+{
+ "issued": {
+  "WON": {
+   "decision": "CANDIDATE",
+   "paper_only": true,
+   "stake": 5.0,
+   "max_stake": 5.0,
+   "offered_odds": 3.75
+  },
+  "LOST": {
+   "decision": "CANDIDATE",
+   "paper_only": true,
+   "stake": 5.0,
+   "max_stake": 5.0,
+   "offered_odds": 3.75
+  },
+  "DNF": {
+   "decision": "CANDIDATE",
+   "paper_only": true,
+   "stake": 5.0,
+   "max_stake": 5.0,
+   "offered_odds": 3.75
+  },
+  "NONRUNNER": {
+   "decision": "CANDIDATE",
+   "paper_only": true,
+   "stake": 5.0,
+   "max_stake": 5.0,
+   "offered_odds": 3.75
+  }
+ },
+ "settle_stats": {
+  "settled": 4,
+  "already_settled": 0,
+  "still_open": 0,
+  "unmeasurable_clv": 4,
+  "settled_via_race_facts": 4,
+  "pending_reasons": {}
+ },
+ "settled": {
+  "NONRUNNER": {
+   "outcome": "void",
+   "stake": 5.0,
+   "returns": 5.0,
+   "profit": 0.0
+  },
+  "DNF": {
+   "outcome": "lost",
+   "stake": 5.0,
+   "returns": 0.0,
+   "profit": -5.0
+  },
+  "WON": {
+   "outcome": "won",
+   "stake": 5.0,
+   "returns": 18.75,
+   "profit": 13.75
+  },
+  "LOST": {
+   "outcome": "lost",
+   "stake": 5.0,
+   "returns": 0.0,
+   "profit": -5.0
+  }
+ },
+ "findings": {
+  "stake_is_never_sized_live": false,
+  "a_WINNING_candidate_records_zero_profit": false,
+  "winner_and_loser_are_numerically_identical": false,
+  "a_non_finisher_is_settled_void_not_lost": false,
+  "an_explicit_non_runner_is_settled_void": true,
+  "settled_via_race_facts_for_every_case": true
+ }
+}

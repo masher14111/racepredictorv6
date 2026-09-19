@@ -1,0 +1,376 @@
+{
+ "frozen_at_utc": "2026-09-19T13:33:50.445879+00:00",
+ "stage": "17",
+ "mode": "PAPER-ONLY",
+ "model_verdict_at_freeze": "NO-GO (execution.model_gate)",
+ "selection": {
+  "rule": "reports/improvement/17/02_selection_protocol.json (frozen before any champion score)",
+  "evidence": "reports/improvement/17/03_champion_replay.json",
+  "selected": "step10_catboost_rebuild",
+  "primary_paired_delta": {
+   "n_races": 618,
+   "mean_delta": -0.16383268750874413,
+   "ci95": [
+    -0.22227577255596587,
+    -0.10673222907300312
+   ],
+   "ci_excludes_zero": true,
+   "p_a_better": 1.0
+  },
+  "why_not_more_complex": "step 12 blend put ZERO weight on the model; step 13 XGBoost got weight 0.0; step 11 measured-speed family has no live ingestion path; step 16 text is DEFERRED_DATA. None is both supported and better."
+ },
+ "candidate": {
+  "family": "CatBoost binary `won`, WIN-market rows only (D24), sigmoid base calibrator, within-race normalisation at scoring; trained by step 10 on the REPAIRED matrix (D26/D27/D33/D38-D41)",
+  "primary_line_price_free": {
+   "tag": "s10idp",
+   "n_features": 39,
+   "feature_cols": [
+    "field_size",
+    "going_speed",
+    "class_change",
+    "distance_furlongs",
+    "recent_form_avg",
+    "recent_form_wins",
+    "recent_form_runs",
+    "timeform_rating",
+    "rating_rank",
+    "pace_bias",
+    "historical_win_rate",
+    "historical_place_rate",
+    "jockey_win_rate",
+    "trainer_win_rate",
+    "jt_combo_win_rate",
+    "jt_combo_runs",
+    "going_pref_win_rate",
+    "going_pref_place_rate",
+    "days_since_last_run",
+    "horse_career_runs",
+    "course_win_rate",
+    "course_place_rate",
+    "course_runs",
+    "distance_win_rate",
+    "distance_place_rate",
+    "distance_runs",
+    "horse_speed",
+    "horse_speed_rank",
+    "speed_trend",
+    "class_par_speed",
+    "class_par_rank",
+    "trainer_hot_strike_rate",
+    "trainer_form_zscore",
+    "jockey_hot_strike_rate",
+    "jockey_form_zscore",
+    "speed_distance_profile",
+    "hot_connection",
+    "hot_connection_z",
+    "freshness_band"
+   ],
+   "calibration": "sigmoid",
+   "files": {
+    "catboost_won_s10idp.bin": {
+     "sha256": "9060a3cc52d3320b17af345bd316823f115a7888442c9b05f232ea80767b0b3b",
+     "bytes": 293304
+    },
+    "catboost_won_s10idp_calib.pkl": {
+     "sha256": "d15ecbc10026aba7c07f1f487f5ad1054a0e9fa1b3514ab5cf37a77036b37fc1",
+     "bytes": 89
+    },
+    "catboost_s10idp_meta.json": {
+     "sha256": "e422909c0da726f181746cf81a74f04de1d42f364428445c53982fa350aa6ffc",
+     "bytes": 3958
+    }
+   }
+  },
+  "disclosure_line_market_assisted": {
+   "tag": "s10mkt",
+   "n_features": 54,
+   "feature_cols": [
+    "implied_prob",
+    "overround_norm_prob",
+    "log_odds",
+    "market_rank",
+    "field_size",
+    "going_speed",
+    "class_change",
+    "distance_furlongs",
+    "recent_form_avg",
+    "recent_form_wins",
+    "recent_form_runs",
+    "timeform_rating",
+    "rating_rank",
+    "pace_bias",
+    "historical_win_rate",
+    "historical_place_rate",
+    "jockey_win_rate",
+    "trainer_win_rate",
+    "jt_combo_win_rate",
+    "jt_combo_runs",
+    "going_pref_win_rate",
+    "going_pref_place_rate",
+    "days_since_last_run",
+    "horse_career_runs",
+    "course_win_rate",
+    "course_place_rate",
+    "course_runs",
+    "distance_win_rate",
+    "distance_place_rate",
+    "distance_runs",
+    "ew_value_index",
+    "odds_drift",
+    "odds_value_delta",
+    "horse_speed",
+    "horse_speed_rank",
+    "speed_trend",
+    "race_complexity",
+    "class_par_speed",
+    "class_par_rank",
+    "trainer_hot_strike_rate",
+    "trainer_form_zscore",
+    "jockey_hot_strike_rate",
+    "jockey_form_zscore",
+    "speed_distance_profile",
+    "form_market_disagreement",
+    "hot_connection",
+    "hot_connection_z",
+    "price_steam_pct",
+    "relative_market_share",
+    "market_book_pct",
+    "freshness_band",
+    "is_steaming",
+    "is_drifting",
+    "market_confidence"
+   ],
+   "calibration": "sigmoid",
+   "files": {
+    "catboost_won_s10mkt.bin": {
+     "sha256": "1ee3810a0de40cae8d736ae11eaabe367cf0cb280288da791cd933ae33720346",
+     "bytes": 53816
+    },
+    "catboost_won_s10mkt_calib.pkl": {
+     "sha256": "b981b472ace234283f008f3dce1996d885c24b3be98b309ab17056bc1308b721",
+     "bytes": 89
+    },
+    "catboost_s10mkt_meta.json": {
+     "sha256": "72dff5f7f81263daa1d439b4bd83770db5109a546da91a09fd9555da2808bba6",
+     "bytes": 4333
+    }
+   },
+   "note": "market-assisted: never qualifies a bet (execution.gates accepts only the price-free key)"
+  },
+  "training_window": {
+   "start": "2024-01-01",
+   "end_exclusive": "2026-08-08",
+   "n_rows": 263982,
+   "n_races": 29888
+  },
+  "targets_available": [
+   "won"
+  ],
+  "targets_MISSING_vs_served_bundle": [
+   "placed_2",
+   "showed",
+   "favourite-longshot recalibrator",
+   "grouped-softmax LightGBM line"
+  ]
+ },
+ "data": {
+  "matrix": "data/audit/10/training_rebuilt.parquet",
+  "matrix_sha256": "9ee4e299a03f82868c0ad20dd2e81c7c9826d3aec4131b1f3ec87ddb697836bd",
+  "unified_races_sha256": "849abb3e8c6fdf0a07a76bb68246c1a57d137490fc97362f546c1646fe4cf284",
+  "eligible_population": {
+   "market_type": "WIN",
+   "rule": "market_type == 'WIN' and position.notna() (labelled, priced win-market rows); PLACE rows are a different price book (D24) and are out of this scorecard's scope.",
+   "race_grouping_key": "race_uid",
+   "head_to_head_extra_filter": "models.head_to_head.head_to_head additionally requires a COMPLETE odds book (every runner in the race priced on the pre-off price column) before a race counts toward the log-loss scorecard \u2014 identical rule applied to every candidate and the market line."
+  }
+ },
+ "operating_cutoff": {
+  "research_assumption": {
+   "assumption": "10-minutes-before-off feature freeze (CONTRACTS.md provisional research assumption, not a deployed cutoff constant)",
+   "price_used_for_decision_and_market_benchmark": "pre-off (morningwap -> ppwap fallback), never odds_finish (closing/settlement price, CLV reference only)"
+  },
+  "deployed": "NONE. No minutes-before-off feature freeze exists in serving; the only live time guards are the 900 s quote/source TTLs. execution.safeguards.block_started_races is configured but not called by scripts/daily_paper_loop.py."
+ },
+ "selection_threshold": {
+  "min_edge": 0.02,
+  "min_expected_value": 0.05,
+  "min_field_size": 5,
+  "max_overround": 1.25
+ },
+ "gate_requirements": {
+  "require_complete_card": true,
+  "require_runner_history": true,
+  "require_calibrated_probability": true,
+  "require_reference_market": true,
+  "require_executable_price": true,
+  "require_source_health": true,
+  "require_model_validation": true
+ },
+ "staking_rule": {
+  "kelly_fraction": 0.1,
+  "max_stake_pct_bankroll": 0.005,
+  "max_race_exposure_pct": 0.005,
+  "max_daily_exposure_pct": 0.03,
+  "min_stake": 0.5,
+  "stake_rounding": 0.1,
+  "allow_accumulators": false,
+  "allow_correlated_bets": false,
+  "max_stake_per_bet_eur": 50.0,
+  "LIVE_STATUS": "NOT APPLIED on the live loop: scripts/daily_paper_loop.py passes no stake_decision to build_ticket, so every live ticket has stake=None."
+ },
+ "safeguards_configured": {
+  "bankroll_stop_loss_pct": 0.2,
+  "daily_loss_limit_pct": 0.02,
+  "block_started_races": true,
+  "started_race_buffer_seconds": 60,
+  "block_duplicates": true,
+  "block_stale_sources": true,
+  "max_source_age_seconds": 900,
+  "max_open_tickets": 25,
+  "LIVE_STATUS": "execution.safeguards is used only by execution/simulator.py, not by the live loop."
+ },
+ "supported_market_terms": {
+  "supported_live": [
+   "WIN market only",
+   "fixed-odds quote at a NAMED bookmaker (consensus/SP/Timeform sources are non-executable)",
+   "quote age <= 900s",
+   "complete reference book",
+   "field >= 5"
+  ],
+  "commission": {
+   "exchange_commission": 0.02,
+   "exchange_sources": [
+    "betfair",
+    "betdaq",
+    "smarkets",
+    "matchbook"
+   ],
+   "live_effect": "0.0 - no live odds source is an exchange"
+  },
+  "rule_4_deductions": "implemented execution/settlement.py; OFFLINE SIMULATOR ONLY - UNSUPPORTED live",
+  "dead_heats": "implemented execution/settlement.py; OFFLINE SIMULATOR ONLY - UNSUPPORTED live",
+  "non_runners": "serving removes declared non-runners and renormalises; live SETTLEMENT maps a null position to `void` (also catches non-finishers) - UNSUPPORTED as evidence",
+  "each_way_place": "UNSUPPORTED live (terms recorded on the ticket only); PLACE odds are not captured",
+  "best_odds_guaranteed": "never assumed",
+  "accumulators": "never permitted",
+  "fail_closed_rule": "Any term marked UNSUPPORTED must not produce settled CANDIDATE evidence. While the verdict is NO-GO no CANDIDATE exists, so nothing can be mis-settled; before any GO, blockers B2-B4 in READINESS.md must be closed."
+ },
+ "forward_gate_retained": {
+  "min_weeks": 8,
+  "min_qualified_bets": 200,
+  "min_qualified_races": 150,
+  "require_positive_mean_clv": true,
+  "clv_ci_lower_above": 0.0,
+  "ae_min": 0.9,
+  "ae_max": 1.1,
+  "max_calibration_ece": 0.03,
+  "max_drawdown_pct": 0.1,
+  "require_model_go": true
+ },
+ "real_money": {
+  "execution.paper_only": true,
+  "placement_code_in_repo": false
+ },
+ "serving_status": {
+  "currently_served": {
+   "models/catboost_won_v3nf.bin": {
+    "sha256": "9d45ef36cae6feb26ddd8c5c3130e3423b736b24e1960e46033359523bcb518b",
+    "bytes": 1359192
+   },
+   "models/catboost_won_v3nf_calib.pkl": {
+    "sha256": "27c992adcddcc22e531e25ddc37899addd07728c4f8688c7f3c4d04ef7a91fd3",
+    "bytes": 89
+   },
+   "models/catboost_v3nf_meta.json": {
+    "sha256": "0dd6f43cc05e4fb54665411e012dcf35c5d21e40a56df6f6f8533ef2c205ae78",
+    "bytes": 10949
+   },
+   "models/fl_oddsband_v3nf_calib.pkl": {
+    "sha256": "ecced5eee2cd7b609fe0a09d5b5a61d96b2b745a28bab4cfaabea300555631b1",
+    "bytes": 491
+   },
+   "models/catboost_won_v3.bin": {
+    "sha256": "a064701968d1023b88483c60d6beb04246db4c44191b9250fdadbd51a8715e32",
+    "bytes": 135152
+   },
+   "models/catboost_won_v3_calib.pkl": {
+    "sha256": "a4c7681e8bede68f7741c4817e0a28bbc475f0ab7135873b55ecf4bd33569cc3",
+    "bytes": 89
+   },
+   "models/catboost_placed_2_v3.bin": {
+    "sha256": "2592a8618091c3e8adbe669ff1cb0d8d68d676195427233820d907e54304520b",
+    "bytes": 176160
+   },
+   "models/catboost_showed_v3.bin": {
+    "sha256": "df3c49077e89d85871130933fa54f5b7adb3fc388907804e6c835a9b3279e1fd",
+    "bytes": 203408
+   },
+   "models/catboost_v3_meta.json": {
+    "sha256": "6736659c023d6a984a915b5a5f04b3497002b22687e36a64081424719d36b161",
+    "bytes": 9843
+   },
+   "models/lgbm_won_v3.txt": {
+    "sha256": "2cb869453916c6b55dfa80f5c48b7c435ca1147c9181c7e2f10ecfa0ee848948",
+    "bytes": 976532
+   },
+   "models/lgbm_v3_meta.json": {
+    "sha256": "280c26349400e7c4773254efacfd2c300a75e5007d03cd2fe3f86cdd9b7760b5",
+    "bytes": 13538
+   }
+  },
+  "candidate_is_served": false,
+  "note": "This stage promotes NOTHING. The served bundle above is also the ROLLBACK target."
+ },
+ "promotion_procedure_reversible_NOT_EXECUTED": [
+  "0. Precondition: a human approves; the final-holdout result in 05_final_holdout_once.json is read first.",
+  "1. COPY (never move/overwrite) catboost_won_s10idp.bin, catboost_won_s10idp_calib.pkl and catboost_s10idp_meta.json from data/audit/10/models_catboost/ into models/. The tag is new, so no existing file is replaced. Verify the three sha256 values against this manifest.",
+  "2. In config.yaml set value.model_tag: s10idp (was v3nf). Leave model.version_tag: v3 unchanged - the rebuild has no placed_2/showed targets, so the headline/place bundle cannot be swapped without a retrain.",
+  "3. No fl_oddsband_s10idp_calib.pkl exists: the market-adjusted value_win_prob loses its F-L remap. Refit it on development data (scripts.refit_fl_recalibrator) or accept the unadjusted line; decide BEFORE switching and record which.",
+  "4. Run: pytest -q tests/models/test_predictor.py tests/execution tests/scripts/test_daily_paper_loop.py, then the isolated replay reports/improvement/17/06_paper_replay.py.",
+  "5. ROLLBACK = set value.model_tag back to v3nf. Nothing was deleted, so rollback is one config line.",
+  "6. A promotion changes the evaluated model: any forward window must (re)start after it, never before."
+ ],
+ "final_holdout_plan": {
+  "window": {
+   "start": "2026-08-28",
+   "end": "2026-09-17",
+   "n_rows": 6754,
+   "n_races": 708,
+   "policy": "Reserved for step17's single frozen-selection evaluation. Step 10 must not load these rows into any fit, tuning CV, calibration carve or head-to-head scoring call. Its coverage (row/null counts only, no performance metric) was inspected in step06's candidate build; no model has ever been scored against it. If step17 finds this window has since been inspected for anything beyond coverage, it must say so rather than silently treating it as still-untouched."
+  },
+  "eligibility": "reserved by step 10 (D42) for this stage; 01_dispositions.json verifies no stage artifact holds a model score on these rows; prior looks were label-free (feature fill, race counts)",
+  "use": "EXACTLY ONCE, by 05_final_holdout_once.py, guarded by a lock file",
+  "primary_endpoint": "s10idp price-free race log loss vs the de-vigged market (models.head_to_head)",
+  "pre_declared_descriptive_lines": [
+   "s10mkt",
+   "champion_v3nf_indep",
+   "champion_v3nf_fl_market_adjusted",
+   "champion_v3_market",
+   "champion_lgbm_v3_market"
+  ],
+  "no_decision_from_holdout": "Selection is already frozen. The holdout can confirm or contradict; it cannot re-select, re-tune or relax a gate."
+ },
+ "code_hashes": {
+  "features/builder.py": "c0ec449c900d894b64b7cbea4b6098e991c1520563028aadcd7156c8c40718d0",
+  "features/derive.py": "0f256366d95f04796b29acd9566a6bdf9cefabb553d5e509b30d93ce81a1c23d",
+  "features/fuse.py": "9d5325b8e4e16d181b3479a0e0350f7132e3a8dfe2e09ab0f4b4db167e7883eb",
+  "features/_trailing_fast.py": "41a477b6d0736164341d015c23a4e5a68b5188c0e0fa8a92c3ee317739b2dddf",
+  "models/features.py": "3ae138b4d2329dc202daa877db8c82c20566b51d2d1adcabeebcbe17a491a6dd",
+  "models/predictor.py": "329916784dbc7443057a50862d22d8e7428b8e0dacce2befcfcb9c690ed661dc",
+  "models/calibration.py": "a5bc7a2aa1e427482247b1c7e51de2bf5982db067712d108088b8c07de5b090a",
+  "models/devig.py": "5d035de0bbdb58533e145d5b9ffae2aef98442b6c45d2a85cb36d39baecc6f98",
+  "backtest/holdout.py": "7ea8cabb92afa73068dbb0aec9e611a77f20a13c976f739865fda48bdd8f31c5",
+  "backtest/data.py": "e5876d2123848939fb47be0ef8fa89e36cf1c971d933302df36f9de3bea88009",
+  "models/head_to_head.py": "d69ad4f2c253b7a025e4593b472386a6c07d814bcf17deabf5aff8c05304f184",
+  "execution/gates.py": "20687a736ca13445e8d2df94b1a708a01f9ef470537dcbcd466c157aeaa48a55",
+  "execution/config.py": "f3bd815d14c183d2ffe776b78365fef8c47ae3faa6ed8412b46b86d92fda9634",
+  "execution/model_gate.py": "276f5d4dd7e43210048a41ab91d869f048e189eb6c0257f704113c742736382d",
+  "execution/forward_gate.py": "ad5c6de9c9161b8d98f9454d5ab56e45251e7259d06fda0b6ad060a4f863f2cd",
+  "execution/tickets.py": "a23fee88fc09df76220fc792633f233351022416e616dc892a646974192ba823",
+  "execution/snapshots.py": "cc67fe198d3a1e3136bc7f66bbf76b123e3c62d033d2d72df2aa255cd91afad1",
+  "execution/settlement.py": "0b17c7ad313729d9ebd31f4c9e6c7f17db859de3ca6964efb46ae30bc38d2b35",
+  "scripts/daily_paper_loop.py": "cd90526eafa822a1979d95cc0ddbce8a304bd15129328134df30ec2ec56a3b06",
+  "scripts/refresh.py": "0974355923c5147c1177a0ebd8194aa71eeaf072d019e4be652a6f0d1b6b680a",
+  "config.yaml": "50824e3e16ddde2d8b9602bac6045d21261953f58740cda41aa6d1ceacc8e7fe"
+ }
+}

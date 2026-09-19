@@ -1,0 +1,39 @@
+{
+ "paper_tickets_by_decision": {
+  "PASS": 988
+ },
+ "paper_tickets_not_paper_only": 0,
+ "paper_tickets_settled": 0,
+ "paper_tickets_with_stake": 0,
+ "paper_tickets_issued_range": [
+  "2026-07-28T00:00:00+00:00",
+  "2026-09-18T00:00:00+00:00",
+  2
+ ],
+ "paper_tickets_duplicate_identity": 0,
+ "paper_only_check_constraint_in_schema": true,
+ "odds_snapshots_rows": 3547,
+ "odds_snapshots_range": [
+  "2026-07-25T12:02:11.985778+00:00",
+  "2026-09-18T23:49:12.164694+00:00",
+  2
+ ],
+ "odds_snapshots_market_types": {
+  "WIN": 3547
+ },
+ "odds_snapshots_bookmakers": {
+  "boylesports": 1122,
+  "livescorebet": 2425
+ },
+ "odds_snapshots_future_stamped": 0,
+ "append_only_triggers": [
+  "odds_snapshots_no_delete",
+  "odds_snapshots_no_update",
+  "text_archive_no_delete",
+  "text_archive_no_update"
+ ],
+ "text_archive": [
+  243,
+  1
+ ]
+}

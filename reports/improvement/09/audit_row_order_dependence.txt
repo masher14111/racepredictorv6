@@ -1,0 +1,4 @@
+rows 72112
+trainer_win_rate rows differing after a pure ROW SHUFFLE: 18085 / 69891 (25.88%)
+  max|delta|=1.0000 mean|delta|=0.0169
+  runs_in_window differing: 7178

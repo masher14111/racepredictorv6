@@ -1,0 +1,15 @@
+{
+  "model_type": "power_blend",
+  "alpha": 0.5,
+  "beta": 0.5,
+  "metadata": {
+    "selected_by": "race_level_log_loss",
+    "dev_race_log_loss": 1.6816514762578625,
+    "n_grid_points": 63,
+    "line": "combined_market",
+    "model_prob_col": "condlogit_market_prob",
+    "reference_prob_col": "market_ref_prob",
+    "selected_on": "blend_dev (walk-forward OOS, 2026-02-01..2026-06-12)",
+    "n_races": 4138
+  }
+}

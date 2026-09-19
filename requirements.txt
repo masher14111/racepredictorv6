@@ -1,0 +1,21 @@
+streamlit
+altair
+pandas
+numpy
+lxml
+pytz
+scikit-learn
+pyyaml
+httpx
+curl_cffi  # browser-impersonating client — bypasses Cloudflare TLS fingerprint on results sites
+playwright
+selenium
+pydantic
+catboost
+lightgbm  # second model line: grouped-softmax win-prob ranker (models/lgbm_softmax.py). 4.6.0 ships a pure-Python wheel that imports on 3.14 — no separate venv needed.
+optuna
+scipy
+plotly
+reportlab
+watchdog>=4.0
+matplotlib

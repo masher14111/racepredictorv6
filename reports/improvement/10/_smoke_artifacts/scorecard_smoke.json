@@ -1,0 +1,159 @@
+{
+  "manifest": "reports/improvement/10/run_manifest.json",
+  "dev_oos_panel_rows": 5561,
+  "dev_oos_panel_races": 618,
+  "candidates": {
+    "condlogit_indep": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.9221887477628536,
+        "brier_runner_level": 0.09094762553624003,
+        "ece": 0.013194954569506973
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.21815651741764785,
+        "brier_runner_level": -0.006225397722947612,
+        "ece": -0.00489020295768073
+      },
+      "model_beats_market_logloss": false
+    },
+    "condlogit_market": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.7126568112995202,
+        "brier_runner_level": 0.08505501881445608,
+        "ece": 0.007720999927185074
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.008624580954314398,
+        "brier_runner_level": -0.00033279100116366533,
+        "ece": 0.0005837516846411697
+      },
+      "model_beats_market_logloss": false
+    },
+    "catboost_indep": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.9327910395083223,
+        "brier_runner_level": 0.09122294537147614,
+        "ece": 0.012377586261512044
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.22875880916311653,
+        "brier_runner_level": -0.0065007175581837245,
+        "ece": -0.004072834649685801
+      },
+      "model_beats_market_logloss": false
+    },
+    "catboost_market": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.7131504376093805,
+        "brier_runner_level": 0.08463047484344866,
+        "ece": 0.01050339132340717
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.009118207264174671,
+        "brier_runner_level": 9.175296984376136e-05,
+        "ece": -0.0021986397115809266
+      },
+      "model_beats_market_logloss": false
+    },
+    "lgbm_indep": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.9117604535754393,
+        "brier_runner_level": 0.09053438788600685,
+        "ece": 0.013662762332584075
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.20772822323023354,
+        "brier_runner_level": -0.0058121600727144285,
+        "ece": -0.005358010720757832
+      },
+      "model_beats_market_logloss": false
+    },
+    "lgbm_market": {
+      "n_races_total": 618,
+      "n_races_kept": 618,
+      "n_runners": 5561,
+      "devig_method": "proportional",
+      "model": {
+        "log_loss": 1.7066445273876811,
+        "brier_runner_level": 0.08475530708247817,
+        "ece": 0.006521923996199227
+      },
+      "market": {
+        "log_loss": 1.7040322303452058,
+        "brier_runner_level": 0.08472222781329242,
+        "ece": 0.008304751611826243
+      },
+      "gaps": {
+        "log_loss": -0.0026122970424753422,
+        "brier_runner_level": -3.307926918574844e-05,
+        "ece": 0.0017828276156270162
+      },
+      "model_beats_market_logloss": false
+    }
+  },
+  "conditional_logit_tuning": {
+    "independent": {
+      "l2": 0.0074593432857265485,
+      "cv_log_loss": 1.9389891211796173
+    },
+    "market": {
+      "l2": 0.0074593432857265485,
+      "cv_log_loss": 1.6986091184318153
+    }
+  },
+  "weighting_ablation_dev_core_cv_log_loss": {
+    "existing_odds_inverse": 1.8395122480770034,
+    "unweighted": 1.6986091184318153,
+    "race_weighted": 1.7086153592935323
+  },
+  "market_only_baseline": {
+    "log_loss": 1.7040322303452058,
+    "brier_runner_level": 0.08472222781329242,
+    "ece": 0.008304751611826243
+  }
+}

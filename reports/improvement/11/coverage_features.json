@@ -1,0 +1,262 @@
+{
+  "by_month": {
+    "2024-01": {
+      "figure_pct": 98.37,
+      "msf_mean3_pct": 21.72,
+      "rows": 6624
+    },
+    "2024-02": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 62.36,
+      "rows": 5726
+    },
+    "2024-03": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 69.73,
+      "rows": 6977
+    },
+    "2024-04": {
+      "figure_pct": 99.9,
+      "msf_mean3_pct": 62.17,
+      "rows": 8326
+    },
+    "2024-05": {
+      "figure_pct": 99.9,
+      "msf_mean3_pct": 71.32,
+      "rows": 11054
+    },
+    "2024-06": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 81.85,
+      "rows": 10151
+    },
+    "2024-07": {
+      "figure_pct": 99.96,
+      "msf_mean3_pct": 86.51,
+      "rows": 10126
+    },
+    "2024-08": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 88.8,
+      "rows": 9964
+    },
+    "2024-09": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 90.82,
+      "rows": 8824
+    },
+    "2024-10": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 89.28,
+      "rows": 10739
+    },
+    "2024-11": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 89.06,
+      "rows": 7837
+    },
+    "2024-12": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 87.61,
+      "rows": 7919
+    },
+    "2025-01": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 92.16,
+      "rows": 6361
+    },
+    "2025-02": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 92.41,
+      "rows": 5861
+    },
+    "2025-03": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 91.33,
+      "rows": 7162
+    },
+    "2025-04": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 89.43,
+      "rows": 8726
+    },
+    "2025-05": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 89.27,
+      "rows": 10557
+    },
+    "2025-06": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 90.76,
+      "rows": 9113
+    },
+    "2025-07": {
+      "figure_pct": 99.99,
+      "msf_mean3_pct": 90.89,
+      "rows": 9466
+    },
+    "2025-08": {
+      "figure_pct": 99.81,
+      "msf_mean3_pct": 91.64,
+      "rows": 9165
+    },
+    "2025-09": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 92.19,
+      "rows": 9506
+    },
+    "2025-10": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 91.65,
+      "rows": 9994
+    },
+    "2025-11": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 90.05,
+      "rows": 7911
+    },
+    "2025-12": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 90.9,
+      "rows": 7535
+    },
+    "2026-01": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 94.05,
+      "rows": 6454
+    },
+    "2026-02": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 93.96,
+      "rows": 5681
+    },
+    "2026-03": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 92.46,
+      "rows": 7082
+    },
+    "2026-04": {
+      "figure_pct": 99.93,
+      "msf_mean3_pct": 89.99,
+      "rows": 8601
+    },
+    "2026-05": {
+      "figure_pct": 99.91,
+      "msf_mean3_pct": 90.0,
+      "rows": 10563
+    },
+    "2026-06": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 90.45,
+      "rows": 8473
+    },
+    "2026-07": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 91.98,
+      "rows": 9514
+    },
+    "2026-08": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 91.3,
+      "rows": 8773
+    },
+    "2026-09": {
+      "figure_pct": 100.0,
+      "msf_mean3_pct": 92.3,
+      "rows": 5532
+    }
+  },
+  "by_window": {
+    "dev_core": {
+      "measured_figure_pct": 99.94,
+      "msf_distance_fill_pct": 58.85,
+      "msf_going_fill_pct": 71.08,
+      "msf_last_fill_pct": 85.6,
+      "msf_mean3_fill_pct": 85.61,
+      "msf_mean6_fill_pct": 85.61,
+      "msf_rank_fill_pct": 85.61,
+      "msf_trend_fill_pct": 85.61,
+      "races": 29888,
+      "rows": 263982
+    },
+    "dev_oos": {
+      "measured_figure_pct": 100.0,
+      "msf_distance_fill_pct": 67.18,
+      "msf_going_fill_pct": 85.07,
+      "msf_last_fill_pct": 91.13,
+      "msf_mean3_fill_pct": 91.15,
+      "msf_mean6_fill_pct": 91.15,
+      "msf_rank_fill_pct": 91.15,
+      "msf_trend_fill_pct": 91.15,
+      "races": 618,
+      "rows": 5561
+    },
+    "final_holdout_RESERVED": {
+      "measured_figure_pct": 100.0,
+      "msf_distance_fill_pct": 71.44,
+      "msf_going_fill_pct": 79.42,
+      "msf_last_fill_pct": 92.6,
+      "msf_mean3_fill_pct": 92.61,
+      "msf_mean6_fill_pct": 92.61,
+      "msf_rank_fill_pct": 92.61,
+      "msf_trend_fill_pct": 92.61,
+      "races": 708,
+      "rows": 6754
+    }
+  },
+  "feature_fill_pct": {
+    "msf_distance": 59.33,
+    "msf_going": 71.57,
+    "msf_last": 85.88,
+    "msf_mean3": 85.89,
+    "msf_mean6": 85.89,
+    "msf_rank": 85.89,
+    "msf_trend": 85.89
+  },
+  "invariance": {
+    "append_invariance_diffs": {
+      "msf_distance": 0,
+      "msf_going": 0,
+      "msf_last": 0,
+      "msf_mean3": 0,
+      "msf_mean6": 0,
+      "msf_rank": 0,
+      "msf_trend": 0
+    },
+    "append_invariant": true,
+    "row_order_diffs": {
+      "msf_distance": 0,
+      "msf_going": 0,
+      "msf_last": 0,
+      "msf_mean3": 0,
+      "msf_mean6": 0,
+      "msf_rank": 0,
+      "msf_trend": 0
+    },
+    "row_order_invariant": true,
+    "rows_compared_append": 527220,
+    "rows_compared_order": 551815
+  },
+  "measured_figure_pct_overall": 99.94,
+  "msf_mean3_fill_by_race_type": {
+    "chase": 89.74,
+    "flat": 85.74,
+    "hurdle": 85.09,
+    "nhf": 55.28
+  },
+  "own_race_figure_excluded_from_features": true,
+  "par_level_counts": {
+    "0": 133692,
+    "1": 27984,
+    "2": 7717,
+    "3": 10009,
+    "4": 79479,
+    "5": 8269,
+    "6": 3122,
+    "7": 5865,
+    "<NA>": 108,
+    "nan": 52
+  },
+  "win_races": 31214,
+  "win_rows": 276297
+}

@@ -1,0 +1,77 @@
+{
+ "max_abs_delta": 0.0,
+ "scorecard": {
+  "s10idp": {
+   "n_races_total": 618,
+   "n_races": 618,
+   "n_runners": 5561,
+   "model_log_loss": 1.9361982860271096,
+   "market_log_loss": 1.7040322303452058,
+   "gap_market_minus_model": -0.23216605568190385,
+   "brier": 0.09144551834400441,
+   "market_brier": 0.08472222781329242,
+   "ece": 0.014926528003101016,
+   "beats_market": false
+  },
+  "s10mkt": {
+   "n_races_total": 618,
+   "n_races": 618,
+   "n_runners": 5561,
+   "model_log_loss": 1.7192373432851251,
+   "market_log_loss": 1.7040322303452058,
+   "gap_market_minus_model": -0.01520511293991933,
+   "brier": 0.08490694758120518,
+   "market_brier": 0.08472222781329242,
+   "ece": 0.008539895260903424,
+   "beats_market": false
+  },
+  "champion_v3nf_indep": {
+   "n_races_total": 618,
+   "n_races": 618,
+   "n_runners": 5561,
+   "model_log_loss": 2.100030973535854,
+   "market_log_loss": 1.7040322303452058,
+   "gap_market_minus_model": -0.3959987431906482,
+   "brier": 0.09589243286505747,
+   "market_brier": 0.08472222781329242,
+   "ece": 0.03244381065477253,
+   "beats_market": false
+  },
+  "champion_v3nf_fl_market_adjusted": {
+   "n_races_total": 618,
+   "n_races": 618,
+   "n_runners": 5561,
+   "model_log_loss": 1.7172127584426053,
+   "market_log_loss": 1.7040322303452058,
+   "gap_market_minus_model": -0.013180528097399558,
+   "brier": 0.08480044452818485,
+   "market_brier": 0.08472222781329242,
+   "ece": 0.012386163794962875,
+   "beats_market": false
+  },
+  "champion_v3_market": {
+   "n_races_total": 618,
+   "n_races": 618,
+   "n_runners": 5561,
+   "model_log_loss": 1.8650313267902516,
+   "market_log_loss": 1.7040322303452058,
+   "gap_market_minus_model": -0.16099909644504584,
+   "brier": 0.08838795149965113,
+   "market_brier": 0.08472222781329242,
+   "ece": 0.027933434387589547,
+   "beats_market": false
+  },
+  "champion_lgbm_v3_market": {
+   "n_races_total": 618,
+   "n_races": 618,
+   "n_runners": 5561,
+   "model_log_loss": 2.1456428951700803,
+   "market_log_loss": 1.7040322303452058,
+   "gap_market_minus_model": -0.44161066482487454,
+   "brier": 0.09268493707754237,
+   "market_brier": 0.08472222781329242,
+   "ece": 0.04126137396779092,
+   "beats_market": false
+  }
+ }
+}

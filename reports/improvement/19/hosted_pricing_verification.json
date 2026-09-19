@@ -1,0 +1,14 @@
+{
+  "model_id": "deepseek/deepseek-v4.1-flash",
+  "provider": "openrouter",
+  "pricing_source": "live",
+  "base_price_input_per_token": 1.5e-07,
+  "base_price_output_per_token": 6e-07,
+  "worst_case_price_input_per_token": 3e-07,
+  "worst_case_price_output_per_token": 1.2e-06,
+  "ceiling_input_per_token": 3e-07,
+  "ceiling_output_per_token": 1.2e-06,
+  "within_ceiling": true,
+  "n_time_of_day_overrides": 6,
+  "verified_at": "2026-09-19T14:51:54.709025+00:00"
+}

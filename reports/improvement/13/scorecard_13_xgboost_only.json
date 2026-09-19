@@ -1,0 +1,91 @@
+{
+  "manifest": "reports/improvement/13/manifest.json",
+  "candidates": {
+    "xgboost_indep": {
+      "training_meta": {
+        "best_params": {
+          "learning_rate": 0.023171758042400847,
+          "max_depth": 10,
+          "min_child_weight": 8.960785365368121,
+          "subsample": 0.7993292420985183,
+          "colsample_bytree": 0.5780093202212182,
+          "reg_lambda": 0.24345423962016924,
+          "reg_alpha": 0.0017073967431528124
+        },
+        "test_auc": 0.6686771459355082,
+        "test_brier": 0.09825153304860215,
+        "calibrated": true,
+        "calibration_method": "sigmoid",
+        "n_cal": 31695,
+        "n_core": 179490,
+        "n_fit": 161534,
+        "n_early_stop": 17956
+      },
+      "head_to_head": {
+        "n_races_total": 618,
+        "n_races_kept": 618,
+        "n_runners": 5561,
+        "devig_method": "proportional",
+        "model": {
+          "log_loss": 1.9786347614612614,
+          "brier_runner_level": 0.09263447306935353,
+          "ece": 0.00790074125277443
+        },
+        "market": {
+          "log_loss": 1.7040322303452058,
+          "brier_runner_level": 0.08472222781329242,
+          "ece": 0.008304751611826243
+        },
+        "gaps": {
+          "log_loss": -0.2746025311160556,
+          "brier_runner_level": -0.007912245256061115,
+          "ece": 0.0004040103590518141
+        },
+        "model_beats_market_logloss": false
+      }
+    },
+    "xgboost_market": {
+      "training_meta": {
+        "best_params": {
+          "learning_rate": 0.023171758042400847,
+          "max_depth": 10,
+          "min_child_weight": 8.960785365368121,
+          "subsample": 0.7993292420985183,
+          "colsample_bytree": 0.5780093202212182,
+          "reg_lambda": 0.24345423962016924,
+          "reg_alpha": 0.0017073967431528124
+        },
+        "test_auc": 0.7886818089594426,
+        "test_brier": 0.08866648009214793,
+        "calibrated": true,
+        "calibration_method": "isotonic",
+        "n_cal": 31695,
+        "n_core": 179490,
+        "n_fit": 161534,
+        "n_early_stop": 17956
+      },
+      "head_to_head": {
+        "n_races_total": 618,
+        "n_races_kept": 618,
+        "n_runners": 5561,
+        "devig_method": "proportional",
+        "model": {
+          "log_loss": 1.7115608037148387,
+          "brier_runner_level": 0.08498514572061992,
+          "ece": 0.0045113135048403495
+        },
+        "market": {
+          "log_loss": 1.7040322303452058,
+          "brier_runner_level": 0.08472222781329242,
+          "ece": 0.008304751611826243
+        },
+        "gaps": {
+          "log_loss": -0.007528573369632863,
+          "brier_runner_level": -0.0002629179073275062,
+          "ece": 0.0037934381069858938
+        },
+        "model_beats_market_logloss": false
+      }
+    }
+  }
+}

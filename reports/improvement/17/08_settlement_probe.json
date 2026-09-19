@@ -1,0 +1,61 @@
+{
+ "issued": {
+  "WON": {
+   "decision": "CANDIDATE",
+   "paper_only": true,
+   "stake": null,
+   "max_stake": 50.0,
+   "offered_odds": 3.75
+  },
+  "LOST": {
+   "decision": "CANDIDATE",
+   "paper_only": true,
+   "stake": null,
+   "max_stake": 50.0,
+   "offered_odds": 3.75
+  },
+  "DNF": {
+   "decision": "CANDIDATE",
+   "paper_only": true,
+   "stake": null,
+   "max_stake": 50.0,
+   "offered_odds": 3.75
+  }
+ },
+ "settle_counts": {
+  "settled": 3,
+  "already_settled": 0,
+  "still_open": 0,
+  "unmeasurable_clv": 3
+ },
+ "settled": {
+  "DNF": {
+   "outcome": "void",
+   "stake": null,
+   "returns": 0.0,
+   "profit": 0.0,
+   "clv_pct": null
+  },
+  "LOST": {
+   "outcome": "lost",
+   "stake": null,
+   "returns": 0.0,
+   "profit": 0.0,
+   "clv_pct": null
+  },
+  "WON": {
+   "outcome": "won",
+   "stake": null,
+   "returns": 0.0,
+   "profit": 0.0,
+   "clv_pct": null
+  }
+ },
+ "findings": {
+  "stake_is_never_sized_live": true,
+  "a_WINNING_candidate_records_zero_profit": true,
+  "winner_and_loser_are_numerically_identical": true,
+  "a_non_finisher_is_settled_void_not_lost": true,
+  "execution.settlement.settle_ticket_called_by_live_loop": false
+ }
+}

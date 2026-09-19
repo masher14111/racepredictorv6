@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-06-14T20:01:33.600218+01:00",
+  "files": [
+    {
+      "path": "reports\\bets_20260614_200133.csv",
+      "sha256": "cc49c779309ece5a361c8f2f8245596e4b17c7dc88b9b82815886f4198d34445",
+      "row_count": 0,
+      "size_bytes": 18
+    },
+    {
+      "path": "reports\\predictions_20260614_200133.csv",
+      "sha256": "e4c083e68e6918fb993625059cd2e488a818367e1def9ef4fba2393614412644",
+      "row_count": 21,
+      "size_bytes": 3837
+    },
+    {
+      "path": "reports\\snapshot_20260614_200133.json",
+      "sha256": "f924bf25d687d3848668553ad0bda2d721432437d6ada9af12c938c6f0f78512",
+      "row_count": null,
+      "size_bytes": 19105
+    }
+  ],
+  "warnings": [
+    "PDF skipped: reportlab is required for PDF export: pip install reportlab"
+  ]
+}
