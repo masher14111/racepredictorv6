@@ -5,8 +5,9 @@ Destination: private repository https://github.com/masher14111/racepredictorv6.
 This is a snapshot of the user's current project, including existing UI/application changes,
 the original improvement programme, and the automatic daily-paper follow-up.
 At snapshot preparation, stages 19 and 20 were verified DONE; stage 21 was still running
-its implementation/checks. The user revoked the earlier safe-stop request and instructed
-the coder to keep running; that stop request was cleared before this upload.
+its implementation/checks. A safe stop after the current stage has been requested.
+The user's instruction to keep it working refers to preserving local app credentials;
+credentials and local data have not been deleted by the upload.
 Stages 22-24 remain pending. Do not interpret this upload as completed implementation,
 model acceptance or prospective validation. Consult current STATE.md for later progress.
 
