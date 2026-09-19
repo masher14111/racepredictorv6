@@ -1,0 +1,16 @@
+# Git-ignored secrets overlay — deep-merged over config.yaml by utils/config_loader.
+# Never commit this file. Keep real credentials (proxy logins, bot tokens) here,
+# or set them via RP_ env vars (e.g. RP_NOTIFICATIONS__CHANNELS__TELEGRAM__BOT_TOKEN).
+
+proxy_pool:
+  proxies:
+    - http://cff0801dc12519980b14:ef80a3a8a1b75983@gw.dataimpulse.com:823
+
+timeform:
+  session_cookie: "h4nlypaed77WMkSkyc.K0v0pzUuRkMQ3p4PCN2CXiJ8hRQBFUnp16t_PCwAbgmXpmO-D4PAMAIBipp1"
+
+notifications:
+  channels:
+    telegram:
+      bot_token: "8648732935:AAErLnphLrBGxcpCO7SAwcpbXxbKAF71Q5g"
+      chat_id: "6618994572"

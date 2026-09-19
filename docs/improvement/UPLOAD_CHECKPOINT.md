@@ -15,9 +15,18 @@ The GitHub publishing history starts at this snapshot because old local Git hist
 a proxy credential. Original local history remains on the pre-upload branch and is not pushed.
 Do not merge or push that legacy history to this repository without sanitising it first.
 
-Source code, tests, documentation, memory and report evidence are included. Secrets, local
-environments/caches, database backups and generated model binaries remain local according
-to .gitignore. A clone needs its own environment, data/models and privately supplied credentials.
+Source code, tests, documentation, memory and report evidence are included. At the user's explicit
+request, this PRIVATE repository also includes config.local.yaml and .env with the current app
+credentials. Do not make this repository public. Local environments/caches, database backups and
+generated model binaries remain local according to .gitignore; a clone still needs its data/models.
+
+On a new Windows installation, run RESTORE_PRIVATE_CREDENTIALS.cmd once to install the two
+predictor API keys from .env into that Windows user's environment, then reopen the application
+terminal. config.local.yaml is already read automatically for proxy/service configuration.
+The helper does not display keys or contact a provider. Existing local credentials remain unchanged.
+Credential inclusion does not create a new hosted allowance: the same cumulative $5/1,200-request
+cap still applies. Preserve the existing budget ledger when moving the application to another PC;
+do not start a new empty ledger or run concurrent independent copies against that allowance.
 
 Portable START_AUTOMATIC_IMPROVEMENTS.cmd, WATCH_IMPROVEMENTS.cmd,
 STOP_AFTER_CURRENT_STEP.cmd, CHECK_IMPROVEMENTS.cmd and SET_OPENROUTER_KEY.cmd
